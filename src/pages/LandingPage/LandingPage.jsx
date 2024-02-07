@@ -1,14 +1,17 @@
 import { useEffect, useRef } from "react"
 import { LandingPageStyledComponent } from "./LandingPageStyledComponents"
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
   // create a cursor glow effect
 
   const cursorEffectRef = useRef(null);
-  const titleRef = useRef(null);
+  const mainContentRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const title = titleRef.current;
+    const mainContent = mainContentRef.current;
+
 
 
 
@@ -19,30 +22,33 @@ export default function LandingPage() {
         divCursorEffect.style.top = e.pageY + "px";
       },200)
     }
+    cursorEffectFunction();
 
-    const mouseOverTitleFunction = (e) => {
-      title.classList.add("title__fade-out")
-      setTimeout(()=>{
-        console.log("redirecting");
-        window.location.assign("https://www.google.com/")
-      }, 800)
-    }
 
     window.addEventListener("mousemove", cursorEffectFunction);
-
-    title.addEventListener("mouseover", mouseOverTitleFunction);
     return () => {
       window.removeEventListener("mousemove", cursorEffectFunction);
-
-      window.removeEventListener("mouseover", mouseOverTitleFunction);
     }
     
 
   }, []);
+
+  function redirect(){
+    const mainContent = mainContentRef.current;
+    console.log("redirecting");
+    mainContent.classList.add("main-content--title__fade-out")
+    setTimeout(()=>{
+      document.documentElement.requestFullscreen()
+      navigate("/main");
+    }, 1500)
+  }
   return(
     <LandingPageStyledComponent>
       <div className="cursor-effect" ref={cursorEffectRef}></div>
-      <button className="title" ref={titleRef}>Hey, I'm Juan</button>
+      <div className="main-content" onClick={redirect} ref={mainContentRef}>
+        <button className="main-content--title">Hey, I'm Juan</button>
+        <small className="main-content--instruction">click us</small>
+      </div>
 
     </LandingPageStyledComponent>
   )

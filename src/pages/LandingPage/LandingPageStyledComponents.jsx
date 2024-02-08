@@ -6,7 +6,7 @@ const blink = keyframes`
     opacity: .6;
   }
   50% {
-    opacity: 0.2;
+    opacity: 0;
   }
 `
 
@@ -59,8 +59,20 @@ export const LandingPageStyledComponent = styled.main`
     background: transparent;
     border-radius: 9999px;
     color: ${lightColor};
-    opacity: .4;
+    opacity: .6;
     transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    &__cursor{
+      color: ${primaryColor};
+      font-weight: 700;
+      font-size: 3rem;
+      opacity: 0.6;
+      animation: infinite 0.7s linear ${blink} ;
+      transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
 
     &:hover{
       opacity: 1;

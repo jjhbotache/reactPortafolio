@@ -38,10 +38,12 @@ export const LandingPageStyledComponent = styled.main`
     z-index: 1;
   }
   .main-content{
+    width: 100vw;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: space-evenly;
     transition: all 6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: .3rem;
     padding: 2rem;
@@ -51,6 +53,9 @@ export const LandingPageStyledComponent = styled.main`
     }
   }
   .main-content--title{
+    max-width: 100vw;
+    text-align: center;
+
     position: relative;
     z-index: 2;
     font-size: 3rem;
@@ -62,7 +67,7 @@ export const LandingPageStyledComponent = styled.main`
     opacity: .6;
     transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
 
-    white-space: nowrap;
+    
     overflow: hidden;
 
     &__cursor{
@@ -79,9 +84,12 @@ export const LandingPageStyledComponent = styled.main`
     }
   }
   .main-content--title__fade-out{
+    white-space: nowrap;
+    max-width: unset !important;
+
     opacity: 0 ;
     border: transparent ;
-    & *{letter-spacing: 4vw ;}
+    & *{letter-spacing: 2vw ;}
     transition: all 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
   }
   .main-content--instruction{

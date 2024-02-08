@@ -14,7 +14,7 @@ export const MainPageStyledComponent = styled.main`
     height: 50px;
     transition: all 3s cubic-bezier(0.175, 0.177, 0.178, 1.1);
     .rectangle{
-      position: absolute; //for reel
+      position: absolute;
       width: 10px;
       height: 40px;
     }

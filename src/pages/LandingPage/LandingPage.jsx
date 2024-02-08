@@ -55,7 +55,8 @@ export default function LandingPage() {
           options={
             {
               wrapperClassName: "main-content--title",
-              cursorClassName: "main-content--title__cursor"
+              cursorClassName: "main-content--title__cursor",
+              // cursor: " ",
             }
           }
         />

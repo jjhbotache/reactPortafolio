@@ -127,11 +127,27 @@ export const MainInfo= styled.main`
     ;
     grid-template-columns: 1fr 1fr;
     
+    @media screen and (width < ${mdScreenWidth}){
+      grid-template-areas: 
+      "title-text"
+      "chanels"
+      "tv"
+      ;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 3fr;
+    }
+    
     .title-texts{
       grid-area: title-text;
       display: flex;
       flex-direction: column;
       justify-content: end;
+
+      @media screen and (width < ${mdScreenWidth}){
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
       .name{
         font-size: 6vw;
         @media screen and (width < ${mdScreenWidth}) {
@@ -160,6 +176,12 @@ export const MainInfo= styled.main`
       align-items: start;
       flex-direction: column;
       padding-left: 1rem;
+
+      @media screen and (width < ${mdScreenWidth}){
+        justify-content: center;
+        align-items: center;
+      }
+
       .chanels--list{
         list-style: none;
         padding: 0;

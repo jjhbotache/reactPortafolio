@@ -1,7 +1,18 @@
-import styled from "styled-components";
-import { primaryColor, secondaryColor } from "../../constants/styleConstants";
+import styled, { keyframes } from "styled-components";
+import { mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
 
-export const MainPageStyledComponent = styled.main`
+const tvStatic = keyframes`
+
+  0%,50%, 100%{
+    background: #343131;
+  }
+  25%, 75%{
+    background: #484141;
+  }
+`;
+    
+
+export const MainPageStyledComponent = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -34,7 +45,7 @@ export const MainPageStyledComponent = styled.main`
       .rectangle--triangle{
         position: absolute;
         top: 0;
-        transform: translateY(-100%);
+        transform: translateY(-99%);
       }
     }
     .rectangle__bottom{
@@ -42,7 +53,7 @@ export const MainPageStyledComponent = styled.main`
       .rectangle--triangle{
         position: absolute;
         top: 0;
-        transform: translateY(-100%) rotateY(180deg);
+        transform: translateY(-99%) rotateY(180deg);
       }
     }
     /* actions */
@@ -67,7 +78,7 @@ export const MainPageStyledComponent = styled.main`
       .rectangle--triangle{
         position: absolute;
         bottom: 0;
-        transform: translateY(100%) rotate(90deg) scaleY(-1);
+        transform: translateY(99%) rotate(90deg) scaleY(-1);
       }
     }
     .rectangle__top{
@@ -75,7 +86,7 @@ export const MainPageStyledComponent = styled.main`
       .rectangle--triangle{
         position: absolute;
         bottom: 0;
-        transform: translateY(100%) rotate(90deg) scaleY(-1);
+        transform: translateY(99%) rotate(90deg) scaleY(-1);
       }
     }
     /* actions */
@@ -85,4 +96,109 @@ export const MainPageStyledComponent = styled.main`
       transform: translate(-170%,170%) scale(5) ;
     }
   }
+`;
+
+
+export const MainInfo= styled.main`
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.175, 0.177, 0.178, 1.1);
+  &.fade-in{
+    opacity: 1;
+  }
+
+  padding: 3rem;
+  /* background: #360000; */
+  .container{
+    /* background: #000; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-areas: 
+    "title-text tv"
+    "chanels tv"
+    ;
+    grid-template-columns: 1fr 1fr;
+    
+    .title-texts{
+      grid-area: title-text;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      .name{
+        font-size: 6vw;
+        @media screen and (width < ${mdScreenWidth}) {
+          font-size: 5vh;
+        }
+        &__first{
+          color: ${primaryColor};
+        }
+        &__last{
+          color: ${secondaryColor};
+        }
+      }
+      .rol{
+        font-size: 1rem;
+        color: ${secondaryColor};
+        margin-bottom: 2rem;
+      }
+    }
+
+
+
+    .chanels{
+      grid-area: chanels;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      flex-direction: column;
+      padding-left: 1rem;
+      .chanels--list{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        li{
+          a{
+            text-decoration: none;
+            color: ${primaryColor};
+            font-size: 1.5rem;
+            transition: all 0.2s ease-in-out;
+            &:hover{
+              color: ${secondaryColor};
+              text-shadow: 0 0 5px ${primaryColor};
+              letter-spacing: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    .tv-container{
+      grid-area: tv;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; 
+      height: 100%;
+      
+      .tv{
+        background: #000;
+        width: 100%; 
+        height: 100%;
+        animation: ${tvStatic} 5s infinite;
+      }
+
+    }
+  }
+
 `;

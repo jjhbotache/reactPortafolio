@@ -41,9 +41,9 @@ export default function LandingPage() {
     }, 1500)
   }
   return(
-    <LandingPageStyledComponent>
+    <LandingPageStyledComponent onClick={redirect}>
       <div className="cursor-effect" ref={cursorEffectRef}></div>
-      <div className="main-content" onClick={redirect} ref={mainContentRef}>
+      <div className="main-content" ref={mainContentRef}>
         <Typewriter
           onInit={(typewriter) => {
             typewriter.typeString(`Hey, I'm Juan, a developer.`)

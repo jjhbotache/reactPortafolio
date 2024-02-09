@@ -54,6 +54,7 @@ export const LandingPageStyledComponent = styled.main`
   }
   .main-content--title{
     max-width: 100vw;
+    min-height: 35vh;
     text-align: center;
 
     position: relative;

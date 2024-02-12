@@ -11,7 +11,15 @@ const tvStatic = keyframes`
     background: #484141;
   }
 `;
-    
+
+const hue_rotate = keyframes`
+  0%,100%{
+    box-shadow: 0 0 5px ${primaryColor};
+  }
+  50%{
+    box-shadow: 0 0 12px ${primaryColor};
+  }
+`;
 
 export const MainPageStyledComponent = styled.div`
   position: relative;
@@ -233,15 +241,20 @@ export const MainInfo= styled.main`
         border: 5px solid ${primaryColor};
         border-radius: 2rem;
         overflow: hidden;
+        &:hover{
+          animation: ${hue_rotate} 1s linear infinite;
+        }
 
         .tv-noise-gif{
           position: absolute;
           top: 54%;
           left: 50%;
           transform: translate(-50%,-50%);
+          z-index: 1;
           filter: hue-rotate(35deg);
           width: 130%;
           height: 130%;
+          
         }
       }
 

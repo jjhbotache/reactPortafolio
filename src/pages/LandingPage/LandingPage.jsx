@@ -13,14 +13,18 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const cursorEffectFunction = (e) => {
+    const divCursorEffect = cursorEffectRef.current;
+    divCursorEffect.style.opacity = 0;
+
+
+    function cursorEffectFunction (e){
       setTimeout(()=>{
         const divCursorEffect = cursorEffectRef.current;
-        divCursorEffect.style.left = e.pageX + "px";
-        divCursorEffect.style.top = e.pageY + "px";
-      },200)
+        divCursorEffect.style.opacity = 0.07
+        divCursorEffect.style.left = e.pageX + "px"
+        divCursorEffect.style.top = e.pageY + "px"
+      },100)
     }
-    cursorEffectFunction();
 
 
     window.addEventListener("mousemove", cursorEffectFunction);

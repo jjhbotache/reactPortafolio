@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import { mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
+import { mdScreenWidth, primaryColor, secondaryColor, titleFont } from "../../constants/styleConstants";
+
 
 const tvStatic = keyframes`
 
@@ -142,14 +143,20 @@ export const MainInfo= styled.main`
       display: flex;
       flex-direction: column;
       justify-content: end;
+      padding-left: 1rem;
 
       @media screen and (width < ${mdScreenWidth}){
         justify-content: center;
         align-items: center;
         text-align: center;
+        padding-left: 0;
       }
       .name{
         font-size: 6vw;
+        line-height: 1em;
+
+        font-family: ${titleFont};
+        letter-spacing: 3px;
         @media screen and (width < ${mdScreenWidth}) {
           font-size: 5vh;
         }
@@ -163,7 +170,7 @@ export const MainInfo= styled.main`
       .rol{
         font-size: 1rem;
         color: ${secondaryColor};
-        margin-bottom: 2rem;
+        margin-top: 1rem;
       }
     }
 
@@ -176,8 +183,11 @@ export const MainInfo= styled.main`
       align-items: start;
       flex-direction: column;
       padding-left: 1rem;
-
+      margin-bottom: 3rem;
+      
       @media screen and (width < ${mdScreenWidth}){
+        margin-bottom: 0rem;
+        padding-left: 0;
         justify-content: center;
         align-items: center;
       }
@@ -195,8 +205,7 @@ export const MainInfo= styled.main`
             color: ${primaryColor};
             font-size: 1.5rem;
             transition: all 0.2s ease-in-out;
-            &:hover{
-              color: ${secondaryColor};
+            &:hover, &:focus{
               text-shadow: 0 0 5px ${primaryColor};
               letter-spacing: 3px;
             }
@@ -212,14 +221,31 @@ export const MainInfo= styled.main`
       align-items: center;
       width: 100%; 
       height: 100%;
+      padding: 0;
+      margin: 0;
       
       .tv{
+        position: relative;
         background: #000;
         width: 100%; 
         height: 100%;
         animation: ${tvStatic} 5s infinite;
+        border: 5px solid ${primaryColor};
+        border-radius: 2rem;
+        overflow: hidden;
+
+        .tv-noise-gif{
+          position: absolute;
+          top: 54%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          filter: hue-rotate(35deg);
+          width: 130%;
+          height: 130%;
+        }
       }
 
+      
     }
   }
 

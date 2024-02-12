@@ -1,7 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
-import { darkColor, lightColor } from './constants/styleConstants';
+import { bodyFont, darkColor, lightColor } from './constants/styleConstants';
 
 const GlobalStyles = createGlobalStyle`
+
+  * {
+    font-family: ${bodyFont};
+  }
   body {
     margin: 0;
     padding: 0;

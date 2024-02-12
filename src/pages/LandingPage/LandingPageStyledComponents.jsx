@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { darkColor, lightColor, primaryColor } from '../../constants/styleConstants'
+import { bodyFont, darkColor, lightColor, mdScreenWidth, primaryColor } from '../../constants/styleConstants'
 
 const blink = keyframes`
   from, to {
@@ -36,17 +36,19 @@ export const LandingPageStyledComponent = styled.main`
       rgba(0,0,0,0) 100%
     );
     z-index: 1;
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .main-content{
-    width: 100vw;
+    width: 92vw;
     min-height: 50vh;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: space-evenly;
     transition: all 6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: .3rem;
     padding: 2rem;
+    z-index: 1;
     &:hover{
       cursor: pointer;
       box-shadow:  0 0 30px 5px ${primaryColor};      
@@ -54,8 +56,9 @@ export const LandingPageStyledComponent = styled.main`
   }
   .main-content--title{
     max-width: 100vw;
-    min-height: 35vh;
     text-align: center;
+
+    
 
     position: relative;
     z-index: 2;
@@ -63,8 +66,7 @@ export const LandingPageStyledComponent = styled.main`
     font-weight: 700;
     transition: all 0.5s ease-in-out;
     background: transparent;
-    border-radius: 9999px;
-    color: ${lightColor};
+    color: ${lightColor}; 
     opacity: .6;
     transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
 
@@ -85,13 +87,19 @@ export const LandingPageStyledComponent = styled.main`
     }
   }
   .main-content--title__fade-out{
-    white-space: nowrap;
-    max-width: unset !important;
+    
+
+    @media screen and (width > ${mdScreenWidth}) {
+      white-space: nowrap;
+      max-width: unset !important;
+    }
+
 
     opacity: 0 ;
     border: transparent ;
     & *{letter-spacing: 2vw ;}
     transition: all 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+
   }
   .main-content--instruction{
     position: relative;

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import { MainInfo, MainPageStyledComponent } from "./MainPageStyledComponents";
 import purpleTriangle from "../../assets/svgs/purple_triangle.svg"
+import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
 
 export default function MainPage() {
   const bottomLeftFrameRef = useRef(null);
@@ -24,23 +25,34 @@ export default function MainPage() {
   ]
 
   useEffect(() => {
-    const tv = tvRef.current;
 
-    // get the tv width and height
-    // see wich is the smallest and set the biggest to this value
-    const tvWidth = tv.clientWidth;
-    const tvHeight = tv.clientHeight;
-    tvWidth < tvHeight
-      ? tv.style.height = tvWidth + "px"
-      : tv.style.width = tvHeight + "px" 
+    function setTvHeightAndWidth() {
+      const tv = tvRef.current;
+
+      tv.style.height = "100%";
+      tv.style.width = "100%";
+
+      const tvSizes = [tv.clientWidth, tv.clientHeight];
+      const minSize = Math.min(...tvSizes);
+      tv.style.height = minSize + "px"
+      tv.style.width = minSize + "px" 
+    }
+
 
     setTimeout(() => {
     bottomLeftFrameRef.current.classList.add('frame__on-corner');
     topRightFrameRef.current.classList.add('frame__on-corner');
       setTimeout(() => {
         MainRef.current.classList.add('fade-in');
+        setTvHeightAndWidth();
       }, 2500);
     }, 100);
+
+
+    window.addEventListener('resize', setTvHeightAndWidth);
+    return () => {
+      window.removeEventListener('resize', setTvHeightAndWidth);
+    }
 
   }, []);
 
@@ -75,7 +87,9 @@ export default function MainPage() {
           </div>
 
           <div className="tv-container">
-            <div className="tv" ref={tvRef}/>
+            <div className="tv" ref={tvRef}>
+              <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" srcset="" />
+            </div>
           </div>
         </div>
       </MainInfo>

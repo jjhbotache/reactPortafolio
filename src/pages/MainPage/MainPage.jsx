@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import { MainInfo, MainPageStyledComponent } from "./MainPageStyledComponents";
 import purpleTriangle from "../../assets/svgs/purple_triangle.svg"
 import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
+import Chanels from "../../components/Chanels/Chanels";
 
 export default function MainPage() {
   const bottomLeftFrameRef = useRef(null);
@@ -12,15 +13,15 @@ export default function MainPage() {
   const chanels = [
     {
       name:"About",
-      link: "#"
+      value: "about"
     },
     {
       name:"Projects",
-      link: "#"
+      value: "projects"
     },
     {
       name:"Contact",
-      link: "#"
+      value: "contact"
     },
   ]
 
@@ -56,6 +57,10 @@ export default function MainPage() {
 
   }, []);
 
+  function onChanelSelect(chanel){
+    alert(chanel);
+  }
+
   return (
     <MainPageStyledComponent>
       <div className="frame frame--bottom-left" ref={bottomLeftFrameRef}>
@@ -76,7 +81,7 @@ export default function MainPage() {
             <h3 className="rol">Frontend Developer - Python developer</h3>
           </div>
 
-          <div className="chanels">
+          {/* <div className="chanels">
             <ul className="chanels--list">
               {chanels.map((chanel, index) => (
                 <li key={index}>
@@ -84,11 +89,15 @@ export default function MainPage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
+          
+          <hr className="title-texts-and-chanels-separator" />
+
+          <Chanels chanels={chanels} onSelectChanel={onChanelSelect} />
 
           <div className="tv-container">
             <div className="tv" ref={tvRef}>
-              <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" srcset="" />
+              <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
             </div>
           </div>
         </div>

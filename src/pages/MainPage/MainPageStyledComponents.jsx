@@ -70,6 +70,9 @@ export const MainPageStyledComponent = styled.div`
       left: 0;
       bottom: 0;
       transform: translate(170%,-170%) scale(5);
+      @media screen and (width < ${mdScreenWidth}){
+        transform: translate(115%,-115%) scale(5);
+      }
     }
   }
   /* ------------------------------------------------- */
@@ -102,6 +105,9 @@ export const MainPageStyledComponent = styled.div`
     &.frame__on-corner{
       top: 0;
       right: 0;
+      @media screen and (width < ${mdScreenWidth}){
+        transform: translate(-115%,115%) scale(5) ;
+      }
       transform: translate(-170%,170%) scale(5) ;
     }
   }
@@ -115,14 +121,16 @@ export const MainInfo= styled.main`
 
   opacity: 0;
   transition: all 1s cubic-bezier(0.175, 0.177, 0.178, 1.1);
+
+  padding: 3rem;
+  @media screen and (width < ${mdScreenWidth}){padding: .7rem;}
+
   &.fade-in{
     opacity: 1;
   }
+  
 
-  padding: 3rem;
-  /* background: #360000; */
   .container{
-    /* background: #000; */
     width: 100%;
     height: 100%;
     position: relative;
@@ -139,11 +147,12 @@ export const MainInfo= styled.main`
     @media screen and (width < ${mdScreenWidth}){
       grid-template-areas: 
       "title-text"
+      "separator"
       "chanels"
       "tv"
       ;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 3fr;
+      grid-template-rows: 1fr 0.25fr 0.25fr 1.5fr;
     }
     
     .title-texts{
@@ -158,6 +167,7 @@ export const MainInfo= styled.main`
         align-items: center;
         text-align: center;
         padding-left: 0;
+        padding-top: 1rem;
       }
       .name{
         font-size: 6vw;
@@ -182,7 +192,20 @@ export const MainInfo= styled.main`
       }
     }
 
+    .title-texts-and-chanels-separator{
+      display: none;
+      @media screen and (width < ${mdScreenWidth}){
+        display: block;
+      }
 
+      width: 100%;
+      height: 2px;
+      background: ${primaryColor};
+      border: none;
+      margin: 1rem 0;
+
+    }
+  
 
     .chanels{
       grid-area: chanels;

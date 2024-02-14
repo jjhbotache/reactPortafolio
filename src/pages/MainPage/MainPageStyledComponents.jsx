@@ -2,25 +2,6 @@ import styled, { keyframes } from "styled-components";
 import { mdScreenWidth, primaryColor, secondaryColor, titleFont } from "../../constants/styleConstants";
 
 
-const tvStatic = keyframes`
-
-  0%,50%, 100%{
-    background: #343131;
-  }
-  25%, 75%{
-    background: #484141;
-  }
-`;
-
-const hue_rotate = keyframes`
-  0%,100%{
-    box-shadow: 0 0 5px ${primaryColor};
-  }
-  50%{
-    box-shadow: 0 0 12px ${primaryColor};
-  }
-`;
-
 export const MainPageStyledComponent = styled.div`
   position: relative;
   width: 100vw;
@@ -142,7 +123,8 @@ export const MainInfo= styled.main`
     "title-text tv"
     "chanels tv"
     ;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
     
     @media screen and (width < ${mdScreenWidth}){
       grid-template-areas: 
@@ -160,13 +142,13 @@ export const MainInfo= styled.main`
       display: flex;
       flex-direction: column;
       justify-content: end;
-      padding-left: 1rem;
+      padding: 0 2rem 0 1rem;
 
       @media screen and (width < ${mdScreenWidth}){
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding-left: 0;
+        padding: 0;
         padding-top: 1rem;
       }
       .name{
@@ -245,44 +227,6 @@ export const MainInfo= styled.main`
       }
     }
 
-    .tv-container{
-      grid-area: tv;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%; 
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      
-      .tv{
-        position: relative;
-        background: #000;
-        width: 100%; 
-        height: 100%;
-        animation: ${tvStatic} 5s infinite;
-        border: 5px solid ${primaryColor};
-        border-radius: 2rem;
-        overflow: hidden;
-        &:hover{
-          animation: ${hue_rotate} 1s linear infinite;
-        }
-
-        .tv-noise-gif{
-          position: absolute;
-          top: 54%;
-          left: 50%;
-          transform: translate(-50%,-50%);
-          z-index: 1;
-          filter: hue-rotate(35deg);
-          width: 130%;
-          height: 130%;
-          
-        }
-      }
-
-      
-    }
   }
 
 `;

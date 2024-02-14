@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mdScreenWidth, primaryColor, secondaryColor } from "../constants/styleConstants";
+import { mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
 
 export const ChanelsStyledComponent = styled.div`
   width: 100%;

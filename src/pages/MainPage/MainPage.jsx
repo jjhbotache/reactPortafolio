@@ -1,14 +1,17 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { MainInfo, MainPageStyledComponent } from "./MainPageStyledComponents";
 import purpleTriangle from "../../assets/svgs/purple_triangle.svg"
 import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
 import Chanels from "../../components/Chanels/Chanels";
+import InfoDisplayer from "../../components/InfoDisplayer/InfoDisplayer";
 
 export default function MainPage() {
   const bottomLeftFrameRef = useRef(null);
   const topRightFrameRef = useRef(null);
   const MainRef = useRef(null);
-  const tvRef = useRef(null);
+  const mainComponentRef = useRef(null);
+  const [titleInfoToDisplay, setTitleInfoToDisplay] = useState(null);
+  
 
   const chanels = [
     {
@@ -27,17 +30,7 @@ export default function MainPage() {
 
   useEffect(() => {
 
-    function setTvHeightAndWidth() {
-      const tv = tvRef.current;
-
-      tv.style.height = "100%";
-      tv.style.width = "100%";
-
-      const tvSizes = [tv.clientWidth, tv.clientHeight];
-      const minSize = Math.min(...tvSizes);
-      tv.style.height = minSize + "px"
-      tv.style.width = minSize + "px" 
-    }
+    
 
 
     setTimeout(() => {
@@ -45,24 +38,30 @@ export default function MainPage() {
     topRightFrameRef.current.classList.add('frame__on-corner');
       setTimeout(() => {
         MainRef.current.classList.add('fade-in');
-        setTvHeightAndWidth();
       }, 2500);
     }, 100);
 
 
-    window.addEventListener('resize', setTvHeightAndWidth);
+    function onFullScreenChange(){
+      // reset the with and height of the main component
+      mainComponentRef.current.style.width = "100vw";
+      mainComponentRef.current.style.height = "100vh";
+    }
+
+    // detect if the user enter or exits the fullscren mode
+    document.addEventListener('fullscreenchange', onFullScreenChange);
     return () => {
-      window.removeEventListener('resize', setTvHeightAndWidth);
+      document.removeEventListener('fullscreenchange', onFullScreenChange);
     }
 
   }, []);
 
   function onChanelSelect(chanel){
-    alert(chanel);
+    setTitleInfoToDisplay(chanel.value);
   }
 
   return (
-    <MainPageStyledComponent>
+    <MainPageStyledComponent ref={mainComponentRef}>
       <div className="frame frame--bottom-left" ref={bottomLeftFrameRef}>
         <div className="rectangle rectangle__left"> <img src={purpleTriangle} alt="purple triangle" className="rectangle--triangle"/> </div>
         <div className="rectangle rectangle__bottom"> <img src={purpleTriangle} alt="purple triangle" className="rectangle--triangle"/> </div>
@@ -95,11 +94,7 @@ export default function MainPage() {
 
           <Chanels chanels={chanels} onSelectChanel={onChanelSelect} />
 
-          <div className="tv-container">
-            <div className="tv" ref={tvRef}>
-              <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
-            </div>
-          </div>
+          <InfoDisplayer titleInfoToDisplay={titleInfoToDisplay}/>
         </div>
       </MainInfo>
     </MainPageStyledComponent>

@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { darkColor, primaryColor } from "../../constants/styleConstants";
+import { darkColor, primaryColor, secondaryColor } from "../../constants/styleConstants";
 
 
 const hue_rotate = keyframes`
@@ -65,7 +65,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           width: 90% !important;
           height: 95% !important;
           z-index: 1;
-          box-shadow: 0 0 50vh 10vh black;
+          box-shadow: 0 0 50vh 10vh rgb(46, 0, 86);
           
 
 

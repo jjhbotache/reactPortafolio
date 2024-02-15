@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { primaryColor } from "../../constants/styleConstants";
+import { darkColor, primaryColor } from "../../constants/styleConstants";
 
 
 const hue_rotate = keyframes`
@@ -49,6 +49,31 @@ export const InfoDisplayerStyledComponent = styled.div`
         justify-content: center;
         align-items: center;
         padding: 1rem;
+        transition: all .5s ease-out;
+
+        left: unset;
+        top: unset;
+        transform: unset;
+
+
+        &.tv__maximazed{
+          position: fixed;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+
+          width: 90% !important;
+          height: 95% !important;
+          z-index: 1;
+          box-shadow: 0 0 50vh 10vh black;
+          
+
+
+          &:hover{
+            animation: none;
+          }
+
+        }
 
         &:hover{
           animation: ${hue_rotate} 1s linear infinite;

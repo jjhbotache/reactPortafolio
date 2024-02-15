@@ -2,10 +2,12 @@ import { useEffect, useRef } from "react";
 import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
 import { InfoDisplayerStyledComponent } from "./InfoDisplayerStyledComponents";
 import { useState } from "react";
+import { mdScreenWidth } from "../../constants/styleConstants";
 
 export default function InfoDisplayer({titleInfoToDisplay}) {
   const tvRef = useRef(null);
-  const [infoToDisplay, setInfoToDisplay] = useState();
+  const [infoToDisplay, setInfoToDisplay] = useState(null);
+  const [maximazed,setMaximazed   ] = useState(false);
 
   function setTvHeightAndWidth() {
     const tv = tvRef.current;
@@ -22,19 +24,31 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     }
   }
 
+  function handleTvMaximazed() {
+    const mdScreenWidthInPx = parseInt(mdScreenWidth.slice(0, -2));
+    if (window.innerWidth > mdScreenWidthInPx || !titleInfoToDisplay ) {
+      console.log("big screen or no titleInfoToDisplay");
+    }else{
+      setMaximazed(!maximazed)
+    }
+
+  }
+
   useEffect(() => {
     setTvHeightAndWidth();
+    
+    
     window.addEventListener('resize', setTvHeightAndWidth);
-    return () => {
-      window.removeEventListener('resize', setTvHeightAndWidth);
+    return () =>{
+        window.removeEventListener('resize', setTvHeightAndWidth);
     }
   }, []);
 
   useEffect(() => {
     console.log('titleInfoToDisplay', titleInfoToDisplay);
-    const tv = tvRef.current;
-    const tvNoiseGif = tv.querySelector('img');
+    const tvNoiseGif = tvRef.current.querySelector('img');
     
+    // deal with  the blinking effect
     if (titleInfoToDisplay !== null) {
       tvNoiseGif.classList.remove('tv-noise-gif__blink-out');
       setTimeout(() => {
@@ -43,7 +57,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     }
 
 
-
+    // setting the info to display
     switch (titleInfoToDisplay) {
       case "about":
         setInfoToDisplay(
@@ -77,13 +91,33 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
           </div>
         );
         break;
+
+      default:
+        setInfoToDisplay(null);
+        break;
                 
     }
+
+    
+
   }, [titleInfoToDisplay]);
+
+  useEffect(() => {
+
+    
+
+    const tv = tvRef.current;
+    maximazed 
+      ? tv.classList.add('tv__maximazed')
+      : tv.classList.remove('tv__maximazed');
+  }, [maximazed]);
+
+
+
   return(
     <InfoDisplayerStyledComponent>
       <div className="tv-container">
-        <div className="tv" ref={tvRef}>
+        <div className="tv" ref={tvRef} onClick={handleTvMaximazed} >
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null && infoToDisplay}
         </div>

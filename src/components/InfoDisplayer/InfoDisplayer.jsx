@@ -3,6 +3,7 @@ import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
 import { InfoDisplayerStyledComponent } from "./InfoDisplayerStyledComponents";
 import { useState } from "react";
 import { mdScreenWidth } from "../../constants/styleConstants";
+import AboutInfo from "../AboutInfo/AboutInfo";
 
 export default function InfoDisplayer({titleInfoToDisplay}) {
   const tvRef = useRef(null);
@@ -60,14 +61,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     // setting the info to display
     switch (titleInfoToDisplay) {
       case "about":
-        setInfoToDisplay(
-          <div className="tv-info">
-            <h1>About</h1>
-            <p>
-              I'm a Frontend Developer with a passion for creating beautiful and functional websites.
-            </p>
-          </div>
-        );
+        setInfoToDisplay( <AboutInfo onScrolled={handleTvMaximazed} /> );
         break;
 
       case "projects":

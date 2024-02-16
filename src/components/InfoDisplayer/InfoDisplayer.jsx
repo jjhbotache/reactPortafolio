@@ -9,6 +9,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
   const tvRef = useRef(null);
   const [infoToDisplay, setInfoToDisplay] = useState(null);
   const [maximazed,setMaximazed   ] = useState(false);
+  const handleTvMaximazedLastTime = useRef();
 
   function setTvHeightAndWidth() {
     const tv = tvRef.current;
@@ -25,14 +26,25 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     }
   }
 
-  function handleTvMaximazed() {
+  function handleTvMaximazed(onlyOpen = false) {
+    // get the time when calling this function
+    // to avoid multiple calls in a short period of time
+    const time = new Date().getTime();
+    if (handleTvMaximazedLastTime.current && time - handleTvMaximazedLastTime.current < 500) return
+    handleTvMaximazedLastTime.current = time;
+
+    
     const mdScreenWidthInPx = parseInt(mdScreenWidth.slice(0, -2));
     if (window.innerWidth > mdScreenWidthInPx || !titleInfoToDisplay ) {
       console.log("big screen or no titleInfoToDisplay");
     }else{
-      setMaximazed(!maximazed)
+      console.log("reverse maximazed: ", maximazed);
+      setMaximazed(
+        onlyOpen
+          ? true
+          : !maximazed
+      )
     }
-
   }
 
   useEffect(() => {
@@ -61,7 +73,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     // setting the info to display
     switch (titleInfoToDisplay) {
       case "about":
-        setInfoToDisplay( <AboutInfo onScrolled={handleTvMaximazed} /> );
+        setInfoToDisplay( <AboutInfo onScrolled={e=>handleTvMaximazed(true)} /> );
         break;
 
       case "projects":
@@ -111,7 +123,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
   return(
     <InfoDisplayerStyledComponent>
       <div className="tv-container">
-        <div className="tv" ref={tvRef} onClick={handleTvMaximazed} >
+        <div className="tv" ref={tvRef} onClick={e=>handleTvMaximazed()} >
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null && infoToDisplay}
         </div>

@@ -38,7 +38,6 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     if (window.innerWidth > mdScreenWidthInPx || !titleInfoToDisplay ) {
       console.log("big screen or no titleInfoToDisplay");
     }else{
-      console.log("reverse maximazed: ", maximazed);
       setMaximazed(
         onlyOpen
           ? true
@@ -125,7 +124,10 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
       <div className="tv-container">
         <div className="tv" ref={tvRef} onClick={e=>handleTvMaximazed()} >
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
-          {titleInfoToDisplay !== null && infoToDisplay}
+          {titleInfoToDisplay !== null
+          ? infoToDisplay
+          : <span className="no-chanel-alert">Choose any chanel!</span>
+          }
         </div>
       </div>
     </InfoDisplayerStyledComponent>

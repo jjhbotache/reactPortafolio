@@ -11,6 +11,15 @@ const hue_rotate = keyframes`
   }
 `;
 
+const blink = keyframes`
+  0%,100%{
+    opacity: 1;
+  }
+  50%{
+    opacity: .15;
+  }
+`;
+
 const blinkAndDisappear = keyframes`
   0%, 10%, 36%, 40%, 79%, 88%, 92%{
     opacity: 1;
@@ -48,8 +57,8 @@ export const InfoDisplayerStyledComponent = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 1rem;
-        transition: all .5s ease-out;
+        /* padding: 1rem; */
+        transition: all .2s ease-out;
 
         left: unset;
         top: unset;
@@ -102,8 +111,39 @@ export const InfoDisplayerStyledComponent = styled.div`
           color: ${primaryColor};
 
         }
+
+        .no-chanel-alert{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          z-index: 1;
+
+          width: 80%;
+          height: 60%;
+
+          display: grid;
+          place-items: center;
+
+          border-radius:2rem ;
+          color: ${primaryColor};
+          font-size: 1.5rem;
+          font-weight: 900;
+          text-align: center;
+          background: radial-gradient(
+            circle,
+            rgba(0, 0, 0, .7) 60%,
+            rgba(0, 0, 0, 0 ) 90%
+          );
+          backdrop-filter: blur(4px) ; 
+
+          text-shadow: 0 0 20px black;
+          animation: ${blink} 5s ease-in-out infinite;
+        }
+
       }
 
+
       
-    }
+  }
 `;

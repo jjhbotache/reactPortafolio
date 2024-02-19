@@ -1,5 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
+
+const breathe = keyframes`
+  0%,100%{
+    transform: scale(1);
+    box-shadow: 0 0 5px ${primaryColor};
+  }
+  50%{
+    transform: scale(1.01);
+    box-shadow: 0 0 10px ${primaryColor};
+  }
+`;
 
 export const ChanelsStyledComponent = styled.div`
   width: 100%;
@@ -23,6 +34,10 @@ export const ChanelsStyledComponent = styled.div`
 
     border: 1px solid ${primaryColor};
     background: rgba(255, 255, 255, .1);
+
+    &[open]{ animation: none; }
+    &:not([open]){ animation: ${breathe} 5s ease-in-out infinite; }
+    
     color: white;
     
     font-size: 1.2rem;
@@ -38,8 +53,6 @@ export const ChanelsStyledComponent = styled.div`
       height: 100%;
       display: grid;
       place-items: center;
-
-      
     }
     &--info{
       opacity: 0;
@@ -69,7 +82,6 @@ export const ChanelsStyledComponent = styled.div`
       }
       
       &.open{
-        
         opacity: 1;
       }
 

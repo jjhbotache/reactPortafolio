@@ -12,14 +12,6 @@ export default function AboutInfo({onScrolled}) {
 
   function textTyped() {
     console.log('String typed out!');
-    const x = setInterval(() => {
-      if(linksRef.current.style?.opacity < 1){
-        linksRef.current.style.opacity = parseFloat(linksRef.current.style.opacity) + 0.05;
-      }else{
-        clearInterval(x);
-      }
-    }, 50);
-    // linksRef.current.style.opacity = 1;
   }
 
   return(
@@ -46,9 +38,7 @@ export default function AboutInfo({onScrolled}) {
             delay: 1,
           }}
         />
-        <ul ref={linksRef} style={{
-          opacity: 0,
-        }}>
+        <ul ref={linksRef} >
           <li><Link to="/projects">Projects</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>      

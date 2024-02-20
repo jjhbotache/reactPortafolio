@@ -4,6 +4,7 @@ import { InfoDisplayerStyledComponent } from "./InfoDisplayerStyledComponents";
 import { useState } from "react";
 import { mdScreenWidth } from "../../constants/styleConstants";
 import AboutInfo from "../AboutInfo/AboutInfo";
+import ContactInfo from "../ContactInfo/ContactInfo";
 
 export default function InfoDisplayer({titleInfoToDisplay}) {
   const tvRef = useRef(null);
@@ -88,12 +89,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
 
       case "contact":
         setInfoToDisplay(
-          <div className="tv-info">
-            <h1>Contact</h1>
-            <p>
-              You can contact me through my email: <a href="mailto: jjhuertasbotache@gmail.com"/>
-            </p>
-          </div>
+          <ContactInfo></ContactInfo>
         );
         break;
 

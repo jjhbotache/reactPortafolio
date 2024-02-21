@@ -1,7 +1,12 @@
 import { motion } from "framer-motion"
-import { ContactInfoContainer } from "./ContactInfoStyledComponents"
+import { ContactInfoContainer, LogoLink } from "./ContactInfoStyledComponents"
 import { useEffect, useRef, useState } from "react";
 import { secondaryColor } from "../../constants/styleConstants";
+import { Link } from "react-router-dom";
+import gmailImg from "../../assets/images/gmail.png";
+import githubImg from "../../assets/images/github.png";
+import linkedinImg from "../../assets/images/linkedin.png";
+import whatsappImg from "../../assets/images/whatsapp.png";
 
 
 export default function ContactInfo() {
@@ -10,23 +15,23 @@ export default function ContactInfo() {
 
   const contactOptions = [
     {
-      "name": "email",
-      "icon": "✉️",
-      "link": "mailto:"
+      "name": "gmail",
+      "icon": gmailImg,
+      "link": "mailto: jjhuertasbotache@gmail.com?subject=Contacto desde tu portafolio"
     },
     {
       "name": "github",
-      "icon": "🐙",
+      "icon": githubImg,
       "link": "/github",
     },
     {
       "name": "linkedin",
-      "icon": "🔗",
+      "icon": linkedinImg,
       "link": "/linkedin",
     },
     {
       "name": "whatsapp",
-      "icon": "📱",
+      "icon": whatsappImg,
       "link": "https://wa.me/"
     }
   ]
@@ -87,6 +92,31 @@ export default function ContactInfo() {
       opacity: 0
     }
   }
+
+  const logoImgVariants = {
+    spin:degToRotate =>({
+      transform: [
+        `translate(-50%,-50%) rotate(-${(degToRotate/90)*90}deg)`,
+        `translate(-50%,-50%) rotate(${(-360) - ((degToRotate/90)*90)}deg)`
+      ],
+      transition: {
+        duration: 20,
+        ease: "linear",
+        repeat: Infinity
+      }
+    }),
+    open:degToRotate =>({
+      transform: [
+        `translate(-50%,-50%) rotate(-${(degToRotate/90)*90}deg)`,
+        `translate(-50%,-50%) rotate(-${(degToRotate/90)*90}deg)`,
+      ],
+      scale: [0,1],
+      transition: {
+        duration: .4,
+      }
+    }),
+
+  }
   
 
   useEffect(() => {
@@ -101,7 +131,7 @@ export default function ContactInfo() {
     }, 1200);
     setTimeout(() => {
       setContactCircleState(["open","spin"]);
-    }, 4000);
+    }, 3000);
     
     
     resizeContainer(motionDiv);   
@@ -114,7 +144,7 @@ export default function ContactInfo() {
   }, []);
 
   useEffect(() => {
-    console.log(contactCircleState);
+    // console.log(contactCircleState);
   }, [contactCircleState]);
   return(
     <ContactInfoContainer>
@@ -133,14 +163,23 @@ export default function ContactInfo() {
               {contactOptions.map((contactOption, index) => {
                 const optionsAmount = contactOptions.length;
                 const degToRotate = (360/optionsAmount)*(index+1);
+
+                console.log(`${contactOption.name} ${degToRotate}`);
                 return (
                   <motion.li 
                   key={index} 
                   className="contactCircleContainer--item"
                   variants={contactOptionsCircleVariants}
-
                   custom={degToRotate}
-                  >{contactOption.icon}</motion.li>
+
+                  ><LogoLink to={contactOption.link} $index={index} $name={contactOption.name}>
+                  <motion.img 
+                    src={contactOption.icon} 
+                    alt="contact icon"
+                    variants={logoImgVariants}
+                    custom={degToRotate}
+                    />
+                  </LogoLink></motion.li>
                 )
               }
               )}                

@@ -38,10 +38,10 @@ export default function AboutInfo({onScrolled}) {
             delay: 1,
           }}
         />
-        <ul ref={linksRef} >
+        {/* <ul ref={linksRef} >
           <li><Link to="/projects">Projects</Link></li>
           <li><Link to="/contact">Contact</Link></li>
-        </ul>      
+        </ul>       */}
       </div>
     </AboutInfoContainer>
   )

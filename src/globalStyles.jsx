@@ -14,6 +14,12 @@ const GlobalStyles = createGlobalStyle`
     background: ${darkColor};
     color: ${lightColor};
   }
+
+
+  /* tostify classes overriding */
+  :root {
+  --toastify-color-info: ${lightColor};
+  }
 `;
 
 export default GlobalStyles;

@@ -114,13 +114,13 @@ export const InfoDisplayerStyledComponent = styled.div`
 
         .no-chanel-alert{
           position: absolute;
-          top: 50%;
+          /* top: 50%;
           left: 50%;
-          transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%); */
           z-index: 1;
 
-          width: 80%;
-          height: 60%;
+          width: 105%;
+          height: 105%;
 
           display: grid;
           place-items: center;
@@ -138,7 +138,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           backdrop-filter: blur(4px) ; 
 
           text-shadow: 0 0 20px black;
-          animation: ${blink} 5s ease-in-out infinite;
+          animation: ${blink} 7s cubic-bezier(.9,0,.1,1) infinite;
         }
 
       }

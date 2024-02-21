@@ -5,12 +5,16 @@ import { useState } from "react";
 import { mdScreenWidth } from "../../constants/styleConstants";
 import AboutInfo from "../AboutInfo/AboutInfo";
 import ContactInfo from "../ContactInfo/ContactInfo";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
 
 export default function InfoDisplayer({titleInfoToDisplay}) {
   const tvRef = useRef(null);
   const [infoToDisplay, setInfoToDisplay] = useState(null);
   const [maximazed,setMaximazed   ] = useState(false);
   const handleTvMaximazedLastTime = useRef();
+
+  const alreadyNotifiedAboutMinimize = useRef(false);
 
   function setTvHeightAndWidth() {
     const tv = tvRef.current;
@@ -77,14 +81,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
         break;
 
       case "projects":
-        setInfoToDisplay(
-          <div className="tv-info">
-            <h1>Projects</h1>
-            <p>
-              I have worked on several projects, some of them are available on my GitHub profile.
-            </p>
-          </div>
-        );
+        setInfoToDisplay( <ProjectsInfo/>);
         break;
 
       case "contact":
@@ -108,17 +105,33 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     
 
     const tv = tvRef.current;
-    maximazed 
-      ? tv.classList.add('tv__maximazed')
-      : tv.classList.remove('tv__maximazed');
+    if(maximazed){
+      tv.classList.add('tv__maximazed')
+      console.log('toast created!');
+      if (!alreadyNotifiedAboutMinimize.current) {
+        alreadyNotifiedAboutMinimize.current = true;
+        toast.info('Double click to minimize!', {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
+      }
+    }else{
+      tv.classList.remove('tv__maximazed');
+    }
   }, [maximazed]);
-
 
 
   return(
     <InfoDisplayerStyledComponent>
       <div className="tv-container">
-        <div className="tv" ref={tvRef} onClick={e=>handleTvMaximazed()} >
+        <div className="tv" ref={tvRef} onDoubleClick={e=>handleTvMaximazed()} >
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null
           ? infoToDisplay

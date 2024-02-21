@@ -22,17 +22,17 @@ export default function ContactInfo() {
     {
       "name": "github",
       "icon": githubImg,
-      "link": "/github",
+      "link": "https://github.com/jjhbotache",
     },
     {
       "name": "linkedin",
       "icon": linkedinImg,
-      "link": "/linkedin",
+      "link": "https://www.linkedin.com/in/juan-jose-huertas-botache/",
     },
     {
       "name": "whatsapp",
       "icon": whatsappImg,
-      "link": "https://wa.me/"
+      "link": "https://wa.me/3012167977?text= Hola Juan Jose, vi tu portafolio y me gustaría contactarte!"
     }
   ]
 
@@ -126,12 +126,9 @@ export default function ContactInfo() {
       for (let entry of entries) { resizeContainer(entry.target) }
     });
     const motionDiv = motionDivRef.current;
-    setTimeout(async() => {
-      setContactCircleState(["open"]);
-    }, 1200);
     setTimeout(() => {
       setContactCircleState(["open","spin"]);
-    }, 3000);
+    }, 1000);
     
     
     resizeContainer(motionDiv);   
@@ -164,7 +161,6 @@ export default function ContactInfo() {
                 const optionsAmount = contactOptions.length;
                 const degToRotate = (360/optionsAmount)*(index+1);
 
-                console.log(`${contactOption.name} ${degToRotate}`);
                 return (
                   <motion.li 
                   key={index} 

@@ -4,6 +4,7 @@ import purpleTriangle from "../../assets/svgs/purple_triangle.svg"
 import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
 import Chanels from "../../components/Chanels/Chanels";
 import InfoDisplayer from "../../components/InfoDisplayer/InfoDisplayer";
+import { Bounce, ToastContainer } from "react-toastify";
 
 export default function MainPage() {
   const bottomLeftFrameRef = useRef(null);
@@ -97,6 +98,7 @@ export default function MainPage() {
           <InfoDisplayer titleInfoToDisplay={titleInfoToDisplay}/>
         </div>
       </MainInfo>
+      
     </MainPageStyledComponent>
   )
 };

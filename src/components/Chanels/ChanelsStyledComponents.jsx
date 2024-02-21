@@ -4,11 +4,11 @@ import { mdScreenWidth, primaryColor, secondaryColor } from "../../constants/sty
 const breathe = keyframes`
   0%,100%{
     transform: scale(1);
-    box-shadow: 0 0 5px ${primaryColor};
+    box-shadow: 0 0 .5rem ${primaryColor};
   }
   50%{
     transform: scale(1.01);
-    box-shadow: 0 0 10px ${primaryColor};
+    box-shadow: 0 0 1rem ${primaryColor};
   }
 `;
 
@@ -106,7 +106,7 @@ export const ChanelsStyledComponent = styled.div`
           cursor: pointer;
           &:hover, &:focus{
             text-shadow: 0 0 .2rem ${primaryColor};
-            letter-spacing: .5rem;
+            letter-spacing: .4rem;
             /* font-size: 2rem; */
             @media screen and (width < ${mdScreenWidth}) { transform: scale(1.5); }
             @media screen and (width >= ${mdScreenWidth}) { transform: scale(2); }

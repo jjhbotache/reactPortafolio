@@ -2,21 +2,34 @@ import { useRef, useState } from "react";
 import { ProjectsContainer, ProjectsInfoContainer, WelcomeText } from "./ProjectsInfoStyledComponents";
 import Typewriter from 'typewriter-effect';
 
+import { motion } from "framer-motion";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Navigation } from 'swiper/modules';
+
+import projectsMedia from "../../constants/projectsMedia";
+
 export default function ProjectsInfo() {
   const [titleTyped, setTitleTyped] = useState(false);
-  const [showSlides, setShowSlides] = useState(false);
   const welcomeTextRef = useRef(null);
+  const showIntroRef = useRef(true);
 
   function welcomeTextFadeOut(){
     welcomeTextRef.current.classList.add("welcomeText__fade-out");
-    setTimeout(()=>{setShowSlides(true)}, 1000);
+    setTimeout(()=>{
+      showIntroRef.current = false
+      setTitleTyped(false);
+    }, 1000);
   }
 
   return(
     <ProjectsInfoContainer>
 
       {
-        !showSlides 
+        showIntroRef.current 
         ?(
           <WelcomeText ref={welcomeTextRef}>
             <Typewriter
@@ -58,9 +71,32 @@ export default function ProjectsInfo() {
           </WelcomeText>
         )
         :(
-          <ProjectsContainer>
-            proyect1
-          </ProjectsContainer>
+          
+
+            <ProjectsContainer>
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className="projectsSwiper"
+              >
+                {
+                  projectsMedia.map((project, index)=>{
+                    return(
+                      <SwiperSlide key={index} className="projectsSwiper--slide">
+                        <h1 className="projectsSwiper--title">{project.title}</h1>
+                        <img src={project.img} alt={project.title} />
+                      </SwiperSlide>
+                    )
+                  })
+                }
+              </Swiper>
+            </ProjectsContainer>
         )
       }  
       

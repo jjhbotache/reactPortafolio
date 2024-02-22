@@ -12,6 +12,8 @@ export default function LandingPage() {
   const mainContentRef = useRef(null);
   const navigate = useNavigate();
 
+  const mainRef = useRef(null)
+
   useEffect(() => {
     const divCursorEffect = cursorEffectRef.current;
     divCursorEffect.style.opacity = 0;
@@ -27,12 +29,14 @@ export default function LandingPage() {
     }
 
 
+    alert("height: ",window.innerHeight)
+    alert("main height: ",mainRef.current.innerHeight)
+
+
     window.addEventListener("mousemove", cursorEffectFunction);
     return () => {
       window.removeEventListener("mousemove", cursorEffectFunction);
     }
-    
-
   }, []);
 
   function redirect(){
@@ -45,7 +49,7 @@ export default function LandingPage() {
     }, 1500)
   }
   return(
-    <LandingPageStyledComponent onClick={redirect}>
+    <LandingPageStyledComponent onClick={redirect} ref={mainRef}>
       <div className="cursor-effect" ref={cursorEffectRef}></div>
       <div className="main-content" ref={mainContentRef}>
         <Typewriter

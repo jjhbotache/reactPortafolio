@@ -62,11 +62,6 @@ export const LogoLink = styled(Link)`
 
     margin-top: 5vw;
     border-radius: 50%;
-    /* ${props =>(
-      props.$name === "gmail"
-      ? `border-radius: .4rem;`
-      : `border-radius: 50%;`
-    )} */
 
     z-index: ${props => props.$index + 2 || 0};
     width: 8vw;

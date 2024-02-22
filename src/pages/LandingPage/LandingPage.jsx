@@ -28,9 +28,10 @@ export default function LandingPage() {
       },100)
     }
 
-
-    alert("height: ",window.innerHeight)
-    alert("main height: ",mainRef.current.innerHeight)
+    setTimeout(()=>{
+      alert("height: ",window.innerHeight)
+      alert("main height: ",mainRef.current.innerHeight)
+    }, 2000)
 
 
     window.addEventListener("mousemove", cursorEffectFunction);

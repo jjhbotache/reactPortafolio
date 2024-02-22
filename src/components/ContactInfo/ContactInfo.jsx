@@ -141,9 +141,6 @@ export default function ContactInfo() {
     };
   }, []);
 
-  useEffect(() => {
-    // console.log(contactCircleState);
-  }, [contactCircleState]);
   return(
     <ContactInfoContainer>
       <motion.div 

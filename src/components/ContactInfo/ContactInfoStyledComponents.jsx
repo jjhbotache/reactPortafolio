@@ -12,7 +12,9 @@ export const ContactInfoContainer = styled.div`
   .contactCircleContainer{
     background-color: #222;
     width: 90%;
-    height: 90%;
+    aspect-ratio: 1/1;
+
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -58,17 +60,18 @@ export const LogoLink = styled(Link)`
     top: 70%;
     transform: translate(-50%,-50%);
 
-    margin-top: 1.5rem;
-    
-    ${props =>(
+    margin-top: 5vw;
+    border-radius: 50%;
+    /* ${props =>(
       props.$name === "gmail"
       ? `border-radius: .4rem;`
       : `border-radius: 50%;`
-    )}
+    )} */
 
     z-index: ${props => props.$index + 2 || 0};
-    width: 3rem;
-    height: 3rem;
+    width: 8vw;
+    min-width: 4rem;
+    aspect-ratio: 1/1;
     transition: all .2s ease-out;
     &:hover{
       transform: scale(1.1) translate(-50%,-50%);

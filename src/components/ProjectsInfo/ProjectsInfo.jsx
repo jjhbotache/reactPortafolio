@@ -90,7 +90,8 @@ export default function ProjectsInfo() {
                     return(
                       <SwiperSlide key={index} className="projectsSwiper--slide">
                         <h1 className="projectsSwiper--title">{project.title}</h1>
-                        <img src={project.img} alt={project.title} />
+                        <img className="projectsSwiper--img" src={project.img} alt={project.title} />
+                        <button className="projectsSwiper--btn">More</button>
                       </SwiperSlide>
                     )
                   })

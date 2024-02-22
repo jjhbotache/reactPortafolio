@@ -50,15 +50,16 @@ export const WelcomeText = styled.div`
 `;
 
 export const ProjectsContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow: hidden;
 
   .projectsSwiper{
     box-sizing: border-box;
-    background: #222;
+    background: rgba(20, 20, 20, 1);
     margin-top: .4rem;
     width: 95%;
     aspect-ratio: 1/1;
@@ -68,11 +69,21 @@ export const ProjectsContainer = styled.div`
 
     & .swiper-button-next, 
       .swiper-button-prev {
-      color: ${primaryColor};
-      text-shadow: 0 0 .5rem ${secondaryColor};
+
+      opacity: .5;
+      color: ${secondaryColor};
       &::after{
+        box-shadow: 0 0 .5rem .1rem ${secondaryColor} inset;
+        border-radius: .4rem;
+        padding: .4rem;
         font-size: 2rem;
       }
+
+      transition: all .2s ease-out;
+      &:hover{
+        opacity: 1;
+      }
+      
     } 
 
     & .swiper-pagination-bullet{
@@ -107,9 +118,30 @@ export const ProjectsContainer = styled.div`
         background: rgba(34, 34, 34, 0.95);
       }
 
-      img{
-        position: absolute;
+      & .projectsSwiper--img{
         width: 100%;
+        height: auto;
+      }
+      & .projectsSwiper--btn{
+        position: absolute;
+        bottom: 2.2rem;
+        z-index: 2;
+        border: none;
+        border-top: ${primaryColor} .1rem solid;
+        border-bottom: ${primaryColor} .1rem solid;
+
+        border-radius: .2rem;
+        padding: .2rem .7rem;
+        background: rgba(20, 20, 20, .6);
+        color: ${primaryColor};
+        font-size: 1.1rem;
+
+        cursor: pointer;
+        transition: all .1s ease-out;
+        &:hover{
+          background: rgba(20, 20, 20, .8);
+          box-shadow: 0 0 .5rem .1rem ${secondaryColor};
+        }
       }
     }
   }

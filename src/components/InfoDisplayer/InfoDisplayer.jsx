@@ -7,6 +7,7 @@ import AboutInfo from "../AboutInfo/AboutInfo";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
+import containerResizer from "../../helpers/containerResizer";
 
 export default function InfoDisplayer({titleInfoToDisplay}) {
   const tvRef = useRef(null);
@@ -16,20 +17,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
 
   const alreadyNotifiedAboutMinimize = useRef(false);
 
-  function setTvHeightAndWidth() {
-    const tv = tvRef.current;
-
-    tv.style.height = "100%";
-    tv.style.width = "100%";
-
-    const tvSizes = [tv.clientWidth, tv.clientHeight];
-    // if the height is bigger than the width
-    // resize the height to the width
-    if (tvSizes[0] < tvSizes[1]) {
-      tv.style.height = tvSizes[0] + "px";
-      tv.style.width = tvSizes[0] + "px";
-    }
-  }
+  
 
   function handleTvMaximazed(onlyOpen = false) {
     // get the time when calling this function
@@ -52,13 +40,13 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
   }
 
   useEffect(() => {
-    setTvHeightAndWidth();
+    const resizeObserver = new ResizeObserver(entries => {
+      entries.forEach(entry => {containerResizer(entry.target)});
+    });
     
-    
-    window.addEventListener('resize', setTvHeightAndWidth);
-    return () =>{
-        window.removeEventListener('resize', setTvHeightAndWidth);
-    }
+    containerResizer(tvRef.current);
+    resizeObserver.observe(tvRef.current);
+    return () => {resizeObserver.disconnect()};
   }, []);
 
   useEffect(() => {
@@ -142,3 +130,4 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     </InfoDisplayerStyledComponent>
   )
 };
+

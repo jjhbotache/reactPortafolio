@@ -7,6 +7,7 @@ import gmailImg from "../../assets/images/gmail.png";
 import githubImg from "../../assets/images/github.png";
 import linkedinImg from "../../assets/images/linkedin.png";
 import whatsappImg from "../../assets/images/whatsapp.png";
+import containerResizer from "../../helpers/containerResizer";
 
 
 export default function ContactInfo() {
@@ -123,7 +124,7 @@ export default function ContactInfo() {
     // Create a new ResizeObserver instance
     let resizeObserver = new ResizeObserver(entries => { 
       // entries is an array of ResizeObserverEntry objects
-      for (let entry of entries) { resizeContainer(entry.target) }
+      for (let entry of entries) { containerResizer(entry.target,90) }
     });
     const motionDiv = motionDivRef.current;
     setTimeout(() => {
@@ -131,7 +132,7 @@ export default function ContactInfo() {
     }, 1000);
     
     
-    resizeContainer(motionDiv);   
+    containerResizer(motionDiv,90);   
     resizeObserver.observe(motionDiv);
 
     // Clean up function
@@ -187,35 +188,3 @@ export default function ContactInfo() {
     </ContactInfoContainer>
   )
 };
-
-function resizeContainer(container) {
-  container.style.width = "90%";
-  container.style.height = "90%";
-
-  const sizes = [container.clientWidth, container.clientHeight];
-  // rezise the opostite size to the smallest size by using percentages and the simple rule of three
-  // x = a * b / c
-  if (sizes[0] < sizes[1]) {
-    container.style.height = "100%";
-    const pxToGet = sizes[0];
-    const maxPixels = container.clientHeight;
-
-
-    const newHeight = pxToGet * 100 / maxPixels;
-    container.style.height = newHeight+"%";  
-    
-  }
-  else {
-    container.style.width = "100%";
-
-    const pxToGet = sizes[1];
-    const maxPixels = container.clientWidth;
-
-    const newWidth = pxToGet * 100 / maxPixels;
-    container.style.width = newWidth+"%";
-    
-  }
-
-
-
-}

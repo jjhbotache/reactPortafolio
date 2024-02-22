@@ -30,7 +30,9 @@ export default function LandingPage() {
 
     setTimeout(()=>{
       alert("height: ",window.innerHeight)
+      alert(window.innerHeight)
       alert("main height: ",mainRef.current.innerHeight)
+      alert(mainRef.current.clientHeight)
     }, 2000)
 
 

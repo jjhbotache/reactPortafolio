@@ -28,12 +28,12 @@ export default function LandingPage() {
       },100)
     }
 
-    setTimeout(()=>{
-      alert("height: ",window.innerHeight)
-      alert(window.innerHeight)
-      alert("main height: ",mainRef.current.innerHeight)
-      alert(mainRef.current.clientHeight)
-    }, 2000)
+    // setTimeout(()=>{
+    //   alert("height: ",window.innerHeight)
+    //   alert(window.innerHeight)
+    //   alert("main height: ",mainRef.current.innerHeight)
+    //   alert(mainRef.current.clientHeight)
+    // }, 2000)
 
 
     window.addEventListener("mousemove", cursorEffectFunction);

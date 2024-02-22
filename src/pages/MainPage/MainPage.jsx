@@ -42,11 +42,20 @@ export default function MainPage() {
       }, 2500);
     }, 100);
 
+    
 
     function onFullScreenChange(){
-      // reset the with and height of the main component
-      mainComponentRef.current.style.width = "100vw";
-      mainComponentRef.current.style.height = "100vh";
+      alert("full screen change")
+      if(document.fullscreenElement){
+        // reset the with and height of the main component
+        mainComponentRef.current.style.width = "100vw";
+        mainComponentRef.current.style.height = "100vh";
+      }
+      else{
+        // reset the with and height of the main component
+        mainComponentRef.current.style.width = window.innerWidth;
+        mainComponentRef.current.style.height = window.innerHeight;
+      }
     }
 
     // detect if the user enter or exits the fullscren mode

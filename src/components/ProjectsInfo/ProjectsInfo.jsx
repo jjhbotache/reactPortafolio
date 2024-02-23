@@ -47,8 +47,12 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
   }
 
   console.log(
-    "maximazed: ",maximazed
+    "video: ", currentProject?.video,
   );
+
+  useEffect(()=>{
+    console.log("currentProject: ", currentProject);
+  }, [currentProject]);
   return(
     <ProjectsInfoContainer>
 
@@ -117,25 +121,27 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                       <SwiperSlide key={index} className="projectsSwiper--slide">
                         <h1 className="projectsSwiper--title">{project.title}</h1>
                         <img className="projectsSwiper--img" src={project.img} alt={project.title} />
-                        {!maximazed && <button className="projectsSwiper--btn" onClick={ ()=>{projectsInfoContainerRef.current.scrollBy(0, 500);} }>More</button>}
+                        {!maximazed && <button className="projectsSwiper--btn" onClick={() => { projectsInfoContainerRef.current.scrollBy({ top: 500, behavior: 'smooth' }); }}>More</button>}
                       </SwiperSlide>
                     )
                   })
                 }
             </Swiper>
-            <motion.div
-            initial={{ opacity: 0 }}
-            variants={infoTextVariants}
-            animate={infoVariant}
-            transition={{ duration: 0.2, ease: "easeOut"}}
-            className="currentProjectInfo"
-            >   
-              <h1 className="currentProjectInfo--name">{currentProject?.title}</h1>
-              <p className="currentProjectInfo--description">{currentProject?.description}</p>
-              <video className="currentProjectInfo--video" controls autoPlay>
-                <source src={currentProject?.video} type="video/mp4" />
-              </video>
-            </motion.div>
+            {
+              currentProject && (
+                <motion.div
+                initial={{ opacity: 0 }}
+                variants={infoTextVariants}
+                animate={infoVariant}
+                transition={{ duration: 0.2, ease: "easeOut"}}
+                className="currentProjectInfo"
+                >   
+                  <h1 className="currentProjectInfo--name">{currentProject.title}</h1>
+                  <p className="currentProjectInfo--description">{currentProject.description}</p>
+                  <video src={currentProject.video} controls loop autoPlay></video>
+                </motion.div>
+              )
+            }
           </ProjectsContainer>
           </>
 

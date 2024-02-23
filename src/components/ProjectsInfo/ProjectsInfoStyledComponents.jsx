@@ -55,14 +55,19 @@ export const ProjectsContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .projectsSwiper{
+    position: relative;
+    width: 95%;
+    aspect-ratio: 1/1;
+
     box-sizing: border-box;
     background: rgba(20, 20, 20, 1);
     margin-top: .4rem;
-    width: 95%;
-    aspect-ratio: 1/1;
 
     border-radius: 1.5rem;
     animation: ${fadeIn} 1s;
@@ -99,9 +104,6 @@ export const ProjectsContainer = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border-radius: 1.5rem;
-      overflow: hidden;
-      overflow-y: scroll;
       &::-webkit-scrollbar {
         display: none;
       }

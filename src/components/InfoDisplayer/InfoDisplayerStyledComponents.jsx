@@ -58,7 +58,7 @@ export const InfoDisplayerStyledComponent = styled.div`
         justify-content: center;
         align-items: center;
         /* padding: 1rem; */
-        transition: all .2s ease-out;
+        transition: all 1s ease-out;
 
         left: unset;
         top: unset;
@@ -76,7 +76,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           z-index: 1;
           box-shadow: 0 0 50vh 10vh rgb(46, 0, 86);
           
-
+          
 
           &:hover{
             animation: none;

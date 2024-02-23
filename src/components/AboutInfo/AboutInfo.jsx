@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { AboutInfoContainer } from "./AboutInfoStyledComponents";
 import Typewriter from "typewriter-effect";
 import { useRef } from "react";

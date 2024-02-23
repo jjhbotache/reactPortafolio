@@ -69,6 +69,8 @@ export const ProjectsContainer = styled.div`
     background: rgba(20, 20, 20, 1);
     margin-top: .4rem;
 
+    cursor: grab;
+
     border-radius: 1.5rem;
     animation: ${fadeIn} 1s;
 
@@ -123,6 +125,9 @@ export const ProjectsContainer = styled.div`
       & .projectsSwiper--img{
         width: 100%;
         height: auto;
+        border-bottom: .2rem solid ${secondaryColor};
+        border-top: .2rem solid ${secondaryColor};
+        padding: .4rem 0;
       }
       & .projectsSwiper--btn{
         position: absolute;
@@ -145,6 +150,28 @@ export const ProjectsContainer = styled.div`
           box-shadow: 0 0 .5rem .1rem ${secondaryColor};
         }
       }
+    }
+  }
+  .currentProjectInfo{
+    
+    &--name{
+      margin-top: 8vh;
+      font-size: 1.5rem;
+      color: ${secondaryColor};
+    }
+    &--description{
+      margin-bottom: 8vh;
+      font-size: 1rem;
+      color: ${primaryColor};
+    }
+    &--video{
+      box-sizing: border-box;
+      width: 95%;
+      padding: .2rem;
+      margin: 1.5rem auto;
+      
+      border: .2rem solid ${secondaryColor};
+      border-radius: .4rem;
     }
   }
 `;

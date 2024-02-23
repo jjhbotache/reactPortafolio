@@ -44,9 +44,17 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
       entries.forEach(entry => {containerResizer(entry.target)});
     });
     
+    function onEscKeyPressed(e) {
+      if (e.key === "Escape" && maximazed) handleTvMaximazed()
+    }
+
     containerResizer(tvRef.current);
+    window.addEventListener('keydown', onEscKeyPressed);
     resizeObserver.observe(tvRef.current);
-    return () => {resizeObserver.disconnect()};
+    return () => {
+      window.removeEventListener('keydown', onEscKeyPressed);
+      resizeObserver.disconnect()
+    };
   }, []);
 
   useEffect(() => {
@@ -60,32 +68,6 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
         tvNoiseGif.classList.add('tv-noise-gif__blink-out');
       }, 100);
     }
-
-
-    // setting the info to display
-    switch (titleInfoToDisplay) {
-      case "about":
-        setInfoToDisplay( <AboutInfo onScrolled={e=>handleTvMaximazed(true)} /> );
-        break;
-
-      case "projects":
-        setInfoToDisplay( <ProjectsInfo/>);
-        break;
-
-      case "contact":
-        setInfoToDisplay(
-          <ContactInfo></ContactInfo>
-        );
-        break;
-
-      default:
-        setInfoToDisplay(null);
-        break;
-                
-    }
-
-    
-
   }, [titleInfoToDisplay]);
 
   useEffect(() => {
@@ -119,10 +101,14 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
   return(
     <InfoDisplayerStyledComponent>
       <div className="tv-container">
-        <div className="tv" ref={tvRef} onDoubleClick={e=>handleTvMaximazed()} onScroll={e=>handleTvMaximazed()}>
+        <div className="tv" ref={tvRef} onDoubleClick={e=>handleTvMaximazed()}>
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null
-          ? infoToDisplay
+          ? 
+            titleInfoToDisplay === "about" ? <AboutInfo onScrolled={e=>handleTvMaximazed(true)} /> :
+            titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>handleTvMaximazed(true)} maximazed={maximazed} /> :
+            titleInfoToDisplay === "contact" ? <ContactInfo/> : undefined
+
           : <span className="no-chanel-alert">Choose any chanel!</span>
           }
         </div>

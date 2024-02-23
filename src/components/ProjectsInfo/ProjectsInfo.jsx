@@ -12,15 +12,17 @@ import { Pagination, Navigation } from 'swiper/modules';
 
 import projectsMedia from "../../constants/projectsMedia";
 
-export default function ProjectsInfo() {
+export default function ProjectsInfo({onScrolled,maximazed}) {
   const [titleTyped, setTitleTyped] = useState(false);
   const welcomeTextRef = useRef(null);
-  const showIntroRef = useRef(false);//false just to test
+  const showIntroRef = useRef(false);// false just to dev
   const [currentProject, setCurrentProject] = useState(null);
   const [infoVariant, setInfoVariant] = useState("hidden");
+  const projectsInfoContainerRef = useRef(null);
+
 
   function welcomeTextFadeOut(){
-    welcomeTextRef.current.classList.add("welcomeText__fade-out");
+    welcomeTextRef.current?.classList.add("welcomeText__fade-out");
     setTimeout(()=>{
       showIntroRef.current = false
       setTitleTyped(false);
@@ -44,6 +46,9 @@ export default function ProjectsInfo() {
     visible: { opacity: 1 }
   }
 
+  console.log(
+    "maximazed: ",maximazed
+  );
   return(
     <ProjectsInfoContainer>
 
@@ -91,7 +96,10 @@ export default function ProjectsInfo() {
         )
         :(
           <>
-          <ProjectsContainer>
+          <ProjectsContainer 
+            onScroll={e=>{onScrolled(e);}}
+            ref={projectsInfoContainerRef}
+            >
             <Swiper
             className="projectsSwiper"
             slidesPerView={1}
@@ -109,7 +117,7 @@ export default function ProjectsInfo() {
                       <SwiperSlide key={index} className="projectsSwiper--slide">
                         <h1 className="projectsSwiper--title">{project.title}</h1>
                         <img className="projectsSwiper--img" src={project.img} alt={project.title} />
-                        <button className="projectsSwiper--btn">More</button>
+                        {!maximazed && <button className="projectsSwiper--btn" onClick={ ()=>{projectsInfoContainerRef.current.scrollBy(0, 500);} }>More</button>}
                       </SwiperSlide>
                     )
                   })
@@ -120,36 +128,15 @@ export default function ProjectsInfo() {
             variants={infoTextVariants}
             animate={infoVariant}
             transition={{ duration: 0.2, ease: "easeOut"}}
+            className="currentProjectInfo"
             >   
-              <h1>{currentProject?.title}</h1>
-              <p>{currentProject?.description}</p>
+              <h1 className="currentProjectInfo--name">{currentProject?.title}</h1>
+              <p className="currentProjectInfo--description">{currentProject?.description}</p>
+              <video className="currentProjectInfo--video" controls autoPlay>
+                <source src={currentProject?.video} type="video/mp4" />
+              </video>
             </motion.div>
           </ProjectsContainer>
-            {/* <ProjectsContainer>
-              <Swiper
-                slidesPerView={1}
-                spaceBetween={30}
-                loop={true}
-                pagination={{
-                  clickable: true,
-                }}
-                navigation={true}
-                modules={[Pagination, Navigation]}
-                className="projectsSwiper"
-              >
-                {
-                  projectsMedia.map((project, index)=>{
-                    return(
-                      <SwiperSlide key={index} className="projectsSwiper--slide">
-                        <h1 className="projectsSwiper--title">{project.title}</h1>
-                        <img className="projectsSwiper--img" src={project.img} alt={project.title} />
-                        <button className="projectsSwiper--btn">More</button>
-                      </SwiperSlide>
-                    )
-                  })
-                }
-              </Swiper>
-            </ProjectsContainer> */}
           </>
 
         )

@@ -20,6 +20,7 @@ import ticTacToeVideo from "../assets/projects/videos/ticTacToeVideo_reducido.mp
 const projectsMedia = [
   {
     title: "Disney+ Clone",
+    tags: ["React", "Redux", "Firebase", "Styled Components"],
     description: "A Disney Plus clone made with React, Redux, Firebase, and Styled Components.",
     img: disneyPlus,
     video: disneyCloneVideo,
@@ -27,6 +28,7 @@ const projectsMedia = [
   },
   {
     title: "Image Arranger",
+    tags: ["React", "Firebase", "Styled Components"],
     description: "A web app that allows you to upload images and arrange them in a grid.",
     img: imageArranger,
     video: imgArrangerVideo,
@@ -34,6 +36,7 @@ const projectsMedia = [
   },
   {
     title: "Mouse Effect",
+    tags: ["React", "Firebase", "Styled Components"],
     description: "A web app that creates a mouse trail effect.",
     img: mouseEffect,
     video: mouseEffectVideo,
@@ -41,6 +44,7 @@ const projectsMedia = [
   },
   {
     title: "Movie Searcher",
+    tags: ["React", "Firebase", "Styled Components"],
     description: "A web app that allows you to search for movies and see their details.",
     img: movieSearcher,
     video: movieSearcherVideo,
@@ -48,6 +52,7 @@ const projectsMedia = [
   },
   {
     title: "Rick and Morty",
+    tags: ["React", "Firebase", "Styled Components"],
     description: "A web app that shows information about Rick and Morty characters.",
     img: rickAndMorty,
     video: rickAndMortyVideo,
@@ -55,6 +60,7 @@ const projectsMedia = [
   },
   {
     title: "Surebets Bettor",
+    tags: ["python", "React", "Request", "Selenium"],
     description: "A web app that shows surebets and allows you to place bets.",
     img: surebetsBettor,
     video: surebetsBettorVideo,
@@ -62,6 +68,7 @@ const projectsMedia = [
   },
   {
     title: "Star Wars",
+    tags: ["React", "Firebase", "Styled Components"],
     description: "A web app that shows information about Star Wars characters.",
     img: SW,
     video: SWVideo,
@@ -69,6 +76,7 @@ const projectsMedia = [
   },
   {
     title: "Tic Tac Toe",
+    tags: ["React", "Firebase", "Styled Components"],
     description: "A web app that allows you to play tic tac toe.",
     img: ticTacToe,
     video: ticTacToeVideo,

@@ -136,9 +136,16 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                 transition={{ duration: 0.2, ease: "easeOut"}}
                 className="currentProjectInfo"
                 >   
+
+                  <hr className="currentProjectInfo--separator" />
                   <h1 className="currentProjectInfo--name">{currentProject.title}</h1>
+                  <ul className="currentProjectInfo--tags-container">
+                    {
+                    currentProject.tags.map((tag, index)=>(<li key={index} className="currentProjectInfo--tag">{tag}</li>))
+                    }
+                  </ul>
                   <p className="currentProjectInfo--description">{currentProject.description}</p>
-                  <video src={currentProject.video} controls loop autoPlay></video>
+                  <video className="currentProjectInfo--video" src={currentProject.video} controls loop autoPlay></video>
                 </motion.div>
               )
             }

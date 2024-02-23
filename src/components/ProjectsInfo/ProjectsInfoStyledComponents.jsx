@@ -154,13 +154,20 @@ export const ProjectsContainer = styled.div`
   }
   .currentProjectInfo{
     
+    &--separator{
+      width: 90%;
+      border: .1rem solid ${primaryColor};
+      margin: 3rem auto;
+      box-shadow: 0 0 .5rem .1rem ${primaryColor};
+    }
+
     &--name{
-      margin-top: 8vh;
       font-size: 1.5rem;
       color: ${secondaryColor};
     }
     &--description{
-      margin-bottom: 8vh;
+      margin-bottom: 1rem;
+      padding: 0 3vw;
       font-size: 1rem;
       color: ${primaryColor};
     }
@@ -172,6 +179,25 @@ export const ProjectsContainer = styled.div`
       
       border: .2rem solid ${secondaryColor};
       border-radius: .4rem;
+    }
+
+    &--tags-container{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      padding: 1rem;
+      margin: 1rem 0;
+      background: rgba(20, 20, 20, .6);
+    }
+    &--tag{
+      font-size: .7rem;
+      padding: .2rem .5rem;
+      margin: .2rem;  
+      border-radius: 99rem;
+      background: ${secondaryColor};
+      color: white;
     }
   }
 `;

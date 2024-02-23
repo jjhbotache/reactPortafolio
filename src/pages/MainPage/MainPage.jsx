@@ -45,7 +45,6 @@ export default function MainPage() {
     
 
     function onFullScreenChange(){
-      alert("full screen change")
       if(document.fullscreenElement){
         // reset the with and height of the main component
         mainComponentRef.current.style.width = "100vw";
@@ -57,6 +56,7 @@ export default function MainPage() {
         mainComponentRef.current.style.height = window.innerHeight;
       }
     }
+    onFullScreenChange();
 
     // detect if the user enter or exits the fullscren mode
     document.addEventListener('fullscreenchange', onFullScreenChange);

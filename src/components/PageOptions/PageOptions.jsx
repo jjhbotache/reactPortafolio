@@ -7,6 +7,10 @@ export default function PageOptions() {
     && 
     document.documentElement.offsetHeight === screen.availHeight
   );
+  const [languaje, setLanguaje] = useState({
+    code: "en",
+    modalOpen: false,
+  });
 
 
   useEffect(() => {
@@ -70,6 +74,17 @@ export default function PageOptions() {
         <button>
           <i className="fi fi-br-globe"></i>
         </button>
+        {
+          languaje.modalOpen
+          ?<div className="languaje-chooser" onClick={
+            (e)=>{setLanguaje({code:languaje.code,modalOpen:false})}
+          }>
+            <h1>{languaje.code === "en" ?"Choose a languaje" :"Elige un idioma"}</h1>
+            <button onClick={()=>{setLanguaje({code:"en",modalOpen:false})}}>English</button>
+            <button onClick={()=>{setLanguaje({code:"es",modalOpen:false})}}>Español</button>
+          </div>
+          :null          
+        }
       </li>
     </PageOptionsContainer>
   );

@@ -40,11 +40,39 @@ export const PageOptionsContainer = styled.ol`
   li {
     background: none;
     margin: .5rem;
+    cursor: pointer;
     button {
       font-size: 1rem;
       background: none;
       margin: 0;
       padding: 0;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .languaje-chooser{
+    position: absolute;
+    width: 95%;
+    height: 95%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    background: #222;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1rem;
       &:focus {
         outline: none;
       }

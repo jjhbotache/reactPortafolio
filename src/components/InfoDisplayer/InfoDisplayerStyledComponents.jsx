@@ -73,7 +73,7 @@ export const InfoDisplayerStyledComponent = styled.div`
 
           width: 90% !important;
           height: 95% !important;
-          z-index: 1;
+          z-index: 2;
           box-shadow: 0 0 50vh 10vh rgb(46, 0, 86);
           
           

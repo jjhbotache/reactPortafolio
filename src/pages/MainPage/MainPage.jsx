@@ -5,6 +5,7 @@ import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
 import Chanels from "../../components/Chanels/Chanels";
 import InfoDisplayer from "../../components/InfoDisplayer/InfoDisplayer";
 import { Bounce, ToastContainer } from "react-toastify";
+import PageOptions from "../../components/PageOptions/PageOptions";
 
 export default function MainPage() {
   const bottomLeftFrameRef = useRef(null);
@@ -30,10 +31,6 @@ export default function MainPage() {
   ]
 
   useEffect(() => {
-
-    
-
-
     setTimeout(() => {
     bottomLeftFrameRef.current.classList.add('frame__on-corner');
     topRightFrameRef.current.classList.add('frame__on-corner');
@@ -41,9 +38,6 @@ export default function MainPage() {
         MainRef.current.classList.add('fade-in');
       }, 2500);
     }, 100);
-
-    
-
     function onFullScreenChange(){
       if(document.fullscreenElement){
         // reset the with and height of the main component
@@ -57,7 +51,6 @@ export default function MainPage() {
       }
     }
     onFullScreenChange();
-
     // detect if the user enter or exits the fullscren mode
     document.addEventListener('fullscreenchange', onFullScreenChange);
     return () => {
@@ -72,6 +65,8 @@ export default function MainPage() {
 
   return (
     <MainPageStyledComponent ref={mainComponentRef}>
+      <PageOptions/>
+
       <div className="frame frame--bottom-left" ref={bottomLeftFrameRef}>
         <div className="rectangle rectangle__left"> <img src={purpleTriangle} alt="purple triangle" className="rectangle--triangle"/> </div>
         <div className="rectangle rectangle__bottom"> <img src={purpleTriangle} alt="purple triangle" className="rectangle--triangle"/> </div>

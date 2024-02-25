@@ -30,13 +30,11 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
   }
   
   function setInfo(swiper) {
-    console.log("triggering function");
     setInfoVariant("hidden");
     if (!!timer) clearTimeout(timer);
     var timer = setTimeout(()=>{
       setCurrentProject(projectsMedia[swiper.realIndex]);
       setInfoVariant("visible");
-      console.log("setting current project");
     }
     , 500);
   }
@@ -46,13 +44,6 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
     visible: { opacity: 1 }
   }
 
-  console.log(
-    "video: ", currentProject?.video,
-  );
-
-  useEffect(()=>{
-    console.log("currentProject: ", currentProject);
-  }, [currentProject]);
   return(
     <ProjectsInfoContainer>
 

@@ -16,20 +16,17 @@ export default function PageOptions() {
   useEffect(() => {
 
     function checkAndUpdateFullScreen() {
-      console.clear();
       const sizesAreEqual =
         document.documentElement.offsetWidth === screen.availWidth
         && 
         document.documentElement.offsetHeight === screen.availHeight
 
-      console.log(document.fullscreenElement !== null,document.webkitIsFullScreen,sizesAreEqual);
       const isFullScreenCheck = 
         document.fullscreenElement !== null
         ||
         document.webkitIsFullScreen
         ||
         sizesAreEqual;
-      console.log("is:",isFullScreenCheck);
       setIsFullscreen(isFullScreenCheck);
     }
 

@@ -25,7 +25,10 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     // get the time when calling this function
     // to avoid multiple calls in a short period of time
     const time = new Date().getTime();
-    if (handleTvMaximazedLastTime.current && time - handleTvMaximazedLastTime.current < 500) return
+    if (handleTvMaximazedLastTime.current && time - handleTvMaximazedLastTime.current < 1000) {
+      console.log("too fast");
+      return;
+    }
     handleTvMaximazedLastTime.current = time;
 
     

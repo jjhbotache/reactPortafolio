@@ -19,7 +19,9 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
 
   
 
-  function handleTvMaximazed(onlyOpen = false) {
+  function handleTvMaximazed(
+    only = undefined// "open" or "close"
+    ) {
     // get the time when calling this function
     // to avoid multiple calls in a short period of time
     const time = new Date().getTime();
@@ -32,9 +34,11 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
       console.log("big screen or no titleInfoToDisplay");
     }else{
       setMaximazed(
-        onlyOpen
+        only === undefined
           ? true
-          : !maximazed
+          : only == "open"
+              ? true
+              : false
       )
     }
   }
@@ -45,14 +49,19 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     });
     
     function onEscKeyPressed(e) {
-      if (e.key === "Escape" && maximazed) handleTvMaximazed()
+      if (e.key === "Escape" && maximazed) handleTvMaximazed("close")
+    }
+    function onBack(e) {
+      handleTvMaximazed("close")
     }
 
     containerResizer(tvRef.current);
     window.addEventListener('keydown', onEscKeyPressed);
+    window.addEventListener('popstate', onBack);
     resizeObserver.observe(tvRef.current);
     return () => {
       window.removeEventListener('keydown', onEscKeyPressed);
+      window.removeEventListener('popstate', onBack);
       resizeObserver.disconnect()
     };
   }, []);
@@ -105,8 +114,8 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null
           ? 
-            titleInfoToDisplay === "about" ? <AboutInfo onScrolled={e=>handleTvMaximazed(true)} /> :
-            titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>handleTvMaximazed(true)} maximazed={maximazed} /> :
+            titleInfoToDisplay === "about" ? <AboutInfo onScrolled={e=>handleTvMaximazed("open")} /> :
+            titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>handleTvMaximazed("open")} maximazed={maximazed} /> :
             titleInfoToDisplay === "contact" ? <ContactInfo/> : undefined
 
           : <span className="no-chanel-alert">Choose any chanel!</span>

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { MainInfo, MainPageStyledComponent } from "./MainPageStyledComponents";
 import purpleTriangle from "../../assets/svgs/purple_triangle.svg"
-import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
 import Chanels from "../../components/Chanels/Chanels";
 import InfoDisplayer from "../../components/InfoDisplayer/InfoDisplayer";
 import { Bounce, ToastContainer } from "react-toastify";
@@ -65,7 +64,7 @@ export default function MainPage() {
 
   return (
     <MainPageStyledComponent ref={mainComponentRef}>
-      <PageOptions/>
+      
 
       <div className="frame frame--bottom-left" ref={bottomLeftFrameRef}>
         <div className="rectangle rectangle__left"> <img src={purpleTriangle} alt="purple triangle" className="rectangle--triangle"/> </div>
@@ -79,6 +78,7 @@ export default function MainPage() {
 
       <MainInfo ref={MainRef}>
         <div className="container">
+          <PageOptions/>
           <div className="title-texts">
             <h1 className="name name__first">Juan Jose</h1>
             <h2 className="name name__last">Huertas Botache</h2>

@@ -37,6 +37,8 @@ const blinkAndDisappear = keyframes`
 export const InfoDisplayerStyledComponent = styled.div`
   grid-area: tv;
   .tv-container{
+      z-index: 1;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -73,7 +75,7 @@ export const InfoDisplayerStyledComponent = styled.div`
 
           width: 90% !important;
           height: 95% !important;
-          z-index: 2;
+          z-index: 3;
           box-shadow: 0 0 50vh 10vh rgb(46, 0, 86);
           
           

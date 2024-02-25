@@ -35,7 +35,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     }else{
       setMaximazed(
         only === undefined
-          ? true
+          ? !maximazed
           : only == "open"
               ? true
               : false

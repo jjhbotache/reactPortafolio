@@ -56,6 +56,8 @@ export const InfoDisplayerStyledComponent = styled.div`
         border-radius: 2rem;
         overflow: hidden;
 
+
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -67,6 +69,26 @@ export const InfoDisplayerStyledComponent = styled.div`
         transform: unset;
 
 
+        & .return-btn{
+          position: absolute;
+          z-index: 5;
+          top: 1rem;
+          right: 1rem;
+          opacity: 0;
+          transition: all .5s ease-in ;
+          transition-delay: .5s;
+          background: radial-gradient(
+            circle,
+            rgba(0, 0, 0, .7) 0%,
+            rgba(0, 0, 0, 0 ) 100%
+          
+          );
+          backdrop-filter: blur(4px) ;
+          border-radius: 50%;
+          &:hover{
+            transform: scale(1.2);
+          }
+        }
         &.tv__maximazed{
           position: fixed;
           left: 50%;
@@ -78,7 +100,9 @@ export const InfoDisplayerStyledComponent = styled.div`
           z-index: 3;
           box-shadow: 0 0 50vh 10vh rgb(46, 0, 86);
           
-          
+          & .return-btn{
+            opacity: 1;
+          }
 
           &:hover{
             animation: none;

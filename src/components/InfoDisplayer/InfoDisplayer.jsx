@@ -111,6 +111,8 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     <InfoDisplayerStyledComponent>
       <div className="tv-container">
         <div className="tv" ref={tvRef} onDoubleClick={e=>handleTvMaximazed()}>
+          <button className="return-btn" onClick={e=>handleTvMaximazed("close")}><i className="fi fi-sr-undo"></i></button>
+          
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null
           ? 

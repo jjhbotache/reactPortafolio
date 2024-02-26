@@ -70,6 +70,7 @@ export const InfoDisplayerStyledComponent = styled.div`
 
 
         & .return-btn{
+          display: none;
           position: absolute;
           z-index: 5;
           top: 1rem;
@@ -81,7 +82,6 @@ export const InfoDisplayerStyledComponent = styled.div`
             circle,
             rgba(0, 0, 0, .7) 0%,
             rgba(0, 0, 0, 0 ) 100%
-          
           );
           backdrop-filter: blur(4px) ;
           border-radius: 50%;
@@ -101,6 +101,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           box-shadow: 0 0 50vh 10vh rgb(46, 0, 86);
           
           & .return-btn{
+            display: block;
             opacity: 1;
           }
 

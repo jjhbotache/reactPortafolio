@@ -11,6 +11,11 @@ import 'swiper/css/pagination';
 import { Pagination, Navigation } from 'swiper/modules';
 
 import projectsMedia from "../../constants/projectsMedia";
+import githubImg from "../../assets/images/github.png";
+import browserImg from "../../assets/images/browser.png";
+import { Link } from "react-router-dom";
+
+
 
 export default function ProjectsInfo({onScrolled,maximazed}) {
   const [titleTyped, setTitleTyped] = useState(false);
@@ -116,7 +121,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                       </SwiperSlide>
                     )
                   })
-                }
+              }
             </Swiper>
             {
               currentProject && (
@@ -136,7 +141,22 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     }
                   </ul>
                   <p className="currentProjectInfo--description">{currentProject.description}</p>
-                  <video className="currentProjectInfo--video" src={currentProject.video} controls loop autoPlay></video>
+                  <video className="currentProjectInfo--video" src={currentProject.video} controls loop autoPlay muted></video>
+                  <section className="currentProjectInfo--check-project-section">
+                    <h2 className="title">Check project</h2>
+                    <div className="check-on-options">
+                      <Link className={"check-on-option " +  (currentProject.links[0].link === null  ? `check-on-option__disabled`  : "") } to={currentProject.links[0].link} target="_blank">
+                        <img className="check-on-option--img" src={githubImg} alt="" srcset="" />
+                        <h3 className="check-on-option--name">Github</h3>
+                      </Link>
+                      <Link className={"check-on-option " +  (currentProject.links[1].link === null  ? `check-on-option__disabled`  : "") } to={currentProject.links[1].link} target="_blank">
+                        <img className="check-on-option--img" src={browserImg} alt="" srcset="" />
+                        <h3 className="check-on-option--name">Web</h3>
+                      </Link>
+                    </div>
+                  </section>
+
+
                 </motion.div>
               )
             }

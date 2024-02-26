@@ -24,7 +24,16 @@ const projectsMedia = [
     description: "A Disney Plus clone made with React, Redux, Firebase, and Styled Components.",
     img: disneyPlus,
     video: disneyCloneVideo,
-    link: "https://disneyplus-clone-7b0e6.web.app/"
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/disney_page"
+      },
+      {
+        name: "Web",
+        link: "https://jjhbotache.github.io/disney_page/"
+      }
+    ]
   },
   {
     title: "Image Arranger",
@@ -32,7 +41,16 @@ const projectsMedia = [
     description: "A web app that allows you to upload images and arrange them in a grid.",
     img: imageArranger,
     video: imgArrangerVideo,
-    link: "https://image-arranger-1.web.app/"
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/image_arranger"
+      },
+      {
+        name: "Web",
+        link: "https://jjhbotache.github.io/image_arranger/"
+      }
+    ]
   },
   {
     title: "Mouse Effect",
@@ -40,7 +58,16 @@ const projectsMedia = [
     description: "A web app that creates a mouse trail effect.",
     img: mouseEffect,
     video: mouseEffectVideo,
-    link: "https://mouse-effect-1.web.app/"
+    links: [
+      {
+        name: "Github",
+        link: null
+      },
+      {
+        name: "Web",
+        link: null
+      }
+    ]
   },
   {
     title: "Movie Searcher",
@@ -48,7 +75,16 @@ const projectsMedia = [
     description: "A web app that allows you to search for movies and see their details.",
     img: movieSearcher,
     video: movieSearcherVideo,
-    link: "https://movie-searcher-1.web.app/"
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/react_projects/tree/main/5)movieSearcher"
+      },
+      {
+        name: "Web",
+        link: null
+      }
+    ]
   },
   {
     title: "Rick and Morty",
@@ -56,7 +92,16 @@ const projectsMedia = [
     description: "A web app that shows information about Rick and Morty characters.",
     img: rickAndMorty,
     video: rickAndMortyVideo,
-    link: "https://rick-and-morty-1.web.app/"
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/rickAndMorty"
+      },
+      {
+        name: "Web",
+        link: "https://rick-and-morty-indol.vercel.app/"
+      }
+    ]
   },
   {
     title: "Surebets Bettor",
@@ -64,7 +109,16 @@ const projectsMedia = [
     description: "A web app that shows surebets and allows you to place bets.",
     img: surebetsBettor,
     video: surebetsBettorVideo,
-    link: "https://surebets-bettor-1.web.app/"
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/bets_gettor"
+      },
+      {
+        name: "Web",
+        link: "https://bets-gettor.vercel.app/"
+      }
+    ]
   },
   {
     title: "Star Wars",
@@ -72,7 +126,16 @@ const projectsMedia = [
     description: "A web app that shows information about Star Wars characters.",
     img: SW,
     video: SWVideo,
-    link: "https://star-wars-1.web.app/"
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/react_projects/tree/main/7)SWapiProject"
+      },
+      {
+        name: "Web",
+        link: "https://starwars-plum-seven.vercel.app/"
+      }
+    ]
   },
   {
     title: "Tic Tac Toe",
@@ -80,7 +143,16 @@ const projectsMedia = [
     description: "A web app that allows you to play tic tac toe.",
     img: ticTacToe,
     video: ticTacToeVideo,
-    link: "https://tic-tac-toe-1.web.app/"
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/react_projects/tree/main/2)secondProject"
+      },
+      {
+        name: "Web",
+        link: null
+      }
+    ]
   }
 ];
 

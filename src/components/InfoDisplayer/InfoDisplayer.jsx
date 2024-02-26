@@ -8,7 +8,7 @@ import ContactInfo from "../ContactInfo/ContactInfo";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
 import containerResizer from "../../helpers/containerResizer";
-import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 
 export default function InfoDisplayer({titleInfoToDisplay}) {

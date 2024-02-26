@@ -5,7 +5,7 @@ import Chanels from "../../components/Chanels/Chanels";
 import InfoDisplayer from "../../components/InfoDisplayer/InfoDisplayer";
 import { Bounce, ToastContainer } from "react-toastify";
 import PageOptions from "../../components/PageOptions/PageOptions";
-import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 
 export default function MainPage() {

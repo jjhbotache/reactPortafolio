@@ -1,7 +1,7 @@
 import { AboutInfoContainer } from "./AboutInfoStyledComponents";
 import Typewriter from "typewriter-effect";
 import { useContext, useRef } from "react";
-import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 import { useEffect } from "react";
 

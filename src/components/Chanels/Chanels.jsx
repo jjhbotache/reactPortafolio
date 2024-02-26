@@ -1,7 +1,7 @@
 import { useContext, useRef } from "react";
 import { ChanelsStyledComponent } from "./ChanelsStyledComponents";
 import { useState } from "react";
-import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 
 export default function Chanels({chanels,onSelectChanel}) {

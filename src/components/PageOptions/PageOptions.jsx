@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { PageOptionsContainer } from "./PageOptionsStyledComponents";
 import { useContext, useEffect, useState } from "react";
-import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 
 
 export default function PageOptions() {

@@ -14,7 +14,7 @@ import projectsMedia from "../../constants/projectsMedia";
 import githubImg from "../../assets/images/github.png";
 import browserImg from "../../assets/images/browser.png";
 import { Link } from "react-router-dom";
-import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 
 

@@ -11,9 +11,8 @@ import containerResizer from "../../helpers/containerResizer";
 
 export default function InfoDisplayer({titleInfoToDisplay}) {
   const tvRef = useRef(null);
-  const [infoToDisplay, setInfoToDisplay] = useState(null);
   const [maximazed,setMaximazed   ] = useState(false);
-  const handleTvMaximazedLastTime = useRef();
+  const handleTvMaximazedLastTime = useRef(0);
 
   const alreadyNotifiedAboutMinimize = useRef(false);
 
@@ -25,11 +24,12 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     // get the time when calling this function
     // to avoid multiple calls in a short period of time
     const time = new Date().getTime();
-    if (handleTvMaximazedLastTime.current && time - handleTvMaximazedLastTime.current < 1000) {
+    if (time - handleTvMaximazedLastTime.current < 1000) {
       console.log("too fast");
       return;
+    }else{
+      handleTvMaximazedLastTime.current = time;
     }
-    handleTvMaximazedLastTime.current = time;
 
     
     const mdScreenWidthInPx = parseInt(mdScreenWidth.slice(0, -2));

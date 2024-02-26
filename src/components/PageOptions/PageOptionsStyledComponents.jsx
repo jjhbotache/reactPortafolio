@@ -34,8 +34,39 @@ export const PageOptionsContainer = styled.ol`
 
   
 
+
   animation: ${fadeIn} 1s ease-in forwards;
   animation-delay: 2s;
+
+  .close{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    i{font-size: 1.5rem;}
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 1rem 0 ${primaryColor};
+    }
+  }
+  
+  .option-btn{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    &:focus {
+      outline: none;
+    }
+    transition: all .1s ease-out;
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 1rem 0 ${primaryColor};
+    }
+    
+  }
 
   li {
     background: none;
@@ -53,29 +84,65 @@ export const PageOptionsContainer = styled.ol`
   }
 
   .languaje-chooser{
-    position: absolute;
-    width: 95%;
-    height: 95%;
+    position: fixed;
+    width: 85%;
+    height: 85%;
+    z-index: 3;
+    border-radius: 1rem;
 
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 
-    background: #222;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    button {
+
+    &::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border-radius: 1rem;
+      background: rgba(20,20,20,.8);
+      filter: blur(.5rem);
+    }
+
+    .title{
+      text-align: center;
+      font-size: 2rem;
+      color: ${primaryColor};
+    }
+    .separator{
+      width: 80%;
+      border: 1px solid ${primaryColor};
+    }
+
+    .languaje-option{
       background: none;
+      color: ${secondaryColor};
+      font-size: 1.5rem;
+      padding: .5rem 1rem;
       border: none;
-      color: white;
-      font-size: 1rem;
+      border-radius: .5rem;
+      cursor: pointer;
+      transition: all .2s ease-out;
       &:focus {
         outline: none;
       }
+      &:hover {
+        background: ${primaryColor};
+        color: white;
+      }
+      &.chosen{
+        background: ${primaryColor};
+        color: white;
+      }
     }
+
   }
 `;

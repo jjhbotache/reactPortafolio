@@ -10,14 +10,14 @@ export const AboutInfoContainer = styled.div`
 
   overflow-y: scroll;
   scrollbar-width: none;
-  height: inherit;
+  height: 100%;
   padding: .5rem 1rem;
   width: 100%;
 
   background-image:
   linear-gradient( rgba(0, 0, 0, .85), rgba(0, 0, 0, .85) ) ,
   url(${svgPc});
-  background-size: 95% 95%;
+  background-size: 90% 90%;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;

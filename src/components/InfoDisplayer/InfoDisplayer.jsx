@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
 import { InfoDisplayerStyledComponent } from "./InfoDisplayerStyledComponents";
 import { useState } from "react";
@@ -8,6 +8,8 @@ import ContactInfo from "../ContactInfo/ContactInfo";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
 import containerResizer from "../../helpers/containerResizer";
+import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import texts from "../../constants/texts";
 
 export default function InfoDisplayer({titleInfoToDisplay}) {
   const tvRef = useRef(null);
@@ -15,6 +17,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
   const handleTvMaximazedLastTime = useRef(0);
 
   const alreadyNotifiedAboutMinimize = useRef(false);
+  const {languaje} = useContext(GlobalStateContext);
 
   
 
@@ -109,7 +112,6 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
     }
   }, [maximazed]);
 
-
   return(
     <InfoDisplayerStyledComponent>
       <div className="tv-container">
@@ -123,11 +125,12 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
             titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>handleTvMaximazed("open")} maximazed={maximazed} /> :
             titleInfoToDisplay === "contact" ? <ContactInfo/> : undefined
 
-          : <span className="no-chanel-alert">Choose any chanel!</span>
+          : <span className="no-chanel-alert">{texts.infoDisplayer.noInfo[languaje]}</span>
           }
         </div>
       </div>
     </InfoDisplayerStyledComponent>
   )
 };
+
 

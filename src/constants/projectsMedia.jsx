@@ -21,7 +21,10 @@ const projectsMedia = [
   {
     title: "Disney+ Clone",
     tags: ["React", "Redux", "Firebase", "Styled Components"],
-    description: "A Disney Plus clone made with React, Redux, Firebase, and Styled Components.",
+    description: {
+      en: "A web app that shows information about Disney movies and series.",
+      es: "Una aplicación web que muestra información sobre películas y series de Disney."
+    },
     img: disneyPlus,
     video: disneyCloneVideo,
     links: [
@@ -38,7 +41,10 @@ const projectsMedia = [
   {
     title: "Image Arranger",
     tags: ["React", "Firebase", "Styled Components"],
-    description: "A web app that allows you to upload images and arrange them in a grid.",
+    description: {
+      en: "A web app that allows you to arrange images in a grid.",
+      es: "Una aplicación web que te permite organizar imágenes en una cuadrícula."
+    },
     img: imageArranger,
     video: imgArrangerVideo,
     links: [
@@ -55,7 +61,10 @@ const projectsMedia = [
   {
     title: "Mouse Effect",
     tags: ["React", "Firebase", "Styled Components"],
-    description: "A web app that creates a mouse trail effect.",
+    description: {
+      en: "A web app that shows a mouse effect.",
+      es: "Una aplicación web que muestra un efecto de ratón."
+    },
     img: mouseEffect,
     video: mouseEffectVideo,
     links: [
@@ -72,7 +81,10 @@ const projectsMedia = [
   {
     title: "Movie Searcher",
     tags: ["React", "Firebase", "Styled Components"],
-    description: "A web app that allows you to search for movies and see their details.",
+    description: {
+      en: "A web app that allows you to search for movies.",
+      es: "Una aplicación web que te permite buscar películas."
+    },
     img: movieSearcher,
     video: movieSearcherVideo,
     links: [
@@ -89,7 +101,10 @@ const projectsMedia = [
   {
     title: "Rick and Morty",
     tags: ["React", "Firebase", "Styled Components"],
-    description: "A web app that shows information about Rick and Morty characters.",
+    description: {
+      en: "A web app that shows information about Rick and Morty characters.",
+      es: "Una aplicación web que muestra información sobre los personajes de Rick y Morty."
+    },
     img: rickAndMorty,
     video: rickAndMortyVideo,
     links: [
@@ -106,7 +121,10 @@ const projectsMedia = [
   {
     title: "Surebets Bettor",
     tags: ["python", "React", "Request", "Selenium"],
-    description: "A web app that shows surebets and allows you to place bets.",
+    description: {
+      en: "A web app that shows surebets from different betting houses.",
+      es: "Una aplicación web que muestra surebets de diferentes casas de apuestas."
+    },
     img: surebetsBettor,
     video: surebetsBettorVideo,
     links: [
@@ -123,7 +141,10 @@ const projectsMedia = [
   {
     title: "Star Wars",
     tags: ["React", "Firebase", "Styled Components"],
-    description: "A web app that shows information about Star Wars characters.",
+    description: {
+      en: "A web app that shows information about Star Wars characters and planets.",
+      es: "Una aplicación web que muestra información sobre personajes y planetas de Star Wars."
+    },
     img: SW,
     video: SWVideo,
     links: [
@@ -140,7 +161,10 @@ const projectsMedia = [
   {
     title: "Tic Tac Toe",
     tags: ["React", "Firebase", "Styled Components"],
-    description: "A web app that allows you to play tic tac toe.",
+    description: {
+      en: "A web app that allows you to play tic tac toe.",
+      es: "Una aplicación web que te permite jugar tic tac toe."
+    },
     img: ticTacToe,
     video: ticTacToeVideo,
     links: [

@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { MainInfo, MainPageStyledComponent } from "./MainPageStyledComponents";
 import purpleTriangle from "../../assets/svgs/purple_triangle.svg"
 import Chanels from "../../components/Chanels/Chanels";
 import InfoDisplayer from "../../components/InfoDisplayer/InfoDisplayer";
 import { Bounce, ToastContainer } from "react-toastify";
 import PageOptions from "../../components/PageOptions/PageOptions";
+import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import texts from "../../constants/texts";
 
 export default function MainPage() {
   const bottomLeftFrameRef = useRef(null);
@@ -12,19 +14,22 @@ export default function MainPage() {
   const MainRef = useRef(null);
   const mainComponentRef = useRef(null);
   const [titleInfoToDisplay, setTitleInfoToDisplay] = useState(null);
+
+  const { languaje } = useContext( GlobalStateContext )
+  
   
 
   const chanels = [
     {
-      name:"About",
+      name: languaje === "en" ? "About" : "Acerca de mi",
       value: "about"
     },
     {
-      name:"Projects",
+      name: languaje === "en" ? "Projects" : "Proyectos",
       value: "projects"
     },
     {
-      name:"Contact",
+      name: languaje === "en" ? "Contact" : "Contacto",
       value: "contact"
     },
   ]
@@ -82,18 +87,9 @@ export default function MainPage() {
           <div className="title-texts">
             <h1 className="name name__first">Juan Jose</h1>
             <h2 className="name name__last">Huertas Botache</h2>
-            <h3 className="rol">Frontend Developer - Python developer</h3>
+            <h3 className="rol">{texts.mainPageTexts.rol[languaje]}</h3>
           </div>
 
-          {/* <div className="chanels">
-            <ul className="chanels--list">
-              {chanels.map((chanel, index) => (
-                <li key={index}>
-                  <a href={chanel.link}>{chanel.name}</a>
-                </li>
-              ))}
-            </ul>
-          </div> */}
           
           <hr className="title-texts-and-chanels-separator" />
 

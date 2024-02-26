@@ -1,11 +1,13 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { ChanelsStyledComponent } from "./ChanelsStyledComponents";
 import { useState } from "react";
+import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import texts from "../../constants/texts";
 
 export default function Chanels({chanels,onSelectChanel}) {
   const detailsRef = useRef(null);
   const detailsInfoRef = useRef(null);
-  const [textOnSummary, setTextOnSummary] = useState("Choose a chanel");
+  const {languaje} = useContext(GlobalStateContext);
 
 
   function onDetailsClick(e){
@@ -19,7 +21,6 @@ export default function Chanels({chanels,onSelectChanel}) {
   }
 
   function chanelClicked(chanel){
-    setTextOnSummary(chanel.name);
     onSelectChanel(chanel);
   }
 
@@ -27,7 +28,7 @@ export default function Chanels({chanels,onSelectChanel}) {
     <ChanelsStyledComponent>
       <details className="chanels-details" onClick={onDetailsClick} ref={detailsRef}>
         <summary className="chanels-details--title">
-          <small>{textOnSummary}</small>
+          <small>{texts.chanels.chooseChannel[languaje]}</small>
         </summary>
         <section className="chanels-details--info" ref={detailsInfoRef} >
           <ol>

@@ -1,5 +1,8 @@
+import { motion } from "framer-motion";
 import { PageOptionsContainer } from "./PageOptionsStyledComponents";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+
 
 export default function PageOptions() {
   const [isFullscreen, setIsFullscreen] = useState(
@@ -7,8 +10,9 @@ export default function PageOptions() {
     && 
     document.documentElement.offsetHeight === screen.availHeight
   );
+  const {languaje:globalLanguaje, setLanguaje:setGlobalLanguaje} = useContext(GlobalStateContext);
   const [languaje, setLanguaje] = useState({
-    code: "en",
+    code: globalLanguaje,
     modalOpen: false,
   });
 
@@ -49,10 +53,14 @@ export default function PageOptions() {
 
   }, []);
 
+  useEffect(() => {
+    setGlobalLanguaje(languaje.code);
+  }, [languaje]);
+
   return (
     <PageOptionsContainer >
       <li>
-        <button onClick={
+        <button className="option-btn" onClick={
           () => {
             document.fullscreenElement !== null
               ?document.exitFullscreen()
@@ -68,18 +76,28 @@ export default function PageOptions() {
         </button>
       </li>
       <li>
-        <button>
+        <button className="option-btn" onClick={
+          ()=>{setLanguaje({code:languaje.code,modalOpen:!languaje.modalOpen})}
+        }>
           <i className="fi fi-br-globe"></i>
         </button>
         {
           languaje.modalOpen
-          ?<div className="languaje-chooser" onClick={
-            (e)=>{setLanguaje({code:languaje.code,modalOpen:false})}
-          }>
-            <h1>{languaje.code === "en" ?"Choose a languaje" :"Elige un idioma"}</h1>
-            <button onClick={()=>{setLanguaje({code:"en",modalOpen:false})}}>English</button>
-            <button onClick={()=>{setLanguaje({code:"es",modalOpen:false})}}>Español</button>
-          </div>
+          ?<motion.div
+            initial={{opacity:0}}
+            animate={{opacity:1,transition:{duration:.2, ease:"easeOut"}}}
+            className="languaje-chooser"
+           >
+            <div className="close">
+              <button onClick={()=>{setLanguaje({code:languaje.code,modalOpen:false})}}>
+                <i className="fi fi-sr-circle-xmark"></i>
+              </button>
+            </div>
+            <h1 className="title">{languaje.code === "en" ?"Choose a languaje" :"Elige un idioma"}</h1>
+            <hr className="separator" />
+            <button className={`languaje-option ${globalLanguaje==="en"? "chosen":""}`} onClick={()=>{setLanguaje({code:"en",modalOpen:false})}}>English</button>
+            <button className={`languaje-option ${globalLanguaje==="es"? "chosen":""}`} onClick={()=>{setLanguaje({code:"es",modalOpen:false})}}>Español</button>
+          </motion.div>
           :null          
         }
       </li>

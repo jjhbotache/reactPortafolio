@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ProjectsContainer, ProjectsInfoContainer, WelcomeText } from "./ProjectsInfoStyledComponents";
 import Typewriter from 'typewriter-effect';
 
@@ -14,16 +14,20 @@ import projectsMedia from "../../constants/projectsMedia";
 import githubImg from "../../assets/images/github.png";
 import browserImg from "../../assets/images/browser.png";
 import { Link } from "react-router-dom";
+import { GlobalStateContext } from "../../contexts/languajeContextProvider";
+import texts from "../../constants/texts";
 
 
 
 export default function ProjectsInfo({onScrolled,maximazed}) {
   const [titleTyped, setTitleTyped] = useState(false);
   const welcomeTextRef = useRef(null);
-  const showIntroRef = useRef(false);// false just to dev
+  const showIntroRef = useRef(true);
   const [currentProject, setCurrentProject] = useState(null);
   const [infoVariant, setInfoVariant] = useState("hidden");
   const projectsInfoContainerRef = useRef(null);
+
+  const {languaje} = useContext(GlobalStateContext);
 
 
   function welcomeTextFadeOut(){
@@ -60,7 +64,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
               onInit={typewriter=>{
                 typewriter
                 .pauseFor(1000)
-                .typeString("Projects")
+                .typeString(texts.projectsInfo.title[languaje])
                 .pauseFor(1000)
                 .callFunction(()=>{setTitleTyped(true);})
                 .start();
@@ -77,7 +81,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                 <Typewriter
                   onInit={typewriter=>{
                     typewriter
-                    .typeString("Here are some of the projects I've worked on")
+                    .typeString(texts.projectsInfo.smallDescription[languaje])
                     .pauseFor(1000)
                     .callFunction(welcomeTextFadeOut)
 
@@ -140,7 +144,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     currentProject.tags.map((tag, index)=>(<li key={index} className="currentProjectInfo--tag">{tag}</li>))
                     }
                   </ul>
-                  <p className="currentProjectInfo--description">{currentProject.description}</p>
+                  <p className="currentProjectInfo--description">{currentProject.description[languaje]}</p>
                   <video className="currentProjectInfo--video" src={currentProject.video} controls loop autoPlay muted></video>
                   <section className="currentProjectInfo--check-project-section">
                     <h2 className="title">Check project</h2>

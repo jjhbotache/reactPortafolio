@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client'
 import GlobalStyles from './globalStyles.jsx'
 import { Bounce, ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import LanguajeContextProvider from './contexts/languajeContextProvider.jsx'
+import LanguajeContextProvider from './contexts/LanguajeContextProvider.jsx'
 
 
 

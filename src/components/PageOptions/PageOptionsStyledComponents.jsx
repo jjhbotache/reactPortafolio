@@ -11,7 +11,7 @@ const fadeIn = keyframes`
 `;
 
 export const PageOptionsContainer = styled.ol`
-  position: absolute;
+  position: fixed;
   z-index: 2;
   list-style: none;
   display: flex;
@@ -29,7 +29,8 @@ export const PageOptionsContainer = styled.ol`
   
   top: 0vh;left: 2vw;
   @media screen and (width > ${mdScreenWidth}) {
-    top: 3vh;left: 3vw;
+    top: 0.4vh; left: 7vw;
+    font-size: .3rem;
   }
 
   

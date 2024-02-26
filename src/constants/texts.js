@@ -47,6 +47,10 @@ const texts = {
       smallDescription:{
         en: "Here are some of the projects I've worked on",
         es: "Aqui estan algunos de los proyectos en los que he trabajado"
+      },
+      checkItOut:{
+        en: "Check it out",
+        es: "Revisar"
       }
     },
 }

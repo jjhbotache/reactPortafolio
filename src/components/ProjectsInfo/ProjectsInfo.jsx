@@ -147,7 +147,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                   <p className="currentProjectInfo--description">{currentProject.description[languaje]}</p>
                   <video className="currentProjectInfo--video" src={currentProject.video} controls loop autoPlay muted></video>
                   <section className="currentProjectInfo--check-project-section">
-                    <h2 className="title">Check project</h2>
+                    <h2 className="title">{texts.projectsInfo.checkItOut[languaje]}</h2>
                     <div className="check-on-options">
                       <Link className={"check-on-option " +  (currentProject.links[0].link === null  ? `check-on-option__disabled`  : "") } to={currentProject.links[0].link} target="_blank">
                         <img className="check-on-option--img" src={githubImg} alt="" srcset="" />

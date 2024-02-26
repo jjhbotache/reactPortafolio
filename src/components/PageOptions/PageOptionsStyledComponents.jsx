@@ -109,7 +109,7 @@ export const PageOptionsContainer = styled.ol`
       height: 100%;
       z-index: -1;
       border-radius: 1rem;
-      background: rgba(20,20,20,.8);
+      background: rgba(20,20,20,.9);
       filter: blur(.5rem);
     }
 

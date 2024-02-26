@@ -66,7 +66,7 @@ export const ProjectsContainer = styled.div`
     aspect-ratio: 1/1;
 
     box-sizing: border-box;
-    background: rgba(20, 20, 20, 1);
+    background: rgba(10, 10, 10, 1);
     margin-top: .4rem;
 
     cursor: grab;
@@ -139,14 +139,14 @@ export const ProjectsContainer = styled.div`
 
         border-radius: .2rem;
         padding: .2rem .7rem;
-        background: rgba(20, 20, 20, .6);
+        background: rgba(10, 10, 10, .6);
         color: ${primaryColor};
         font-size: 1.1rem;
 
         cursor: pointer;
         transition: all .1s ease-out;
         &:hover{
-          background: rgba(20, 20, 20, .8);
+          background: rgba(10, 10, 10, .8);
           box-shadow: 0 0 .5rem .1rem ${secondaryColor};
         }
       }
@@ -190,10 +190,10 @@ export const ProjectsContainer = styled.div`
       padding: 1rem;
       margin: 1rem 0;
       background: linear-gradient(to bottom, 
-      rgba(20, 20, 20, .0) 0%, 
-      rgba(20, 20, 20, 1) 15%, 
-      rgba(20, 20, 20, 1) 85% , 
-      rgba(20, 20, 20, .0) 100% );
+      rgba(10, 10, 10, .0) 0%, 
+      rgba(10, 10, 10, 1) 15%, 
+      rgba(10, 10, 10, 1) 85% , 
+      rgba(10, 10, 10, .0) 100% );
     }
     &--tag{
       font-size: .7rem;
@@ -205,7 +205,7 @@ export const ProjectsContainer = styled.div`
     }
 
     &--check-project-section{
-      background: linear-gradient(to bottom, rgba(20, 20, 20, .0) 0% , rgba(20, 20, 20, 1) 10%);
+      background: linear-gradient(to bottom, rgba(10, 10, 10, .0) 0% , rgba(10, 10, 10, 1) 10%);
       font-size: 1.2rem;
       color: ${secondaryColor};
       padding-bottom: 2rem;

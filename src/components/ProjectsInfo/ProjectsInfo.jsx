@@ -121,7 +121,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                       <SwiperSlide key={index} className="projectsSwiper--slide">
                         <h1 className="projectsSwiper--title">{project.title}</h1>
                         <img className="projectsSwiper--img" src={project.img} alt={project.title} />
-                        {!maximazed && <button className="projectsSwiper--btn" onClick={() => { projectsInfoContainerRef.current.scrollBy({ top: 500, behavior: 'smooth' }); }}>More</button>}
+                        {!maximazed && <button className="projectsSwiper--btn" onClick={() => { projectsInfoContainerRef.current.scrollBy({ top: 500, behavior: 'smooth' }); }}>{texts.projectsInfo.more[languaje]}</button>}
                       </SwiperSlide>
                     )
                   })
@@ -150,11 +150,11 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     <h2 className="title">{texts.projectsInfo.checkItOut[languaje]}</h2>
                     <div className="check-on-options">
                       <Link className={"check-on-option " +  (currentProject.links[0].link === null  ? `check-on-option__disabled`  : "") } to={currentProject.links[0].link} target="_blank">
-                        <img className="check-on-option--img" src={githubImg} alt="" srcset="" />
+                        <img className="check-on-option--img" src={githubImg} alt="github img" />
                         <h3 className="check-on-option--name">Github</h3>
                       </Link>
                       <Link className={"check-on-option " +  (currentProject.links[1].link === null  ? `check-on-option__disabled`  : "") } to={currentProject.links[1].link} target="_blank">
-                        <img className="check-on-option--img" src={browserImg} alt="" srcset="" />
+                        <img className="check-on-option--img" src={browserImg} alt="browser img"/>
                         <h3 className="check-on-option--name">Web</h3>
                       </Link>
                     </div>

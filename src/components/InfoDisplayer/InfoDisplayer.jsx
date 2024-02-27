@@ -95,7 +95,7 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
       console.log('toast created!');
       if (!alreadyNotifiedAboutMinimize.current) {
         alreadyNotifiedAboutMinimize.current = true;
-        toast.info('Double click to minimize!', {
+        toast.info(texts.infoDisplayer.minimizeToast[languaje], {
           position: "bottom-center",
           autoClose: 3000,
           hideProgressBar: false,

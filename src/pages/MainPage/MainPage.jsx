@@ -21,15 +21,24 @@ export default function MainPage() {
 
   const chanels = [
     {
-      name: languaje === "en" ? "About" : "Acerca de mi",
+      name:{
+        en: texts.chanels.chanels.about.en,
+        es: texts.chanels.chanels.about.es
+      },
       value: "about"
     },
     {
-      name: languaje === "en" ? "Projects" : "Proyectos",
+      name: {
+        en: texts.chanels.chanels.projects.en,
+        es: texts.chanels.chanels.projects.es
+      },
       value: "projects"
     },
     {
-      name: languaje === "en" ? "Contact" : "Contacto",
+      name: {
+        en: texts.chanels.chanels.contact.en,
+        es: texts.chanels.chanels.contact.es
+      },
       value: "contact"
     },
   ]

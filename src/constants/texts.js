@@ -4,21 +4,36 @@ const texts = {
         en: "Frontend Developer - Python developer",
         es: "Desarrollador Frontend - Desarrollador Python"
       },
-      chooseChannel:{
-        en: "Choose a channel",
-        es: "Elige un canal"
-      }
     },
     chanels:{
       chooseChannel:{
         en: "Choose a channel",
         es: "Elige un canal"
+      },
+      chanels:{
+        about:{
+          en: "About me",
+          es: "Acerca de mi"
+        },
+        projects:{
+          en: "Projects",
+          es: "Proyectos"
+        },
+        contact:{
+          en: "Contact",
+          es: "Contacto"
+        }
       }
+
     },
     infoDisplayer:{
       noInfo:{
         en: "Choose a channel to display information!",
         es: "Elige un canal para mostrar información!"
+      },
+      minimizeToast:{
+        en: "Double click to minimize!",
+        es: "Doble click para minimizar!"
       }
     },
     aboutInfo:{
@@ -47,6 +62,10 @@ const texts = {
       smallDescription:{
         en: "Here are some of the projects I've worked on",
         es: "Aqui estan algunos de los proyectos en los que he trabajado"
+      },
+      more:{
+        en: "More",
+        es: "Mas"
       },
       checkItOut:{
         en: "Check it out",

@@ -71,7 +71,7 @@ export default function LandingPage() {
             }
           }
         />
-        <small className="main-content--instruction">click us</small>
+        <small className="main-content--instruction">Click us - Cliquéanos</small>
       </div>
 
     </LandingPageStyledComponent>

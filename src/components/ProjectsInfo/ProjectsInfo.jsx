@@ -139,7 +139,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                 >   
                   
                   <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
@@ -152,21 +152,21 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     </ul>
                   </motion.div>
                   <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
                   <p className="currentProjectInfo--description">{currentProject.description[languaje]}</p>
                   </motion.div>
                   <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
                   <video className="currentProjectInfo--video" src={currentProject.video} controls loop autoPlay muted></video>
                   </motion.div>
                   <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >

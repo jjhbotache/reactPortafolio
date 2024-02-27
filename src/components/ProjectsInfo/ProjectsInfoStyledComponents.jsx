@@ -187,12 +187,12 @@ export const ProjectsContainer = styled.div`
       justify-content: center;
       align-items: center;
       list-style: none;
-      padding: 1rem;
+      padding: 3vw 1rem;
       margin: 1rem 0;
       background: linear-gradient(to bottom, 
       rgba(10, 10, 10, .0) 0%, 
-      rgba(10, 10, 10, 1) 15%, 
-      rgba(10, 10, 10, 1) 85% , 
+      rgba(30, 30, 30, 1) 15%, 
+      rgba(30, 30, 30, 1) 85% , 
       rgba(10, 10, 10, .0) 100% );
     }
     &--tag{
@@ -205,7 +205,7 @@ export const ProjectsContainer = styled.div`
     }
 
     &--check-project-section{
-      background: linear-gradient(to bottom, rgba(10, 10, 10, .0) 0% , rgba(10, 10, 10, 1) 10%);
+      background: linear-gradient(to bottom, rgba(30, 30, 30, .0) 0% , rgba(30, 30, 30, 1) 10%);
       font-size: 1.2rem;
       color: ${secondaryColor};
       padding-bottom: 2rem;

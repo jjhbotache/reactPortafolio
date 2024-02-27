@@ -1,9 +1,8 @@
 import { useContext, useEffect, useRef, useState } from "react"
 import { MainInfo, MainPageStyledComponent } from "./MainPageStyledComponents";
 import purpleTriangle from "../../assets/svgs/purple_triangle.svg"
-import Chanels from "../../components/Chanels/Chanels";
+import Channels from "../../components/Channels/Channels";
 import InfoDisplayer from "../../components/InfoDisplayer/InfoDisplayer";
-import { Bounce, ToastContainer } from "react-toastify";
 import PageOptions from "../../components/PageOptions/PageOptions";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
@@ -19,25 +18,25 @@ export default function MainPage() {
   
   
 
-  const chanels = [
+  const channels = [
     {
       name:{
-        en: texts.chanels.chanels.about.en,
-        es: texts.chanels.chanels.about.es
+        en: texts.channels.channels.about.en,
+        es: texts.channels.channels.about.es
       },
       value: "about"
     },
     {
       name: {
-        en: texts.chanels.chanels.projects.en,
-        es: texts.chanels.chanels.projects.es
+        en: texts.channels.channels.projects.en,
+        es: texts.channels.channels.projects.es
       },
       value: "projects"
     },
     {
       name: {
-        en: texts.chanels.chanels.contact.en,
-        es: texts.chanels.chanels.contact.es
+        en: texts.channels.channels.contact.en,
+        es: texts.channels.channels.contact.es
       },
       value: "contact"
     },
@@ -72,8 +71,14 @@ export default function MainPage() {
 
   }, []);
 
-  function onChanelSelect(chanel){
-    setTitleInfoToDisplay(chanel.value);
+  function onChannelSelect(channel){
+    setTitleInfoToDisplay(channel.value);
+  }
+
+  function onChangeInfoToDisplay(titleInfoToDisplay){
+    // look for the channels that has the same value as titleInfoToDisplay
+    const channel = channels.find(channel => channel.value === titleInfoToDisplay);
+    setTitleInfoToDisplay(channel.value);
   }
 
   return (
@@ -100,11 +105,11 @@ export default function MainPage() {
           </div>
 
           
-          <hr className="title-texts-and-chanels-separator" />
+          <hr className="title-texts-and-channels-separator" />
 
-          <Chanels chanels={chanels} onSelectChanel={onChanelSelect} />
+          <Channels channels={channels} onSelectChannel={onChannelSelect} />
 
-          <InfoDisplayer titleInfoToDisplay={titleInfoToDisplay}/>
+          <InfoDisplayer titleInfoToDisplay={titleInfoToDisplay} onChangeInfoToDisplay={onChangeInfoToDisplay}/>
         </div>
       </MainInfo>
       

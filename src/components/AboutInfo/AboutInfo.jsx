@@ -4,10 +4,13 @@ import { useContext, useRef } from "react";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 import { useEffect } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-export default function AboutInfo({onScrolled}) {
+export default function AboutInfo({onScrolled, onWatchProjects, onContactMe}) {
   const {languaje} = useContext(GlobalStateContext);
-
+  const [typed, setTyped] = useState(false);
 
 
   return(
@@ -26,13 +29,23 @@ export default function AboutInfo({onScrolled}) {
               .pauseFor(2000)
               .typeString(texts.aboutInfo.text3[languaje])
               .pasteString('<br/><br/>')
+              .callFunction(()=>{setTyped(true)})
               .start();
-          }
-          }
+          }}
           options={{
             delay: 1,
           }}
         />
+        {
+          typed && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 }}}
+          >
+            <h2 className="continue-exploring-text">{texts.aboutInfo.continueExploring[languaje]}</h2>
+          </motion.div>
+          )
+        }
       </div>
     </AboutInfoContainer>
   )

@@ -11,7 +11,7 @@ import containerResizer from "../../helpers/containerResizer";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 
-export default function InfoDisplayer({titleInfoToDisplay}) {
+export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}) {
   const tvRef = useRef(null);
   const [maximazed,setMaximazed   ] = useState(false);
   const handleTvMaximazedLastTime = useRef(0);
@@ -19,7 +19,10 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
   const alreadyNotifiedAboutMinimize = useRef(false);
   const {languaje} = useContext(GlobalStateContext);
 
-  
+  function changeInfoToDisplay(title) {
+    console.log('changeInfoToDisplay', title);
+    onChangeInfoToDisplay(title);
+  }
 
   function handleTvMaximazed(
     only = undefined// "open" or "close"
@@ -86,9 +89,6 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
   }, [titleInfoToDisplay]);
 
   useEffect(() => {
-
-    
-
     const tv = tvRef.current;
     if(maximazed){
       tv.classList.add('tv__maximazed')
@@ -121,11 +121,19 @@ export default function InfoDisplayer({titleInfoToDisplay}) {
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null
           ? 
-            titleInfoToDisplay === "about" ? <AboutInfo onScrolled={e=>handleTvMaximazed("open")} /> :
+            titleInfoToDisplay === "about" ? <AboutInfo 
+            onScrolled={e=>handleTvMaximazed("open")}
+            onWatchProjects={e=>{changeInfoToDisplay("projects")}}
+            onContactMe={e=>{changeInfoToDisplay("contact")}}
+             /> :
+
+
             titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>handleTvMaximazed("open")} maximazed={maximazed} /> :
+
+
             titleInfoToDisplay === "contact" ? <ContactInfo/> : undefined
 
-          : <span className="no-chanel-alert">{texts.infoDisplayer.noInfo[languaje]}</span>
+          : <span className="no-channel-alert">{texts.infoDisplayer.noInfo[languaje]}</span>
           }
         </div>
       </div>

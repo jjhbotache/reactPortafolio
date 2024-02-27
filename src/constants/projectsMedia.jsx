@@ -6,6 +6,7 @@ import rickAndMorty from '../assets/projects/imgs/rickAndMorty.png';
 import surebetsBettor from '../assets/projects/imgs/surebetsBettor.jpeg';
 import SW from '../assets/projects/imgs/SW.png';
 import ticTacToe from '../assets/projects/imgs/ticTacToe.jpeg';
+import netflixClone from '../assets/projects/imgs/netflixClone.png';
 
 // videos
 import disneyCloneVideo from "../assets/projects/videos/disneyCloneVideo_reducido.mp4"
@@ -16,10 +17,31 @@ import rickAndMortyVideo from "../assets/projects/videos/rickAndMortyVideo_reduc
 import surebetsBettorVideo from "../assets/projects/videos/surebetsBettorVideo_reducido.mp4"
 import SWVideo from "../assets/projects/videos/SWVideo_reducido.mp4"
 import ticTacToeVideo from "../assets/projects/videos/ticTacToeVideo_reducido.mp4"
+import netflixCloneVideo from "../assets/projects/videos/netflixCloneVideo.mp4"
 
 const projectsMedia = [
   {
-    title: "Disney+ Clone",
+    title: "NetflixClone Clone",
+    tags: ["React", "Redux", "Firebase", "Styled Components"],
+    description: {
+      en: "A web app that shows information about Netflix movies and series.",
+      es: "Una aplicación web que muestra información sobre películas y series de Netflix."
+    },
+    img: netflixClone,
+    video: netflixCloneVideo,
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/netflixClone"
+      },
+      {
+        name: "Web",
+        link: "https://netflix-clone-beta-seven-55.vercel.app/"
+      }
+    ]
+  },
+  {
+    title: "Disney+ firstpage Clone",
     tags: ["React", "Redux", "Firebase", "Styled Components"],
     description: {
       en: "A web app that shows information about Disney movies and series.",

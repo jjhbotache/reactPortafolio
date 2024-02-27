@@ -5,12 +5,12 @@ const texts = {
         es: "Desarrollador Frontend - Desarrollador Python"
       },
     },
-    chanels:{
+    channels:{
       chooseChannel:{
         en: "Choose a channel",
         es: "Elige un canal"
       },
-      chanels:{
+      channels:{
         about:{
           en: "About me",
           es: "Acerca de mi"
@@ -52,7 +52,11 @@ const texts = {
       title:{
         en: "About me",
         es: "Acerca de mi"
-      }
+      },
+      continueExploring:{
+        en:"You can continue exploring my projects or contact me through the channels menu!",
+        es:"Puedes continuar explorando mis proyectos o contactarme a través del menu de canales!"
+      },
     },
     projectsInfo:{
       title:{

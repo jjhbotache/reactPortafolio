@@ -121,7 +121,7 @@ export const MainInfo= styled.main`
 
     grid-template-areas: 
     "title-text tv"
-    "chanels tv"
+    "channels tv"
     ;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr;
@@ -130,7 +130,7 @@ export const MainInfo= styled.main`
       grid-template-areas: 
       "title-text"
       "separator"
-      "chanels"
+      "channels"
       "tv"
       ;
       grid-template-columns: 1fr;
@@ -174,7 +174,7 @@ export const MainInfo= styled.main`
       }
     }
 
-    .title-texts-and-chanels-separator{
+    .title-texts-and-channels-separator{
       display: none;
       @media screen and (width < ${mdScreenWidth}){
         display: block;
@@ -189,8 +189,8 @@ export const MainInfo= styled.main`
     }
   
 
-    .chanels{
-      grid-area: chanels;
+    .channels{
+      grid-area: channels;
       display: flex;
       justify-content: start;
       align-items: start;
@@ -205,7 +205,7 @@ export const MainInfo= styled.main`
         align-items: center;
       }
 
-      .chanels--list{
+      .channels--list{
         list-style: none;
         padding: 0;
         margin: 0;

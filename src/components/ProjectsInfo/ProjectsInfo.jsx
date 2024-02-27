@@ -29,6 +29,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
 
   const {languaje} = useContext(GlobalStateContext);
 
+  const timeToGoUpInSecs = .8;
 
   function welcomeTextFadeOut(){
     welcomeTextRef.current?.classList.add("welcomeText__fade-out");
@@ -136,29 +137,53 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                 transition={{ duration: 0.2, ease: "easeOut"}}
                 className="currentProjectInfo"
                 >   
-
-                  <hr className="currentProjectInfo--separator" />
-                  <h1 className="currentProjectInfo--name">{currentProject.title}</h1>
-                  <ul className="currentProjectInfo--tags-container">
-                    {
-                    currentProject.tags.map((tag, index)=>(<li key={index} className="currentProjectInfo--tag">{tag}</li>))
-                    }
-                  </ul>
+                  
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
+                  >
+                    <hr className="currentProjectInfo--separator" />
+                    <h1 className="currentProjectInfo--name">{currentProject.title}</h1>
+                    <ul className="currentProjectInfo--tags-container">
+                      {
+                      currentProject.tags.map((tag, index)=>(<li key={index} className="currentProjectInfo--tag">{tag}</li>))
+                      }
+                    </ul>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
+                  >
                   <p className="currentProjectInfo--description">{currentProject.description[languaje]}</p>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
+                  >
                   <video className="currentProjectInfo--video" src={currentProject.video} controls loop autoPlay muted></video>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
+                  >
                   <section className="currentProjectInfo--check-project-section">
                     <h2 className="title">{texts.projectsInfo.checkItOut[languaje]}</h2>
                     <div className="check-on-options">
-                      <Link className={"check-on-option " +  (currentProject.links[0].link === null  ? `check-on-option__disabled`  : "") } to={currentProject.links[0].link} target="_blank">
-                        <img className="check-on-option--img" src={githubImg} alt="github img" />
-                        <h3 className="check-on-option--name">Github</h3>
-                      </Link>
-                      <Link className={"check-on-option " +  (currentProject.links[1].link === null  ? `check-on-option__disabled`  : "") } to={currentProject.links[1].link} target="_blank">
-                        <img className="check-on-option--img" src={browserImg} alt="browser img"/>
-                        <h3 className="check-on-option--name">Web</h3>
-                      </Link>
+                      {
+                        currentProject.links.map((link, index)=>(
+                          <Link key={index} className={"check-on-option " +  (link.link === null  ? `check-on-option__disabled`  : "") } to={link.link} target="_blank">
+                            <img className="check-on-option--img" src={ link.name.includes("Github") ? githubImg : browserImg } alt="option img" />
+                            <h3 className="check-on-option--name">{link.name}</h3>
+                          </Link>
+                        ))
+                      }
                     </div>
                   </section>
+                  </motion.div>
 
 
                 </motion.div>

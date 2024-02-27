@@ -146,6 +146,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           transform: translate(-50%,-50%); */
           z-index: 1;
 
+          padding: 10%;
           width: 105%;
           height: 105%;
 

@@ -11,6 +11,7 @@ const fadeIn = keyframes`
   }
 `;
 
+
 export const ProjectsInfoContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -162,8 +163,29 @@ export const ProjectsContainer = styled.div`
     }
 
     &--name{
+      padding: 0 1rem;
       font-size: 1.5rem;
       color: ${secondaryColor};
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        bottom: -15%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 90%;
+        height: .17rem;
+        background: linear-gradient(
+          to right,
+          transparent 0%,
+          ${primaryColor} 30%,
+          ${secondaryColor} 50%,
+          ${primaryColor} 70%,
+          transparent 100%
+        );
+        border-radius: 50%;
+      }
     }
     &--description{
       margin-bottom: 1rem;

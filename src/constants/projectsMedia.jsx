@@ -72,11 +72,11 @@ const projectsMedia = [
     video: memorableWebpageVideo,
     links: [
       {
-        name: "Github - frontend",
+        name: "Github frontend",
         link: "https://github.com/jjhbotache/memorableWebStore"
       },
       {
-        name: "Github - backend",
+        name: "Github backend",
         link: "https://github.com/jjhbotache/school_stage_back"
       },
       {

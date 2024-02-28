@@ -27,7 +27,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
   const [infoVariant, setInfoVariant] = useState("hidden");
   const projectsInfoContainerRef = useRef(null);
 
-  const {languaje} = useContext(GlobalStateContext);
+  const {language} = useContext(GlobalStateContext);
 
   const timeToGoUpInSecs = .8;
 
@@ -65,7 +65,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
               onInit={typewriter=>{
                 typewriter
                 .pauseFor(1000)
-                .typeString(texts.projectsInfo.title[languaje])
+                .typeString(texts.projectsInfo.title[language])
                 .pauseFor(1000)
                 .callFunction(()=>{setTitleTyped(true);})
                 .start();
@@ -82,7 +82,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                 <Typewriter
                   onInit={typewriter=>{
                     typewriter
-                    .typeString(texts.projectsInfo.smallDescription[languaje])
+                    .typeString(texts.projectsInfo.smallDescription[language])
                     .pauseFor(1000)
                     .callFunction(welcomeTextFadeOut)
 
@@ -122,7 +122,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                       <SwiperSlide key={index} className="projectsSwiper--slide">
                         <h1 className="projectsSwiper--title">{project.title}</h1>
                         <img className="projectsSwiper--img" src={project.img} alt={project.title} />
-                        {!maximazed && <button className="projectsSwiper--btn" onClick={() => { projectsInfoContainerRef.current.scrollBy({ top: 500, behavior: 'smooth' }); }}>{texts.projectsInfo.more[languaje]}</button>}
+                        {!maximazed && <button className="projectsSwiper--btn" onClick={() => { projectsInfoContainerRef.current.scrollBy({ top: 500, behavior: 'smooth' }); }}>{texts.projectsInfo.more[language]}</button>}
                       </SwiperSlide>
                     )
                   })
@@ -156,7 +156,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
-                  <p className="currentProjectInfo--description">{currentProject.description[languaje]}</p>
+                  <p className="currentProjectInfo--description">{currentProject.description[language]}</p>
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -171,7 +171,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
                   <section className="currentProjectInfo--check-project-section">
-                    <h2 className="title">{texts.projectsInfo.checkItOut[languaje]}</h2>
+                    <h2 className="title">{texts.projectsInfo.checkItOut[language]}</h2>
                     <div className="check-on-options">
                       {
                         currentProject.links.map((link, index)=>(

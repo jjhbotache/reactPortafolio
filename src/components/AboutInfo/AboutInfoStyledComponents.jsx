@@ -12,7 +12,7 @@ const shine = keyframes`
   50% {
     text-shadow: 0 0 .2rem  ${primaryColor};
     transform: scale(1.01);
-    letter-spacing: .15rem;
+    letter-spacing: .12rem;
   }
 `;
 
@@ -58,6 +58,11 @@ export const AboutInfoContainer = styled.div`
 
   p {
     margin-bottom: 2rem;
+  }
+  .separator{
+    color : ${secondaryColor};
+    border: 1px solid ${secondaryColor};
+    box-shadow: 0 0 .5rem ${secondaryColor};
   }
   .continue-exploring-text{
     margin-top: 2rem;

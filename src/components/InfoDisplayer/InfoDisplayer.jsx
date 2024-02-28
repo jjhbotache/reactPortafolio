@@ -17,7 +17,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
   const handleTvMaximazedLastTime = useRef(0);
 
   const alreadyNotifiedAboutMinimize = useRef(false);
-  const {languaje} = useContext(GlobalStateContext);
+  const {language} = useContext(GlobalStateContext);
 
   function changeInfoToDisplay(title) {
     console.log('changeInfoToDisplay', title);
@@ -95,7 +95,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
       console.log('toast created!');
       if (!alreadyNotifiedAboutMinimize.current) {
         alreadyNotifiedAboutMinimize.current = true;
-        toast.info(texts.infoDisplayer.minimizeToast[languaje], {
+        toast.info(texts.infoDisplayer.minimizeToast[language], {
           position: "bottom-center",
           autoClose: 3000,
           hideProgressBar: false,
@@ -121,11 +121,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null
           ? 
-            titleInfoToDisplay === "about" ? <AboutInfo 
-            onScrolled={e=>handleTvMaximazed("open")}
-            onWatchProjects={e=>{changeInfoToDisplay("projects")}}
-            onContactMe={e=>{changeInfoToDisplay("contact")}}
-             /> :
+            titleInfoToDisplay === "about" ? <AboutInfo onScrolled={e=>handleTvMaximazed("open")} /> :
 
 
             titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>handleTvMaximazed("open")} maximazed={maximazed} /> :
@@ -133,7 +129,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
 
             titleInfoToDisplay === "contact" ? <ContactInfo/> : undefined
 
-          : <span className="no-channel-alert">{texts.infoDisplayer.noInfo[languaje]}</span>
+          : <span className="no-channel-alert">{texts.infoDisplayer.noInfo[language]}</span>
           }
         </div>
       </div>

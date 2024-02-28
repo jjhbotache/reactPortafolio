@@ -84,7 +84,7 @@ export const PageOptionsContainer = styled.ol`
     }
   }
 
-  .languaje-chooser{
+  .language-chooser{
     position: fixed;
     width: 85%;
     height: 85%;
@@ -123,7 +123,7 @@ export const PageOptionsContainer = styled.ol`
       border: 1px solid ${primaryColor};
     }
 
-    .languaje-option{
+    .language-option{
       background: none;
       color: ${secondaryColor};
       font-size: 1.5rem;

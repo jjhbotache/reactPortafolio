@@ -14,7 +14,7 @@ export default function MainPage() {
   const mainComponentRef = useRef(null);
   const [titleInfoToDisplay, setTitleInfoToDisplay] = useState(null);
 
-  const { languaje } = useContext( GlobalStateContext )
+  const { language } = useContext( GlobalStateContext )
   
   
 
@@ -101,7 +101,7 @@ export default function MainPage() {
           <div className="title-texts">
             <h1 className="name name__first">Juan Jose</h1>
             <h2 className="name name__last">Huertas Botache</h2>
-            <h3 className="rol">{texts.mainPageTexts.rol[languaje]}</h3>
+            <h3 className="rol">{texts.mainPageTexts.rol[language]}</h3>
           </div>
 
           

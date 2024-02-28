@@ -7,8 +7,8 @@ import { useEffect } from "react";
 export default function Channels({channels,onSelectChannel}) {
   const detailsRef = useRef(null);
   const detailsInfoRef = useRef(null);
-  const {languaje} = useContext(GlobalStateContext);
-  const [channelText, setChannelText] = useState(texts.channels.chooseChannel[languaje]);
+  const {language} = useContext(GlobalStateContext);
+  const [channelText, setChannelText] = useState(texts.channels.chooseChannel[language]);
   const [currentChannel, setcurrentChannel] = useState(undefined);
 
 
@@ -30,9 +30,9 @@ export default function Channels({channels,onSelectChannel}) {
   useEffect(() => {
     console.log("currentChannel",currentChannel);
     setChannelText(
-      currentChannel ? currentChannel.name[languaje] : texts.channels.chooseChannel[languaje]
+      currentChannel ? currentChannel.name[language] : texts.channels.chooseChannel[language]
     );
-  }, [languaje, currentChannel]);
+  }, [language, currentChannel]);
   return (
     <ChannelsStyledComponent>
       <details className="channels-details" onClick={onDetailsClick} ref={detailsRef}>
@@ -40,7 +40,7 @@ export default function Channels({channels,onSelectChannel}) {
         <section className="channels-details--info" ref={detailsInfoRef} >
           <ol>
             {channels.map((channel, index) =>( 
-            <li key={index} className="channels-select--options" onClick={e=>{channelClicked(channel)}} value={channel.value}>{channel.name[languaje]}</li>
+            <li key={index} className="channels-select--options" onClick={e=>{channelClicked(channel)}} value={channel.value}>{channel.name[language]}</li>
             ))}
           </ol>
         </section>

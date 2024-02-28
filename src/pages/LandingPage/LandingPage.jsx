@@ -57,17 +57,31 @@ export default function LandingPage() {
       <div className="main-content" ref={mainContentRef}>
         <Typewriter
           onInit={(typewriter) => {
-            typewriter.typeString(`Hey, I'm Juan, a developer.`)
-              .callFunction(() => {
-                console.log('String typed out!');
-              })
-              .start();
+            typewriter
+            .typeString(`Hola`)
+            .pauseFor(500)
+            .typeString(`, soy Juan,`)
+            .pauseFor(250)
+            .typeString(`un desarrollador`)
+            .pauseFor(2000)
+            .deleteAll()
+            .typeString(`Hey`)
+            .pauseFor(500)
+            .typeString(`, I'm Juan,`)
+            .pauseFor(250)
+            .typeString(`a developer`)
+            .pauseFor(2000)
+            .deleteAll()
+            .pauseFor(500)
+            .start();
           }}
           options={
             {
               wrapperClassName: "main-content--title",
               cursorClassName: "main-content--title__cursor",
-              // cursor: " ",
+              loop: true,
+              delay: 30,
+              deleteSpeed: 30,
             }
           }
         />

@@ -29,7 +29,7 @@ export const PageOptionsContainer = styled.ol`
   
   top: 0vh;left: 2vw;
   @media screen and (width > ${mdScreenWidth}) {
-    top: 0.4vh; left: 7vw;
+    top: 2vh; left: 5vw;
     font-size: .3rem;
   }
 

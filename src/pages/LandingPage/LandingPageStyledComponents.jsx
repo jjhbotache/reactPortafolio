@@ -39,6 +39,7 @@ export const LandingPageStyledComponent = styled.main`
     transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .main-content{
+    word-break: break-word ;
     width: 92vw;
     min-height: 50vh;
     display: flex;
@@ -48,6 +49,10 @@ export const LandingPageStyledComponent = styled.main`
     transition: all 6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: .3rem;
     padding: 2rem;
+    @media screen and (width < ${mdScreenWidth}) {
+      padding: .2rem;
+      font-size: .8rem;
+    }
     z-index: 1;
     &:hover{
       cursor: pointer;

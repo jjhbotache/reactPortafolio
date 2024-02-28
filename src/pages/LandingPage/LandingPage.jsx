@@ -62,7 +62,7 @@ export default function LandingPage() {
             .pauseFor(500)
             .typeString(`, soy Juan,`)
             .pauseFor(250)
-            .typeString(`un desarrollador`)
+            .typeString(`un programador`)
             .pauseFor(2000)
             .deleteAll()
             .typeString(`Hey`)

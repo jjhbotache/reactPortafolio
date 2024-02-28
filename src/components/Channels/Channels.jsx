@@ -28,7 +28,7 @@ export default function Channels({channels,onSelectChannel}) {
   }
 
   useEffect(() => {
-    console.log("currentChannel",currentChannel);
+    // console.log("currentChannel",currentChannel);
     setChannelText(
       currentChannel ? currentChannel.name[language] : texts.channels.chooseChannel[language]
     );

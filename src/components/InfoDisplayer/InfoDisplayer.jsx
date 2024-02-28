@@ -65,6 +65,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
     }
 
     containerResizer(tvRef.current);
+
     window.addEventListener('keydown', onEscKeyPressed);
     window.addEventListener('popstate', onBack);
     resizeObserver.observe(tvRef.current);
@@ -76,7 +77,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
   }, []);
 
   useEffect(() => {
-    console.log('titleInfoToDisplay', titleInfoToDisplay);
+    // console.log('titleInfoToDisplay', titleInfoToDisplay);
     const tvNoiseGif = tvRef.current.querySelector('img');
     
     // deal with  the blinking effect

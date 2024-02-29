@@ -123,7 +123,7 @@ export const MainInfo= styled.main`
     "title-text tv"
     "channels tv"
     ;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: .7fr 1fr;
     grid-template-rows: 1fr 1fr;
     
     @media screen and (width < ${mdScreenWidth}){
@@ -142,7 +142,7 @@ export const MainInfo= styled.main`
       display: flex;
       flex-direction: column;
       justify-content: end;
-      padding: 0 2rem 0 1rem;
+      padding: 0 .5rem 0 .5rem;
 
       @media screen and (width < ${mdScreenWidth}){
         justify-content: center;

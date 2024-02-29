@@ -6,7 +6,7 @@ export const CoolBtnContainer = styled.button`
   overflow: hidden;
   border-radius: 999rem;
   min-width: 20vw;
-  padding: 1.5vh 0;
+  padding: 1.5vh 5vw;
   
   ${
     props => props.$typeBtn === "primary" ? 

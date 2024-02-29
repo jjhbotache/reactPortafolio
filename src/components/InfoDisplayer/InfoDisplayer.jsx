@@ -54,7 +54,8 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(entries => {
-      entries.forEach(entry => {containerResizer(entry.target)});
+      entries.forEach(entry => {
+        containerResizer(entry.target)});
     });
     
     function onEscKeyPressed(e) {

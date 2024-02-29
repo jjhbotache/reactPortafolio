@@ -11,6 +11,8 @@ import CVFile from "../../assets/files/JUAN JOSE HUERTAS BOTACHE CV.pdf";
 import CVimg from "../../assets/images/JUAN JOSE HUERTAS BOTACHE CV_pages-to-jpg-0001.jpg";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import containerResizer from "../../helpers/containerResizer";
+
 
 
 export default function AboutInfo({onScrolled}) {
@@ -18,19 +20,15 @@ export default function AboutInfo({onScrolled}) {
   const [typed, setTyped] = useState(false);
   const typeWriterContainerRef = useRef(null);
   const dialogRef = useRef(null);
+  const modalCvImgRef = useRef(null);
 
-  // function doSomething(e) {
-  //   console.log(typeWriterContainerRef.current);
-  //   typeWriterContainerRef.current.onInit = (typewriter) => {
-  //     typewriter
-  //       .deleteAll()
-  //       .pauseFor(1000)
-  //       .typeString("Hello")
-  //       .pauseFor(2000)
-  //       .typeString("World")
-  //       .start();
+  // useEffect(() => {
+  //   // creaete a event listener to resize the modal image
+  //   window.addEventListener('resize', ()=>containerResizer(modalCvImgRef.current));
+  //   return () => {
+  //     window.removeEventListener('resize', ()=>containerResizer(modalCvImgRef.current));
   //   }
-  // }
+  // }, []);
 
   useEffect(() => {
     // delete everythin inside the container
@@ -57,7 +55,6 @@ export default function AboutInfo({onScrolled}) {
   }
   , [language]);
 
-
   function downloadCV() {
     const link = document.createElement('a');
     link.href = CVFile;
@@ -71,6 +68,7 @@ export default function AboutInfo({onScrolled}) {
 
   function watchInHereCV(e) {
     dialogRef.current.showModal();
+    // containerResizer(modalCvImgRef.current);
   }
 
   return(
@@ -102,7 +100,7 @@ export default function AboutInfo({onScrolled}) {
             <img src={CVimg} alt="CV" />
           </motion.div>
           <dialog className="CV-modal" ref={dialogRef} onClick={e => dialogRef.current.close()}>
-            <img src={CVimg} alt="CV" />
+            <img ref={modalCvImgRef} src={CVimg} alt="CV" />
             <small>{texts.aboutInfo.closeModal[language]}</small>
           </dialog>
 

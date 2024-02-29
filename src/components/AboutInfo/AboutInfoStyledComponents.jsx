@@ -113,9 +113,12 @@ export const AboutInfoContainer = styled.div`
       opacity: 1;
       img{
         display:block;
-        height: 100%;
-        width: auto;
         border-radius: .5rem;
+
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 100%;
+
       }
     }
   }

@@ -2,6 +2,7 @@ export default function containerResizer(container, maxSize = 100) {
   // console.log("containerResizer");
   container.style.width = `${maxSize}%`;
   container.style.height = `${maxSize}%`;
+  container.style.aspectRatio = "unset";
   const sizes = [container.offsetWidth, container.offsetHeight];
 
   if (sizes[0] === sizes[1]){

@@ -39,7 +39,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
 
     
     const mdScreenWidthInPx = parseInt(mdScreenWidth.slice(0, -2));
-    if (window.innerWidth > mdScreenWidthInPx || !titleInfoToDisplay ) {
+    if (!titleInfoToDisplay ) {
       console.log("big screen or no titleInfoToDisplay");
     }else{
       setMaximazed(
@@ -53,10 +53,10 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
   }
 
   useEffect(() => {
-    const resizeObserver = new ResizeObserver(entries => {
-      entries.forEach(entry => {
-        containerResizer(entry.target)});
-    });
+    // const resizeObserver = new ResizeObserver(entries => {
+    //   entries.forEach(entry => {
+    //     containerResizer(entry.target)});
+    // });
     
     function onEscKeyPressed(e) {
       if (e.key === "Escape" && maximazed) handleTvMaximazed("close")
@@ -69,11 +69,13 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
 
     window.addEventListener('keydown', onEscKeyPressed);
     window.addEventListener('popstate', onBack);
-    resizeObserver.observe(tvRef.current);
+    window.addEventListener('resize', e=>containerResizer(tvRef.current));
+    // resizeObserver.observe(tvRef.current);
     return () => {
       window.removeEventListener('keydown', onEscKeyPressed);
       window.removeEventListener('popstate', onBack);
-      resizeObserver.disconnect()
+      window.removeEventListener('resize', e=>containerResizer(tvRef.current));
+      // resizeObserver.disconnect()
     };
   }, []);
 

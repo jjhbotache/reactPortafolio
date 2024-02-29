@@ -70,4 +70,7 @@ export const AboutInfoContainer = styled.div`
     animation: ${shine} 2s infinite;
   }
 
+  .btn-container{
+    margin-top: 2rem;
+  }
 `;

@@ -72,7 +72,8 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
               }}
               options={{
                 wrapperClassName: "title",
-                cursor: ""
+                cursor: "",
+                delay: 20
               }}
             />
             {
@@ -90,7 +91,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                   }}
                   options={{
                     wrapperClassName: "subtitle--text",
-                    delay: 40,
+                    delay: 10,
                     cursor: ""
                   }}
                 />

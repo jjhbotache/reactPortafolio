@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
   --toastify-color-info: ${lightColor};
   }
+
 `;
 
 export default GlobalStyles;

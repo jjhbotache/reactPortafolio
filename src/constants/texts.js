@@ -57,6 +57,14 @@ const texts = {
         en:"You can continue exploring my projects or contact me through the channels menu!",
         es:"Puedes continuar explorando mis proyectos o contactarme a través del menu de canales!"
       },
+      downloadCV:{
+        en: "Download CV",
+        es: "Descargar CV"
+      },
+      watchCV:{
+        en: "Watch CV",
+        es: "Ver CV"
+      }
     },
     projectsInfo:{
       title:{

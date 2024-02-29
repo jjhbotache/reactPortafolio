@@ -6,7 +6,10 @@ import texts from "../../constants/texts";
 import { useEffect } from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import CoolBtn from "../ProjectsInfo/CoolBtn/CoolBtn";
+import CVFile from "../../assets/files/JUAN JOSE HUERTAS BOTACHE CV.pdf";
+
+
 
 export default function AboutInfo({onScrolled}) {
   const {language} = useContext(GlobalStateContext);
@@ -40,10 +43,10 @@ export default function AboutInfo({onScrolled}) {
        .pauseFor(1000)
        .typeString(texts.aboutInfo.text1[language])
        .pasteString('<br/><br/>')
-       .pauseFor(2000)
+       .pauseFor(1000)
        .typeString(texts.aboutInfo.text2[language])
        .pasteString('<br/><br/>')
-       .pauseFor(2000)
+       .pauseFor(1000)
        .typeString(texts.aboutInfo.text3[language])
        .pasteString('<br/><br/>')
        .callFunction(()=>{setTyped(true)})
@@ -53,9 +56,15 @@ export default function AboutInfo({onScrolled}) {
   , [language]);
 
 
+  function downloadCV() {
+    const link = document.createElement('a');
+    link.href = CVFile;
+    link.download = 'Juan Jose Huertas Botache CV.pdf';
+    link.click();
+  }
 
   return(
-    <AboutInfoContainer onScroll={onScrolled}>
+    <AboutInfoContainer onScroll={onScrolled} onClick={e=>setTyped(true)}>
       <div className="content">
         <h1>{texts.aboutInfo.title[language] }</h1>
         {/* <button onClick={doSomething}>hi</button> */}
@@ -63,13 +72,24 @@ export default function AboutInfo({onScrolled}) {
         
         {
           typed && (
+            <>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 }}}
+            >
+              <hr className="separator" />
+              <h2 className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h2>
+            </motion.div>
+
           <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 }}}
+          initial={{ opacity: 0, scale: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 1 }}}
+          className="btn-container"
           >
-            <hr className="separator" />
-            <h2 className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h2>
+             <CoolBtn text={texts.aboutInfo.downloadCV[language]} onClick={downloadCV}/>
+             {/* <CoolBtn $type="secondary" text={texts.aboutInfo.watchCV[language]}/> */}
           </motion.div>
+          </>
           )
         }
       </div>

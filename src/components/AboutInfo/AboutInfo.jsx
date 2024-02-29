@@ -8,13 +8,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import CoolBtn from "../ProjectsInfo/CoolBtn/CoolBtn";
 import CVFile from "../../assets/files/JUAN JOSE HUERTAS BOTACHE CV.pdf";
-
+import CVimg from "../../assets/images/JUAN JOSE HUERTAS BOTACHE CV_pages-to-jpg-0001.jpg";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function AboutInfo({onScrolled}) {
   const {language} = useContext(GlobalStateContext);
   const [typed, setTyped] = useState(false);
   const typeWriterContainerRef = useRef(null);
+  const dialogRef = useRef(null);
 
   // function doSomething(e) {
   //   console.log(typeWriterContainerRef.current);
@@ -37,7 +40,6 @@ export default function AboutInfo({onScrolled}) {
      const typewriter = new Typewriter(typeWriterContainerRef.current, {
        delay: 1,
      });
-     console.log('typewriter', typewriter);
      // then, add the text to the typewriter
      typewriter
        .pauseFor(1000)
@@ -63,6 +65,14 @@ export default function AboutInfo({onScrolled}) {
     link.click();
   }
 
+  function watchCV() {
+    window.open(CVFile, '_blank');
+  }
+
+  function watchInHereCV(e) {
+    dialogRef.current.showModal();
+  }
+
   return(
     <AboutInfoContainer onScroll={onScrolled} onClick={e=>setTyped(true)}>
       <div className="content">
@@ -74,20 +84,35 @@ export default function AboutInfo({onScrolled}) {
           typed && (
             <>
             <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 }}}
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0, transition: { duration: 1 }}}
             >
               <hr className="separator" />
-              <h2 className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h2>
+              <h3 className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h3>
+              <hr className="separator" />
             </motion.div>
 
           <motion.div
-          initial={{ opacity: 0, scale: 0.5, y: 100 }}
-          whileInView={{ opacity: 1, scale: 1, y:0, transition: { duration: 1 }}}
+          onClick={watchInHereCV}
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
+          className="cvImg-container"
+          >
+            <h2>Curriculum Vitae</h2>
+            <img src={CVimg} alt="CV" />
+          </motion.div>
+          <dialog className="CV-modal" ref={dialogRef} onClick={e => dialogRef.current.close()}>
+            <img src={CVimg} alt="CV" />
+            <small>{texts.aboutInfo.closeModal[language]}</small>
+          </dialog>
+
+          <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
           className="btn-container"
           >
              <CoolBtn text={texts.aboutInfo.downloadCV[language]} onClick={downloadCV}/>
-             {/* <CoolBtn $type="secondary" text={texts.aboutInfo.watchCV[language]}/> */}
+             <CoolBtn type="secondary" text={texts.aboutInfo.watchCV[language]} onClick={watchCV}/>
           </motion.div>
           </>
           )

@@ -64,6 +64,10 @@ const texts = {
       watchCV:{
         en: "Watch CV",
         es: "Ver CV"
+      },
+      closeModal:{
+        en: "click to exit",
+        es: "clickea para salir"
       }
     },
     projectsInfo:{

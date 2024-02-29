@@ -23,6 +23,7 @@ export const AboutInfoContainer = styled.div`
   font-size: 1rem;
 
   overflow-y: auto;
+  overflow-x: hidden;
   /* scrollbar-width: none; */
   height: 100%;
   padding: .5rem 1rem;
@@ -65,12 +66,66 @@ export const AboutInfoContainer = styled.div`
     box-shadow: 0 0 .5rem ${secondaryColor};
   }
   .continue-exploring-text{
-    margin-top: 2rem;
-    font-size: 1.5rem;
+    margin: 2rem 0;
+    font-size: .7rem;
     animation: ${shine} 2s infinite;
   }
 
+  .cvImg-container{
+    h2{
+      margin-bottom: 1rem;
+    }
+    img{
+      width: 100%;
+      max-width: 300px;
+      border-radius: 1rem;
+    }
+    cursor: pointer;
+  }
+  .CV-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: auto;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, .8);
+    backdrop-filter: blur(5px);
+    color: ${primaryColor};
+    
+    
+    opacity: 0;
+    z-index: -2;
+    transition: .5s all ease-out;
+
+    img{display:none;}
+    &[open]{
+      opacity: 1;
+      img{
+        display:block;
+        height: 100%;
+        width: auto;
+        border-radius: .5rem;
+      }
+    }
+  }
+
   .btn-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
     margin-top: 2rem;
   }
 `;

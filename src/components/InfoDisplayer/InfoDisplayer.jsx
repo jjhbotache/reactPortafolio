@@ -97,7 +97,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
       if (!alreadyNotifiedAboutMinimize.current) {
         alreadyNotifiedAboutMinimize.current = true;
         toast.info(texts.infoDisplayer.minimizeToast[language], {
-          position: "bottom-center",
+          position: "top-center",
           autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,

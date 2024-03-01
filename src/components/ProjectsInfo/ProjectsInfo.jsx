@@ -58,9 +58,9 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
     <ProjectsInfoContainer>
 
       {
-        showIntroRef.current 
+        showIntroRef.current
         ?(
-          <WelcomeText ref={welcomeTextRef}>
+          <WelcomeText ref={welcomeTextRef} onClick={setTitleTyped(true)}>
             <Typewriter
               onInit={typewriter=>{
                 typewriter

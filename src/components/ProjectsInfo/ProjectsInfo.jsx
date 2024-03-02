@@ -60,7 +60,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
       {
         showIntroRef.current
         ?(
-          <WelcomeText ref={welcomeTextRef} onClick={setTitleTyped(true)}>
+          <WelcomeText ref={welcomeTextRef} onClick={e=>setTitleTyped(true)}>
             <Typewriter
               onInit={typewriter=>{
                 typewriter

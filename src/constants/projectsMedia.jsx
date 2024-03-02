@@ -183,7 +183,7 @@ const projectsMedia = [
     links: [
       {
         name: "Github",
-        link: "https://github.com/jjhbotache/react_projects/tree/main/5)movieSearcher"
+        link: "https://github.com/jjhbotache/moviesSearcher"
       },
       {
         name: "Web",

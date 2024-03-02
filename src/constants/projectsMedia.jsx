@@ -128,7 +128,7 @@ const projectsMedia = [
     links: [
       {
         name: "Github",
-        link: "https://github.com/jjhbotache/react_projects/tree/main/7)SWapiProject"
+        link: "https://github.com/jjhbotache/SWApi_project"
       },
       {
         name: "Web",

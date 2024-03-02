@@ -272,27 +272,6 @@ const projectsMedia = [
       }
     ]
   },
-  // mouseEffect
-  {
-    title: "Mouse Effect",
-    tags: ["React"],
-    description: {
-      es: "Este simple proyecto, se uso para aprender sobre el hook useEffect de React y sobre la función de limpieza y su relevancia en React. El proyecto muestra un efecto glow a cambio del cursor si esta activado,  de lo contrario, se mostrará el cursor por defecto.",
-      en: "This simple project was used to learn about the useEffect hook of React and about the cleanup function and its relevance in React. The project shows a glow effect in exchange for the cursor if it is activated, otherwise, the default cursor will be shown."
-    },
-    img: mouseEffect,
-    video: mouseEffectVideo,
-    links: [
-      {
-        name: "Github",
-        link: null
-      },
-      {
-        name: "Web",
-        link: null
-      }
-    ]
-  },
 ];
 
 export default projectsMedia;

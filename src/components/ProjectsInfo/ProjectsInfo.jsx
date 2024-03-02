@@ -62,6 +62,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
         ?(
           <WelcomeText ref={welcomeTextRef} onClick={e=>setTitleTyped(true)}>
             <Typewriter
+              onClick={e=>setTitleTyped(true)}
               onInit={typewriter=>{
                 typewriter
                 .pauseFor(1000)

@@ -32,6 +32,7 @@ export const WelcomeText = styled.div`
   padding: .2rem .5rem  ;
   transition: all 1s;
   opacity: 1;
+  cursor: pointer;
   .title {
     font-size: 2rem;
     text-align: center;
@@ -57,6 +58,7 @@ export const ProjectsContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -65,6 +67,7 @@ export const ProjectsContainer = styled.div`
     position: relative;
     width: 95%;
     aspect-ratio: 1/1;
+    max-height: 97vh;
 
     box-sizing: border-box;
     background: rgba(10, 10, 10, 1);

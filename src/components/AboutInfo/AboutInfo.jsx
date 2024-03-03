@@ -8,7 +8,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import CoolBtn from "../ProjectsInfo/CoolBtn/CoolBtn";
 import CVFile from "../../assets/files/JUAN JOSE HUERTAS BOTACHE CV.pdf";
-import CVimg from "../../assets/images/JUAN JOSE HUERTAS BOTACHE CV_pages-to-jpg-0001.jpg";
+import CVimg from "../../assets/images/JUAN JOSE HUERTAS BOTACHE CV.png";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import containerResizer from "../../helpers/containerResizer";

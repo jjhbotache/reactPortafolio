@@ -65,7 +65,7 @@ const projectsMedia = [
       "react-router-dom",
     ],
     description: {
-      es: "Este proyecto, se compone de un Backend desarrollado con Python y un Frontend desarrollado con React. Esta, es una página hecha para una empresa que vende vinos con diseños personalizados, por lo que la pagina, permite a clientes, visualizar los diseños, registrarse, guardar diseños en el carrito, crear ordenes de compra y ver el estado de las mismas en su dashboard. De lado del administrador, se puede manejar todos los datos como los vinos que se venden, los diseños, sus tags y demás.",
+      es: "Este proyecto, se compone de un Backend desarrollado con Python y un Frontend desarrollado con React. Esta, es una página hecha para una empresa que vende vinos con diseños personalizados, por lo que la página, permite a clientes, visualizar los diseños, registrarse, guardar diseños en el carrito, crear ordenes de compra y ver el estado de las mismas en su dashboard. De lado del administrador, se puede manejar todos los datos como los vinos que se venden, los diseños, sus tags y demás.",
       en: "This project consists of a Backend developed with Python and a Frontend developed with React. This is a page made for a company that sells wines with personalized designs, so the page allows customers to view the designs, register, save designs in the cart, create purchase orders and see the status of them in their dashboard. On the administrator side, you can manage all the data such as the wines that are sold, the designs, their tags and more."
     },
     img: memorableWebpage,
@@ -94,7 +94,7 @@ const projectsMedia = [
       "BEM methodology",
     ],
     description: {
-      es: "Este proyecto se enfocó en hacer una réplica de la página de Disney+ utilizando las tecnologías más básicas (HTML y CSS).  Se evitó adrede el uso de cualquier tipo de librería o hojas de estilos existentes y se construyó bajo la metodología BEM para dar orden al nombramiento de clases CSS.",
+      es: "Este proyecto se enfocó en hacer una réplica de la página de Disney+ utilizando las tecnologías más básicas (HTML y CSS).  Se evitó adrede el uso de cualquier tipo de librería u hojas de estilos existentes y se construyó bajo la metodología BEM para dar orden al nombramiento de clases CSS.",
       en: "This project focused on making a replica of the Disney+ page using the most basic technologies (HTML and CSS). The use of any type of library or existing style sheets was deliberately avoided and it was built under the BEM methodology to give order to the naming of CSS classes."
     },
     img: disneyPlus,
@@ -175,8 +175,8 @@ const projectsMedia = [
       "CSS Modules"
     ],
     description: {
-      es: "Este proyecto, utiliza la omDB api, TypeScript, modulos css y técnicas de debounce y mocks de respuestas .json. La estética de la pagina se vio apoyada en Bootstrap.",
-      en: "This project uses the omDB api, TypeScript, css modules and debounce and .json response mocks techniques. The aesthetics of the page were supported by Bootstrap."
+      es: "Este proyecto, utiliza la omDB api, TypeScript, modulos css, técnicas de debounce y mocks de respuestas .json. La estética de la pagina se vio apoyada en Bootstrap.",
+      en: "This project uses the omDB api, TypeScript, css modules, debounce and .json response mocks techniques. The aesthetics of the page were supported by Bootstrap."
     },
     img: movieSearcher,
     video: movieSearcherVideo,

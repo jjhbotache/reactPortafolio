@@ -9,9 +9,7 @@ import { motion } from "framer-motion";
 import CoolBtn from "../ProjectsInfo/CoolBtn/CoolBtn";
 import CVFile from "../../assets/files/JUAN JOSE HUERTAS BOTACHE.pdf";
 import CVimg from "../../assets/images/JUAN JOSE HUERTAS BOTACHE.png";
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import containerResizer from "../../helpers/containerResizer";
 
 
 

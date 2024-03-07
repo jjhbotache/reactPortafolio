@@ -13,7 +13,6 @@ import reactNativeCalc from '../assets/projects/imgs/reactNativeCalc.png';
 // videos
 import disneyCloneVideo from "../assets/projects/videos/disneyCloneVideo_reducido.mp4"
 import imgArrangerVideo from "../assets/projects/videos/imgArrangerVideo_reducido.mp4"
-import mouseEffectVideo from "../assets/projects/videos/mouseEffectVideo_reducido.mp4"
 import movieSearcherVideo from "../assets/projects/videos/movieSearcherVideo_reducido.mp4"
 import rickAndMortyVideo from "../assets/projects/videos/rickAndMortyVideo_reducido.mp4"
 import surebetsBettorVideo from "../assets/projects/videos/surebetsBettorVideo_reducido.mp4"

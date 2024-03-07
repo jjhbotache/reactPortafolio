@@ -8,6 +8,7 @@ import SW from '../assets/projects/imgs/SW.png';
 import ticTacToe from '../assets/projects/imgs/ticTacToe.jpeg';
 import netflixClone from '../assets/projects/imgs/netflixClone.png';
 import memorableWebpage from '../assets/projects/imgs/memorableWebpage.png';
+import reactNativeCalc from '../assets/projects/imgs/reactNativeCalc.png';
 
 // videos
 import disneyCloneVideo from "../assets/projects/videos/disneyCloneVideo_reducido.mp4"
@@ -20,6 +21,7 @@ import SWVideo from "../assets/projects/videos/SWVideo_reducido.mp4"
 import ticTacToeVideo from "../assets/projects/videos/ticTacToeVideo_reducido.mp4"
 import netflixCloneVideo from "../assets/projects/videos/netflixCloneVideo.mp4"
 import memorableWebpageVideo from "../assets/projects/videos/memorableWebpageVideo.mp4"
+import reactNativeCalcVideo from "../assets/projects/videos/reactNativeCalcVideo.mp4"
 
 const projectsMedia = [
   // netflixClone
@@ -264,11 +266,36 @@ const projectsMedia = [
     links: [
       {
         name: "Github",
-        link: "https://github.com/jjhbotache/react_projects/tree/main/2)secondProject"
+        link: "https://github.com/jjhbotache/tictactoeReact"
       },
       {
         name: "Web",
         link: null
+      }
+    ]
+  },
+  // reactNativeCalc
+  {
+    title: "React Native Calculator",
+    tags: [
+      "React Native",
+      "Javascript",
+      "Expo",
+    ],
+    description: {
+      en: "This application allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.",
+      es: "Esta aplicación permite a los usuarios realizar operaciones aritméticas básicas como suma, resta, multiplicación y división."
+    },
+    img: reactNativeCalc,
+    video: reactNativeCalcVideo,
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/reactNativeCalculator"
+      },
+      {
+        name: "Download",
+        link: "https://expo.dev/accounts/jjhbotache/projects/reactNativeCalc/builds/41612a44-022d-4bbb-a310-b42c3bbf32da"
       }
     ]
   },

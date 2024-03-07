@@ -13,6 +13,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 import projectsMedia from "../../constants/projectsMedia";
 import githubImg from "../../assets/images/github.png";
 import browserImg from "../../assets/images/browser.png";
+import downloadImg from "../../assets/images/download.png";
 import { Link } from "react-router-dom";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
@@ -139,7 +140,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                 transition={{ duration: 0.2, ease: "easeOut"}}
                 className="currentProjectInfo"
                 >   
-                  
+                  {/* title - separator - tags */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -153,6 +154,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                       }
                     </ul>
                   </motion.div>
+                  {/* project description */}
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -160,6 +162,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                   >
                   <p className="currentProjectInfo--description">{currentProject.description[language]}</p>
                   </motion.div>
+                  {/* video */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -167,6 +170,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                   >
                   <video className="currentProjectInfo--video" src={currentProject.video} controls loop autoPlay muted></video>
                   </motion.div>
+                  {/* check project section */}
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -178,7 +182,16 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                       {
                         currentProject.links.map((link, index)=>(
                           <Link key={index} className={"check-on-option " +  (link.link === null  ? `check-on-option__disabled`  : "") } to={link.link} target="_blank">
-                            <img className="check-on-option--img" src={ link.name.includes("Github") ? githubImg : browserImg } alt="option img" />
+                            <img className="check-on-option--img" src={ 
+                              
+                              link.name.includes("Github")
+                                ? githubImg 
+                                : link.name.includes("Web")
+                                  ? browserImg
+                                  : link.name.includes("Download")
+                                    ? downloadImg
+                                    : ""
+                              } alt="option img" />
                             <h3 className="check-on-option--name">{link.name}</h3>
                           </Link>
                         ))

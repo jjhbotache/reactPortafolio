@@ -9,6 +9,7 @@ import ticTacToe from '../assets/projects/imgs/ticTacToe.jpeg';
 import netflixClone from '../assets/projects/imgs/netflixClone.png';
 import memorableWebpage from '../assets/projects/imgs/memorableWebpage.png';
 import reactNativeCalc from '../assets/projects/imgs/reactNativeCalc.png';
+import newspaperApp from '../assets/projects/imgs/newspaperApp.png';
 
 // videos
 import disneyCloneVideo from "../assets/projects/videos/disneyCloneVideo_reducido.mp4"
@@ -21,6 +22,7 @@ import ticTacToeVideo from "../assets/projects/videos/ticTacToeVideo_reducido.mp
 import netflixCloneVideo from "../assets/projects/videos/netflixCloneVideo.mp4"
 import memorableWebpageVideo from "../assets/projects/videos/memorableWebpageVideo.mp4"
 import reactNativeCalcVideo from "../assets/projects/videos/reactNativeCalcVideo.mp4"
+import newspaperAppVideo from "../assets/projects/videos/newspaperAppVideo.mp4"
 
 const projectsMedia = [
   // netflixClone
@@ -295,6 +297,31 @@ const projectsMedia = [
       {
         name: "Download",
         link: "https://expo.dev/accounts/jjhbotache/projects/reactNativeCalc/builds/41612a44-022d-4bbb-a310-b42c3bbf32da"
+      }
+    ]
+  },
+  // newspaperApp
+  {
+    title: "Newspaper App",
+    tags: [
+      "Javascript",
+      "React Native",
+      "Expo",
+    ],
+    description: {
+      en: "This application allows users to read news and search them.",
+      es: "Esta aplicación permite a los usuarios leer noticias y buscarlas."
+    },
+    img: newspaperApp,
+    video: newspaperAppVideo,
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/reactNativeNewspaperApp"
+      },
+      {
+        name: "Download",
+        link: null
       }
     ]
   },

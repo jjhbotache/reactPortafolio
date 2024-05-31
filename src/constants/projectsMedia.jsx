@@ -10,6 +10,7 @@ import netflixClone from '../assets/projects/imgs/netflixClone.png';
 import memorableWebpage from '../assets/projects/imgs/memorableWebpage.png';
 import reactNativeCalc from '../assets/projects/imgs/reactNativeCalc.png';
 import newspaperApp from '../assets/projects/imgs/newspaperApp.png';
+import reactTodoApp from '../assets/projects/imgs/reactTodoApp.png';
 
 // videos
 import disneyCloneVideo from "../assets/projects/videos/disneyCloneVideo_reducido.mp4"
@@ -23,6 +24,7 @@ import netflixCloneVideo from "../assets/projects/videos/netflixCloneVideo.mp4"
 import memorableWebpageVideo from "../assets/projects/videos/memorableWebpageVideo.mp4"
 import reactNativeCalcVideo from "../assets/projects/videos/reactNativeCalcVideo.mp4"
 import newspaperAppVideo from "../assets/projects/videos/newspaperAppVideo.mp4"
+import reactTodoAppVideo from "../assets/projects/videos/reactTodoAppVideo.mp4"
 
 const projectsMedia = [
   // netflixClone
@@ -324,6 +326,31 @@ const projectsMedia = [
         link: null
       }
     ]
+  },
+  // reactTodoApp
+  {
+    title: "React native Todo App",
+    tags: [
+      "React native",
+      "Javascript",
+      "Expo SQLite",
+    ],
+    description: {
+      en: "This application allows users to manage and rearrange tasks.",
+      es: "Esta aplicación permite a los usuarios gestionar y reorganizar tareas."
+    },
+    img: reactTodoApp,
+    video: reactTodoAppVideo,
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/react_native_todo",
+      },
+      {
+        name: "Download",
+        link: null,
+      },
+    ],
   },
 ];
 

@@ -11,7 +11,7 @@ import containerResizer from "../../helpers/containerResizer";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 
-export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}) {
+export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay, onClick}) {
   const tvRef = useRef(null);
   const [maximazed,setMaximazed   ] = useState(false);
   const handleTvMaximazedLastTime = useRef(0);
@@ -118,7 +118,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay}
 
   return(
     <InfoDisplayerStyledComponent>
-      <div className="tv-container">
+      <div className="tv-container" onClick={onClick}>
         <div className="tv" ref={tvRef} onDoubleClick={e=>handleTvMaximazed()}>
           <button className="return-btn" onClick={e=>handleTvMaximazed("close")}><i className="fi fi-sr-undo"></i></button>
           

@@ -12,6 +12,15 @@ const breathe = keyframes`
   }
 `;
 
+const glowing = keyframes`
+  0%,100%{
+    background-position: 0 0;
+  }
+  50%{
+    background-position: 400% 0;
+  }
+`
+
 export const ChannelsStyledComponent = styled.div`
   width: 100%;
   height: 100%;
@@ -20,20 +29,46 @@ export const ChannelsStyledComponent = styled.div`
   align-items: center;
 
   .channels-details{
+    position: relative;
     width: 80%;
     height: 80%;
     max-width: 200px;
     max-height: 50px;
     border-radius: .5rem;
-    padding: .3rem;
+    
+    z-index: 2;
 
     display: flex;
     justify-content: center;
     align-items: center;
     
-
     border: 1px solid ${primaryColor};
     background: rgba(255, 255, 255, .1);
+
+    summary{
+      background: #111;
+      padding: .3rem;
+      border-radius: .5rem;
+    }
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        45deg,
+        ${primaryColor}, #00a5d2, ${secondaryColor}, #00a5d2,
+        ${primaryColor}, #00a5d2, ${secondaryColor}, #00a5d2
+      );
+      background-size: 800%;
+      border-radius: .5rem;
+      filter: blur(.3em);
+      animation: ${glowing} 20s linear infinite;
+    }
 
     &[open]{ animation: none; }
     &:not([open]){ animation: ${breathe} 5s ease-in-out infinite; }
@@ -117,5 +152,7 @@ export const ChannelsStyledComponent = styled.div`
     }
 
   }
+
+
   
 `;

@@ -28,8 +28,8 @@ const texts = {
     },
     infoDisplayer:{
       noInfo:{
-        en: "Choose a channel to display information!",
-        es: "Elige un canal para mostrar información!"
+        es: "Toca el botón y elige un canal para mostrar información!",
+        en: "Click the button and choose a channel to display information!"
       },
       minimizeToast:{
         en: "Double click to minimize!",

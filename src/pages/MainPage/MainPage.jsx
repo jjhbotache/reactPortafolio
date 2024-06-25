@@ -81,6 +81,10 @@ export default function MainPage() {
     setTitleInfoToDisplay(channel.value);
   }
 
+  function onTvClicked(){
+    console.log('tv clicked');
+  }
+
   return (
     <MainPageStyledComponent ref={mainComponentRef}>
       
@@ -97,6 +101,7 @@ export default function MainPage() {
 
       <MainInfo ref={MainRef}>
         <div className="container">
+
           <PageOptions/>
           <div className="title-texts">
             <h1 className="name name__first">Juan Jose</h1>
@@ -109,7 +114,7 @@ export default function MainPage() {
 
           <Channels channels={channels} onSelectChannel={onChannelSelect} />
 
-          <InfoDisplayer titleInfoToDisplay={titleInfoToDisplay} onChangeInfoToDisplay={onChangeInfoToDisplay}/>
+          <InfoDisplayer titleInfoToDisplay={titleInfoToDisplay} onChangeInfoToDisplay={onChangeInfoToDisplay} onClick={onTvClicked}/>
         </div>
       </MainInfo>
       

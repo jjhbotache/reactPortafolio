@@ -52,7 +52,7 @@ export const InfoDisplayerStyledComponent = styled.div`
         background: #000;
         width: 100%; 
         height: 100%;
-        border: 5px solid ${primaryColor};
+        border: .3vw solid ${primaryColor};
         border-radius: 2rem;
         overflow: hidden;
 

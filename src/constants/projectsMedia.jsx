@@ -24,11 +24,10 @@ import netflixCloneVideo from "../assets/projects/videos/netflixCloneVideo.mp4"
 import memorableWebpageVideo from "../assets/projects/videos/memorableWebpageVideo.mp4"
 import reactNativeCalcVideo from "../assets/projects/videos/reactNativeCalcVideo.mp4"
 import newspaperAppVideo from "../assets/projects/videos/newspaperAppVideo.mp4"
-import reactTodoAppVideo from "../assets/projects/videos/reactTodoAppVideo.mp4"
-
+import reactTodoAppVideo from "../assets/projects/videos/reactTodoApp.mp4"
 //files
-import reactTodoAppFile from '../assets/files/reactNativeTodoApp.apk'
-
+// import reactTodoAppFile from '../assets/files/reactNativeTodoApp.apk'
+const reactTodoAppFile = "/reactNativeTodoApp.apk"
 
 const projectsMedia = [
   // netflixClone
@@ -340,8 +339,8 @@ const projectsMedia = [
       "Expo SQLite",
     ],
     description: {
-      en: "This application allows users to manage and rearrange tasks.",
-      es: "Esta aplicación permite a los usuarios gestionar y reorganizar tareas."
+      es: "Esta aplicación permite a los usuarios gestionar y reorganizar tareas. Utiliza Expo SQLite para almacenar las tareas y funcionalidades de reorganización mediante drag and drop.",
+      en: "This application allows users to manage and rearrange tasks. It uses Expo SQLite to store tasks and drag and drop reorganization features."
     },
     img: reactTodoApp,
     video: reactTodoAppVideo,

@@ -13,7 +13,7 @@ export const MainPageStyledComponent = styled.div`
     position: absolute;
     width: 50px;
     height: 50px;
-    transition: all 3s cubic-bezier(0.175, 0.177, 0.178, 1.1);
+    transition: all 1s cubic-bezier(0.175, 0.177, 0.178, 1.1);
     .rectangle{
       position: absolute;
       width: 10px;
@@ -101,7 +101,7 @@ export const MainInfo= styled.main`
   width: 100vw;
 
   opacity: 0;
-  transition: all 1s cubic-bezier(0.175, 0.177, 0.178, 1.1);
+  transition: all .5s cubic-bezier(0.175, 0.177, 0.178, 1.1);
 
   padding: 3rem;
   @media screen and (width < ${mdScreenWidth}){padding: .7rem;}

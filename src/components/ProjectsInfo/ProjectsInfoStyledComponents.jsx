@@ -132,6 +132,7 @@ export const ProjectsContainer = styled.div`
         border-bottom: .2rem solid ${secondaryColor};
         border-top: .2rem solid ${secondaryColor};
         padding: .4rem 0;
+        aspect-ratio: 16/9;
       }
       & .projectsSwiper--btn{
         position: absolute;

@@ -46,7 +46,7 @@ export const LandingPageStyledComponent = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    transition: all 6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: .3rem;
     padding: 2rem;
     @media screen and (width < ${mdScreenWidth}) {

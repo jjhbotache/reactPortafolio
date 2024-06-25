@@ -181,7 +181,13 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     <div className="check-on-options">
                       {
                         currentProject.links.map((link, index)=>(
-                          <Link key={index} className={"check-on-option " +  (link.link === null  ? `check-on-option__disabled`  : "") } to={link.link} target="_blank">
+                          <Link
+                            key={index}
+                            className={"check-on-option " +  (link.link === null  ? `check-on-option__disabled`  : "") }
+                            target="_blank"
+                            to={link.link}
+                            download={link.name.includes("Download")}
+                            >
                             <img className="check-on-option--img" src={ 
                               
                               link.name.includes("Github")

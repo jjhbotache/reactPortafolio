@@ -48,7 +48,7 @@ export default function MainPage() {
     topRightFrameRef.current.classList.add('frame__on-corner');
       setTimeout(() => {
         MainRef.current.classList.add('fade-in');
-      }, 2500);
+      }, 1000);
     }, 100);
     function onFullScreenChange(){
       if(document.fullscreenElement){

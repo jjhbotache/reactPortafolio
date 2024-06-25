@@ -62,7 +62,7 @@ export const InfoDisplayerStyledComponent = styled.div`
         justify-content: center;
         align-items: center;
         /* padding: 1rem; */
-        transition: all 1s ease-out;
+        transition: all .2s ease-out;
 
         left: unset;
         top: unset;

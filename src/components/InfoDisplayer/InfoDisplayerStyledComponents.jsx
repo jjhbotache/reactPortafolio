@@ -48,6 +48,8 @@ export const InfoDisplayerStyledComponent = styled.div`
       margin: 0;
       
       .tv{
+
+        
         position: relative;
         background: #000;
         width: 100%; 
@@ -67,6 +69,18 @@ export const InfoDisplayerStyledComponent = styled.div`
         left: unset;
         top: unset;
         transform: unset;
+
+        /* hide the scroll bar */
+        /* change the colors of the scrollbar */
+        .content::-webkit-scrollbar {
+          width: 10px;
+        }
+        .content::-webkit-scrollbar-track {
+          background: #1f1f1f;
+        }
+        .content::-webkit-scrollbar-thumb {
+          background: #717171;
+        }
 
 
         & .return-btn{
@@ -103,6 +117,10 @@ export const InfoDisplayerStyledComponent = styled.div`
           & .return-btn{
             display: block;
             opacity: 1;
+            border: 2px solid ${primaryColor};
+            color: ${primaryColor};
+            font-size: 1.1rem;
+            aspect-ratio: 1;
           }
 
           &:hover{

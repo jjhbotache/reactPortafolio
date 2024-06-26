@@ -53,10 +53,6 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay,
   }
 
   useEffect(() => {
-    // const resizeObserver = new ResizeObserver(entries => {
-    //   entries.forEach(entry => {
-    //     containerResizer(entry.target)});
-    // });
     
     function onEscKeyPressed(e) {
       if (e.key === "Escape" && maximazed) handleTvMaximazed("close")
@@ -125,10 +121,10 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay,
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null
           ? 
-            titleInfoToDisplay === "about" ? <AboutInfo onScrolled={e=>handleTvMaximazed("open")} /> :
+            titleInfoToDisplay === "about" ? <AboutInfo onScrolled={e=>console.log("scrolled")} /> :
 
 
-            titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>handleTvMaximazed("open")} maximazed={maximazed} /> :
+            titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>console.log("scrolled")} maximazed={maximazed} /> :
 
 
             titleInfoToDisplay === "contact" ? <ContactInfo/> : undefined

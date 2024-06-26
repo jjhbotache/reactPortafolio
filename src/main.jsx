@@ -7,6 +7,8 @@ import GlobalStyles from './globalStyles.jsx'
 import { Bounce, ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import LanguajeContextProvider from './contexts/LanguajeContextProvider.jsx'
+import { Provider } from 'react-redux'
+import store from './redux/store.jsx'
 
 
 
@@ -15,6 +17,7 @@ import LanguajeContextProvider from './contexts/LanguajeContextProvider.jsx'
 // wrap the app in the router
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
+    <Provider store={store}>
     <LanguajeContextProvider>
       <GlobalStyles />
       <App />
@@ -32,5 +35,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         transition={Bounce}
       />
     </LanguajeContextProvider>
+    </Provider>
   </>,
 )

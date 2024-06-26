@@ -10,6 +10,8 @@ import CoolBtn from "../ProjectsInfo/CoolBtn/CoolBtn";
 import CVFile from "../../assets/files/JUAN JOSE HUERTAS BOTACHE.pdf";
 import CVimg from "../../assets/images/JUAN JOSE HUERTAS BOTACHE.png";
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from "react-redux";
+import { setTitleInfoToDisplay } from "../../redux/slices/titleInfoToDisplaySlice";
 
 
 
@@ -19,6 +21,7 @@ export default function AboutInfo({onScrolled}) {
   const typeWriterContainerRef = useRef(null);
   const dialogRef = useRef(null);
   const modalCvImgRef = useRef(null);
+  const dispatch = useDispatch();
 
   // useEffect(() => {
   //   // creaete a event listener to resize the modal image
@@ -47,7 +50,15 @@ export default function AboutInfo({onScrolled}) {
        .pauseFor(1000)
        .typeString(texts.aboutInfo.text3[language])
        .pasteString('<br/><br/>')
-       .callFunction(()=>{setTyped(true)})
+       .callFunction(()=>{
+          setTyped(true)
+          // to all the Typewriter__cursor elements, add a class to hide them
+          try {
+            typeWriterContainerRef.current.querySelectorAll('.Typewriter__cursor').forEach(cursor => cursor.classList.add('hide'))
+          } catch (error) {
+            console.log("didn't find any cursor");
+          }
+        })
        .start();
 
   }
@@ -69,11 +80,14 @@ export default function AboutInfo({onScrolled}) {
     // containerResizer(modalCvImgRef.current);
   }
 
+  function onContinueExploring(e) {
+    dispatch(setTitleInfoToDisplay('projects'));
+  }
+
   return(
     <AboutInfoContainer onScroll={onScrolled} onClick={e=>setTyped(true)}>
       <div className="content">
         <h1>{texts.aboutInfo.title[language] }</h1>
-        {/* <button onClick={doSomething}>hi</button> */}
         <div ref={typeWriterContainerRef} className="typer-container" />
         
         {
@@ -84,7 +98,7 @@ export default function AboutInfo({onScrolled}) {
               whileInView={{ opacity: 1, x: 0, transition: { duration: 1 }}}
             >
               <hr className="separator" />
-              <h3 className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h3>
+              <h3 onClick={onContinueExploring} className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h3>
               <hr className="separator" />
             </motion.div>
 

@@ -6,15 +6,22 @@ import InfoDisplayer from "../../components/InfoDisplayer/InfoDisplayer";
 import PageOptions from "../../components/PageOptions/PageOptions";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
+import { useDispatch, useSelector } from "react-redux";
+import { setTitleInfoToDisplay } from "../../redux/slices/titleInfoToDisplaySlice";
 
 export default function MainPage() {
   const bottomLeftFrameRef = useRef(null);
   const topRightFrameRef = useRef(null);
   const MainRef = useRef(null);
   const mainComponentRef = useRef(null);
-  const [titleInfoToDisplay, setTitleInfoToDisplay] = useState(null);
+  const titleInfoToDisplay = useSelector(state => state.titleInfoToDisplay);
+
+
+
+
 
   const { language } = useContext( GlobalStateContext )
+  const dispatch = useDispatch();
   
   
 
@@ -72,13 +79,15 @@ export default function MainPage() {
   }, []);
 
   function onChannelSelect(channel){
-    setTitleInfoToDisplay(channel.value);
+    const { value:newTitle } = channel;
+    dispatch(setTitleInfoToDisplay(newTitle));
+
   }
 
   function onChangeInfoToDisplay(titleInfoToDisplay){
     // look for the channels that has the same value as titleInfoToDisplay
     const channel = channels.find(channel => channel.value === titleInfoToDisplay);
-    setTitleInfoToDisplay(channel.value);
+    dispatch(setTitleInfoToDisplay(channel.value));
   }
 
   function onTvClicked(){

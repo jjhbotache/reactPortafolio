@@ -91,15 +91,18 @@ export const ChannelsStyledComponent = styled.div`
     }
     &--info{
       opacity: 0;
-      position: absolute;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+
       display: grid;
       place-items: center;
-      top: 0;
-      left: 0;
+
       z-index: 10;
-      width: 100%;
-      height: 100%;
-      /* box-shadow: rgba(0, 0, 0, .8) 0 0 10rem; */
+      width: 95vw;
+      height: 80vh;
 
       transition: all 0.3s ease-in-out;
 
@@ -111,9 +114,9 @@ export const ChannelsStyledComponent = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,.85);
+        background: rgba(0,0,0,.9);
         filter: blur(10px);
-        box-shadow: 0 0 10rem 3rem rgba(0,0,0,.8);
+        box-shadow: 0 0 10px ${primaryColor};
       }
       
       &.open{
@@ -141,11 +144,8 @@ export const ChannelsStyledComponent = styled.div`
           cursor: pointer;
           &:hover, &:focus{
             text-shadow: 0 0 .2rem ${primaryColor};
-            letter-spacing: .4rem;
-            /* font-size: 2rem; */
-            @media screen and (width < ${mdScreenWidth}) { transform: scale(1.5); }
-            @media screen and (width >= ${mdScreenWidth}) { transform: scale(2); }
-
+            letter-spacing: .1rem;
+            transform: scale(1.1);
           }
         }
       }

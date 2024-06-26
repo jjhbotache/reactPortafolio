@@ -7,12 +7,12 @@ const shine = keyframes`
   0%,100% {
     text-shadow: 0 0 0  ${primaryColor};
     transform: scale(1);
-    letter-spacing: .1rem;
+    letter-spacing: .03rem;
   }
   50% {
     text-shadow: 0 0 .2rem  ${primaryColor};
     transform: scale(1.01);
-    letter-spacing: .12rem;
+    letter-spacing: .02rem;
   }
 `;
 
@@ -37,16 +37,10 @@ export const AboutInfoContainer = styled.div`
   background-repeat: no-repeat;
   background-attachment: scroll;
 
-  /* change the colors of the scrollbar */
   &::-webkit-scrollbar {
-    width: 10px;
+    display: none;
   }
-  &::-webkit-scrollbar-track {
-    background: #1f1f1f;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #717171;
-  }
+
   
   @media screen and (width > ${mdScreenWidth}){
     padding: 5vh 5vw ;
@@ -66,9 +60,13 @@ export const AboutInfoContainer = styled.div`
     box-shadow: 0 0 .5rem ${secondaryColor};
   }
   .continue-exploring-text{
-    margin: 2rem 0;
+    margin: 2rem 1rem;
     font-size: .7rem;
     animation: ${shine} 2s infinite;
+    cursor: pointer;
+  }
+  .Typewriter__cursor.hide{
+    display: none;
   }
 
   .cvImg-container{

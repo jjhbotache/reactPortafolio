@@ -134,7 +134,7 @@ export const MainInfo= styled.main`
       "tv"
       ;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 0.25fr 0.25fr 1.5fr;
+      grid-template-rows: 4fr 1fr 1fr 55vh;
     }
     
     .title-texts{

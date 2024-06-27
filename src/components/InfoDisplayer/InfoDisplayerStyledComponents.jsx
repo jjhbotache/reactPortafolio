@@ -54,6 +54,8 @@ export const InfoDisplayerStyledComponent = styled.div`
         background: #000;
         width: 100%; 
         height: 100%;
+        max-height: inherit;
+       
         border: .3vw solid ${primaryColor};
         border-radius: 2rem;
         overflow: hidden;
@@ -82,6 +84,28 @@ export const InfoDisplayerStyledComponent = styled.div`
           background: #717171;
         }
 
+
+        .maximizeBtn{
+          position: absolute;
+          z-index: 2;
+          top: 1rem;
+          right: 1rem;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background: ${primaryColor};
+          i,i::before,i::after{
+            color: ${darkColor} !important;
+          }
+          display: grid;
+          place-items: center;
+          transition: all .1s ;
+          cursor: pointer;
+          &:hover{
+            transform: scale(1.2);
+            box-shadow: 0 0 5px ${primaryColor};
+          }
+        }
 
         & .return-btn{
           display: none;

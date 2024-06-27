@@ -7,12 +7,12 @@ const shine = keyframes`
   0%,100% {
     text-shadow: 0 0 0  ${primaryColor};
     transform: scale(1);
-    letter-spacing: .03rem;
+    /* letter-spacing: .03rem; */
   }
   50% {
     text-shadow: 0 0 .2rem  ${primaryColor};
-    transform: scale(1.01);
-    letter-spacing: .02rem;
+    transform: scale(1.03);
+    /* letter-spacing: .02rem; */
   }
 `;
 
@@ -60,7 +60,8 @@ export const AboutInfoContainer = styled.div`
     box-shadow: 0 0 .5rem ${secondaryColor};
   }
   .continue-exploring-text{
-    margin: 2rem 1rem;
+    margin: 2rem 0;
+    padding: 0 1rem;
     font-size: .7rem;
     animation: ${shine} 2s infinite;
     cursor: pointer;

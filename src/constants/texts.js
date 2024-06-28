@@ -38,16 +38,16 @@ const texts = {
     },
     aboutInfo:{
       text1:{
-        en: "I am a developer passionate about technology and software development. I love learning how technology makes life easier.",
-        es: "Soy un desarrollador apasionado por la tecnología y el desarrollo de software. Me encanta aprender el como la tecnología facilita la vida."
+        es: "Soy un desarrollador apasionado por la tecnología y el software. Me entusiasma aprender cómo la tecnología puede facilitar la vida y mejorar procesos.",
+        en: "I am a developer passionate about technology and software. I am excited to learn how technology can make life easier and improve processes."
       },
       text2:{
-        en: "For the last 4 years I have dedicated myself to learning and improving my software development skills, and I have worked on several personal projects which you can review on my GitHub profile.",
-        es: "Desde hace 4 años me he dedicado a aprender y mejorar mis habilidades en el desarrollo de software, y he trabajado en varios proyectos personales los cuales puede revisar en mi perfil de GitHub."
+        es: "Durante los últimos 4 años, me he dedicado a perfeccionar mis habilidades en desarrollo de software. He trabajado en varios proyectos personales que pueden verse en mi perfil de GitHub.",
+        en: "For the last 4 years, I have been dedicated to perfecting my skills in software development. I have worked on several personal projects that can be seen on my GitHub."
       },
       text3:{
-        en: "Software development is not just about writing code, but also understanding the problem and finding the best solution for it, applying good practices and design patterns.",
-        es: "El desarrollo de software, no es solo escribir código, si no tambien entender el problema y buscar la mejor solución para el mismo, aplicando buenas practicas y patrones de diseño."
+        es: "Para mí, el desarrollo de software va más allá de escribir código. Implica entender el problema, buscar la mejor solución y aplicar buenas prácticas y patrones de diseño.",
+        en: "For me, software development goes beyond writing code. It involves understanding the problem, looking for the best solution, and applying good practices and design patterns."
       },
       title:{
         en: "About me",

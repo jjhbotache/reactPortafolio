@@ -36,7 +36,7 @@ export const ChannelsStyledComponent = styled.div`
     max-height: 50px;
     border-radius: .5rem;
     
-    z-index: 2;
+    /* z-index: 2; */
 
     display: flex;
     justify-content: center;

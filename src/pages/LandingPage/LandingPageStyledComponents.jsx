@@ -41,7 +41,6 @@ export const LandingPageStyledComponent = styled.main`
   .main-content{
     word-break: break-word ;
     width: 92vw;
-    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,7 +48,17 @@ export const LandingPageStyledComponent = styled.main`
     transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: .3rem;
     padding: 2rem;
+
+    .Typewriter{
+      height: 50vh;
+      min-height: 50vh;
+    }
+    
     @media screen and (width < ${mdScreenWidth}) {
+      .Typewriter{
+        height: 80vh;
+        min-height: 80vh;
+      }
       padding: .2rem;
       font-size: .8rem;
     }
@@ -59,7 +68,7 @@ export const LandingPageStyledComponent = styled.main`
       box-shadow:  0 0 30px 5px ${primaryColor};      
     }
   }
-  .main-content--title{
+  .main-content__title{
     max-width: 100vw;
     text-align: center;
 
@@ -91,7 +100,7 @@ export const LandingPageStyledComponent = styled.main`
       opacity: 1;
     }
   }
-  .main-content--title__fade-out{
+  .main-content__title__fade-out{
     
 
     @media screen and (width > ${mdScreenWidth}) {
@@ -106,10 +115,11 @@ export const LandingPageStyledComponent = styled.main`
     transition: all 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 
   }
-  .main-content--instruction{
+  .main-content__instruction{
     position: relative;
     z-index: 2;
-
+    font-size: 1rem;
+    text-align: center;
     letter-spacing: 3px;
     animation: infinite 2s ease-in ${blink} ;
     transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);

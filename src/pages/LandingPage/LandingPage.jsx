@@ -22,7 +22,7 @@ export default function LandingPage() {
     function cursorEffectFunction (e){
       setTimeout(()=>{
         const divCursorEffect = cursorEffectRef.current;
-        divCursorEffect.style.opacity = 0.07
+        // divCursorEffect.style.opacity = 0.07
         divCursorEffect.style.left = e.pageX + "px"
         divCursorEffect.style.top = e.pageY + "px"
       },50)
@@ -39,7 +39,7 @@ export default function LandingPage() {
   function redirect(){
     const mainContent = mainContentRef.current;
     console.log("redirecting");
-    mainContent.classList.add("main-content--title__fade-out")
+    mainContent.classList.add("main-content__title__fade-out")
     document.documentElement.requestFullscreen()
     setTimeout(()=>{
       navigate("/main");
@@ -72,15 +72,15 @@ export default function LandingPage() {
           }}
           options={
             {
-              wrapperClassName: "main-content--title",
-              cursorClassName: "main-content--title__cursor",
+              wrapperClassName: "main-content__title",
+              cursorClassName: "main-content__title__cursor",
               loop: true,
               delay: 30,
               deleteSpeed: 30,
             }
           }
         />
-        <small className="main-content--instruction">Click us - Cliquéanos</small>
+        <small className="main-content__instruction">Click us - Cliquéanos</small>
       </div>
 
     </LandingPageStyledComponent>

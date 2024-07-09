@@ -125,7 +125,7 @@ export const MainInfo= styled.main`
     "channels tv"
     ;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     
     @media screen and (width < ${mdScreenWidth}){
       grid-template-areas: 
@@ -159,6 +159,9 @@ export const MainInfo= styled.main`
 
         font-family: ${titleFont};
         letter-spacing: 3px;
+
+        
+
         @media screen and (width < ${mdScreenWidth}) {
           font-size: 5vh;
         }

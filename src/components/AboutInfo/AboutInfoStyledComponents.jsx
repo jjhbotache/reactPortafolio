@@ -50,19 +50,24 @@ export const AboutInfoContainer = styled.div`
 
   h1 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    height: 2.5em;
   }
 
   p {
     margin-bottom: 2rem;
   }
 
-  .typer-container{
+  .typer-container,.about-text{
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 18em;
-    min-height: 18em;
+    min-height: 40vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    @media screen and (width < ${mdScreenWidth}){
+      width: 100%;
+      max-width: 500px;
+      font-size: clamp(.8rem, 3.5vw, 1rem);
+    }
   }
 
   .separator{
@@ -88,7 +93,7 @@ export const AboutInfoContainer = styled.div`
 
     &__category{
       width: 100%;
-      max-width: 500px;
+      max-width: 310px;
       border-radius: 1rem;
       padding: 1rem;
       background: rgba(255, 255, 255, 0.02);
@@ -115,7 +120,7 @@ export const AboutInfoContainer = styled.div`
     animation: ${shine} 2s infinite;
     cursor: pointer;
   }
-  .Typewriter__cursor.hide{
+  .Typewriter__cursor{
     display: none;
   }
 

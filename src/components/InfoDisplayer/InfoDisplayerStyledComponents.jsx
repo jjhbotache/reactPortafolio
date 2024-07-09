@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { darkColor, primaryColor, secondaryColor } from "../../constants/styleConstants";
+import { darkColor, mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
 
 
 const hue_rotate = keyframes`
@@ -51,11 +51,16 @@ export const InfoDisplayerStyledComponent = styled.div`
       & .tv-container__antenna{
         position: absolute;
         top: 0;
-        left: 10%;
-        transform: translate(-50%,-90%);
+        left: clamp(10%, 10vw, 25%);
+        transform: translate(-65%,calc(-100% + .25em));
         height: 2em;
         width: auto;
         z-index:1;
+
+        @media screen and (width < ${mdScreenWidth}){
+          display: none;
+          
+        }
 
       } 
       

@@ -51,7 +51,7 @@ export const InfoDisplayerStyledComponent = styled.div`
       & .tv-container__antenna{
         position: absolute;
         top: 0;
-        left: 15%;
+        left: 10%;
         transform: translate(-50%,-90%);
         height: 2em;
         width: auto;

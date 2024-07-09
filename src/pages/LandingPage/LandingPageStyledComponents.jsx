@@ -56,8 +56,8 @@ export const LandingPageStyledComponent = styled.main`
     
     @media screen and (width < ${mdScreenWidth}) {
       .Typewriter{
-        height: 80vh;
-        min-height: 80vh;
+        height: 70vh;
+        min-height: 70vh;
       }
       padding: .2rem;
       font-size: .8rem;

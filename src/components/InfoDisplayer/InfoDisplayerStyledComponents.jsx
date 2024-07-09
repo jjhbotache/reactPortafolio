@@ -64,17 +64,17 @@ export const InfoDisplayerStyledComponent = styled.div`
       } 
       
       .tv{
-        position: relative;
-        background: #000;
+        /* position: relative;
         width: 100%; 
         height: 100%;
-        max-height: inherit;
-       
+        max-height: inherit; */
+        
+        
+        
+        
         border: .5em inset ${primaryColor};
         overflow: hidden;
-
-
-
+        background: #000;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -140,7 +140,7 @@ export const InfoDisplayerStyledComponent = styled.div`
             transform: scale(1.2);
           }
         }
-        &.tv__maximazed{
+        /* &.tv__maximazed{
           position: fixed;
           left: 50%;
           top: 50%;
@@ -149,10 +149,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           width: 99% !important;
           height: 99% !important;
           z-index: 3;
-          
-
-
-        }
+        } */
 
         &:hover{
           animation: ${hue_rotate} 1s linear infinite;

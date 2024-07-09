@@ -15,10 +15,21 @@ import { motion, transform } from "framer-motion";
 const variants = {
   minimized: {
     position: "relative",
-    transform: "unset",
+    transform: "translate(0,0)",
     zIndex: "unset",
     width: "100%",
     height: "100%",
+    top: "unset",
+    left: "unset",
+  },
+  maximazed: {
+    position: "fixed",
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%,-50%)",
+    zIndex: 3,
+    width: "99%",
+    height: "99%",
   }
 
 }
@@ -26,9 +37,6 @@ const variants = {
 export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   const tvRef = useRef(null);
   const [maximazed,setMaximazed   ] = useState(false);
-  const handleTvMaximazedLastTime = useRef(0);
-
-  const alreadyNotifiedAboutMinimize = useRef(false);
   const {language} = useContext(GlobalStateContext);
 
   
@@ -43,24 +51,11 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
     function onEscKeyPressed(e) {
       if (e.key === "Escape" && maximazed) handleTvMaximazed("close")
     }
-    function onBack(e) {
-      if (maximazed){
-        e.preventDefault();
-        handleTvMaximazed("close")
-      }
-    }
 
-    // containerResizer(tvRef.current);
 
     window.addEventListener('keydown', onEscKeyPressed);
-    window.addEventListener('popstate', onBack);
-    // window.addEventListener('resize', e=>containerResizer(tvRef.current));
-    // resizeObserver.observe(tvRef.current);
     return () => {
       window.removeEventListener('keydown', onEscKeyPressed);
-      window.removeEventListener('popstate', onBack);
-      // window.removeEventListener('resize', e=>containerResizer(tvRef.current));
-      // resizeObserver.disconnect()
     };
   }, []);
 
@@ -84,7 +79,13 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
     <InfoDisplayerStyledComponent onClick={onClick}>
       <div className={`tv-container`}>
         <img className="tv-container__antenna" src="/antenna.svg" alt="antenna" />
-        <motion.div className={`tv ${maximazed && "tv__maximazed"}`} ref={tvRef} > 
+        {/* ${maximazed && "tv__maximazed"} */}
+        <motion.div 
+          initial={maximazed ? "maximazed" : "minimized"}
+          animate={maximazed ? "maximazed" : "minimized"}
+          variants={variants}
+          transition={{duration: .5}}
+        className={`tv`} ref={tvRef} > 
 
           {titleInfoToDisplay !== null &&  <div className="maximizeBtn" onClick={e=>handleTvMaximazed()}>
             <i className={!maximazed ? "fi fi-br-expand" : "fi fi-br-compress"}> </i>

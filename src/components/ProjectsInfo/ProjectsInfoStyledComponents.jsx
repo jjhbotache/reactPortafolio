@@ -126,13 +126,30 @@ export const ProjectsContainer = styled.div`
         font-size: clamp(1.5rem, 3vw, 2rem);
         border-radius: 1rem;
         padding: .2rem 2rem;
-        background: rgba(34, 34, 34, 0.95);
 
-        /* give a linear gradient to text */
-        background: linear-gradient(45deg, ${primaryColor}, ${secondaryColor});
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        span{
+          /* give a linear gradient to text */
+          background: linear-gradient(45deg, ${primaryColor}, ${secondaryColor});
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+
+        &::before{
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+
+          border-radius: 1rem;
+          background: #222;
+          filter: blur(5px);
+          z-index: -1;
+          
+        }
 
       }
 

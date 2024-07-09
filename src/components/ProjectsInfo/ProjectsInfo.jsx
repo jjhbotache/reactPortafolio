@@ -130,7 +130,9 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                   projectsMedia.map((project, index)=>{
                     return(
                       <SwiperSlide key={index} className="projectsSwiper__slide">
-                        <h1 className="projectsSwiper__title">{project.title}</h1>
+                        <h1 className="projectsSwiper__title">
+                          <span>{project.title}</span>
+                        </h1>
                         <img className="projectsSwiper__img" src={project.img} alt={project.title} />
                         {!maximazed && <button className="projectsSwiper__btn" onClick={() => { projectsInfoContainerRef.current.scrollBy({ top: 500, behavior: 'smooth' }); }}>{texts.projectsInfo.more[language]}</button>}
                       </SwiperSlide>

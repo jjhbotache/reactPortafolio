@@ -60,6 +60,8 @@ export const AboutInfoContainer = styled.div`
   .typer-container,.about-text{
     margin: 0 auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 40vh;
     padding-bottom: 0;
     margin-bottom: 0;

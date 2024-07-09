@@ -123,10 +123,17 @@ export const ProjectsContainer = styled.div`
         position: absolute;
         top: 0;
         z-index: 2;
-        font-size: 1.1rem;
+        font-size: clamp(1.5rem, 3vw, 2rem);
         border-radius: 1rem;
-        padding: .2rem .5rem;
+        padding: .2rem 2rem;
         background: rgba(34, 34, 34, 0.95);
+
+        /* give a linear gradient to text */
+        background: linear-gradient(45deg, ${primaryColor}, ${secondaryColor});
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+
       }
 
       & .projectsSwiper__img{

@@ -10,6 +10,7 @@ import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
 import containerResizer from "../../helpers/containerResizer";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
+import { motion } from "framer-motion";
 
 export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   const tvRef = useRef(null);
@@ -21,32 +22,9 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
 
   
 
-  function handleTvMaximazed(
-    only = undefined// "open" or "close"
-    ) {
-    // get the time when calling this function
-    // to avoid multiple calls in a short period of time
-    const time = new Date().getTime();
-    if (time - handleTvMaximazedLastTime.current < 1000) {
-      console.log("too fast");
-      return;
-    }else{
-      handleTvMaximazedLastTime.current = time;
-    }
-
-    
-    const mdScreenWidthInPx = parseInt(mdScreenWidth.slice(0, -2));
-    if (!titleInfoToDisplay ) {
-      console.log("big screen or no titleInfoToDisplay");
-    }else{
-      setMaximazed(
-        only === undefined
-          ? !maximazed
-          : only == "open"
-              ? true
-              : false
-      )
-    }
+  function handleTvMaximazed(only = undefined){ // "open" or "close"
+    if(titleInfoToDisplay === null) return;
+    setMaximazed(prev=>only === "open" ? true : only === "close" ? false : !prev);
   }
 
   useEffect(() => {
@@ -62,12 +40,12 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
 
     window.addEventListener('keydown', onEscKeyPressed);
     window.addEventListener('popstate', onBack);
-    window.addEventListener('resize', e=>containerResizer(tvRef.current));
+    // window.addEventListener('resize', e=>containerResizer(tvRef.current));
     // resizeObserver.observe(tvRef.current);
     return () => {
       window.removeEventListener('keydown', onEscKeyPressed);
       window.removeEventListener('popstate', onBack);
-      window.removeEventListener('resize', e=>containerResizer(tvRef.current));
+      // window.removeEventListener('resize', e=>containerResizer(tvRef.current));
       // resizeObserver.disconnect()
     };
   }, []);
@@ -85,35 +63,11 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
     }
   }, [titleInfoToDisplay]);
 
-  useEffect(() => {
-    const tv = tvRef.current;
-    if(maximazed){
-      tv.classList.add('tv__maximazed')
-      console.log('toast created!');
-      if (!alreadyNotifiedAboutMinimize.current) {
-        alreadyNotifiedAboutMinimize.current = true;
-        toast.info(texts.infoDisplayer.minimizeToast[language], {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Bounce,
-        });
-      }
-    }else{
-      tv.classList.remove('tv__maximazed');
-    }
-  }, [maximazed]);
 
-  console.log("titleInfoToDisplay",titleInfoToDisplay);
   return(
     <InfoDisplayerStyledComponent onClick={onClick}>
-      <div className="tv-container">
-        <div className="tv" ref={tvRef} > 
+      <div className={`tv-container`}>
+        <motion.div className={`tv ${maximazed && "tv__maximazed"}`} ref={tvRef} > 
           {titleInfoToDisplay !== null && 
           <div className="maximizeBtn" onClick={e=>handleTvMaximazed()}>
             <i className={!maximazed ? "fi fi-br-expand" : "fi fi-br-compress"}> </i>
@@ -133,7 +87,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
 
           : <span className="no-channel-alert">{texts.infoDisplayer.noInfo[language]}</span>
           }
-        </div>
+        </motion.div>
       </div>
     </InfoDisplayerStyledComponent>
   )

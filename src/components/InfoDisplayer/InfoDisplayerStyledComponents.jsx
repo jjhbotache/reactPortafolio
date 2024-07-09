@@ -46,18 +46,27 @@ export const InfoDisplayerStyledComponent = styled.div`
       height: 100%;
       padding: 0;
       margin: 0;
+      position: relative;
+
+      & .tv-container__antenna{
+        position: absolute;
+        top: 0;
+        left: 15%;
+        transform: translate(-50%,-90%);
+        height: 2em;
+        width: auto;
+        z-index:1;
+
+      } 
       
       .tv{
-
-        
         position: relative;
         background: #000;
         width: 100%; 
         height: 100%;
         max-height: inherit;
        
-        border: .3vw solid ${primaryColor};
-        border-radius: 2rem;
+        border: .5em inset ${primaryColor};
         overflow: hidden;
 
 
@@ -133,29 +142,19 @@ export const InfoDisplayerStyledComponent = styled.div`
           top: 50%;
           transform: translate(-50%,-50%);
 
-          width: 90% !important;
-          height: 95% !important;
+          width: 99% !important;
+          height: 99% !important;
           z-index: 3;
-          box-shadow: 0 0 50vh 10vh rgb(46, 0, 86);
           
-          & .return-btn{
-            display: block;
-            opacity: 1;
-            border: 2px solid ${primaryColor};
-            color: ${primaryColor};
-            font-size: 1.1rem;
-            aspect-ratio: 1;
-          }
 
-          &:hover{
-            animation: none;
-          }
 
         }
 
         &:hover{
           animation: ${hue_rotate} 1s linear infinite;
         }
+
+        
 
         .tv-noise-gif{
           background: #000;

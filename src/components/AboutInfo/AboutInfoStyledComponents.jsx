@@ -58,7 +58,11 @@ export const AboutInfoContainer = styled.div`
   }
 
   .typer-container{
-    min-height: 15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18em;
+    min-height: 18em;
   }
 
   .separator{
@@ -107,7 +111,7 @@ export const AboutInfoContainer = styled.div`
   .continue-exploring-text{
     margin: 2rem 0;
     padding: 0 1rem;
-    font-size: .7rem;
+    font-size: 1rem;
     animation: ${shine} 2s infinite;
     cursor: pointer;
   }

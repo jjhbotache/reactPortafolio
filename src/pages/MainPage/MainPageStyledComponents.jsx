@@ -114,6 +114,7 @@ export const MainInfo= styled.main`
   .container{
     width: 100%;
     height: 100%;
+
     position: relative;
     z-index: 1;
 
@@ -123,8 +124,8 @@ export const MainInfo= styled.main`
     "title-text tv"
     "channels tv"
     ;
-    grid-template-columns: .7fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     
     @media screen and (width < ${mdScreenWidth}){
       grid-template-areas: 
@@ -133,8 +134,9 @@ export const MainInfo= styled.main`
       "channels"
       "tv"
       ;
-      grid-template-columns: 1fr;
       grid-template-rows: 4fr 1fr 1fr 55vh;
+      grid-template-columns: 100%;
+
     }
     
     .title-texts{

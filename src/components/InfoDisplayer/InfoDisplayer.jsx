@@ -10,7 +10,18 @@ import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
 import containerResizer from "../../helpers/containerResizer";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
-import { motion } from "framer-motion";
+import { motion, transform } from "framer-motion";
+
+const variants = {
+  minimized: {
+    position: "relative",
+    transform: "unset",
+    zIndex: "unset",
+    width: "100%",
+    height: "100%",
+  }
+
+}
 
 export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   const tvRef = useRef(null);
@@ -33,10 +44,13 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
       if (e.key === "Escape" && maximazed) handleTvMaximazed("close")
     }
     function onBack(e) {
-      handleTvMaximazed("close")
+      if (maximazed){
+        e.preventDefault();
+        handleTvMaximazed("close")
+      }
     }
 
-    containerResizer(tvRef.current);
+    // containerResizer(tvRef.current);
 
     window.addEventListener('keydown', onEscKeyPressed);
     window.addEventListener('popstate', onBack);
@@ -64,15 +78,17 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   }, [titleInfoToDisplay]);
 
 
+  
+
   return(
     <InfoDisplayerStyledComponent onClick={onClick}>
       <div className={`tv-container`}>
+        <img className="tv-container__antenna" src="/antenna.svg" alt="antenna" />
         <motion.div className={`tv ${maximazed && "tv__maximazed"}`} ref={tvRef} > 
-          {titleInfoToDisplay !== null && 
-          <div className="maximizeBtn" onClick={e=>handleTvMaximazed()}>
+
+          {titleInfoToDisplay !== null &&  <div className="maximizeBtn" onClick={e=>handleTvMaximazed()}>
             <i className={!maximazed ? "fi fi-br-expand" : "fi fi-br-compress"}> </i>
-          </div>
-          }
+          </div> }
           
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null

@@ -92,7 +92,6 @@ export default function MainPage() {
   // }
 
   function onTvClicked(e){
-    console.log('tv clicked');
     if (titleInfoToDisplay === null) {
       dispatcher(toggleMenu())
     }

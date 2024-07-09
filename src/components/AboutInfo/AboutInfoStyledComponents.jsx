@@ -33,7 +33,7 @@ export const AboutInfoContainer = styled.div`
 
   background-image:
   linear-gradient( rgba(0, 0, 0, .85), rgba(0, 0, 0, .9) ) ,
-  url(${svgPc});
+  url(/Idea.svg);
   background-size: 70% 70%;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,6 +56,11 @@ export const AboutInfoContainer = styled.div`
   p {
     margin-bottom: 2rem;
   }
+
+  .typer-container{
+    min-height: 15em;
+  }
+
   .separator{
     color : ${secondaryColor};
     border: 1px solid ${secondaryColor};
@@ -76,14 +81,10 @@ export const AboutInfoContainer = styled.div`
     &__category-title{
       margin-bottom: 2em;
     }
-    &{
-      width: 100%;
-      text-align: center;
-    }
 
     &__category{
       width: 100%;
-      max-width: 300px;
+      max-width: 500px;
       border-radius: 1rem;
       padding: 1rem;
       background: rgba(255, 255, 255, 0.02);
@@ -99,45 +100,7 @@ export const AboutInfoContainer = styled.div`
       gap: 1rem;
       align-items: center;
     }
-    &__technology{
-      width: 4.5em;
-      height: 4.5em;
-      box-sizing: border-box;
-
-      max-width: 100px;
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-      align-items: center;
-      justify-content: center;
-      background: rgba(51, 51, 51, 0.2);
-      box-shadow: 0 0 1rem rgba(51, 51, 51, .2);
-      backdrop-filter: blur(10px);
-      border-radius: .5rem;
-      padding: .5rem;
-      transition: .5s all ease-out;
-      cursor: pointer;
-      &:hover{
-        transform: scale(1.1);
-        box-shadow: 0 0 1rem rgba(255, 255, 255, .5);
-      }
-
-
-
-      img{
-        max-width: 1.2em;
-        max-height: 1.2em;
-        border-radius: .2rem;
-        background-color: ${lightColor};
-        padding: .1rem;
-      }
-      p{
-        font-size: .7rem;
-        font-weight: bold;
-        margin: 0;
-        color: ${secondaryColor};
-      }
-    }
+    
 
   }
 

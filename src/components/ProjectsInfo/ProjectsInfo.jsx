@@ -17,8 +17,14 @@ import downloadImg from "../../assets/images/download.png";
 import { Link } from "react-router-dom";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
+import technologies from "../../constants/technologies";
+import TechTag from "./TechTag/TechTag";
 
+technologies
 
+const allTechnologies = Object.keys(technologies).map(
+  category => technologies[category].map(tech => tech)
+).flat();
 
 export default function ProjectsInfo({onScrolled,maximazed}) {
   const [titleTyped, setTitleTyped] = useState(false);
@@ -82,7 +88,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
             {
               titleTyped &&
               <div className="subtitle">
-                <hr className="subtitle--separator" />
+                <hr className="subtitle__separator" />
                 <Typewriter
                   onInit={typewriter=>{
                     typewriter
@@ -93,7 +99,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     .start();
                   }}
                   options={{
-                    wrapperClassName: "subtitle--text",
+                    wrapperClassName: "subtitle__text",
                     delay: 10,
                     cursor: ""
                   }}
@@ -123,10 +129,10 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
               {
                   projectsMedia.map((project, index)=>{
                     return(
-                      <SwiperSlide key={index} className="projectsSwiper--slide">
-                        <h1 className="projectsSwiper--title">{project.title}</h1>
-                        <img className="projectsSwiper--img" src={project.img} alt={project.title} />
-                        {!maximazed && <button className="projectsSwiper--btn" onClick={() => { projectsInfoContainerRef.current.scrollBy({ top: 500, behavior: 'smooth' }); }}>{texts.projectsInfo.more[language]}</button>}
+                      <SwiperSlide key={index} className="projectsSwiper__slide">
+                        <h1 className="projectsSwiper__title">{project.title}</h1>
+                        <img className="projectsSwiper__img" src={project.img} alt={project.title} />
+                        {!maximazed && <button className="projectsSwiper__btn" onClick={() => { projectsInfoContainerRef.current.scrollBy({ top: 500, behavior: 'smooth' }); }}>{texts.projectsInfo.more[language]}</button>}
                       </SwiperSlide>
                     )
                   })
@@ -147,37 +153,43 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
-                    <hr className="currentProjectInfo--separator" />
-                    <h1 className="currentProjectInfo--name">{currentProject.title}</h1>
-                    <ul className="currentProjectInfo--tags-container">
-                      {
-                      currentProject.tags.map((tag, index)=>(<li key={index} className="currentProjectInfo--tag">{tag}</li>))
-                      }
-                    </ul>
+                    <hr className="currentProjectInfo__separator" />
+                    <h1 className="currentProjectInfo__name">{currentProject.title}</h1>
                   </motion.div>
-                  {/* project description */}
+                  {/* technologies */}
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
-                  <p className="currentProjectInfo--description">{currentProject.description[language]}</p>
+                  <ul className="currentProjectInfo__techs_container">{
+                    currentProject.tags.map((tag, index)=><TechTag key={index} tag={tag} allTechnologies={allTechnologies} />)
+                  }</ul>
                   </motion.div>
-                  {/* video */}
+
+                  {/* project description */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
-                  <video className="currentProjectInfo--video" src={currentProject.video} controls loop autoPlay muted></video>
+                  <p className="currentProjectInfo__description">{currentProject.description[language]}</p>
                   </motion.div>
-                  {/* check project section */}
+                  {/* video */}
                   <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
-                  <section className="currentProjectInfo--check-project-section">
+                  <video className="currentProjectInfo__video" src={currentProject.video} controls loop autoPlay muted></video>
+                  </motion.div>
+                  {/* check project section */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
+                  >
+                  <section className="currentProjectInfo__check-project-section">
                     <h2 className="title">{texts.projectsInfo.checkItOut[language]}</h2>
                     <div className="check-on-options">
                       {
@@ -189,7 +201,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                             to={link.link}
                             download={link.name.includes("Download")}
                             >
-                            <img className="check-on-option--img" src={ 
+                            <img className="check-on-option__img" src={ 
                               
                               link.name.includes("Github")
                                 ? githubImg 
@@ -199,7 +211,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                                     ? downloadImg
                                     : ""
                               } alt="option img" />
-                            <h3 className="check-on-option--name">{link.name}</h3>
+                            <h3 className="check-on-option__name">{link.name}</h3>
                           </Link>
                         ))
                       }

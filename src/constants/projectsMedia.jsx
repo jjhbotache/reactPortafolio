@@ -40,7 +40,6 @@ const projectsMedia = [
       "Styled Components",
       "React Router",
       "AWS Cognito",
-      "react-router-dom"
     ],
     description: {
       es: "Este es un clon de la pagina web de Netflix. La app simula el login y registro de usuarios utilizando AWS Cognito, permite el pago de la suscripción utilizando Paypal y almacena la información de los usuarios en Firebase.",
@@ -70,7 +69,7 @@ const projectsMedia = [
       "JWT",
       "CSS Modules",
       "Bootstrap",
-      "react-router-dom",
+      "React Router",
     ],
     description: {
       es: "Este proyecto, se compone de un Backend desarrollado con Python y un Frontend desarrollado con React. Esta, es una página hecha para una empresa que vende vinos con diseños personalizados, por lo que la página, permite a clientes, visualizar los diseños, registrarse, guardar diseños en el carrito, crear ordenes de compra y ver el estado de las mismas en su dashboard. De lado del administrador, se puede manejar todos los datos como los vinos que se venden, los diseños, sus tags y demás.",
@@ -125,7 +124,7 @@ const projectsMedia = [
       "React",
       "Api consumption",
       "Styled Components",
-      "react-router-dom"
+      "React Router"
     ],
     description: {
       es: "Este proyecto, utiliza la api SWapi,la api de Pixabay y StyledComponents. Se utiliza la información de la api SWapi para pasar props a componentes y hacer un pequeño avatar con altura, color y recuadro variable con base a esta información. La api SWapi no proporciona imágenes de los personajes, por lo que se recurrió a utilizar la api de Pixabay para buscar el nombre y seleccionar una imagen aleatoria de los resultados.",
@@ -152,7 +151,7 @@ const projectsMedia = [
       "React",
       "Api consumption",
       "Bootstrap",
-      "react-router-dom"
+      "React Router"
     ],
     description: {
       es: "Este proyecto se centró en el efectivo consumo de la api de Rick y Morty y uso de TypeScript, agregando funciones como el scroll infinito, búsqueda de caracteres y filtro de los mismos. La estética de la pagina se vio apoyada en Bootstrap.",
@@ -205,7 +204,7 @@ const projectsMedia = [
     tags: [
       "HTML",
       "CSS",
-      "JS",
+      "Javascript",
       "BEM methodology"
     ],
     description: {
@@ -236,7 +235,7 @@ const projectsMedia = [
       "sqlite",
       "pywebview",
       "Recharts",
-      "react-router-dom"
+      "React Router"
     ],
     description: {
       es: "Este programa analiza mediante web scraping, 3 casas de apuestas y apartir de esa información, encuentra surebets: Apuestas seguras, que al apostar a todos eventos posibles, se obtendrá una ganancia. El programa se escribió en Python y usa, para la interfaz gráfica, usa react mediante la librería pywebview. Con respecto a Python, se usó request, beautiful soup para hacer web scraping y sqlite para almacenar información de las surebets registradas y con respecto a la UI se utilizo React y Recharts para hacer gráficos de la información guardada.",
@@ -336,7 +335,7 @@ const projectsMedia = [
     tags: [
       "React native",
       "Javascript",
-      "Expo SQLite",
+      "SQLite",
     ],
     description: {
       es: "Esta aplicación permite a los usuarios gestionar y reorganizar tareas. Utiliza Expo SQLite para almacenar las tareas y funcionalidades de reorganización mediante drag and drop.",

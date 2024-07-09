@@ -79,65 +79,64 @@ export default function AboutInfo({onScrolled}) {
     <AboutInfoContainer onScroll={onScrolled} onClick={e=>setTyped(true)}>
       <div className="content">
         <h1>{texts.aboutInfo.title[language] }</h1>
-        <div ref={typeWriterContainerRef} className="typer-container" />
-        
+        {/* if typed, show all the text at once */}
         {
-          typed && (
-            <>
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0, transition: { duration: 1 }}}
-            >
-              <hr className="separator" />
-              <section className="technologies-section">
-                <h2 className="technologies-section__title">{texts.aboutInfo.technologies[language]}</h2>
-                {
-                  Object.keys(technologies).map(category=>(
-                    <div key={category} className="technologies-section__category">
-                      <h3 className="technologies-section__category-title">{category}</h3>
-                      <ul className="technologies-section__technologies-container">
-                        {technologies[category].map(tech=>(<TechnologyComponent tech={tech} key={tech.name}/>))}
-                      </ul>
-                    </div>
-                  ))
-                }
-              </section>
-              {/* <h3 onClick={onContinueExploring} className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h3> */}
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0, transition: { duration: 1 }}}
-            >
-              <hr className="separator" />
-              <h3 onClick={onContinueExploring} className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h3>
-              <hr className="separator" />
-            </motion.div>
-
-            <motion.div
-            onClick={watchInHereCV}
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
-            className="cvImg-container"
-            >
-              <h2>Curriculum Vitae</h2>
-              <img src={CVimg} alt="CV" />
-            </motion.div>
-            <dialog className="CV-modal" ref={dialogRef} onClick={e => dialogRef.current.close()}>
-              <img ref={modalCvImgRef} src={CVimg} alt="CV" />
-              <small>{texts.aboutInfo.closeModal[language]}</small>
-            </dialog>
-
-            <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
-            className="btn-container"
-            >
-                <CoolBtn text={texts.aboutInfo.downloadCV[language]} onClick={downloadCV}/>
-                <CoolBtn type="secondary" text={texts.aboutInfo.watchCV[language]} onClick={watchCV}/>
-            </motion.div>
-            </>
-          )
+          typed 
+            ?<p className="about-text"> {texts.aboutInfo.text1[language]}<br/><br/>{texts.aboutInfo.text2[language]}</p> 
+            : <div onClick={e=>setTyped(true)} ref={typeWriterContainerRef} className="typer-container" />
         }
+        {/* technologies */}
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0, transition: { duration: 1 }}}
+        >
+          <hr className="separator" />
+          <section className="technologies-section">
+            <h2 className="technologies-section__title">{texts.aboutInfo.technologies[language]}</h2>
+            {
+              Object.keys(technologies).map(category=>(
+                <div key={category} className="technologies-section__category">
+                  <h3 className="technologies-section__category-title">{category}</h3>
+                  <ul className="technologies-section__technologies-container">
+                    {technologies[category].sort((a,b)=>b.importance - a.importance) .map(tech=>(<TechnologyComponent tech={tech} key={tech.name}/>))}
+                  </ul>
+                </div>
+              ))
+            }
+          </section>
+        </motion.div>
+        {/* click to projects */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0, transition: { duration: 1 }}}
+        >
+          <hr className="separator" />
+          <h3 onClick={onContinueExploring} className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h3>
+          <hr className="separator" />
+        </motion.div>
+        {/* cv */}
+        <motion.div
+        onClick={watchInHereCV}
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
+        className="cvImg-container"
+        >
+          <h2>Curriculum Vitae</h2>
+          <img src={CVimg} alt="CV" />
+        </motion.div>
+        <dialog className="CV-modal" ref={dialogRef} onClick={e => dialogRef.current.close()}>
+          <img ref={modalCvImgRef} src={CVimg} alt="CV" />
+          <small>{texts.aboutInfo.closeModal[language]}</small>
+        </dialog>
+        {/* cv btns */}
+        <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
+        className="btn-container"
+        >
+            <CoolBtn text={texts.aboutInfo.downloadCV[language]} onClick={downloadCV}/>
+            <CoolBtn type="secondary" text={texts.aboutInfo.watchCV[language]} onClick={watchCV}/>
+        </motion.div>
       </div>
     </AboutInfoContainer>
   )

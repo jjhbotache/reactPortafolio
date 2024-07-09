@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
+import { lightColor, mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
 import svgPc from "../../assets/svgs/programming-monitor-svgrepo-com.svg";
 
 const shine = keyframes`
@@ -15,6 +15,8 @@ const shine = keyframes`
     /* letter-spacing: .02rem; */
   }
 `;
+
+
 
 export const AboutInfoContainer = styled.div`
   text-align: center;
@@ -59,6 +61,86 @@ export const AboutInfoContainer = styled.div`
     border: 1px solid ${secondaryColor};
     box-shadow: 0 0 .5rem ${secondaryColor};
   }
+  .technologies-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: .5rem;
+
+    &__title,&__category-title{
+      width: 100%;
+      text-align: center;
+    }
+    &__category-title{
+      margin-bottom: 2em;
+    }
+    &{
+      width: 100%;
+      text-align: center;
+    }
+
+    &__category{
+      width: 100%;
+      max-width: 300px;
+      border-radius: 1rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    
+
+    
+    &__technologies-container{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1rem;
+      align-items: center;
+    }
+    &__technology{
+      width: 4.5em;
+      height: 4.5em;
+      box-sizing: border-box;
+
+      max-width: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      align-items: center;
+      justify-content: center;
+      background: rgba(51, 51, 51, 0.2);
+      box-shadow: 0 0 1rem rgba(51, 51, 51, .2);
+      backdrop-filter: blur(10px);
+      border-radius: .5rem;
+      padding: .5rem;
+      transition: .5s all ease-out;
+      cursor: pointer;
+      &:hover{
+        transform: scale(1.1);
+        box-shadow: 0 0 1rem rgba(255, 255, 255, .5);
+      }
+
+
+
+      img{
+        max-width: 1.2em;
+        max-height: 1.2em;
+        border-radius: .2rem;
+        background-color: ${lightColor};
+        padding: .1rem;
+      }
+      p{
+        font-size: .7rem;
+        font-weight: bold;
+        margin: 0;
+        color: ${secondaryColor};
+      }
+    }
+
+  }
+
   .continue-exploring-text{
     margin: 2rem 0;
     padding: 0 1rem;

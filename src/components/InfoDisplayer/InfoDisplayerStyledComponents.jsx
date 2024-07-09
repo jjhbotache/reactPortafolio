@@ -87,7 +87,7 @@ export const InfoDisplayerStyledComponent = styled.div`
 
         .maximizeBtn{
           position: absolute;
-          z-index: 1;
+          z-index: 2;
           top: 1rem;
           right: 1rem;
           width: 2rem;

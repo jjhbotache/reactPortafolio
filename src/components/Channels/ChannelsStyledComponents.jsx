@@ -25,8 +25,14 @@ export const ChannelsStyledComponent = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
+  margin-top: 2em;
+  
+  @media screen and (width < ${mdScreenWidth}){
+    margin-top: unset;
+    justify-content: center;
+  }
 
   .channels-details{
     position: relative;
@@ -43,6 +49,7 @@ export const ChannelsStyledComponent = styled.div`
     
     border: 1px solid ${primaryColor};
     background: rgba(255, 255, 255, .1);
+    cursor: pointer;
 
     summary{
       background: #111;

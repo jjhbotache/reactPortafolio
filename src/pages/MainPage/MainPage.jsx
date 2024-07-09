@@ -8,6 +8,7 @@ import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 import { useDispatch, useSelector } from "react-redux";
 import { setTitleInfoToDisplay } from "../../redux/slices/titleInfoToDisplaySlice";
+import { toggleMenu } from "../../redux/slices/menuOpenSlice";
 
 export default function MainPage() {
   const bottomLeftFrameRef = useRef(null);
@@ -21,7 +22,7 @@ export default function MainPage() {
 
 
   const { language } = useContext( GlobalStateContext )
-  const dispatch = useDispatch();
+  const dispatcher = useDispatch();
   
   
 
@@ -80,18 +81,21 @@ export default function MainPage() {
 
   function onChannelSelect(channel){
     const { value:newTitle } = channel;
-    dispatch(setTitleInfoToDisplay(newTitle));
+    dispatcher(setTitleInfoToDisplay(newTitle));
 
   }
 
-  function onChangeInfoToDisplay(titleInfoToDisplay){
-    // look for the channels that has the same value as titleInfoToDisplay
-    const channel = channels.find(channel => channel.value === titleInfoToDisplay);
-    dispatch(setTitleInfoToDisplay(channel.value));
-  }
+  // function onChangeInfoToDisplay(titleInfoToDisplay){
+  //   // look for the channels that has the same value as titleInfoToDisplay
+  //   const channel = channels.find(channel => channel.value === titleInfoToDisplay);
+  //   dispatch(setTitleInfoToDisplay(channel.value));
+  // }
 
-  function onTvClicked(){
+  function onTvClicked(e){
     console.log('tv clicked');
+    if (titleInfoToDisplay === null) {
+      dispatcher(toggleMenu())
+    }
   }
 
   return (
@@ -123,7 +127,7 @@ export default function MainPage() {
 
           <Channels channels={channels} onSelectChannel={onChannelSelect} />
 
-          <InfoDisplayer titleInfoToDisplay={titleInfoToDisplay} onChangeInfoToDisplay={onChangeInfoToDisplay} onClick={onTvClicked}/>
+          <InfoDisplayer titleInfoToDisplay={titleInfoToDisplay} onClick={onTvClicked}/>
         </div>
       </MainInfo>
       

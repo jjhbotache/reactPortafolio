@@ -23,7 +23,7 @@ import texts from "../../constants/texts";
 export default function ProjectsInfo({onScrolled,maximazed}) {
   const [titleTyped, setTitleTyped] = useState(false);
   const welcomeTextRef = useRef(null);
-  const showIntroRef = useRef(true);
+  const [showIntro, setShowIntro] = useState(true);
   const [currentProject, setCurrentProject] = useState(null);
   const [infoVariant, setInfoVariant] = useState("hidden");
   const projectsInfoContainerRef = useRef(null);
@@ -35,7 +35,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
   function welcomeTextFadeOut(){
     welcomeTextRef.current?.classList.add("welcomeText__fade-out");
     setTimeout(()=>{
-      showIntroRef.current = false
+      setShowIntro(false);
       setTitleTyped(false);
     }, 1000);
   }
@@ -55,13 +55,14 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
     visible: { opacity: 1 }
   }
 
+
   return(
     <ProjectsInfoContainer>
 
       {
-        showIntroRef.current
+        showIntro
         ?(
-          <WelcomeText ref={welcomeTextRef} onClick={e=>setTitleTyped(true)}>
+          <WelcomeText ref={welcomeTextRef} onClick={e=>{setTitleTyped(true);setShowIntro(false)}}>
             <Typewriter
               onClick={e=>setTitleTyped(true)}
               onInit={typewriter=>{

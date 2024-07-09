@@ -199,6 +199,7 @@ export const MainInfo= styled.main`
       margin-bottom: 3rem;
       
       @media screen and (width < ${mdScreenWidth}){
+        display: grid;
         margin-bottom: 0rem;
         padding-left: 0;
         justify-content: center;

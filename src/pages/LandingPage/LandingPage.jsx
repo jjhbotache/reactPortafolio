@@ -45,6 +45,7 @@ export default function LandingPage() {
       navigate("/main");
     }, 1500)
   }
+  
   return(
     <LandingPageStyledComponent onClick={redirect} ref={mainRef}>
       <div className="cursor-effect" ref={cursorEffectRef}></div>

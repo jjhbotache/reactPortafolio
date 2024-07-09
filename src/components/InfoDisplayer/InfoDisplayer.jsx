@@ -11,7 +11,7 @@ import containerResizer from "../../helpers/containerResizer";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 
-export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay, onClick}) {
+export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   const tvRef = useRef(null);
   const [maximazed,setMaximazed   ] = useState(false);
   const handleTvMaximazedLastTime = useRef(0);
@@ -19,10 +19,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay,
   const alreadyNotifiedAboutMinimize = useRef(false);
   const {language} = useContext(GlobalStateContext);
 
-  function changeInfoToDisplay(title) {
-    console.log('changeInfoToDisplay', title);
-    onChangeInfoToDisplay(title);
-  }
+  
 
   function handleTvMaximazed(
     only = undefined// "open" or "close"
@@ -112,10 +109,11 @@ export default function InfoDisplayer({titleInfoToDisplay,onChangeInfoToDisplay,
     }
   }, [maximazed]);
 
+  console.log("titleInfoToDisplay",titleInfoToDisplay);
   return(
-    <InfoDisplayerStyledComponent>
-      <div className="tv-container" onClick={onClick}>
-        <div className="tv" ref={tvRef} onDoubleClick={e=>handleTvMaximazed()}> 
+    <InfoDisplayerStyledComponent onClick={onClick}>
+      <div className="tv-container">
+        <div className="tv" ref={tvRef} > 
           {titleInfoToDisplay !== null && 
           <div className="maximizeBtn" onClick={e=>handleTvMaximazed()}>
             <i className={!maximazed ? "fi fi-br-expand" : "fi fi-br-compress"}> </i>

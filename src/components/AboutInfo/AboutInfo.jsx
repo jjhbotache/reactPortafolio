@@ -12,6 +12,8 @@ import CVimg from "../../assets/images/JUAN JOSE HUERTAS BOTACHE.png";
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from "react-redux";
 import { setTitleInfoToDisplay } from "../../redux/slices/titleInfoToDisplaySlice";
+import technologies from "../../constants/technologies";
+import TechnologyComponent from "./TechnologyComponent";
 
 
 
@@ -23,13 +25,6 @@ export default function AboutInfo({onScrolled}) {
   const modalCvImgRef = useRef(null);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   // creaete a event listener to resize the modal image
-  //   window.addEventListener('resize', ()=>containerResizer(modalCvImgRef.current));
-  //   return () => {
-  //     window.removeEventListener('resize', ()=>containerResizer(modalCvImgRef.current));
-  //   }
-  // }, []);
 
   useEffect(() => {
     // delete everythin inside the container
@@ -37,19 +32,15 @@ export default function AboutInfo({onScrolled}) {
 
      // first, create a typewriter element and put it on the container
      const typewriter = new Typewriter(typeWriterContainerRef.current, {
-       delay: 1,
+       delay: 5,
      });
      // then, add the text to the typewriter
      typewriter
-       .pauseFor(1000)
+       .pauseFor(250)
        .typeString(texts.aboutInfo.text1[language])
        .pasteString('<br/><br/>')
-       .pauseFor(1000)
+       .pauseFor(100)
        .typeString(texts.aboutInfo.text2[language])
-       .pasteString('<br/><br/>')
-       .pauseFor(1000)
-       .typeString(texts.aboutInfo.text3[language])
-       .pasteString('<br/><br/>')
        .callFunction(()=>{
           setTyped(true)
           // to all the Typewriter__cursor elements, add a class to hide them
@@ -94,6 +85,26 @@ export default function AboutInfo({onScrolled}) {
           typed && (
             <>
             <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0, transition: { duration: 1 }}}
+            >
+              <hr className="separator" />
+              <section className="technologies-section">
+                <h2 className="technologies-section__title">{texts.aboutInfo.technologies[language]}</h2>
+                {
+                  Object.keys(technologies).map(category=>(
+                    <div key={category} className="technologies-section__category">
+                      <h3 className="technologies-section__category-title">{category}</h3>
+                      <ul className="technologies-section__technologies-container">
+                        {technologies[category].map(tech=>(<TechnologyComponent tech={tech} key={tech.name}/>))}
+                      </ul>
+                    </div>
+                  ))
+                }
+              </section>
+              {/* <h3 onClick={onContinueExploring} className="continue-exploring-text">{texts.aboutInfo.continueExploring[language]}</h3> */}
+            </motion.div>
+            <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0, transition: { duration: 1 }}}
             >
@@ -102,29 +113,29 @@ export default function AboutInfo({onScrolled}) {
               <hr className="separator" />
             </motion.div>
 
-          <motion.div
-          onClick={watchInHereCV}
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
-          className="cvImg-container"
-          >
-            <h2>Curriculum Vitae</h2>
-            <img src={CVimg} alt="CV" />
-          </motion.div>
-          <dialog className="CV-modal" ref={dialogRef} onClick={e => dialogRef.current.close()}>
-            <img ref={modalCvImgRef} src={CVimg} alt="CV" />
-            <small>{texts.aboutInfo.closeModal[language]}</small>
-          </dialog>
+            <motion.div
+            onClick={watchInHereCV}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
+            className="cvImg-container"
+            >
+              <h2>Curriculum Vitae</h2>
+              <img src={CVimg} alt="CV" />
+            </motion.div>
+            <dialog className="CV-modal" ref={dialogRef} onClick={e => dialogRef.current.close()}>
+              <img ref={modalCvImgRef} src={CVimg} alt="CV" />
+              <small>{texts.aboutInfo.closeModal[language]}</small>
+            </dialog>
 
-          <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
-          className="btn-container"
-          >
-             <CoolBtn text={texts.aboutInfo.downloadCV[language]} onClick={downloadCV}/>
-             <CoolBtn type="secondary" text={texts.aboutInfo.watchCV[language]} onClick={watchCV}/>
-          </motion.div>
-          </>
+            <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x:0, transition: { duration: .7 }}}
+            className="btn-container"
+            >
+                <CoolBtn text={texts.aboutInfo.downloadCV[language]} onClick={downloadCV}/>
+                <CoolBtn type="secondary" text={texts.aboutInfo.watchCV[language]} onClick={watchCV}/>
+            </motion.div>
+            </>
           )
         }
       </div>

@@ -1,4 +1,6 @@
 export default function containerResizer(container, maxSize = 100) {
+  if(!container) return
+
   // console.log("containerResizer");
   container.style.width = `${maxSize}%`;
   container.style.height = `${maxSize}%`;
@@ -20,5 +22,5 @@ export default function containerResizer(container, maxSize = 100) {
   }
   container.style.aspectRatio = "1/1";
 
-  console.log("containerResizer", sizes, container.style.width, container.style.height);
+  // console.log("containerResizer", sizes, container.style.width, container.style.height);
 }

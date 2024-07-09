@@ -21,6 +21,15 @@ const GlobalStyles = createGlobalStyle`
   --toastify-color-info: ${lightColor};
   }
 
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  p{
+    margin: 0;
+  }
+
 `;
 
 export default GlobalStyles;

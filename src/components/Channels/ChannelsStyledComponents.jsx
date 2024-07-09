@@ -27,7 +27,7 @@ export const ChannelsStyledComponent = styled.div`
   display: flex;
   justify-content: start;
   align-items: start;
-  margin-top: 2em;
+  margin-top: 2vh;
   
   @media screen and (width < ${mdScreenWidth}){
     margin-top: unset;

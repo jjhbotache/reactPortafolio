@@ -1,33 +1,37 @@
-import disneyPlus from '../assets/projects/imgs/disneyPlus.png';
-import imageArranger from '../assets/projects/imgs/imageArranger.png';
-import mouseEffect from '../assets/projects/imgs/mouseEffect.jpeg';
-import movieSearcher from '../assets/projects/imgs/movieSearcher.jpeg';
-import rickAndMorty from '../assets/projects/imgs/rickAndMorty.png';
-import surebetsBettor from '../assets/projects/imgs/surebetsBettor.jpeg';
-import SW from '../assets/projects/imgs/SW.png';
-import ticTacToe from '../assets/projects/imgs/ticTacToe.jpeg';
-import netflixClone from '../assets/projects/imgs/netflixClone.png';
-import memorableWebpage from '../assets/projects/imgs/memorableWebpage.png';
-import reactNativeCalc from '../assets/projects/imgs/reactNativeCalc.png';
-import newspaperApp from '../assets/projects/imgs/newspaperApp.png';
-import reactTodoApp from '../assets/projects/imgs/reactTodoApp.png';
+import disneyPlus from '/projects/imgs/disneyPlus.png';
+import imageArranger from '/projects/imgs/imageArranger.png';
+import mouseEffect from '/projects/imgs/mouseEffect.jpeg';
+import movieSearcher from '/projects/imgs/movieSearcher.jpeg';
+import rickAndMorty from '/projects/imgs/rickAndMorty.png';
+import surebetsBettor from '/projects/imgs/surebetsBettor.jpeg';
+import SW from '/projects/imgs/SW.png';
+import ticTacToe from '/projects/imgs/ticTacToe.jpeg';
+import netflixClone from '/projects/imgs/netflixClone.png';
+import memorableWebpage from '/projects/imgs/memorableWebpage.png';
+import reactNativeCalc from '/projects/imgs/reactNativeCalc.png';
+import newspaperApp from '/projects/imgs/newspaperApp.png';
+import reactTodoApp from '/projects/imgs/reactTodoApp.png';
+import chattus from '/projects/imgs/chattus.png';
 
 // videos
-import disneyCloneVideo from "../assets/projects/videos/disneyCloneVideo_reducido.mp4"
-import imgArrangerVideo from "../assets/projects/videos/imgArrangerVideo_reducido.mp4"
-import movieSearcherVideo from "../assets/projects/videos/movieSearcherVideo_reducido.mp4"
-import rickAndMortyVideo from "../assets/projects/videos/rickAndMortyVideo_reducido.mp4"
-import surebetsBettorVideo from "../assets/projects/videos/surebetsBettorVideo_reducido.mp4"
-import SWVideo from "../assets/projects/videos/SWVideo_reducido.mp4"
-import ticTacToeVideo from "../assets/projects/videos/ticTacToeVideo_reducido.mp4"
-import netflixCloneVideo from "../assets/projects/videos/netflixCloneVideo.mp4"
-import memorableWebpageVideo from "../assets/projects/videos/memorableWebpageVideo.mp4"
-import reactNativeCalcVideo from "../assets/projects/videos/reactNativeCalcVideo.mp4"
-import newspaperAppVideo from "../assets/projects/videos/newspaperAppVideo.mp4"
-import reactTodoAppVideo from "../assets/projects/videos/reactTodoApp.mp4"
-//files
-// import reactTodoAppFile from '../assets/files/reactNativeTodoApp.apk'
-const reactTodoAppFile = "/reactNativeTodoApp.apk"
+import disneyCloneVideo from "/projects/videos/disneyCloneVideo_reducido.mp4"
+import imgArrangerVideo from "/projects/videos/imgArrangerVideo_reducido.mp4"
+import movieSearcherVideo from "/projects/videos/movieSearcherVideo_reducido.mp4"
+import rickAndMortyVideo from "/projects/videos/rickAndMortyVideo_reducido.mp4"
+import surebetsBettorVideo from "/projects/videos/surebetsBettorVideo_reducido.mp4"
+import SWVideo from "/projects/videos/SWVideo_reducido.mp4"
+import ticTacToeVideo from "/projects/videos/ticTacToeVideo_reducido.mp4"
+import netflixCloneVideo from "/projects/videos/netflixCloneVideo.mp4"
+import memorableWebpageVideo from "/projects/videos/memorableWebpageVideo.mp4"
+import reactNativeCalcVideo from "/projects/videos/reactNativeCalcVideo.mp4"
+import newspaperAppVideo from "/projects/videos/newspaperAppVideo.mp4"
+import reactTodoAppVideo from "/projects/videos/reactTodoApp.mp4"
+import chattusVideo from "/projects/videos/chattus.mp4"
+
+// apks
+const reactTodoAppApk = "/apks/reactNativeTodo.apk"
+const reactNativeCalcApk = "/apks/reactNativeCalc.apk"
+
 
 const projectsMedia = [
   // netflixClone
@@ -56,7 +60,8 @@ const projectsMedia = [
         name: "Web",
         link: "https://netflix-clone-beta-seven-55.vercel.app/"
       }
-    ]
+    ],
+    importance: 3
   },
   // memorableWebpage
   {
@@ -90,7 +95,8 @@ const projectsMedia = [
         name: "Web",
         link: "https://memorable-web-store.vercel.app/"
       }
-    ]
+    ],
+    importance: 2
   },
   // disneyPlus
   {
@@ -115,7 +121,8 @@ const projectsMedia = [
         name: "Web",
         link: "https://jjhbotache.github.io/disney_page/"
       }
-    ]
+    ],
+    importance: 2
   },
   // SWapiProject
   {
@@ -141,7 +148,8 @@ const projectsMedia = [
         name: "Web",
         link: "https://starwars-plum-seven.vercel.app/"
       }
-    ]
+    ],
+    importance: 2
   },
   // rickAndMorty
   {
@@ -169,7 +177,8 @@ const projectsMedia = [
         name: "Web",
         link: "https://rick-and-morty-indol.vercel.app/"
       }
-    ]
+    ],
+    importance: 2
   },
   // movieSearcher
   {
@@ -196,7 +205,8 @@ const projectsMedia = [
         name: "Web",
         link: null
       }
-    ]
+    ],
+    importance: 2
   },
   // imageArranger
   {
@@ -222,7 +232,8 @@ const projectsMedia = [
         name: "Web",
         link: "https://jjhbotache.github.io/image_arranger/"
       }
-    ]
+    ],
+    importance: 1
   },
   // surebetsBettor
   {
@@ -252,7 +263,8 @@ const projectsMedia = [
         name: "Web",
         link: "https://bets-gettor.vercel.app/"
       }
-    ]
+    ],
+    importance: 2
   },
   // ticTacToe
   {
@@ -277,7 +289,8 @@ const projectsMedia = [
         name: "Web",
         link: null
       }
-    ]
+    ],
+    importance: 1
   },
   // reactNativeCalc
   {
@@ -302,7 +315,8 @@ const projectsMedia = [
         name: "Download",
         link: "https://expo.dev/accounts/jjhbotache/projects/reactNativeCalc/builds/41612a44-022d-4bbb-a310-b42c3bbf32da"
       }
-    ]
+    ],
+    importance: 1
   },
   // newspaperApp
   {
@@ -327,7 +341,8 @@ const projectsMedia = [
         name: "Download",
         link: null
       }
-    ]
+    ],
+    importance: 1
   },
   // reactTodoApp
   {
@@ -350,9 +365,43 @@ const projectsMedia = [
       },
       {
         name: "Download",
-        link: reactTodoAppFile,
+        link: reactTodoAppApk,
       },
     ],
+    importance: 2
+  },
+  // chattus
+  {
+    title: "Chattus",
+    tags: [
+      "React",
+      "Styled Components",
+      "Redux Toolkit",
+      "React Router",
+      "WebSockets",
+      "Vite"
+    ],
+    description: {
+      es: "Esta página web permite crear un chat temporal rápido y sencillo, sin necesidad de registrarse y con funcionalidades como enviar mensajes, fotos, videos, audios y archivos. También permite crear salas de chat con funcionalidades interesante, como mínimo tiempo de actividad o exigencia de foco en el chat. La construcción de la página se hizo con React y el backend con python y fastapi.",
+      en: "This web page allows you to create a quick and simple temporary chat, without the need to register and with features such as sending messages, photos, videos, audios and files. It also allows you to create chat rooms with interesting features, such as minimum activity time or chat focus requirement. The construction of the page was done with React and the backend with python and fastapi."
+    },
+    img: chattus,
+    video: chattusVideo,
+    links: [
+      {
+        name: "Github Frontend",
+        link: "https://github.com/jjhbotache/chattus_front",
+      },
+      {
+        name: "Github Backend",
+        link: "https://github.com/jjhbotache/chattus_back",
+      },
+      {
+        name: "Web",
+        link: "https://chattus.netlify.app",
+      },
+    ],
+    importance: 3
   },
 ];
 

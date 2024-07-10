@@ -36,7 +36,7 @@ const technologies = {
       knowlegePercentage: 40
     },
     {
-      name: "Redux",
+      name: "Redux toolkit",
       svgUrl: "/SVG/redux.svg",
       technologyLink: "https://redux.js.org/",
       importance: 4,

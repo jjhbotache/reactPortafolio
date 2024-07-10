@@ -11,20 +11,23 @@ import 'swiper/css/pagination';
 import { Pagination, Navigation } from 'swiper/modules';
 
 import projectsMedia from "../../constants/projectsMedia";
-import githubImg from "../../assets/images/github.png";
-import browserImg from "../../assets/images/browser.png";
-import downloadImg from "../../assets/images/download.png";
+import githubImg from "/images/github.png";
+import browserImg from "/images/browser.png";
+import downloadImg from "/images/download.png";
 import { Link } from "react-router-dom";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 import technologies from "../../constants/technologies";
 import TechTag from "./TechTag/TechTag";
+import projectsMediaReArranger from "../../helpers/projectsMediaReArranger";
 
-technologies
 
 const allTechnologies = Object.keys(technologies).map(
   category => technologies[category].map(tech => tech)
 ).flat();
+
+const projectsToShow = projectsMediaReArranger(projectsMedia);
+
 
 export default function ProjectsInfo({onScrolled,maximazed}) {
   const [titleTyped, setTitleTyped] = useState(false);
@@ -33,8 +36,9 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
   const [currentProject, setCurrentProject] = useState(null);
   const [infoVariant, setInfoVariant] = useState("hidden");
   const projectsInfoContainerRef = useRef(null);
-
   const {language} = useContext(GlobalStateContext);
+
+  
 
   const timeToGoUpInSecs = .8;
 
@@ -50,7 +54,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
     setInfoVariant("hidden");
     if (!!timer) clearTimeout(timer);
     var timer = setTimeout(()=>{
-      setCurrentProject(projectsMedia[swiper.realIndex]);
+      setCurrentProject(projectsToShow[swiper.realIndex]);
       setInfoVariant("visible");
     }
     , 500);
@@ -127,7 +131,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
             onSlideChange={(swiper)=>{setInfo(swiper)}}
             >
               {
-                  projectsMedia.map((project, index)=>{
+                  projectsToShow.map((project, index)=>{
                     return(
                       <SwiperSlide key={index} className="projectsSwiper__slide">
                         <h1 className="projectsSwiper__title">

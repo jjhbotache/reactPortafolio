@@ -3,10 +3,10 @@ import { ContactInfoContainer, LogoLink } from "./ContactInfoStyledComponents"
 import { useEffect, useRef, useState } from "react";
 import { secondaryColor } from "../../constants/styleConstants";
 import { Link } from "react-router-dom";
-import gmailImg from "../../assets/images/gmail.png";
-import githubImg from "../../assets/images/github.png";
-import linkedinImg from "../../assets/images/linkedin.png";
-import whatsappImg from "../../assets/images/whatsapp.png";
+import gmailImg from "/images/gmail.png";
+import githubImg from "/images/github.png";
+import linkedinImg from "/images/linkedin.png";
+import whatsappImg from "/images/whatsapp.png";
 import containerResizer from "../../helpers/containerResizer";
 
 

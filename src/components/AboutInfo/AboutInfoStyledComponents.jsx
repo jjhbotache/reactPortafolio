@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { lightColor, mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
-import svgPc from "../../assets/svgs/programming-monitor-svgrepo-com.svg";
+import svgPc from "/svgs/programming-monitor-svgrepo-com.svg";
 
 const shine = keyframes`
 

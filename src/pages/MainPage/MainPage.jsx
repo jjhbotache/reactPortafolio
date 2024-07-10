@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react"
 import { MainInfo, MainPageStyledComponent } from "./MainPageStyledComponents";
-import purpleTriangle from "../../assets/svgs/purple_triangle.svg"
+import purpleTriangle from "/svgs/purple_triangle.svg"
 import Channels from "../../components/Channels/Channels";
 import InfoDisplayer from "../../components/InfoDisplayer/InfoDisplayer";
 import PageOptions from "../../components/PageOptions/PageOptions";

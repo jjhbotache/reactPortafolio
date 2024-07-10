@@ -1,41 +1,13 @@
 import { useContext, useEffect, useRef } from "react";
-import tvNoiseGif from "../../assets/gifs/tv_noise.gif"
+import tvNoiseGif from "/gifs/tv_noise.gif"
 import { InfoDisplayerStyledComponent } from "./InfoDisplayerStyledComponents";
 import { useState } from "react";
-import { mdScreenWidth } from "../../constants/styleConstants";
 import AboutInfo from "../AboutInfo/AboutInfo";
 import ContactInfo from "../ContactInfo/ContactInfo";
-import { Bounce, ToastContainer, toast } from "react-toastify";
 import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
-import containerResizer from "../../helpers/containerResizer";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
-import { motion } from "framer-motion";
 
-const variants = {
-  minimized: {
-    position: "relative",
-    transform: "translate(0,0)",
-    zIndex: "unset",
-    width: "100%",
-    height: "100%",
-    opacity: 1,
-  },
-  maximazed: {
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%,-50%)",
-    zIndex: 3,
-    width: "99%",
-    height: ["0%","99%", "99%"],
-    opacity: [0,0,1],
-    transition: {
-      duration: .2,
-    }
-  }
-
-}
 
 export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   const tvRef = useRef(null);

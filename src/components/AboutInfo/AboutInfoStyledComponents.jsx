@@ -45,7 +45,7 @@ export const AboutInfoContainer = styled.div`
 
   
   @media screen and (width > ${mdScreenWidth}){
-    padding: 5vh 5vw ;
+    padding: 5vh 1vw ;
   }
 
   h1 {
@@ -97,7 +97,7 @@ export const AboutInfoContainer = styled.div`
       width: 100%;
       max-width: 310px;
       border-radius: 1rem;
-      padding: 1rem;
+      padding: .1rem;
       background: rgba(255, 255, 255, 0.02);
     }
 

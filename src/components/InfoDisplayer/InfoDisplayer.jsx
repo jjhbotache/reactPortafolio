@@ -75,6 +75,12 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
     }
   }, [titleInfoToDisplay]);
 
+  useEffect(() => {
+    maximazed
+      ? tvRef.current.requestFullscreen()
+      : document.exitFullscreen();
+  }, [maximazed]);
+
 
   
 
@@ -82,13 +88,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
     <InfoDisplayerStyledComponent onClick={onClick}>
       <div className={`tv-container`}>
         <img className="tv-container__antenna" src="/antenna.svg" alt="antenna" />
-        {/* ${maximazed && "tv__maximazed"} */}
-        <motion.div 
-          initial={maximazed ? "maximazed" : "minimized"}
-          animate={maximazed ? "maximazed" : "minimized"}
-          variants={variants}
-          transition={{duration: .5}}
-        className={`tv`} ref={tvRef} > 
+        <div className={`tv`} ref={tvRef} > 
 
           {titleInfoToDisplay !== null &&  <div className="maximizeBtn" onClick={e=>handleTvMaximazed()}>
             <i className={!maximazed ? "fi fi-br-expand" : "fi fi-br-compress"}> </i>
@@ -107,7 +107,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
 
           : <span className="no-channel-alert">{texts.infoDisplayer.noInfo[language]}</span>
           }
-        </motion.div>
+        </div>
       </div>
     </InfoDisplayerStyledComponent>
   )

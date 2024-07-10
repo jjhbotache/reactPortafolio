@@ -29,8 +29,8 @@ import reactTodoAppVideo from "/projects/videos/reactTodoApp.mp4"
 import chattusVideo from "/projects/videos/chattus.mp4"
 
 // apks
-const reactTodoAppApk = "/apks/reactNativeTodo.apk"
-const reactNativeCalcApk = "/apks/reactNativeCalc.apk"
+const reactTodoAppApk = "/apks/reactNativeTodo.rar"
+const reactNativeCalcApk = "/apks/reactNativeCalc.rar"
 
 
 const projectsMedia = [

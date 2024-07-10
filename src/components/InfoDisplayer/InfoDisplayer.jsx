@@ -10,7 +10,7 @@ import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
 import containerResizer from "../../helpers/containerResizer";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
-import { motion, transform } from "framer-motion";
+import { motion } from "framer-motion";
 
 const variants = {
   minimized: {
@@ -19,22 +19,19 @@ const variants = {
     zIndex: "unset",
     width: "100%",
     height: "100%",
-    top: "unset",
-    left: "unset",
-    transition: {
-      duration: .1
-    }
+    opacity: 1,
   },
   maximazed: {
     position: "fixed",
-    left: "50%",
     top: "50%",
+    left: "50%",
     transform: "translate(-50%,-50%)",
     zIndex: 3,
     width: "99%",
-    height: ["0%", "99%"],
+    height: ["0%","99%", "99%"],
+    opacity: [0,0,1],
     transition: {
-      duration: .1
+      duration: .2,
     }
   }
 

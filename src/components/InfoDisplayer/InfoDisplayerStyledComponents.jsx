@@ -68,7 +68,8 @@ export const InfoDisplayerStyledComponent = styled.div`
         width: 100%; 
         height: 100%;
         max-height: inherit; */
-        
+        left: 50%;
+        top: 50%;       
         
         
         

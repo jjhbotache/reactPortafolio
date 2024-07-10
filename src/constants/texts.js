@@ -37,12 +37,12 @@ const texts = {
   },
   aboutInfo: {
     text1: {
-      es: "Soy un desarrollador apasionado por la tecnología y el software. Me entusiasma aprender cómo la tecnología puede facilitar la vida y mejorar procesos.",
-      en: "I am a developer passionate about technology and software. I am excited to learn how technology can make life easier and improve processes."
+      es: "Soy un desarrollador apasionado por la tecnología y el software. Me encanta simplificar la vida mediante la tecnología y sus mejores prácticas.",
+      en: "I am a developer passionate about technology and software. I love to simplify life through technology and its best practices."
     },
     text2: {
-      es: "Durante los últimos 4 años, me he dedicado a perfeccionar mis habilidades en desarrollo de software. He trabajado en varios proyectos personales que pueden verse en mi perfil de GitHub.",
-      en: "For the last 4 years, I have been dedicated to perfecting my skills in software development. I have worked on several personal projects that can be seen on my GitHub profile."
+      es: "Es por eso que me he especializado en React.js y Python, tecnologías con las que desarrollar soluciones para la mayoría de problemas es posible.",
+      en: "That's why I have specialized in React.js and Python, technologies with which developing solutions for most problems is possible."
     },
     title: {
       en: "About me",

@@ -36,7 +36,7 @@ const technologies = {
       knowlegePercentage: 40
     },
     {
-      name: "Redux toolkit",
+      name: "Redux",
       svgUrl: "/SVG/redux.svg",
       technologyLink: "https://redux.js.org/",
       importance: 4,
@@ -105,35 +105,35 @@ const technologies = {
       svgUrl: "/SVG/firebase.svg",
       technologyLink: "https://firebase.google.com/",
       importance: 4,
-      knowlegePercentage: 80
+      knowlegePercentage: 75
     },
     {
       name: "Python",
       svgUrl: "/SVG/python.svg",
       technologyLink: "https://www.python.org/",
       importance: 5,
-      knowlegePercentage: 90
+      knowlegePercentage: 85
     },
     {
       name: "Flask",
       svgUrl: "/SVG/flask-light.svg",
       technologyLink: "https://flask.palletsprojects.com/",
       importance: 3,
-      knowlegePercentage: 75
+      knowlegePercentage: 68
     },
     {
       name: "FastAPI",
       svgUrl: "/SVG/fastapi.svg",
       technologyLink: "https://fastapi.tiangolo.com/",
       importance: 4,
-      knowlegePercentage: 70
+      knowlegePercentage: 75
     },
     {
       name: "phpMyAdmin",
       svgUrl: "/SVG/phpMyAdmin.svg",
       technologyLink: "https://www.phpmyadmin.net/",
       importance: 1,
-      knowlegePercentage: 60
+      knowlegePercentage: 65
     },
     {
       name: "SQLite",
@@ -154,7 +154,7 @@ const technologies = {
       svgUrl: "/SVG/beautiful soup.svg",
       technologyLink: "https://www.crummy.com/software/BeautifulSoup/",
       importance: 2,
-      knowlegePercentage: 80
+      knowlegePercentage: 85
     },
     {
       name: "PyWebView",
@@ -184,28 +184,28 @@ const technologies = {
       svgUrl: "/SVG/github.svg",
       technologyLink: "https://github.com/",
       importance: 2,
-      knowlegePercentage: 95
+      knowlegePercentage: 90
     },
     {
       name: "GCP",
       svgUrl: "/SVG/google.svg",
       technologyLink: "https://cloud.google.com/",
       importance: 1,
-      knowlegePercentage: 100
+      knowlegePercentage: 68
     },
     {
       name: "JWT",
       svgUrl: "/SVG/jwt.svg",
       technologyLink: "https://jwt.io/",
       importance: 3,
-      knowlegePercentage: 80
+      knowlegePercentage: 70
     },
     {
       name: "PayPal",
       svgUrl: "/SVG/logos--paypal.svg",
       technologyLink: "https://www.paypal.com/",
       importance: 2,
-      knowlegePercentage: 70
+      knowlegePercentage: 68
     },
     {
       name: "Cloudinary",
@@ -219,14 +219,14 @@ const technologies = {
       svgUrl: "/SVG/copilot.svg",
       technologyLink: "https://copilot.github.com/",
       importance: 4,
-      knowlegePercentage: 85
+      knowlegePercentage: 95
     },
     {
       name: "Google gemini",
       svgUrl: "/SVG/gemini.svg",
       technologyLink: "https://ai.google.dev/gemini-api/docs?hl=es-419",
       importance: 5,
-      knowlegePercentage: 60
+      knowlegePercentage: 70
     }
   ]
 };

@@ -17,8 +17,8 @@ const variants = {
     position: "relative",
     transform: "translate(0,0)",
     zIndex: "unset",
-    width: ["0%", "100%"],
-    height: ["0%", "100%"],
+    width: "100%",
+    height: "100%",
     top: "unset",
     left: "unset",
     transition: {

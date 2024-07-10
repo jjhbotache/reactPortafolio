@@ -32,6 +32,17 @@ const blinkAndDisappear = keyframes`
     display: none;
   }
 `;
+
+const standOut = keyframes`
+  0%,100%{
+    transform: scale(1);
+    box-shadow: 0 0 .2em ${primaryColor};
+  }
+  50%{
+    transform: scale(1.2);
+    box-shadow: 0 0 .5em ${primaryColor};
+  }
+`;
   
 
 export const InfoDisplayerStyledComponent = styled.div`
@@ -116,6 +127,10 @@ export const InfoDisplayerStyledComponent = styled.div`
           &:hover{
             transform: scale(1.2);
             box-shadow: 0 0 5px ${primaryColor};
+          }
+
+          &--stand-out{
+            animation: ${standOut} 1s cubic-bezier(.9,0,.1,1) infinite;
           }
         }
 

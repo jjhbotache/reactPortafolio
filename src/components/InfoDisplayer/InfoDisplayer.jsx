@@ -13,6 +13,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   const tvRef = useRef(null);
   const [maximazed,setMaximazed   ] = useState(false);
   const {language} = useContext(GlobalStateContext);
+  const firstTimeMaximazed = useRef(false);
 
   
 
@@ -48,22 +49,27 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   }, [titleInfoToDisplay]);
 
   useEffect(() => {
-    maximazed
-      ? tvRef.current.requestFullscreen()
-      : document.exitFullscreen().catch((err) => console.log("already minimized"));
+
+    if(maximazed){
+      tvRef.current.requestFullscreen()
+      firstTimeMaximazed.current = true;
+    }else{
+      document.exitFullscreen().catch((err) => console.log("already minimized"))
+    }
+    
   }, [maximazed]);
 
 
   
-
+  console.log("maximazed",firstTimeMaximazed.current);
   return(
     <InfoDisplayerStyledComponent onClick={onClick}>
       <div className={`tv-container`}>
         <img className="tv-container__antenna" src="/antenna.svg" alt="antenna" />
         <div className={`tv`} ref={tvRef} > 
 
-          {titleInfoToDisplay !== null &&  <div className="maximizeBtn" onClick={e=>handleTvMaximazed()}>
-            <i className={!maximazed ? "fi fi-br-expand" : "fi fi-br-compress"}> </i>
+          {titleInfoToDisplay !== null &&  <div className={"maximizeBtn"+(!firstTimeMaximazed.current ? " maximizeBtn--stand-out":"")} onClick={e=>handleTvMaximazed()}>
+            <i className={(!maximazed ? "fi fi-br-expand" : "fi fi-br-compress" )}> </i>
           </div> }
           
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />

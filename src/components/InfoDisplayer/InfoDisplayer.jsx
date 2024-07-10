@@ -22,7 +22,7 @@ const variants = {
     top: "unset",
     left: "unset",
     transition: {
-      duration: .5
+      duration: .1
     }
   },
   maximazed: {
@@ -34,7 +34,7 @@ const variants = {
     width: "99%",
     height: ["0%", "99%"],
     transition: {
-      duration: .5
+      duration: .1
     }
   }
 

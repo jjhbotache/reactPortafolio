@@ -50,7 +50,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   useEffect(() => {
     maximazed
       ? tvRef.current.requestFullscreen()
-      : document.exitFullscreen();
+      : document.exitFullscreen().catch((err) => console.log("already minimized"));
   }, [maximazed]);
 
 

@@ -50,7 +50,7 @@ const technologies = {
       knowlegePercentage: 85
     },
     {
-      name: "React Router",
+      name: "React Router DOM",
       svgUrl: "/SVG/reactrouter.svg",
       technologyLink: "https://reactrouter.com/",
       importance: 3,

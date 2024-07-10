@@ -169,7 +169,15 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
                   <ul className="currentProjectInfo__techs_container">{
-                    currentProject.tags.map((tag, index)=><TechTag key={index} tag={tag} allTechnologies={allTechnologies} />)
+                    currentProject.tags.sort((nameTagA,nameTagB)=>{
+                      const tagA = allTechnologies.find(tech=>tech.name === nameTagA);
+                      const tagB = allTechnologies.find(tech=>tech.name === nameTagB);
+                      if(!!tagA && !!tagB){
+                        return tagA.importance - tagB.importance;
+                      }else{
+                        return 0;
+                      }
+                    } ).map((tag, index)=><TechTag key={index} tag={tag} allTechnologies={allTechnologies} />)
                   }</ul>
                   </motion.div>
 

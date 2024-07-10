@@ -4,7 +4,7 @@ import { primaryColor, secondaryColor } from "../../../constants/styleConstants"
 export default function TechTag({tag, allTechnologies}) {
   const svgSrc = allTechnologies.find(tech => tech.name?.toLowerCase() === tag.toLowerCase())?.svgUrl;
   return (
-    <Container className="currentProjectInfo__tech" $animationDelay={Math.random()*3}>
+    <Container className="currentProjectInfo__tech" $animationDelay={Math.random()*5}>
       <img src={
         !!svgSrc
           ? svgSrc

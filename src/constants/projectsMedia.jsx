@@ -12,6 +12,7 @@ import reactNativeCalc from '/projects/imgs/reactNativeCalc.png';
 import newspaperApp from '/projects/imgs/newspaperApp.png';
 import reactTodoApp from '/projects/imgs/reactTodoApp.png';
 import chattus from '/projects/imgs/chattus.png';
+import memorable3 from '/projects/imgs/memorable.gif';
 
 // videos
 import disneyCloneVideo from "/projects/videos/disneyCloneVideo_reducido.mp4"
@@ -27,11 +28,41 @@ import reactNativeCalcVideo from "/projects/videos/reactNativeCalcVideo.mp4"
 import newspaperAppVideo from "/projects/videos/newspaperAppVideo.mp4"
 import reactTodoAppVideo from "/projects/videos/reactTodoApp.mp4"
 import chattusVideo from "/projects/videos/chattus.mp4"
+import memorable3Video from "/projects/videos/memorable_complete_video.mp4"
 
 // apks
 const reactTodoAppApk = "/apks/reactNativeTodo.rar"
 const reactNativeCalcApk = "/apks/reactNativeCalc.rar"
 
+
+// prompt used to generate the objs
+/*
+@workspace segun los objetos de proyectos anteriores creados y lista de tecnologias en este proyecto, genera el objeto con este formato:
+{
+    title: "",
+    description: {
+      en: ""
+      es: "",
+    },
+    tags: [
+      "",
+    ],
+    img: ,
+    video: ,
+    links: [
+      {
+        name: "Github",
+        link: "",
+      },
+      {
+        name: "Web",
+        link: "",
+      },
+    ],
+    importance: 3
+  },
+para este proyecto:
+*/
 
 const projectsMedia = [
   // netflixClone
@@ -42,7 +73,7 @@ const projectsMedia = [
       "Paypal",
       "Firebase",
       "Styled Components",
-      "React Router",
+      "React Router DOM",
       "AWS Cognito",
     ],
     description: {
@@ -74,7 +105,7 @@ const projectsMedia = [
       "JWT",
       "CSS Modules",
       "Bootstrap",
-      "React Router",
+      "React Router DOM",
     ],
     description: {
       es: "Este proyecto, se compone de un Backend desarrollado con Python y un Frontend desarrollado con React. Esta, es una página hecha para una empresa que vende vinos con diseños personalizados, por lo que la página, permite a clientes, visualizar los diseños, registrarse, guardar diseños en el carrito, crear ordenes de compra y ver el estado de las mismas en su dashboard. De lado del administrador, se puede manejar todos los datos como los vinos que se venden, los diseños, sus tags y demás.",
@@ -131,7 +162,7 @@ const projectsMedia = [
       "React",
       "Api consumption",
       "Styled Components",
-      "React Router"
+      "React Router DOM"
     ],
     description: {
       es: "Este proyecto, utiliza la api SWapi,la api de Pixabay y StyledComponents. Se utiliza la información de la api SWapi para pasar props a componentes y hacer un pequeño avatar con altura, color y recuadro variable con base a esta información. La api SWapi no proporciona imágenes de los personajes, por lo que se recurrió a utilizar la api de Pixabay para buscar el nombre y seleccionar una imagen aleatoria de los resultados.",
@@ -159,7 +190,7 @@ const projectsMedia = [
       "React",
       "Api consumption",
       "Bootstrap",
-      "React Router"
+      "React Router DOM"
     ],
     description: {
       es: "Este proyecto se centró en el efectivo consumo de la api de Rick y Morty y uso de TypeScript, agregando funciones como el scroll infinito, búsqueda de caracteres y filtro de los mismos. La estética de la pagina se vio apoyada en Bootstrap.",
@@ -246,7 +277,7 @@ const projectsMedia = [
       "sqlite",
       "pywebview",
       "Recharts",
-      "React Router"
+      "React Router DOM"
     ],
     description: {
       es: "Este programa analiza mediante web scraping, 3 casas de apuestas y apartir de esa información, encuentra surebets: Apuestas seguras, que al apostar a todos eventos posibles, se obtendrá una ganancia. El programa se escribió en Python y usa, para la interfaz gráfica, usa react mediante la librería pywebview. Con respecto a Python, se usó request, beautiful soup para hacer web scraping y sqlite para almacenar información de las surebets registradas y con respecto a la UI se utilizo React y Recharts para hacer gráficos de la información guardada.",
@@ -377,7 +408,7 @@ const projectsMedia = [
       "React",
       "Styled Components",
       "Redux Toolkit",
-      "React Router",
+      "React Router DOM",
       "WebSockets",
       "Vite"
     ],
@@ -403,6 +434,48 @@ const projectsMedia = [
     ],
     importance: 3
   },
+  // memorable 3
+  {
+    title: "Memorable3",
+    description: {
+      "en": "Memorable frontend is a web application created with the purpose of putting into practice various technologies such as Redux, React Router DOM, and Styled-Components. It utilizes cutting-edge web technologies to offer a user-friendly and interactive platform. Users can customize wine bottles with personal messages, important dates, or special motifs, turning them into unforgettable treasures.",
+      "es": "Memorable frontend es una aplicación web creada con el propósito de poner en práctica diversas tecnologías como Redux, React Router DOM y Styled-Components. Utiliza tecnologías web de vanguardia para ofrecer una plataforma interactiva y fácil de usar. Los usuarios pueden personalizar botellas de vino con mensajes personales, fechas importantes o motivos especiales, convirtiéndolos en tesoros inolvidables."
+    },
+    tags: [
+      "React",
+      "Typescript",
+      "Styled Components",
+      "Redux Toolkit",
+      "Framer motion",
+      "GCP",
+      "swiper",
+      "Python",
+      "FastAPI",
+      "SQLite",
+      "Cloudinary",
+      "Pydantic",
+      "Uvicorn",
+    ],
+    img: memorable3,
+    video: memorable3Video,
+    links: [
+      {
+        name: "Github Frontend",
+        link: "https://github.com/jjhbotache/memorable_3_front"
+      },
+      {
+        name: "Github Backend",
+        link: "https://github.com/jjhbotache/memorable_3_back"
+      },
+      {
+        name: "Web",
+        link: "https://vinos-memorable.vercel.app/"
+      }
+    ],
+    importance: 4
+  },
+
+
 ];
 
 export default projectsMedia;

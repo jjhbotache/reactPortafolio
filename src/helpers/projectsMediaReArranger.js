@@ -8,12 +8,16 @@ export default function projectsMediaReArranger(projectsMedia) {
     projectsMedia.filter((project) => project.importance === importance)
   );
 
+  // order the array by importance
+  projectsGroupedByImportance.sort((a, b) =>b[0].importance - a[0].importance);
+
+  console.log(projectsGroupedByImportance);
+
   const shuffledProjectsGroupedByImportance = projectsGroupedByImportance.map((group) =>
     shuffleArrayOrder(group)
   );
 
   const toReturn = shuffledProjectsGroupedByImportance.flat();
-  console.log(toReturn);
   return toReturn  
 };
 

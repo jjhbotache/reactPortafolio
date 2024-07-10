@@ -17,10 +17,13 @@ const variants = {
     position: "relative",
     transform: "translate(0,0)",
     zIndex: "unset",
-    width: "100%",
-    height: "100%",
+    width: ["0%", "100%"],
+    height: ["0%", "100%"],
     top: "unset",
     left: "unset",
+    transition: {
+      duration: .5
+    }
   },
   maximazed: {
     position: "fixed",
@@ -29,7 +32,10 @@ const variants = {
     transform: "translate(-50%,-50%)",
     zIndex: 3,
     width: "99%",
-    height: "99%",
+    height: ["0%", "99%"],
+    transition: {
+      duration: .5
+    }
   }
 
 }

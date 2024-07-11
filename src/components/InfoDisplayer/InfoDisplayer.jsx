@@ -13,12 +13,13 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   const tvRef = useRef(null);
   const [maximazed,setMaximazed   ] = useState(false);
   const {language} = useContext(GlobalStateContext);
-  const firstTimeMaximazed = useRef(false);
+  const [firstTimeMaximazed, setFirstTimeMaximazed] = useState(false);
 
   
 
   function handleTvMaximazed(only = undefined){ // "open" or "close"
     if(titleInfoToDisplay === null) return;
+    if(only !== "close") setFirstTimeMaximazed(true);
     setMaximazed(prev=>only === "open" ? true : only === "close" ? false : !prev);
   }
 
@@ -49,14 +50,9 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   }, [titleInfoToDisplay]);
 
   useEffect(() => {
-
-    if(maximazed){
-      tvRef.current.requestFullscreen()
-      firstTimeMaximazed.current = true;
-    }else{
-      document.exitFullscreen().catch((err) => console.log("already minimized"))
-    }
-    
+    maximazed
+      ?tvRef.current.requestFullscreen()
+      :document.exitFullscreen().catch((err) => console.log("already minimized"))
   }, [maximazed]);
 
 
@@ -67,7 +63,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
         <img className="tv-container__antenna" src="/antenna.svg" alt="antenna" />
         <div className={`tv`} ref={tvRef} > 
 
-          {titleInfoToDisplay !== null &&  <div className={"maximizeBtn"+(!firstTimeMaximazed.current ? " maximizeBtn--stand-out":"")} onClick={e=>handleTvMaximazed()}>
+          {titleInfoToDisplay !== null &&  <div className={"maximizeBtn"+(!firstTimeMaximazed ? " maximizeBtn--stand-out":"")} onClick={handleTvMaximazed}>
             <i className={(!maximazed ? "fi fi-br-expand" : "fi fi-br-compress" )}> </i>
           </div> }
           
@@ -77,7 +73,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
             titleInfoToDisplay === "about" ? <AboutInfo /> :
 
 
-            titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>console.log("scrolled")} maximazed={maximazed} /> :
+            titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={console.log("scrolled")} maximazed={maximazed} /> :
 
 
             titleInfoToDisplay === "contact" ? <ContactInfo/> : undefined

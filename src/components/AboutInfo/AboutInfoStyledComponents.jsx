@@ -68,6 +68,7 @@ export const AboutInfoContainer = styled.div`
     min-height: 40vh;
     padding-bottom: 0;
     margin-bottom: 0;
+    max-width: 400px;
     @media screen and (width < ${mdScreenWidth}){
       width: 100%;
       max-width: 500px;

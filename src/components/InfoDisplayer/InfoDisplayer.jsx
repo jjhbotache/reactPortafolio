@@ -57,7 +57,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
         :document.exitFullscreen().catch(()=>{});
     } catch (error) {
       maximazed
-        ?tvRef.current.webkitEnterFullScreen()
+        ?tvRef.current.webkitEnterFullscreen()
         :exitFullscreen()
     }
   }, [maximazed]);

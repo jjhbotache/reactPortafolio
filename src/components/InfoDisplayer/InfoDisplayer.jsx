@@ -87,7 +87,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
             titleInfoToDisplay === "about" ? <AboutInfo /> :
 
 
-            titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={console.log("scrolled")} maximazed={maximazed} /> :
+            titleInfoToDisplay === "projects" ? <ProjectsInfo maximazed={maximazed} /> :
 
 
             titleInfoToDisplay === "contact" ? <ContactInfo/> : undefined

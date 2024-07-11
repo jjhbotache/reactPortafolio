@@ -20,41 +20,41 @@ const shiningBorder = keyframes`
   to { background-position: right; }
 `;
 
-const Container = styled.li.attrs(props => ({
-  style: {
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: ".2rem",
-    fontSize: ".7rem",
-    padding: ".3rem .5rem",
-    margin: ".2rem",
-    borderRadius: "99rem",
-    background: `linear-gradient(to right,${primaryColor},${secondaryColor},${primaryColor},${primaryColor},${secondaryColor},${primaryColor})`,
-    backgroundSize: "250%",
-    color: "white",
-    animationDelay: `${props.$animationDelay}s !important`,
-    animation: `${shiningBorder} 2s infinite ease-in-out`,
-  },
-}))`
-  &::before {
+const Container = styled.li`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .2rem;
+  font-size: .7rem;
+  padding: .3rem .5rem;
+  margin: .2rem;  
+  border-radius: 99rem;
+  background: linear-gradient(to right,${primaryColor},${secondaryColor},${primaryColor},${primaryColor},${secondaryColor},${primaryColor});
+  background-size: 250%;
+  color: white;
+  animation-delay: ${props => props.$animationDelay}s !important;
+  animation: ${shiningBorder} 2s infinite ease-in-out;
+
+
+  &::before{
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     width: calc(100% - 5px);
     height: calc(100% - 5px);
     background: ${secondaryColor}dd;
     border-radius: 999999rem;
     position: absolute;
   }
-  * {
+  *{
     position: relative;
     z-index: 2;
   }
-  img {
+  img{
     width: 1.5rem;
     height: 1.2rem;
     max-width: 1.5rem;

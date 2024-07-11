@@ -29,7 +29,7 @@ const allTechnologies = Object.keys(technologies).map(
 const projectsToShow = projectsMediaReArranger(projectsMedia);
 
 
-export default function ProjectsInfo({onScrolled,maximazed}) {
+export default function ProjectsInfo({maximazed}) {
   const [titleTyped, setTitleTyped] = useState(false);
   const welcomeTextRef = useRef(null);
   const [showIntro, setShowIntro] = useState(true);
@@ -116,7 +116,6 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
         :(
           <>
           <ProjectsContainer 
-            onScroll={e=>{onScrolled(e);}}
             ref={projectsInfoContainerRef}
             >
             <Swiper
@@ -153,7 +152,7 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                 transition={{ duration: 0.2, ease: "easeOut"}}
                 className="currentProjectInfo"
                 >   
-                  {/* title - separator - tags */}
+                  {/* title - separator  */}
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -168,12 +167,12 @@ export default function ProjectsInfo({onScrolled,maximazed}) {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: timeToGoUpInSecs, ease: "easeOut" }}
                   >
-                  <ul className="currentProjectInfo__techs_container">{
+                  <ul className="currentProjectInfo__techs-container">{
                     currentProject.tags.sort((nameTagA,nameTagB)=>{
                       const tagA = allTechnologies.find(tech=>tech.name === nameTagA);
                       const tagB = allTechnologies.find(tech=>tech.name === nameTagB);
                       if(!!tagA && !!tagB){
-                        return tagA.importance - tagB.importance;
+                        return tagB.importance - tagA.importance;
                       }else{
                         return 0;
                       }

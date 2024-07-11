@@ -234,7 +234,7 @@ export const ProjectsContainer = styled.div`
       border-radius: .4rem;
     }     
 
-    &__techs_container{
+    &__techs-container{
       display: flex;
       flex-wrap: wrap;
       justify-content: center;

@@ -28,6 +28,12 @@ export const ChannelsStyledComponent = styled.div`
   justify-content: start;
   align-items: start;
   margin-top: 2vh;
+
+  /* hide the little triangle */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  
   
   @media screen and (width < ${mdScreenWidth}){
     margin-top: unset;

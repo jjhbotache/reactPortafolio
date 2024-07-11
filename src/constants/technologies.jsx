@@ -139,7 +139,7 @@ const technologies = {
       name: "SQLite",
       svgUrl: "/SVG/sqlite.svg",
       technologyLink: "https://www.sqlite.org/index.html",
-      importance: 4,
+      importance: 3,
       knowlegePercentage: 85
     },
     {
@@ -167,7 +167,7 @@ const technologies = {
       name: "Selenium",
       svgUrl: "/SVG/selenium.svg",
       technologyLink: "https://selenium-python.readthedocs.io/",
-      importance: 2,
+      importance: 3,
       knowlegePercentage: 75
     }
   ],
@@ -190,14 +190,14 @@ const technologies = {
       name: "GCP",
       svgUrl: "/SVG/google.svg",
       technologyLink: "https://cloud.google.com/",
-      importance: 1,
+      importance: 3,
       knowlegePercentage: 68
     },
     {
       name: "JWT",
       svgUrl: "/SVG/jwt.svg",
       technologyLink: "https://jwt.io/",
-      importance: 3,
+      importance: 2,
       knowlegePercentage: 70
     },
     {
@@ -211,7 +211,7 @@ const technologies = {
       name: "Cloudinary",
       svgUrl: "/SVG/cloudinary.svg",
       technologyLink: "https://cloudinary.com/",
-      importance: 3,
+      importance: 2,
       knowlegePercentage: 75
     },
     {

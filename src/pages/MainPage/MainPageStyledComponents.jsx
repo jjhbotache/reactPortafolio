@@ -97,8 +97,8 @@ export const MainPageStyledComponent = styled.div`
 
 export const MainInfo= styled.main`
   box-sizing: border-box;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 
   opacity: 0;
   transition: all .5s cubic-bezier(0.175, 0.177, 0.178, 1.1);

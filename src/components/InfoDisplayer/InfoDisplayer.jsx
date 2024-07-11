@@ -7,6 +7,7 @@ import ContactInfo from "../ContactInfo/ContactInfo";
 import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
+import { exitFullscreen } from "../../helpers/exitFullScreen";
 
 
 export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
@@ -57,7 +58,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
     } catch (error) {
       maximazed
         ?tvRef.current.webkitEnterFullScreen()
-        :document.webkitExitFullscreen()
+        :exitFullscreen()
     }
   }, [maximazed]);
 

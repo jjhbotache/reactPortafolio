@@ -154,7 +154,7 @@ export const InfoDisplayerStyledComponent = styled.div`
             transform: scale(1.2);
           }
         }
-        /* &.tv__maximazed{
+        &.tv__maximazed{
           position: fixed;
           left: 50%;
           top: 50%;
@@ -163,7 +163,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           width: 99% !important;
           height: 99% !important;
           z-index: 3;
-        } */
+        }
 
         &:hover{
           animation: ${hue_rotate} 1s linear infinite;

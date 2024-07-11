@@ -7,12 +7,15 @@ import ContactInfo from "../ContactInfo/ContactInfo";
 import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
-import { exitFullscreen } from "../../helpers/exitFullScreen";
+import exitFullscreen from "../../helpers/exitFullScreen";
+import requesFullscren from "../../helpers/requesFullscren";
+import { toast } from "react-toastify";
 
 
 export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   const tvRef = useRef(null);
   const [maximazed,setMaximazed   ] = useState(false);
+  const [maximazedManualy,setMaximazedManualy   ] = useState(false);
   const {language} = useContext(GlobalStateContext);
   const [firstTimeMaximazed, setFirstTimeMaximazed] = useState(false);
 
@@ -51,14 +54,18 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   }, [titleInfoToDisplay]);
 
   useEffect(() => {
-    try {
-      maximazed
-        ?tvRef.current.requestFullscreen()
-        :document.exitFullscreen().catch(()=>{});
-    } catch (error) {
-      maximazed
-        ?tvRef.current.webkitEnterFullscreen()
-        :exitFullscreen();
+    if (maximazed) {
+      requesFullscren(tvRef.current)
+      .then(() => {
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.warning(texts.infoDisplayer.fullscreenError[language]);
+        setMaximazedManualy(true);
+      })
+    }else{
+      exitFullscreen()
+      setMaximazedManualy(false);
     }
   }, [maximazed]);
 
@@ -68,7 +75,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
     <InfoDisplayerStyledComponent onClick={onClick}>
       <div className={`tv-container`}>
         <img className="tv-container__antenna" src="/antenna.svg" alt="antenna" />
-        <div className={`tv`} ref={tvRef} > 
+        <div className={`tv ${maximazedManualy ? "tv__maximazed" : ""}`} ref={tvRef} > 
 
           {titleInfoToDisplay !== null &&  <div className={"maximizeBtn"+(!firstTimeMaximazed ? " maximizeBtn--stand-out":"")} onClick={handleTvMaximazed}>
             <i className={(!maximazed ? "fi fi-br-expand" : "fi fi-br-compress" )}> </i>

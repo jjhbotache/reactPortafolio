@@ -33,6 +33,10 @@ const texts = {
     minimizeToast: {
       en: "Double-click to minimize!",
       es: "¡Doble clic para minimizar!"
+    },
+    fullscreenError:{
+      es: "Modo pantalla completa no disponible en tu navegador, usa otro navegador para mejor experiencia.",
+      en: "Fullscreen mode not available in your browser, use another browser for a better experience."
     }
   },
   aboutInfo: {

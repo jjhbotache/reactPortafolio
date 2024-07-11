@@ -14,6 +14,10 @@ const GlobalStyles = createGlobalStyle`
     background: ${darkColor};
     color: ${lightColor};
   }
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+  }
 
 
   /* tostify classes overriding */

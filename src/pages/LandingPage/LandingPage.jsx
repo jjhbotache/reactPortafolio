@@ -36,11 +36,9 @@ export default function LandingPage() {
     }
   }, []);
 
-  function redirect(){
+  function redirect(e){
     const mainContent = mainContentRef.current;
     mainContent.classList.add("main-content__title__fade-out")
-    try { document.documentElement.requestFullscreen()}
-    catch (e) { console.log("Can't request fullscreen mode") }
 
     setTimeout(()=>{
       navigate("/main");

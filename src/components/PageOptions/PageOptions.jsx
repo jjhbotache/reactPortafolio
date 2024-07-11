@@ -57,24 +57,12 @@ export default function PageOptions() {
     setGlobalLanguaje(language.code);
   }, [language]);
 
+  useEffect(() => {
+  }, [isFullscreen]);
+  
+
   return (
     <PageOptionsContainer >
-      <li>
-        <button className="option-btn" onClick={
-          () => {
-            document.fullscreenElement !== null
-              ?document.exitFullscreen()
-              :document.documentElement.requestFullscreen();
-          }
-        
-        }>
-          {
-            isFullscreen 
-              ?<i className="fi fi-br-compress"></i>
-              :<i className="fi fi-br-expand"></i>
-          }
-        </button>
-      </li>
       <li>
         <button className="option-btn" onClick={
           ()=>{setLanguaje({code:language.code,modalOpen:!language.modalOpen})}

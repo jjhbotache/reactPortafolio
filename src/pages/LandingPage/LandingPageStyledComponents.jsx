@@ -17,7 +17,7 @@ export const LandingPageStyledComponent = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   background-color: ${darkColor};
   color: ${lightColor};
   overflow: hidden;

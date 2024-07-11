@@ -19,6 +19,9 @@ const shine = keyframes`
 
 
 export const AboutInfoContainer = styled.div`
+  line-height: 1.5;
+  letter-spacing: .05rem;
+
   text-align: center;
   /* background-color: #1f1f1f; */
   color: ${primaryColor};

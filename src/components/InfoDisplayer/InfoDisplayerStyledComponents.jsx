@@ -111,8 +111,8 @@ export const InfoDisplayerStyledComponent = styled.div`
         .maximizeBtn{
           position: absolute;
           z-index: 2;
-          top: .2rem;
-          right: .2rem;
+          top: .45rem;
+          right: .45rem;
           width: 2rem;
           height: 2rem;
           border-radius: 50%;

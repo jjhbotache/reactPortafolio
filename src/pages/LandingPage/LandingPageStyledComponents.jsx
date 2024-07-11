@@ -47,18 +47,14 @@ export const LandingPageStyledComponent = styled.main`
     justify-content: space-evenly;
     transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: .3rem;
-    padding: 2rem;
+    padding: 3rem;
 
     .Typewriter{
-      height: 50vh;
-      min-height: 50vh;
+      height: 30vh;
+      min-height: 30vh;
     }
     
     @media screen and (width < ${mdScreenWidth}) {
-      .Typewriter{
-        height: 70vh;
-        min-height: 70vh;
-      }
       padding: .2rem;
       font-size: .8rem;
     }
@@ -76,13 +72,15 @@ export const LandingPageStyledComponent = styled.main`
 
     position: relative;
     z-index: 2;
-    font-size: 3rem;
+    font-size: 2.5em;
     font-weight: 700;
     transition: all 0.5s ease-in-out;
     background: transparent;
     color: ${lightColor}; 
     opacity: .6;
     transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+    line-height: 1.2em;
+    
 
     
     overflow: hidden;

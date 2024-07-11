@@ -11,7 +11,6 @@ export default function projectsMediaReArranger(projectsMedia) {
   // order the array by importance
   projectsGroupedByImportance.sort((a, b) =>b[0].importance - a[0].importance);
 
-  console.log(projectsGroupedByImportance);
 
   const shuffledProjectsGroupedByImportance = projectsGroupedByImportance.map((group) =>
     shuffleArrayOrder(group)

@@ -17,7 +17,7 @@ import TechnologyComponent from "./TechnologyComponent";
 
 
 
-export default function AboutInfo({onScrolled}) {
+export default function AboutInfo({}) {
   const {language} = useContext(GlobalStateContext);
   const [typed, setTyped] = useState(false);
   const typeWriterContainerRef = useRef(null);
@@ -28,7 +28,11 @@ export default function AboutInfo({onScrolled}) {
 
   useEffect(() => {
     // delete everythin inside the container
-    typeWriterContainerRef.current.innerHTML = "";
+    if(typeWriterContainerRef.current){
+      typeWriterContainerRef.current.innerHTML = "";
+    }else{
+      window.location.reload();
+    }
 
      // first, create a typewriter element and put it on the container
      const typewriter = new Typewriter(typeWriterContainerRef.current, {
@@ -47,7 +51,6 @@ export default function AboutInfo({onScrolled}) {
           try {
             typeWriterContainerRef.current.querySelectorAll('.Typewriter__cursor').forEach(cursor => cursor.classList.add('hide'))
           } catch (error) {
-            console.log("didn't find any cursor");
           }
         })
        .start();
@@ -76,7 +79,7 @@ export default function AboutInfo({onScrolled}) {
   }
 
   return(
-    <AboutInfoContainer onScroll={onScrolled} onClick={e=>setTyped(true)}>
+    <AboutInfoContainer onClick={e=>setTyped(true)}>
       <div className="content">
         <h1>{texts.aboutInfo.title[language] }</h1>
         {/* if typed, show all the text at once */}

@@ -61,7 +61,6 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
 
 
   
-  console.log("maximazed",firstTimeMaximazed.current);
   return(
     <InfoDisplayerStyledComponent onClick={onClick}>
       <div className={`tv-container`}>
@@ -75,7 +74,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
           <img src={tvNoiseGif} alt="tv_noise_gif" className="tv-noise-gif" />
           {titleInfoToDisplay !== null
           ? 
-            titleInfoToDisplay === "about" ? <AboutInfo onScrolled={e=>console.log("scrolled")} /> :
+            titleInfoToDisplay === "about" ? <AboutInfo /> :
 
 
             titleInfoToDisplay === "projects" ? <ProjectsInfo onScrolled={e=>console.log("scrolled")} maximazed={maximazed} /> :

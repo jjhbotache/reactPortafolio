@@ -23,7 +23,7 @@ export const AboutInfoContainer = styled.div`
   letter-spacing: .05rem;
 
   text-align: center;
-  /* background-color: #1f1f1f; */
+  background-color: ${({ theme }) => theme.colors.background};
   color: ${primaryColor};
   font-size: 1rem;
 
@@ -35,8 +35,13 @@ export const AboutInfoContainer = styled.div`
   width: 100%;
 
   background-image:
-  linear-gradient( rgba(0, 0, 0, .85), rgba(0, 0, 0, .9) ) ,
-  url(/Idea.svg);
+  linear-gradient( 
+    ${({ theme }) => (
+    theme.colors.background === '#222' // if its in dark theme
+      ? "#222222ee, #222222fe "
+      : "#e0e0e099, #e0e0e099 "
+    )})
+     , url(/Idea.svg);
   background-size: 70% 70%;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,8 +61,11 @@ export const AboutInfoContainer = styled.div`
     height: 2.5em;
   }
 
-  p {
-    margin-bottom: 2rem;
+  
+  span.Typewriter__wrapper,p {
+    border-radius: 2%;
+    padding: 0 .3rem;
+    background-color: ${({theme})=>theme.colors.background}dd;
   }
 
   .typer-container,.about-text{
@@ -121,10 +129,13 @@ export const AboutInfoContainer = styled.div`
 
   .continue-exploring-text{
     margin: 2rem 0;
-    padding: 0 1rem;
+    padding: 1rem;
     font-size: 1rem;
     animation: ${shine} 2s infinite;
+    background-color: ${({theme})=>theme.colors.background}dd;
     cursor: pointer;
+
+    
   }
   .Typewriter__cursor{
     display: none;

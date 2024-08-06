@@ -1,16 +1,24 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { primaryColor, secondaryColor } from "../../constants/styleConstants";
 
 export const ContactInfoContainer = styled.div`
+  
   ul{
     list-style: none;
     padding: 0;
     margin: 0;
+    ${({theme})=>theme.colors.background === "#222"
+    ? css`background-color: #222;`
+    : css`background:white;`
+    }
   }
 
   .contactCircleContainer{
-    background-color: #222;
+    ${({theme})=>theme.colors.background === "#222"
+    ? css`background-color: #222;`
+    : css`background:white;`
+    }
     width: 90%;
     aspect-ratio: 1/1;
 
@@ -31,13 +39,16 @@ export const ContactInfoContainer = styled.div`
       align-items: center;
       width: 80%;
       height: 80%;
-      background: radial-gradient(
+      ${({theme})=>theme.colors.background === "#222"
+      ? css`background: radial-gradient(
         circle,
         rgba(255, 255, 255, 0.053) 0%,
         #222222a6 50%,
         rgba(0,0,0,0) 100%
-        
-      );
+      );`
+      : css`background: white;`
+      }
+      border-radius: 50%;
       transition: all .4s ease;
     }
 

@@ -72,7 +72,11 @@ const Container = styled.li`
   height: auto;
   max-width: 100px;
   
-  background: rgba(51, 51, 51, 0.2);
+  background: ${({ theme }) => (theme.colors.background === '#222'?
+    "rgba(51, 51, 51, 0.2)":
+    "transparent")};
+
+   
   box-shadow: 0 0 1rem rgba(51, 51, 51, .2);
   backdrop-filter: blur(10px);
   border-radius: .5rem;

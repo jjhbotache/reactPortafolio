@@ -35,7 +35,7 @@ export const MainPageStyledComponent = styled.div`
       .rectangle--triangle{
         position: absolute;
         top: 0;
-        transform: translateY(-99%);
+        transform: translateY(-94%);
       }
     }
     .rectangle__bottom{
@@ -71,7 +71,7 @@ export const MainPageStyledComponent = styled.div`
       .rectangle--triangle{
         position: absolute;
         bottom: 0;
-        transform: translateY(99%) rotate(90deg) scaleY(-1);
+        transform: translateY(102%) rotate(90deg) scaleY(-1);
       }
     }
     .rectangle__top{
@@ -79,7 +79,7 @@ export const MainPageStyledComponent = styled.div`
       .rectangle--triangle{
         position: absolute;
         bottom: 0;
-        transform: translateY(99%) rotate(90deg) scaleY(-1);
+        transform: translateY(102%) rotate(90deg) scaleY(-1);
       }
     }
     /* actions */

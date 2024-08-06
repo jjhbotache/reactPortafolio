@@ -84,7 +84,7 @@ export const InfoDisplayerStyledComponent = styled.div`
         
         border: .5em inset ${primaryColor};
         overflow: hidden;
-        background: #000;
+        background: ${({theme})=>theme.colors.background};
         display: flex;
         justify-content: center;
         align-items: center;
@@ -172,6 +172,12 @@ export const InfoDisplayerStyledComponent = styled.div`
         
 
         .tv-noise-gif{
+          ${({ theme }) => (
+          theme.colors.background === '#222' // if its in dark theme
+            ? ""
+            : "opacity: .8;"
+          )}
+          
           background: #000;
           position: absolute;
           top: 54%;
@@ -181,6 +187,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           filter: hue-rotate(35deg);
           width: 130%;
           height: 130%;
+
           
           &.tv-noise-gif__blink-out{
             animation: ${blinkAndDisappear} 1s linear;

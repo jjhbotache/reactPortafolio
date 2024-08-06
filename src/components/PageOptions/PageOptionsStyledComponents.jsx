@@ -73,6 +73,10 @@ export const PageOptionsContainer = styled.ol`
     background: none;
     margin: .5rem;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
     button {
       font-size: 1rem;
       background: none;

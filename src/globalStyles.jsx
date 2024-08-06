@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { bodyFont, darkColor, lightColor } from './constants/styleConstants';
+import { bodyFont } from './constants/styleConstants';
 
 const GlobalStyles = createGlobalStyle`
 
@@ -11,8 +11,8 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
-    background: ${darkColor};
-    color: ${lightColor};
+    background: ${({theme})=>theme.colors.background};
+    color: ${({theme})=>theme.colors.text};
   }
   html, body, #root {
     height: 100%;
@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* tostify classes overriding */
   :root {
-  --toastify-color-info: ${lightColor};
+    --toastify-color-info: ${({theme})=>theme.colors.primary};
   }
 
   ul{
@@ -37,3 +37,9 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default GlobalStyles;
+
+
+// ${({theme})=>theme.colors.background === "#222"
+// ? css`background: rgba(10, 10, 10, 1);`
+// : css``
+// };

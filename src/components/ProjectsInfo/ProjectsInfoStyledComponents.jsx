@@ -1,14 +1,10 @@
-import { keyframes } from "styled-components";
+import { css, keyframes } from "styled-components";
 import styled from "styled-components";
 import { primaryColor, secondaryColor } from "../../constants/styleConstants";
 
 const fadeIn = keyframes`
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
+  from{ opacity: 0; }
+  to{ opacity: 1; }
 `;
 
 
@@ -23,7 +19,7 @@ export const ProjectsInfoContainer = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-
+  background-color: ${({theme})=>theme.colors.background};
   
 
 `;
@@ -41,7 +37,11 @@ export const WelcomeText = styled.div`
     &__separator {
       border: 1px solid ${primaryColor};
       border-radius: 999rem;
-      box-shadow: 0 0 .9rem .1rem ${secondaryColor};
+      ${({theme})=>theme.colors.background === "#222"
+        ? css`box-shadow: 0 0 .9rem .1rem ${secondaryColor};`
+        : css``
+      };
+      
     }
     font-size: 1rem;
   };
@@ -62,18 +62,25 @@ export const ProjectsContainer = styled.div`
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  
   &::-webkit-scrollbar {
     display: none;
   }
 
+  
   .projectsSwiper{
+
     position: relative;
     width: 95%;
     aspect-ratio: 1/1;
     max-height: 97vh;
 
     box-sizing: border-box;
-    background: rgba(10, 10, 10, 1);
+    ${({theme})=>theme.colors.background === "#222"
+        ? css`background: rgba(10, 10, 10, 1);`
+        : css``
+    };
+    
     margin-top: .4rem;
 
     cursor: grab;
@@ -101,7 +108,8 @@ export const ProjectsContainer = styled.div`
     } 
 
     & .swiper-pagination-bullet{
-      background: white;
+
+      background:${({theme})=>theme.colors.text};
       &-active{
         background: ${secondaryColor};
       }
@@ -141,12 +149,12 @@ export const ProjectsContainer = styled.div`
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 100%;
-          height: 100%;
+          width: 90%;
+          height: 80%;
 
           border-radius: 1rem;
           background: #222;
-          filter: blur(5px);
+          filter: blur(2px);
           z-index: -1;
           
         }
@@ -171,7 +179,11 @@ export const ProjectsContainer = styled.div`
 
         border-radius: .2rem;
         padding: .2rem .7rem;
-        background: rgba(10, 10, 10, .6);
+        background:${({theme})=>theme.colors.background === "#222"
+          ? `rgba(10, 10, 10, .6)`
+          : `rgba(10, 10, 10, .9)`
+        }; 
+        
         color: ${primaryColor};
         font-size: 1.1rem;
 
@@ -242,16 +254,34 @@ export const ProjectsContainer = styled.div`
       list-style: none;
       padding: 3vw 1rem;
       margin: 1rem 0;
+      ${({theme})=>theme.colors.background === "#222"
+      ? css`
       background: linear-gradient(to bottom, 
       rgba(10, 10, 10, .0) 0%, 
       rgba(30, 30, 30, 1) 15%, 
       rgba(30, 30, 30, 1) 85% , 
       rgba(10, 10, 10, .0) 100% );
+      `
+      : css`
+      background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, .0) 0%, 
+      rgba(255, 255, 255, 1) 15%, 
+      rgba(255, 255, 255, 1) 85% , 
+      rgba(255, 255, 255, .0) 100% );`
+      };
+      
     }
     
 
     &__check-project-section{
+      ${({theme})=>theme.colors.background === "#222"
+      ? css`
       background: linear-gradient(to bottom, rgba(30, 30, 30, .0) 0% , rgba(30, 30, 30, 1) 10%);
+      `
+      : css`
+      background: linear-gradient(to bottom, rgba(255, 255, 255, .0) 0% , rgba(255, 255, 255, 1) 10%);
+      `
+      };
       font-size: 1.2rem;
       color: ${secondaryColor};
       padding-bottom: 2rem;

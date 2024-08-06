@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import { PageOptionsContainer } from "./PageOptionsStyledComponents";
 import { useContext, useEffect, useState } from "react";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../../redux/slices/themeSlice";
 
 
-export default function PageOptions() {
+export default function PageOptions({toogleTheme}) {
   const [isFullscreen, setIsFullscreen] = useState(
     document.documentElement.offsetWidth === screen.availWidth
     && 
@@ -15,6 +17,9 @@ export default function PageOptions() {
     code: globalLanguaje,
     modalOpen: false,
   });
+
+  const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme).colors.background == "#222" ? "dark" : "light";
 
 
   useEffect(() => {
@@ -68,6 +73,13 @@ export default function PageOptions() {
           ()=>{setLanguaje({code:language.code,modalOpen:!language.modalOpen})}
         }>
           <i className="fi fi-br-globe"></i>
+        </button>
+        <button className="option-btn" onClick={e=>dispatch(toggleTheme())}>
+          {
+            theme === "dark"
+            ?<i className="fi fi-br-sun"></i>
+            :<i className="fi fi-br-moon"></i>
+          }
         </button>
         {
           language.modalOpen

@@ -2,23 +2,18 @@ import { useContext, useRef, useState } from "react";
 import { ChannelsStyledComponent } from "./ChannelsStyledComponents";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
-import { useEffect } from "react";
 import { toggleMenu } from "../../redux/slices/menuOpenSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Channels({channels,onSelectChannel}) {
   const {language} = useContext(GlobalStateContext);
-  const [channelText, setChannelText] = useState(texts.channels.chooseChannel[language]);
   const [currentChannel, setcurrentChannel] = useState(undefined);
   const menuOpen = useSelector(state => state.menuOpen);
+  const titleInfoToDisplay = useSelector(state => state.titleInfoToDisplay);
 
   const dispatcher = useDispatch();
 
-  useEffect(() => {
-    setChannelText(
-      currentChannel ? currentChannel.name[language] : texts.channels.chooseChannel[language]
-    );
-  }, [language, currentChannel]);
+  
 
   function channelClicked(channel){
     onSelectChannel(channel);
@@ -35,7 +30,11 @@ export default function Channels({channels,onSelectChannel}) {
   return (
     <ChannelsStyledComponent>
       <details className={`channels-details ${menuOpen ? "open":""}`} open={menuOpen} onClick={cliked} >
-        <summary className="channels-details--title"> <small>{channelText}</small> </summary>
+        <summary className="channels-details--title"> <small>{
+          currentChannel
+            ?texts.channels.channels[titleInfoToDisplay][language]
+            :texts.channels.chooseChannel[language]
+        }</small> </summary>
         <section className={`channels-details--info ${menuOpen ? "open":""}`} >
           <ol>
             {channels.map((channel, index) =>( 

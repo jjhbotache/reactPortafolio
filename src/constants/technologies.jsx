@@ -169,6 +169,13 @@ const technologies = {
       technologyLink: "https://selenium-python.readthedocs.io/",
       importance: 3,
       knowlegePercentage: 75
+    },
+    {
+      name: "Postgres SQL",
+      svgUrl: "/SVG/postgresql.svg",
+      technologyLink: "https://www.postgresql.org/",
+      importance: 5,
+      knowlegePercentage: 40
     }
   ],
   others: [

@@ -1,14 +1,14 @@
 import disneyPlus from '/projects/imgs/disneyPlus.png';
-import imageArranger from '/projects/imgs/imageArranger.png';
-import mouseEffect from '/projects/imgs/mouseEffect.jpeg';
+// import imageArranger from '/projects/imgs/imageArranger.png';
+// import mouseEffect from '/projects/imgs/mouseEffect.jpeg';
 import movieSearcher from '/projects/imgs/movieSearcher.jpeg';
 import rickAndMorty from '/projects/imgs/rickAndMorty.png';
 import surebetsBettor from '/projects/imgs/surebetsBettor.jpeg';
 import SW from '/projects/imgs/SW.png';
-import ticTacToe from '/projects/imgs/ticTacToe.jpeg';
+// import ticTacToe from '/projects/imgs/ticTacToe.jpeg';
 import netflixClone from '/projects/imgs/netflixClone.png';
 import memorableWebpage from '/projects/imgs/memorableWebpage.png';
-import reactNativeCalc from '/projects/imgs/reactNativeCalc.png';
+// import reactNativeCalc from '/projects/imgs/reactNativeCalc.png';
 import newspaperApp from '/projects/imgs/newspaperApp.png';
 import reactTodoApp from '/projects/imgs/reactTodoApp.png';
 import chattus from '/projects/imgs/chattus.png';
@@ -16,15 +16,15 @@ import memorable3 from '/projects/imgs/memorable.gif';
 
 // videos
 import disneyCloneVideo from "/projects/videos/disneyCloneVideo_reducido.mp4"
-import imgArrangerVideo from "/projects/videos/imgArrangerVideo_reducido.mp4"
+// import imgArrangerVideo from "/projects/videos/imgArrangerVideo_reducido.mp4"
 import movieSearcherVideo from "/projects/videos/movieSearcherVideo_reducido.mp4"
 import rickAndMortyVideo from "/projects/videos/rickAndMortyVideo_reducido.mp4"
 import surebetsBettorVideo from "/projects/videos/surebetsBettorVideo_reducido.mp4"
 import SWVideo from "/projects/videos/SWVideo_reducido.mp4"
-import ticTacToeVideo from "/projects/videos/ticTacToeVideo_reducido.mp4"
+// import ticTacToeVideo from "/projects/videos/ticTacToeVideo_reducido.mp4"
 import netflixCloneVideo from "/projects/videos/netflixCloneVideo.mp4"
 import memorableWebpageVideo from "/projects/videos/memorableWebpageVideo.mp4"
-import reactNativeCalcVideo from "/projects/videos/reactNativeCalcVideo.mp4"
+// import reactNativeCalcVideo from "/projects/videos/reactNativeCalcVideo.mp4"
 import newspaperAppVideo from "/projects/videos/newspaperAppVideo.mp4"
 import reactTodoAppVideo from "/projects/videos/reactTodoApp.mp4"
 import chattusVideo from "/projects/videos/chattus.mp4"
@@ -32,7 +32,6 @@ import memorable3Video from "/projects/videos/memorable_complete_video.mp4"
 
 // apks
 const reactTodoAppApk = "/apks/reactNativeTodo.rar"
-const reactNativeCalcApk = "/apks/reactNativeCalc.rar"
 
 
 // prompt used to generate the objs
@@ -240,32 +239,32 @@ const projectsMedia = [
     importance: 2
   },
   // imageArranger
-  {
-    title: "Image Arranger",
-    tags: [
-      "HTML",
-      "CSS",
-      "Javascript",
-      "BEM methodology"
-    ],
-    description: {
-      es: "Este proyecto se limitó a usar las tecnologías básicas HTML-CSS-JS para crear una página que organiza imágenes en las columnas que se le pidan. La app consume la api de Pixabay buscar imágenes y agregar aleatoriamente una desde los resultados. El nombramiento de las clases CSS se hizo bajo la metodología BEM y se llegó a usar la etiqueta <dialog> de HTML que no es muy usada/conocida.",
-      en: "This project was limited to using the basic technologies HTML-CSS-JS to create a page that organizes images in the columns that are requested. The app consumes the Pixabay api to search for images and add one randomly from the results. The naming of the CSS classes was done under the BEM methodology and the <dialog> tag of HTML was used, which is not very used/known."
-    },
-    img: imageArranger,
-    video: imgArrangerVideo,
-    links: [
-      {
-        name: "Github",
-        link: "https://github.com/jjhbotache/image_arranger"
-      },
-      {
-        name: "Web",
-        link: "https://jjhbotache.github.io/image_arranger/"
-      }
-    ],
-    importance: 1
-  },
+  // {
+  //   title: "Image Arranger",
+  //   tags: [
+  //     "HTML",
+  //     "CSS",
+  //     "Javascript",
+  //     "BEM methodology"
+  //   ],
+  //   description: {
+  //     es: "Este proyecto se limitó a usar las tecnologías básicas HTML-CSS-JS para crear una página que organiza imágenes en las columnas que se le pidan. La app consume la api de Pixabay buscar imágenes y agregar aleatoriamente una desde los resultados. El nombramiento de las clases CSS se hizo bajo la metodología BEM y se llegó a usar la etiqueta <dialog> de HTML que no es muy usada/conocida.",
+  //     en: "This project was limited to using the basic technologies HTML-CSS-JS to create a page that organizes images in the columns that are requested. The app consumes the Pixabay api to search for images and add one randomly from the results. The naming of the CSS classes was done under the BEM methodology and the <dialog> tag of HTML was used, which is not very used/known."
+  //   },
+  //   img: imageArranger,
+  //   video: imgArrangerVideo,
+  //   links: [
+  //     {
+  //       name: "Github",
+  //       link: "https://github.com/jjhbotache/image_arranger"
+  //     },
+  //     {
+  //       name: "Web",
+  //       link: "https://jjhbotache.github.io/image_arranger/"
+  //     }
+  //   ],
+  //   importance: 1
+  // },
   // surebetsBettor
   {
     title: "Surebets Bettor",
@@ -298,57 +297,57 @@ const projectsMedia = [
     importance: 2
   },
   // ticTacToe
-  {
-    title: "Tic Tac Toe",
-    tags: [
-      "React",
-      "Typescript",
-      "LocalStorage",
-    ],
-    description: {
-      es: "Este proyecto hace alusión al clásico juego 3 en raya, gato o tic tac toe. El programa permite guardar el juego, por lo que, si se cierra la ventana, se podrá continuar jugando en otro momento. Se programo en TypeScript y se uso LocalStorage para la permanencia de datos.",
-      en: "This project alludes to the classic game 3 in a row or tic tac toe. The program allows you to save the game, so if the window is closed, you can continue playing at another time. It was programmed in TypeScript and LocalStorage was used for data persistence."
-    },
-    img: ticTacToe,
-    video: ticTacToeVideo,
-    links: [
-      {
-        name: "Github",
-        link: "https://github.com/jjhbotache/tictactoeReact"
-      },
-      {
-        name: "Web",
-        link: null
-      }
-    ],
-    importance: 1
-  },
+  // {
+  //   title: "Tic Tac Toe",
+  //   tags: [
+  //     "React",
+  //     "Typescript",
+  //     "LocalStorage",
+  //   ],
+  //   description: {
+  //     es: "Este proyecto hace alusión al clásico juego 3 en raya, gato o tic tac toe. El programa permite guardar el juego, por lo que, si se cierra la ventana, se podrá continuar jugando en otro momento. Se programo en TypeScript y se uso LocalStorage para la permanencia de datos.",
+  //     en: "This project alludes to the classic game 3 in a row or tic tac toe. The program allows you to save the game, so if the window is closed, you can continue playing at another time. It was programmed in TypeScript and LocalStorage was used for data persistence."
+  //   },
+  //   img: ticTacToe,
+  //   video: ticTacToeVideo,
+  //   links: [
+  //     {
+  //       name: "Github",
+  //       link: "https://github.com/jjhbotache/tictactoeReact"
+  //     },
+  //     {
+  //       name: "Web",
+  //       link: null
+  //     }
+  //   ],
+  //   importance: 1
+  // },
   // reactNativeCalc
-  {
-    title: "React Native Calculator",
-    tags: [
-      "React Native",
-      "Javascript",
-      "Expo",
-    ],
-    description: {
-      en: "This application allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.",
-      es: "Esta aplicación permite a los usuarios realizar operaciones aritméticas básicas como suma, resta, multiplicación y división."
-    },
-    img: reactNativeCalc,
-    video: reactNativeCalcVideo,
-    links: [
-      {
-        name: "Github",
-        link: "https://github.com/jjhbotache/reactNativeCalculator"
-      },
-      {
-        name: "Download",
-        link: "https://expo.dev/accounts/jjhbotache/projects/reactNativeCalc/builds/41612a44-022d-4bbb-a310-b42c3bbf32da"
-      }
-    ],
-    importance: 1
-  },
+  // {
+  //   title: "React Native Calculator",
+  //   tags: [
+  //     "React Native",
+  //     "Javascript",
+  //     "Expo",
+  //   ],
+  //   description: {
+  //     en: "This application allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.",
+  //     es: "Esta aplicación permite a los usuarios realizar operaciones aritméticas básicas como suma, resta, multiplicación y división."
+  //   },
+  //   img: reactNativeCalc,
+  //   video: reactNativeCalcVideo,
+  //   links: [
+  //     {
+  //       name: "Github",
+  //       link: "https://github.com/jjhbotache/reactNativeCalculator"
+  //     },
+  //     {
+  //       name: "Download",
+  //       link: "https://expo.dev/accounts/jjhbotache/projects/reactNativeCalc/builds/41612a44-022d-4bbb-a310-b42c3bbf32da"
+  //     }
+  //   ],
+  //   importance: 1
+  // },
   // newspaperApp
   {
     title: "Newspaper App",
@@ -449,8 +448,8 @@ const projectsMedia = [
       "GCP",
       "Python",
       "FastAPI",
-      "SQLite",
       "Cloudinary",
+      "Postgres SQL",
     ],
     img: memorable3,
     video: memorable3Video,

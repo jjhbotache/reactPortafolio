@@ -148,7 +148,7 @@ const Container = styled.li`
     color: ${lightColor};
     line-height: 1em;
     background-color: transparent;
-
+    text-align: center;
     a{
       text-decoration: none;
       color: ${secondaryColor};

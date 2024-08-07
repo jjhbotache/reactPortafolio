@@ -1,8 +1,8 @@
 const texts = {
   mainPageTexts: {
     rol: {
-      en: "Frontend Developer - Python Developer",
-      es: "Desarrollador Frontend - Desarrollador Python"
+      en: "React Developer - Python Developer",
+      es: "Desarrollador React - Desarrollador Python"
     },
   },
   channels: {

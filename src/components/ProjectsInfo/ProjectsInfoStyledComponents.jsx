@@ -121,7 +121,7 @@ export const ProjectsContainer = styled.div`
 
     & .swiper-pagination-bullet{
 
-      background:${({theme})=>theme.colors.text};
+      background:${({theme})=>theme.colors.lightColor};
       &-active{
         background: ${secondaryColor};
       }

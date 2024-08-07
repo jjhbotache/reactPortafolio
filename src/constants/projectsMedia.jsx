@@ -405,6 +405,8 @@ const projectsMedia = [
     title: "Chattus",
     tags: [
       "React",
+      "Python",
+      "fastAPI",
       "Styled Components",
       "Redux Toolkit",
       "React Router DOM",

@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { primaryColor, secondaryColor } from "../../constants/styleConstants";
+import { darkColor, lightColor, primaryColor, secondaryColor } from "../../constants/styleConstants";
 import { motion } from "framer-motion";
 
 export default function TechnologyComponent({tech}) {
@@ -72,12 +72,12 @@ const Container = styled.li`
   height: auto;
   max-width: 100px;
   
-  background: ${({ theme }) => (theme.colors.background === '#222'?
-    "rgba(51, 51, 51, 0.2)":
-    "transparent")};
 
-   
-  box-shadow: 0 0 1rem rgba(51, 51, 51, .2);
+  background-color: ${darkColor}aa;
+  
+  
+    
+  box-shadow: 0 0 1rem rgba(25, 25, 25, 1);
   backdrop-filter: blur(10px);
   border-radius: .5rem;
   padding: .2rem;
@@ -117,7 +117,7 @@ const Container = styled.li`
       padding: .1rem;
       text-align: center;
       letter-spacing: .01rem;
-      color: ${secondaryColor};
+      color: ${lightColor};
     }
     .technologies-section__circle{
       transform: rotate(-90deg);
@@ -126,7 +126,7 @@ const Container = styled.li`
       height: 100%;
       circle{
         fill: transparent;
-        stroke: ${primaryColor};
+        stroke: ${({ theme }) => theme.colors.secondaryColor};
         stroke-width: .2rem;
       }
     }
@@ -145,16 +145,9 @@ const Container = styled.li`
     font-size: .7rem;
     font-weight: bold;
     margin: 0;
-    color: ${secondaryColor};
+    color: ${lightColor};
     line-height: 1em;
-    background: linear-gradient(
-      45deg,
-       ${secondaryColor} 0%,
-       #6a00c7 90%
-    ); 
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    background-color: transparent;
 
     a{
       text-decoration: none;

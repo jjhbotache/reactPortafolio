@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { darkTheme, lightTheme } from "../../themes";
 import getOsTheme from "../../helpers/getOsTheme";
+import { darkColor } from "../../constants/styleConstants";
 
 
   
-  const currentTheme = getOsTheme();
-  console.log(`El tema actual del sistema operativo es: ${currentTheme}`);
   
 
 const themeSlice = createSlice({
@@ -13,7 +12,7 @@ const themeSlice = createSlice({
     initialState: getOsTheme() === "light" ? lightTheme : darkTheme,
     reducers: {
         toggleTheme: (state) => {
-            return state.colors.background === "#222" ? lightTheme : darkTheme;
+            return state.colors.background === darkColor ? lightTheme : darkTheme;
         }
     }
 })

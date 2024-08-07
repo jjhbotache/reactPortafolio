@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import { mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
+import styled, { css, keyframes } from "styled-components";
+import { darkColor, mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
 
 const fadeIn = keyframes`
   from {
@@ -20,7 +20,10 @@ export const PageOptionsContainer = styled.ol`
   opacity: 0;
 
   border-radius: .2rem;
-  background: linear-gradient(135deg,#222 20%,${secondaryColor} 150%);
+  ${({theme})=>theme.colors.background === darkColor
+  ? css`background: linear-gradient(135deg,#222 20%,${secondaryColor} 150%);`
+  : css`background: linear-gradient(135deg,#e0e0e0 20%,white 150%);`
+  };
   /* backdrop-filter: blur(50px); */
 
   padding: 0 .2rem .2rem 0;
@@ -37,7 +40,6 @@ export const PageOptionsContainer = styled.ol`
 
 
   animation: ${fadeIn} 1s ease-in forwards;
-  animation-delay: 2s;
 
   .close{
     position: absolute;
@@ -64,7 +66,9 @@ export const PageOptionsContainer = styled.ol`
     transition: all .1s ease-out;
     &:hover {
       transform: scale(1.2);
-      box-shadow: 0 0 1rem 0 ${primaryColor};
+      filter:drop-shadow(
+        0 0 .2rem ${primaryColor}
+      );
     }
     
   }

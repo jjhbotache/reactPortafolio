@@ -8,17 +8,11 @@ export const ContactInfoContainer = styled.div`
     list-style: none;
     padding: 0;
     margin: 0;
-    ${({theme})=>theme.colors.background === "#222"
-    ? css`background-color: #222;`
-    : css`background:white;`
-    }
+    /* background-color:${({theme})=>theme.colors.darkColor}; */
   }
 
   .contactCircleContainer{
-    ${({theme})=>theme.colors.background === "#222"
-    ? css`background-color: #222;`
-    : css`background:white;`
-    }
+    background-color:${({theme})=>theme.colors.darkColor};
     width: 90%;
     aspect-ratio: 1/1;
 
@@ -32,22 +26,19 @@ export const ContactInfoContainer = styled.div`
     justify-content: center;
     align-items: center;
 
-    /* border-radius: 50%; */
+    background: radial-gradient(
+      circle,
+      transparent 0%,
+      ${({theme})=>theme.colors.lightColor}12 50%,
+      transparent 100%
+    );
+
     ul{
       display: flex;
       justify-content: center;
       align-items: center;
       width: 80%;
       height: 80%;
-      ${({theme})=>theme.colors.background === "#222"
-      ? css`background: radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.053) 0%,
-        #222222a6 50%,
-        rgba(0,0,0,0) 100%
-      );`
-      : css`background: white;`
-      }
       border-radius: 50%;
       transition: all .4s ease;
     }

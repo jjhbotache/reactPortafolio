@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../redux/slices/themeSlice";
+import { darkColor } from "../../constants/styleConstants";
 
 
 export default function PageOptions({toogleTheme}) {
@@ -19,7 +20,7 @@ export default function PageOptions({toogleTheme}) {
   });
 
   const dispatch = useDispatch();
-  const theme = useSelector(state => state.theme).colors.background == "#222" ? "dark" : "light";
+  const theme = useSelector(state => state.theme).colors.background == darkColor ? "dark" : "light";
 
 
   useEffect(() => {

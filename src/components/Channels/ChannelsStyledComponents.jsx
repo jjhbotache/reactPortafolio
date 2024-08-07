@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
 
 const breathe = keyframes`
@@ -58,9 +58,14 @@ export const ChannelsStyledComponent = styled.div`
     cursor: pointer;
 
     summary{
-      background: #111;
+      background-color: ${({theme})=>theme.colors.darkColor};
+      
       padding: .3rem;
       border-radius: .5rem;
+
+      small{
+        color: ${({theme})=>theme.colors.text};
+      }
     }
 
     &::before{

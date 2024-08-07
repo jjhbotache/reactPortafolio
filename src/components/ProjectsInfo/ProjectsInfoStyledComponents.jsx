@@ -1,6 +1,6 @@
 import { css, keyframes } from "styled-components";
 import styled from "styled-components";
-import { primaryColor, secondaryColor } from "../../constants/styleConstants";
+import { darkColor, primaryColor, secondaryColor } from "../../constants/styleConstants";
 
 const fadeIn = keyframes`
   from{ opacity: 0; }
@@ -37,7 +37,7 @@ export const WelcomeText = styled.div`
     &__separator {
       border: 1px solid ${primaryColor};
       border-radius: 999rem;
-      ${({theme})=>theme.colors.background === "#222"
+      ${({theme})=>theme.colors.background === darkColor
         ? css`box-shadow: 0 0 .9rem .1rem ${secondaryColor};`
         : css``
       };
@@ -76,9 +76,21 @@ export const ProjectsContainer = styled.div`
     max-height: 97vh;
 
     box-sizing: border-box;
-    ${({theme})=>theme.colors.background === "#222"
-        ? css`background: rgba(10, 10, 10, 1);`
-        : css``
+    ${({theme})=>theme.colors.background === darkColor
+        ? css`background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(0, 0, 0, 1) 30%,
+          rgba(0, 0, 0, 1) 70%,
+          transparent 100%
+        );`
+        : css`background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(255, 255, 255, 1) 10%,
+          rgba(255, 255, 255, 1) 90%,
+          transparent 100%
+        );`
     };
     
     margin-top: .4rem;
@@ -153,7 +165,7 @@ export const ProjectsContainer = styled.div`
           height: 80%;
 
           border-radius: 1rem;
-          background: #222;
+          background: ${({theme})=>theme.colors.darkColor };
           filter: blur(2px);
           z-index: -1;
           
@@ -179,7 +191,7 @@ export const ProjectsContainer = styled.div`
 
         border-radius: .2rem;
         padding: .2rem .7rem;
-        background:${({theme})=>theme.colors.background === "#222"
+        background:${({theme})=>theme.colors.background === darkColor
           ? `rgba(10, 10, 10, .6)`
           : `rgba(10, 10, 10, .9)`
         }; 
@@ -202,7 +214,10 @@ export const ProjectsContainer = styled.div`
       width: 90%;
       border: .1rem solid ${primaryColor};
       margin: 3rem auto;
-      box-shadow: 0 0 .5rem .1rem ${primaryColor};
+      ${({theme})=>darkColor
+        ? css`box-shadow: 0 0 .9rem .1rem ${secondaryColor};`
+        : css``
+      };
     }
 
     &__name{
@@ -254,34 +269,24 @@ export const ProjectsContainer = styled.div`
       list-style: none;
       padding: 3vw 1rem;
       margin: 1rem 0;
-      ${({theme})=>theme.colors.background === "#222"
-      ? css`
       background: linear-gradient(to bottom, 
-      rgba(10, 10, 10, .0) 0%, 
-      rgba(30, 30, 30, 1) 15%, 
-      rgba(30, 30, 30, 1) 85% , 
-      rgba(10, 10, 10, .0) 100% );
-      `
-      : css`
-      background: linear-gradient(to bottom, 
-      rgba(255, 255, 255, .0) 0%, 
-      rgba(255, 255, 255, 1) 15%, 
-      rgba(255, 255, 255, 1) 85% , 
-      rgba(255, 255, 255, .0) 100% );`
-      };
+      transparent 0%,
+      ${({theme})=>theme.colors.darkColor} 15%, 
+      ${({theme})=>theme.colors.darkColor} 85% , 
+      transparent 100% );
       
     }
     
 
     &__check-project-section{
-      ${({theme})=>theme.colors.background === "#222"
-      ? css`
-      background: linear-gradient(to bottom, rgba(30, 30, 30, .0) 0% , rgba(30, 30, 30, 1) 10%);
-      `
-      : css`
-      background: linear-gradient(to bottom, rgba(255, 255, 255, .0) 0% , rgba(255, 255, 255, 1) 10%);
-      `
-      };
+      background: linear-gradient(to bottom, 
+      transparent 0%,
+      ${({theme})=>theme.colors.darkColor}dd 15%, 
+      ${({theme})=>theme.colors.darkColor}ff 85% , 
+      ${({theme})=>theme.colors.darkColor} 100% );
+
+      
+
       font-size: 1.2rem;
       color: ${secondaryColor};
       padding-bottom: 2rem;

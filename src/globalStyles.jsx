@@ -38,8 +38,8 @@ const GlobalStyles = createGlobalStyle`
 
 export default GlobalStyles;
 
-
-// ${({theme})=>theme.colors.background === "#222"
-// ? css`background: rgba(10, 10, 10, 1);`
-// : css``
-// };
+// ${({theme})=>theme.colors.primary}
+// ${({theme})=>theme.colors.background === darkColor
+//             ? css`opacity: 1;`
+//             : css`opacity: .5;`
+//           };

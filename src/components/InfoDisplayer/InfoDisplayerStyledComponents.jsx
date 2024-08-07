@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { darkColor, mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
 
 
@@ -172,12 +172,11 @@ export const InfoDisplayerStyledComponent = styled.div`
         
 
         .tv-noise-gif{
-          ${({ theme }) => (
-          theme.colors.background === '#222' // if its in dark theme
-            ? ""
-            : "opacity: .8;"
-          )}
-          
+          ${({theme})=>theme.colors.background === darkColor
+            ? css`opacity: 1;`
+            : css`opacity: .5;`
+          };
+                    
           background: #000;
           position: absolute;
           top: 54%;
@@ -204,9 +203,6 @@ export const InfoDisplayerStyledComponent = styled.div`
 
         .no-channel-alert{
           position: absolute;
-          /* top: 50%;
-          left: 50%;
-          transform: translate(-50%,-50%); */
           z-index: 1;
 
           padding: 10%;
@@ -224,9 +220,9 @@ export const InfoDisplayerStyledComponent = styled.div`
           background: radial-gradient(
             circle,
             rgba(0, 0, 0, .7) 60%,
-            rgba(0, 0, 0, 0 ) 90%
+            rgba(0, 0, 0, 0 ) 150%
           );
-          backdrop-filter: blur(4px) ; 
+          backdrop-filter: blur(10px) ; 
 
           text-shadow: 0 0 20px black;
           animation: ${blink} 7s cubic-bezier(.9,0,.1,1) infinite;

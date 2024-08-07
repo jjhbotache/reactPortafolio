@@ -1,4 +1,6 @@
 import { bodyFont, darkColor, lightColor, mdScreenWidth, primaryColor, secondaryColor, titleFont } from "./constants/styleConstants";
+const deepDarkBlue = "#111222";
+
 
 // themes.tsx
 export const lightTheme = {
@@ -6,8 +8,8 @@ export const lightTheme = {
     primary: "#2f0044",
     background: lightColor,
     text: darkColor,
-    darkColor: darkColor,
-    lightColor: darkColor,
+    darkColor: "#ffffff",
+    lightColor: deepDarkBlue,
     secondaryColor: "#0f0061",
   },
   mdScreenWidth: mdScreenWidth,
@@ -22,7 +24,7 @@ export const darkTheme = {
     primary: primaryColor,
     background: darkColor,
     text: lightColor,
-    darkColor: darkColor,
+    darkColor: deepDarkBlue,
     lightColor: lightColor,
     secondaryColor: secondaryColor,
   },

@@ -35,13 +35,10 @@ export const AboutInfoContainer = styled.div`
   width: 100%;
 
   background-image:
-  linear-gradient( 
-    ${({ theme }) => (
-    theme.colors.background === '#222' // if its in dark theme
-      ? "#222222ee, #222222fe "
-      : "#e0e0e099, #e0e0e099 "
-    )})
-     , url(/Idea.svg);
+    linear-gradient( 
+      ${({ theme }) => theme.colors.background}cc,
+      ${({ theme }) => theme.colors.background}cc)
+    , url(/Idea.svg);
   background-size: 70% 70%;
   background-position: center;
   background-repeat: no-repeat;

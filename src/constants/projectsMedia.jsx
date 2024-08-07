@@ -71,12 +71,13 @@ const projectsMedia = [
       "React",
       "Paypal",
       "Firebase",
+      "GCP",
       "Styled Components",
       "React Router DOM",
       "AWS Cognito",
     ],
     description: {
-      es: "Este es un clon de la pagina web de Netflix. La app simula el login y registro de usuarios utilizando AWS Cognito, permite el pago de la suscripción utilizando Paypal y almacena la información de los usuarios en Firebase.",
+      es: "Este es un clon de la pagina web de Netflix. La app simula el login y registro de usuarios utilizando AWS Cognito o Google, permite el pago de la suscripción utilizando Paypal y almacena la información de los usuarios en Firebase.",
       en: "This is a clone of the Netflix web page. The app simulates user login and registration using AWS Cognito, allows payment of the subscription using Paypal and stores user information in Firebase."
     },
     img: netflixClone,
@@ -93,41 +94,6 @@ const projectsMedia = [
     ],
     importance: 3
   },
-  // memorableWebpage
-  {
-    title: "Memorable Webpage",
-    tags: [
-      "React",
-      "Python",
-      "Flask",
-      "phpMyAdmin",
-      "JWT",
-      "CSS Modules",
-      "Bootstrap",
-      "React Router DOM",
-    ],
-    description: {
-      es: "Este proyecto, se compone de un Backend desarrollado con Python y un Frontend desarrollado con React. Esta, es una página hecha para una empresa que vende vinos con diseños personalizados, por lo que la página, permite a clientes, visualizar los diseños, registrarse, guardar diseños en el carrito, crear ordenes de compra y ver el estado de las mismas en su dashboard. De lado del administrador, se puede manejar todos los datos como los vinos que se venden, los diseños, sus tags y demás.",
-      en: "This project consists of a Backend developed with Python and a Frontend developed with React. This is a page made for a company that sells wines with personalized designs, so the page allows customers to view the designs, register, save designs in the cart, create purchase orders and see the status of them in their dashboard. On the administrator side, you can manage all the data such as the wines that are sold, the designs, their tags and more."
-    },
-    img: memorableWebpage,
-    video: memorableWebpageVideo,
-    links: [
-      {
-        name: "Github frontend",
-        link: "https://github.com/jjhbotache/memorableWebStore"
-      },
-      {
-        name: "Github backend",
-        link: "https://github.com/jjhbotache/school_stage_back"
-      },
-      {
-        name: "Web",
-        link: "https://memorable-web-store.vercel.app/"
-      }
-    ],
-    importance: 2
-  },
   // disneyPlus
   {
     title: "Disney+ Clone",
@@ -137,8 +103,8 @@ const projectsMedia = [
       "BEM methodology",
     ],
     description: {
-      es: "Este proyecto se enfocó en hacer una réplica de la página de Disney+ utilizando las tecnologías más básicas (HTML y CSS).  Se evitó adrede el uso de cualquier tipo de librería u hojas de estilos existentes y se construyó bajo la metodología BEM para dar orden al nombramiento de clases CSS.",
-      en: "This project focused on making a replica of the Disney+ page using the most basic technologies (HTML and CSS). The use of any type of library or existing style sheets was deliberately avoided and it was built under the BEM methodology to give order to the naming of CSS classes."
+      es: `Este proyecto se enfocó en hacer una réplica de la página de Disney+ exactamente igual (pixel perfect) utilizando las tecnologías más básicas (HTML y CSS).
+      Se evitó adrede el uso de cualquier tipo de librería u hojas de estilos existentes y se construyó bajo la metodología BEM para dar orden al nombramiento de clases CSS.`,
     },
     img: disneyPlus,
     video: disneyCloneVideo,
@@ -210,61 +176,6 @@ const projectsMedia = [
     ],
     importance: 2
   },
-  // movieSearcher
-  {
-    title: "Movie Searcher",
-    tags: [
-      "React",
-      "Typescript",
-      "Api consumption",
-      "Bootstrap",
-      "CSS Modules"
-    ],
-    description: {
-      es: "Este proyecto, utiliza la omDB api, TypeScript, modulos css, técnicas de debounce y mocks de respuestas .json. La estética de la pagina se vio apoyada en Bootstrap.",
-      en: "This project uses the omDB api, TypeScript, css modules, debounce and .json response mocks techniques. The aesthetics of the page were supported by Bootstrap."
-    },
-    img: movieSearcher,
-    video: movieSearcherVideo,
-    links: [
-      {
-        name: "Github",
-        link: "https://github.com/jjhbotache/moviesSearcher"
-      },
-      {
-        name: "Web",
-        link: null
-      }
-    ],
-    importance: 2
-  },
-  // imageArranger
-  // {
-  //   title: "Image Arranger",
-  //   tags: [
-  //     "HTML",
-  //     "CSS",
-  //     "Javascript",
-  //     "BEM methodology"
-  //   ],
-  //   description: {
-  //     es: "Este proyecto se limitó a usar las tecnologías básicas HTML-CSS-JS para crear una página que organiza imágenes en las columnas que se le pidan. La app consume la api de Pixabay buscar imágenes y agregar aleatoriamente una desde los resultados. El nombramiento de las clases CSS se hizo bajo la metodología BEM y se llegó a usar la etiqueta <dialog> de HTML que no es muy usada/conocida.",
-  //     en: "This project was limited to using the basic technologies HTML-CSS-JS to create a page that organizes images in the columns that are requested. The app consumes the Pixabay api to search for images and add one randomly from the results. The naming of the CSS classes was done under the BEM methodology and the <dialog> tag of HTML was used, which is not very used/known."
-  //   },
-  //   img: imageArranger,
-  //   video: imgArrangerVideo,
-  //   links: [
-  //     {
-  //       name: "Github",
-  //       link: "https://github.com/jjhbotache/image_arranger"
-  //     },
-  //     {
-  //       name: "Web",
-  //       link: "https://jjhbotache.github.io/image_arranger/"
-  //     }
-  //   ],
-  //   importance: 1
-  // },
   // surebetsBettor
   {
     title: "Surebets Bettor",
@@ -279,8 +190,14 @@ const projectsMedia = [
       "React Router DOM"
     ],
     description: {
-      es: "Este programa analiza mediante web scraping, 3 casas de apuestas y apartir de esa información, encuentra surebets: Apuestas seguras, que al apostar a todos eventos posibles, se obtendrá una ganancia. El programa se escribió en Python y usa, para la interfaz gráfica, usa react mediante la librería pywebview. Con respecto a Python, se usó request, beautiful soup para hacer web scraping y sqlite para almacenar información de las surebets registradas y con respecto a la UI se utilizo React y Recharts para hacer gráficos de la información guardada.",
-      en: "This program analyzes through web scraping, 3 bookmakers and from that information, finds surebets: bets, that by betting on all possible events, a profit will be obtained. The program was written in Python and uses, for the graphical interface, react through the pywebview library. Regarding Python, request and beautiful soup were used to do web scraping and sqlite to store information from the surebets registered and regarding the UI, React and Recharts were used to make graphs of the stored information."
+      es: `Esta aplicacion de escritorio, analiza mediante web scraping, 3 casas de apuestas y apartir de esa información, encuentra surebets: Apuestas seguras, que al apostar a todos eventos posibles, se obtendrá igual, una ganancia.
+      El programa se escribió en Python y usa, para la interfaz gráfica, React mediante la librería pywebview, para con Recharts, mostrar gráficos de la información.
+      Con respecto a Python, se usó request, beautiful soup para hacer web scraping y sqlite para almacenar información de las surebets registradas.
+      La preview que puedes ver abajo, es solo la interfaz desplegada, asi que no escrapeará información.`,
+      en:`This desktop application, analyzes by web scraping, 3 bookmakers and from that information, finds surebets: sure bets, that when betting on all possible events, you will get the same, a profit.
+      The program was written in Python and uses, for the graphical interface, React through the pywebview library, to display graphs of the information with Recharts.
+      With respect to Python, we used request, beautiful soup for web scraping and sqlite to store information of the registered surebets.
+      The preview you can see below, is only the displayed interface, so it will not scrape information.`
     },
     img: surebetsBettor,
     video: surebetsBettorVideo,
@@ -295,84 +212,6 @@ const projectsMedia = [
       }
     ],
     importance: 2
-  },
-  // ticTacToe
-  // {
-  //   title: "Tic Tac Toe",
-  //   tags: [
-  //     "React",
-  //     "Typescript",
-  //     "LocalStorage",
-  //   ],
-  //   description: {
-  //     es: "Este proyecto hace alusión al clásico juego 3 en raya, gato o tic tac toe. El programa permite guardar el juego, por lo que, si se cierra la ventana, se podrá continuar jugando en otro momento. Se programo en TypeScript y se uso LocalStorage para la permanencia de datos.",
-  //     en: "This project alludes to the classic game 3 in a row or tic tac toe. The program allows you to save the game, so if the window is closed, you can continue playing at another time. It was programmed in TypeScript and LocalStorage was used for data persistence."
-  //   },
-  //   img: ticTacToe,
-  //   video: ticTacToeVideo,
-  //   links: [
-  //     {
-  //       name: "Github",
-  //       link: "https://github.com/jjhbotache/tictactoeReact"
-  //     },
-  //     {
-  //       name: "Web",
-  //       link: null
-  //     }
-  //   ],
-  //   importance: 1
-  // },
-  // reactNativeCalc
-  // {
-  //   title: "React Native Calculator",
-  //   tags: [
-  //     "React Native",
-  //     "Javascript",
-  //     "Expo",
-  //   ],
-  //   description: {
-  //     en: "This application allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.",
-  //     es: "Esta aplicación permite a los usuarios realizar operaciones aritméticas básicas como suma, resta, multiplicación y división."
-  //   },
-  //   img: reactNativeCalc,
-  //   video: reactNativeCalcVideo,
-  //   links: [
-  //     {
-  //       name: "Github",
-  //       link: "https://github.com/jjhbotache/reactNativeCalculator"
-  //     },
-  //     {
-  //       name: "Download",
-  //       link: "https://expo.dev/accounts/jjhbotache/projects/reactNativeCalc/builds/41612a44-022d-4bbb-a310-b42c3bbf32da"
-  //     }
-  //   ],
-  //   importance: 1
-  // },
-  // newspaperApp
-  {
-    title: "Newspaper App",
-    tags: [
-      "Javascript",
-      "React Native",
-      "Expo",
-    ],
-    description: {
-      en: "This application allows users to read news and search them.",
-      es: "Esta aplicación permite a los usuarios leer noticias y buscarlas."
-    },
-    img: newspaperApp,
-    video: newspaperAppVideo,
-    links: [
-      {
-        name: "Github",
-        link: "https://github.com/jjhbotache/reactNativeNewspaperApp"
-      },
-      {
-        name: "Download",
-        link: null
-      }
-    ],
-    importance: 1
   },
   // reactTodoApp
   {
@@ -391,7 +230,7 @@ const projectsMedia = [
     links: [
       {
         name: "Github",
-        link: "https://github.com/jjhbotache/react_native_todo",
+        link: null,
       },
       {
         name: "Download",
@@ -405,6 +244,7 @@ const projectsMedia = [
     title: "Chattus",
     tags: [
       "React",
+      "Typescript",
       "Python",
       "fastAPI",
       "Styled Components",
@@ -414,8 +254,14 @@ const projectsMedia = [
       "Vite"
     ],
     description: {
-      es: "Esta página web permite crear un chat temporal rápido y sencillo, sin necesidad de registrarse y con funcionalidades como enviar mensajes, fotos, videos, audios y archivos. También permite crear salas de chat con funcionalidades interesante, como mínimo tiempo de actividad o exigencia de foco en el chat. La construcción de la página se hizo con React y el backend con python y fastapi.",
-      en: "This web page allows you to create a quick and simple temporary chat, without the need to register and with features such as sending messages, photos, videos, audios and files. It also allows you to create chat rooms with interesting features, such as minimum activity time or chat focus requirement. The construction of the page was done with React and the backend with python and fastapi."
+      es: `Esta página web permite crear un chat temporal rápido y sencillo.
+      La web se puede usar sin necesidad de registrarse y con funcionalidades como enviar mensajes, fotos, videos, audios y archivos.
+      También permite crear salas de chat con funcionalidades como mínimo tiempo de actividad o exigencia de foco en el chat.
+      La construcción de la página se hizo con React y Typescript y el backend con Fastapi.`,
+      en: `This website allows you to create a quick and easy temporary chat.
+      The website can be used without registration and with functionalities such as sending messages, photos, videos, audios and files.
+      It also allows to create chat rooms with functionalities such as minimum uptime or focus requirement on the chat.
+      The site was built with React and Typescript and the backend with Fastapi.`
     },
     img: chattus,
     video: chattusVideo,
@@ -439,8 +285,14 @@ const projectsMedia = [
   {
     title: "Memorable3",
     description: {
-      "en": "Memorable frontend is a web application created with the purpose of putting into practice various technologies such as Redux, React Router DOM, and Styled-Components. It utilizes cutting-edge web technologies to offer a user-friendly and interactive platform. Users can customize wine bottles with personal messages, important dates, or special motifs, turning them into unforgettable treasures.",
-      "es": "Memorable frontend es una aplicación web creada con el propósito de poner en práctica diversas tecnologías como Redux, React Router DOM y Styled-Components. Utiliza tecnologías web de vanguardia para ofrecer una plataforma interactiva y fácil de usar. Los usuarios pueden personalizar botellas de vino con mensajes personales, fechas importantes o motivos especiales, convirtiéndolos en tesoros inolvidables."
+      es: `Este es Memorable, realizado por 3ra vez. Este proyecto utiliza react.js, fastAPI y postgres SQL.
+      Permite a los usuarios buscar el diseño que buscan, con facilidad, ya que se dispone de filtro por etiquetas, buscador por palabras y mas interesante, sugerencias generadas por IA.
+      Los usuarios pueden registrarse y guardar los diseños que les gusten, para luego verlos en sus favoritos.
+      En cuanto a la administración, se puede gestionar los diseños, los tags y en general, la info de la página.`,
+      en: `This is Memorable, done for the 3rd time. This project uses react.js, fastAPI and postgresSQL.
+      It allows users to search for the design they are looking for, with ease, since it has filter by tags, search by words and more interesting, suggestions generated by AI.
+      Users can register and save the designs they like, and then view them in their favorites.
+      As for the administration, you can manage the designs, tags and in general, the page info.`
     },
     tags: [
       "React",

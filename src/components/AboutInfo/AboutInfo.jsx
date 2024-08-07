@@ -99,7 +99,7 @@ export default function AboutInfo({}) {
             {
               Object.keys(technologies).map(category=>(
                 <div key={category} className="technologies-section__category">
-                  <h3 className="technologies-section__category-title">{category}</h3>
+                  <h3 className="technologies-section__category-title">{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
                   <ul className="technologies-section__technologies-container">
                     {technologies[category].sort((a,b)=>b.importance - a.importance) .map(tech=>(<TechnologyComponent tech={tech} key={tech.name}/>))}
                   </ul>

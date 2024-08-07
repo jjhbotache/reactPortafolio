@@ -166,7 +166,7 @@ export default function ContactInfo() {
                   variants={contactOptionsCircleVariants}
                   custom={degToRotate}
 
-                  ><LogoLink to={contactOption.link} $index={index} $name={contactOption.name}>
+                  ><LogoLink to={contactOption.link} $index={index} $name={contactOption.name}  target="_blank">
                   <motion.img 
                     src={contactOption.icon} 
                     alt="contact icon"

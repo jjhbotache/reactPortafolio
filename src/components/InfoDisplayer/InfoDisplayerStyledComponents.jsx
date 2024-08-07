@@ -118,7 +118,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           border-radius: 50%;
           background: ${primaryColor};
           i,i::before,i::after{
-            color: ${darkColor} !important;
+            color: ${({theme})=>theme.colors.background} !important;
           }
           display: grid;
           place-items: center;

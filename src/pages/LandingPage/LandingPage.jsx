@@ -8,33 +8,11 @@ import Typewriter from 'typewriter-effect';
 export default function LandingPage() {
   // create a cursor glow effect
 
-  const cursorEffectRef = useRef(null);
   const mainContentRef = useRef(null);
   const navigate = useNavigate();
 
   const mainRef = useRef(null)
 
-  useEffect(() => {
-    const divCursorEffect = cursorEffectRef.current;
-    divCursorEffect.style.opacity = 0;
-
-
-    function cursorEffectFunction (e){
-      setTimeout(()=>{
-        const divCursorEffect = cursorEffectRef.current;
-        // divCursorEffect.style.opacity = 0.07
-        divCursorEffect.style.left = e.pageX + "px"
-        divCursorEffect.style.top = e.pageY + "px"
-      },50)
-    }
-
-
-
-    window.addEventListener("mousemove", cursorEffectFunction);
-    return () => {
-      window.removeEventListener("mousemove", cursorEffectFunction);
-    }
-  }, []);
 
   function redirect(e){
     const mainContent = mainContentRef.current;
@@ -47,7 +25,6 @@ export default function LandingPage() {
   
   return(
     <LandingPageStyledComponent onClick={redirect} ref={mainRef}>
-      <div className="cursor-effect" ref={cursorEffectRef}></div>
       <div className="main-content" ref={mainContentRef}>
         <Typewriter
           onInit={(typewriter) => {

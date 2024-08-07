@@ -5,12 +5,12 @@ const deepDarkBlue = "#111222";
 // themes.tsx
 export const lightTheme = {
   colors: {
-    primary: "#2f0044",
+    primary: primaryColor,
     background: lightColor,
     text: darkColor,
     darkColor: "#ffffff",
     lightColor: deepDarkBlue,
-    secondaryColor: "#0f0061",
+    secondaryColor: secondaryColor,
   },
   mdScreenWidth: mdScreenWidth,
   fonts: {

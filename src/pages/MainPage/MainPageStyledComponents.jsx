@@ -35,7 +35,7 @@ export const MainPageStyledComponent = styled.div`
       .rectangle--triangle{
         position: absolute;
         top: 0;
-        transform: translateY(-94%);
+        transform: translateY(-99%);
       }
     }
     .rectangle__bottom{
@@ -71,7 +71,7 @@ export const MainPageStyledComponent = styled.div`
       .rectangle--triangle{
         position: absolute;
         bottom: 0;
-        transform: translateY(102%) rotate(90deg) scaleY(-1);
+        transform: translateY(99%) rotate(90deg) scaleY(-1);
       }
     }
     .rectangle__top{
@@ -79,7 +79,7 @@ export const MainPageStyledComponent = styled.div`
       .rectangle--triangle{
         position: absolute;
         bottom: 0;
-        transform: translateY(102%) rotate(90deg) scaleY(-1);
+        transform: translateY(100%) rotate(90deg) scaleY(-1);
       }
     }
     /* actions */
@@ -166,15 +166,15 @@ export const MainInfo= styled.main`
           font-size: 5vh;
         }
         &__first{
-          color: ${primaryColor};
+          color: ${({theme})=>theme.colors.primary};
         }
         &__last{
-          color: ${secondaryColor};
+          color: ${({theme})=>theme.colors.secondaryColor};
         }
       }
       .rol{
         font-size: 1rem;
-        color: ${secondaryColor};
+        color: ${({theme})=>theme.colors.secondaryColor};
         margin-top: 1rem;
       }
     }

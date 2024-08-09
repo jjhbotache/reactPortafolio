@@ -13,6 +13,7 @@ import newspaperApp from '/projects/imgs/newspaperApp.png';
 import reactTodoApp from '/projects/imgs/reactTodoApp.png';
 import chattus from '/projects/imgs/chattus.png';
 import memorable3 from '/projects/imgs/memorable.gif';
+import memorable_instabot_flowchar from '/projects/imgs/memorable_instabot_flowchar.gif';
 
 // videos
 import disneyCloneVideo from "/projects/videos/disneyCloneVideo_reducido.mp4"
@@ -29,6 +30,7 @@ import newspaperAppVideo from "/projects/videos/newspaperAppVideo.mp4"
 import reactTodoAppVideo from "/projects/videos/reactTodoApp.mp4"
 import chattusVideo from "/projects/videos/chattus.mp4"
 import memorable3Video from "/projects/videos/memorable_complete_video.mp4"
+import memorable_instabot_flowcharsVideo from "/projects/videos/memorable_instabot_flowchar.mp4"
 
 // apks
 const reactTodoAppApk = "/apks/reactNativeTodo.rar"
@@ -320,6 +322,38 @@ const projectsMedia = [
         name: "Web",
         link: "https://vinos-memorable.vercel.app/"
       }
+    ],
+    importance: 4
+  },
+  // memorable 3
+  {
+    title: "Instagram follower bot",
+    description: {
+      es: `Este es un proyecto muy interesante, ya que se trata de un bot que sigue a los seguidores de una cuenta de Instagram.
+      Dadas unas cuentas objetivo, el bot sigue a los seguidores de estas cuentas, con un criterio que se puede configurar.
+      Ya que Instagram tiene ciertas restricciones, el bot, aleatoriamente revisa el feed de instagram y tambien la mira con criterio, ignorando
+      el contenido que no cumpla con el criterio.
+      Los criterios son evaluados mediante IA, para tener un feed personalizado y seguir cuentas idoneas. 
+      `,
+      en: `This is a very interesting project, as it is a bot that follows the followers of an Instagram account.
+      Given some target accounts, the bot follows the followers of these accounts, with a criteria that can be configured.
+      Since Instagram has certain restrictions, the bot randomly goes through the instagram feed and also looks at it with criteria, ignoring
+      content that does not meet the criteria.
+      The criteria are evaluated by AI, to have a personalized feed and follow suitable accounts.`
+    },
+    tags: [
+      "GCP",
+      "Python",
+      "Selenium",
+      "Google gemini",
+    ],
+    img: memorable_instabot_flowchar,
+    video: memorable_instabot_flowcharsVideo,
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/memorable_insta_bot"
+      },
     ],
     importance: 4
   },

@@ -13,7 +13,7 @@ import newspaperApp from '/projects/imgs/newspaperApp.png';
 import reactTodoApp from '/projects/imgs/reactTodoApp.png';
 import chattus from '/projects/imgs/chattus.png';
 import memorable3 from '/projects/imgs/memorable.gif';
-import memorable_instabot_flowchar from '/projects/imgs/memorable_instabot_flowchar.gif';
+import memorable_instabot_flowchar from '/projects/imgs/memorable_instabot_flowchar.png';
 
 // videos
 import disneyCloneVideo from "/projects/videos/disneyCloneVideo_reducido.mp4"
@@ -325,7 +325,7 @@ const projectsMedia = [
     ],
     importance: 4
   },
-  // memorable 3
+  // Instagram follower bot
   {
     title: "Instagram follower bot",
     description: {

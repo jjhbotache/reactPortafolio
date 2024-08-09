@@ -30,7 +30,6 @@ import newspaperAppVideo from "/projects/videos/newspaperAppVideo.mp4"
 import reactTodoAppVideo from "/projects/videos/reactTodoApp.mp4"
 import chattusVideo from "/projects/videos/chattus.mp4"
 import memorable3Video from "/projects/videos/memorable_complete_video.mp4"
-import memorable_instabot_flowcharsVideo from "/projects/videos/memorable_instabot_flowchar.mp4"
 
 // apks
 const reactTodoAppApk = "/apks/reactNativeTodo.rar"
@@ -348,7 +347,7 @@ const projectsMedia = [
       "Google gemini",
     ],
     img: memorable_instabot_flowchar,
-    video: memorable_instabot_flowcharsVideo,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723244275/memorable_instabot_flowchar_n7tiqo.mp4",
     links: [
       {
         name: "Github",

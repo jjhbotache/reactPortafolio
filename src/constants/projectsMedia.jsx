@@ -1,34 +1,15 @@
 import disneyPlus from '/projects/imgs/disneyPlus.png';
-// import imageArranger from '/projects/imgs/imageArranger.png';
-// import mouseEffect from '/projects/imgs/mouseEffect.jpeg';
-import movieSearcher from '/projects/imgs/movieSearcher.jpeg';
 import rickAndMorty from '/projects/imgs/rickAndMorty.png';
 import surebetsBettor from '/projects/imgs/surebetsBettor.jpeg';
 import SW from '/projects/imgs/SW.png';
-// import ticTacToe from '/projects/imgs/ticTacToe.jpeg';
 import netflixClone from '/projects/imgs/netflixClone.png';
-import memorableWebpage from '/projects/imgs/memorableWebpage.png';
-// import reactNativeCalc from '/projects/imgs/reactNativeCalc.png';
-import newspaperApp from '/projects/imgs/newspaperApp.png';
 import reactTodoApp from '/projects/imgs/reactTodoApp.png';
 import chattus from '/projects/imgs/chattus.png';
 import memorable3 from '/projects/imgs/memorable.gif';
 import memorable_instabot_flowchar from '/projects/imgs/memorable_instabot_flowchar.png';
 
 // videos
-import disneyCloneVideo from "/projects/videos/disneyCloneVideo_reducido.mp4"
-// import imgArrangerVideo from "/projects/videos/imgArrangerVideo_reducido.mp4"
-import movieSearcherVideo from "/projects/videos/movieSearcherVideo_reducido.mp4"
-import rickAndMortyVideo from "/projects/videos/rickAndMortyVideo_reducido.mp4"
-import surebetsBettorVideo from "/projects/videos/surebetsBettorVideo_reducido.mp4"
-import SWVideo from "/projects/videos/SWVideo_reducido.mp4"
-// import ticTacToeVideo from "/projects/videos/ticTacToeVideo_reducido.mp4"
-import netflixCloneVideo from "/projects/videos/netflixCloneVideo.mp4"
-import memorableWebpageVideo from "/projects/videos/memorableWebpageVideo.mp4"
-// import reactNativeCalcVideo from "/projects/videos/reactNativeCalcVideo.mp4"
-import newspaperAppVideo from "/projects/videos/newspaperAppVideo.mp4"
-import reactTodoAppVideo from "/projects/videos/reactTodoApp.mp4"
-import memorable3Video from "/projects/videos/memorable_complete_video.mp4"
+// (in cloudinary)
 
 // apks
 const reactTodoAppApk = "/apks/reactNativeTodo.rar"
@@ -81,7 +62,7 @@ const projectsMedia = [
       en: "This is a clone of the Netflix web page. The app simulates user login and registration using AWS Cognito, allows payment of the subscription using Paypal and stores user information in Firebase."
     },
     img: netflixClone,
-    video: netflixCloneVideo,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255076/netflixCloneVideo_gkycka.mp4",
     links: [
       {
         name: "Github",
@@ -107,7 +88,7 @@ const projectsMedia = [
       Se evitó adrede el uso de cualquier tipo de librería u hojas de estilos existentes y se construyó bajo la metodología BEM para dar orden al nombramiento de clases CSS.`,
     },
     img: disneyPlus,
-    video: disneyCloneVideo,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254665/disneyCloneVideo_reducido_zplh4m.mp4",
     links: [
       {
         name: "Github",
@@ -134,7 +115,7 @@ const projectsMedia = [
       en: "This project uses the SWapi api, the Pixabay api and StyledComponents. The information from the SWapi api is used to pass props to components and make a small avatar with variable height, color and box, based on this information. The SWapi api doesn't provide images of the characters, so the Pixabay api was used to search for the name and select a random image from the results."
     },
     img: SW,
-    video: SWVideo,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255004/SWVideo_reducido_o7xeoq.mp4",
     links: [
       {
         name: "Github",
@@ -163,7 +144,7 @@ const projectsMedia = [
       
     },
     img: rickAndMorty,
-    video: rickAndMortyVideo,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254886/rickAndMortyVideo_reducido_toqeex.mp4",
     links: [
       {
         name: "Github",
@@ -200,7 +181,7 @@ const projectsMedia = [
       The preview you can see below, is only the displayed interface, so it will not scrape information.`
     },
     img: surebetsBettor,
-    video: surebetsBettorVideo,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254946/surebetsBettorVideo_reducido_z1ba0f.mp4",
     links: [
       {
         name: "Github",
@@ -226,7 +207,7 @@ const projectsMedia = [
       en: "This application allows users to manage and rearrange tasks. It uses Expo SQLite to store tasks and drag and drop reorganization features."
     },
     img: reactTodoApp,
-    video: reactTodoAppVideo,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255131/reactTodoApp_asmrrg.mp4",
     links: [
       {
         name: "Github",
@@ -306,7 +287,7 @@ const projectsMedia = [
       "Postgres SQL",
     ],
     img: memorable3,
-    video: memorable3Video,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255185/memorable_complete_video_elyftt.mp4",
     links: [
       {
         name: "Github Frontend",

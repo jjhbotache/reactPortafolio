@@ -28,7 +28,6 @@ import memorableWebpageVideo from "/projects/videos/memorableWebpageVideo.mp4"
 // import reactNativeCalcVideo from "/projects/videos/reactNativeCalcVideo.mp4"
 import newspaperAppVideo from "/projects/videos/newspaperAppVideo.mp4"
 import reactTodoAppVideo from "/projects/videos/reactTodoApp.mp4"
-import chattusVideo from "/projects/videos/chattus.mp4"
 import memorable3Video from "/projects/videos/memorable_complete_video.mp4"
 
 // apks
@@ -265,7 +264,7 @@ const projectsMedia = [
       The site was built with React and Typescript and the backend with Fastapi.`
     },
     img: chattus,
-    video: chattusVideo,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254371/chattus_iv1lbg.mp4",
     links: [
       {
         name: "Github Frontend",

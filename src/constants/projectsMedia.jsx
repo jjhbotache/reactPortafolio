@@ -335,7 +335,7 @@ const projectsMedia = [
       },
     ],
     importance: 4
-  },
+  }
 
 
 ];

@@ -7,6 +7,7 @@ import reactTodoApp from '/projects/imgs/reactTodoApp.png';
 import chattus from '/projects/imgs/chattus.png';
 import memorable3 from '/projects/imgs/memorable.gif';
 import memorable_instabot_flowchar from '/projects/imgs/memorable_instabot_flowchar.png';
+import iphone_api from '/projects/imgs/iphone_api.png';
 
 // videos
 // (in cloudinary)
@@ -335,6 +336,31 @@ const projectsMedia = [
       },
     ],
     importance: 4
+  },
+  // Iphone4s api
+  {
+    title: "Iphone 4s api",
+    description: {
+      es: `¿Correr un servidor en un Iphone 4s? Claro que sí!. Este proyecto se enfocó en crear un servidor en un Iphone 4s usando python 2.5.1 y las librerias
+      que vienen por defecto con este python. El servidor es capaz de manejar bases de datos sqlite y guardar archivos de los cuales se les puede cambiar la visibilidad.
+      `,
+      en: `Run a server on an Iphone 4s? Of course!. This project focused on creating a server on an Iphone 4s using python 2.5.1 and the libraries
+      that come by default with this python. The server is able to handle sqlite databases and save files that can have their visibility changed.`
+    },
+    tags: [
+      "Python",
+      "SQLite",
+      "HTML",
+    ],
+    img: iphone_api,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723336992/0810_m6uk33.mp4",
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/iphone_api"
+      },
+    ],
+    importance: 3
   }
 
 

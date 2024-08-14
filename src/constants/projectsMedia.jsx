@@ -8,6 +8,7 @@ import chattus from '/projects/imgs/chattus.png';
 import memorable3 from '/projects/imgs/memorable.gif';
 import memorable_instabot_flowchar from '/projects/imgs/memorable_instabot_flowchar.png';
 import iphone_api from '/projects/imgs/iphone_api.png';
+import prematch_bettor from '/projects/imgs/prematch_bettor.gif';
 
 // videos
 // (in cloudinary)
@@ -374,20 +375,16 @@ const projectsMedia = [
       "Beautiful Soup",
       "pyTelegramBotAPI"
     ],
-    img: memorable3,
-    video: memorable3Video,
+    img: prematch_bettor,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723668852/simplescreenrecorder-2024-08-14_11.26.20-ezgif.com-video-to-gif-converter_iugz1t.mp4",
     links: [
       {
-        name: "Github Frontend",
-        link: "https://github.com/jjhbotache/memorable_3_front"
+        name: "Github",
+        link: "https://github.com/jjhbotache/prematch_bettor"
       },
       {
-        name: "Github Backend",
-        link: "https://github.com/jjhbotache/memorable_3_back"
-      },
-      {
-        name: "Web",
-        link: "https://vinos-memorable.vercel.app/"
+        name: "Telegram Chatbot Web",
+        link: "https://t.me/PreSureBetbot"
       }
     ],
     importance: 3

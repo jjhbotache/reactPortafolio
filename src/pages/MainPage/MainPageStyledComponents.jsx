@@ -35,7 +35,7 @@ export const MainPageStyledComponent = styled.div`
       .rectangle--triangle{
         position: absolute;
         top: 0;
-        transform: translateY(-99%);
+        transform: translateY(-94%);
       }
     }
     .rectangle__bottom{

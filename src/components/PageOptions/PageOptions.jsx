@@ -78,7 +78,7 @@ export default function PageOptions({toogleTheme}) {
         <button className="option-btn" onClick={e=>dispatch(toggleTheme())}>
           {
             theme === "dark"
-            ?<i className="fi fi-br-sun"></i>
+            ?<i className="fi fi-sr-brightness"></i>
             :<i className="fi fi-br-moon"></i>
           }
         </button>

@@ -10,6 +10,21 @@ const blink = keyframes`
   }
 `;
 
+const gradientAnimation = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
+
+
+
+
 export const LandingPageStyledComponent = styled.main`
   display: flex;
   flex-direction: column;
@@ -37,30 +52,51 @@ export const LandingPageStyledComponent = styled.main`
     transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .main-content {
-    word-break: break-word;
+    position: relative;
+    word-break: keep-all;
     width: 92vw;
+    min-height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 0.3rem;
     padding: 3rem;
-    background-color: ${({ theme }) => theme.colors.darkColor};
+    transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    
+    &::before {
+      transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(334deg, #2e0518, #081d30, #260752, #2e0518);
+      background-size: 180% 180%;
+      animation: ${gradientAnimation} 10s ease-in-out infinite;
+      border-radius: 0.3rem;
+      z-index: 0;
+      filter: blur(70px);
 
+      
+    }
+    
     .Typewriter {
       height: 30vh;
-      min-height: 30vh;
     }
 
     @media screen and (width < ${mdScreenWidth}) {
-      padding: 0.2rem;
       font-size: 0.8rem;
+      padding: .5rem;
     }
     z-index: 1;
     &:hover {
       cursor: pointer;
-      box-shadow: 0 0 30px 5px ${({ theme }) => theme.colors.primary};
+      box-shadow: 0 0 200px 10px ${({ theme }) => theme.colors.primary}30;
+      &::before {
+        filter: blur(25px);
+      }
     }
   }
   .main-content__title {
@@ -72,10 +108,13 @@ export const LandingPageStyledComponent = styled.main`
     font-size: 2.5em;
     font-weight: 700;
     transition: all 0.5s ease-in-out;
-    background: transparent;
-    color: ${({ theme }) => theme.colors.primary};
+    background: linear-gradient(15deg, #ac1bac, #329b9b);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    line-height: 1.2em;
+    line-height: 1.5em;
 
     overflow: hidden;
 
@@ -108,7 +147,7 @@ export const LandingPageStyledComponent = styled.main`
     font-size: 1rem;
     text-align: center;
     letter-spacing: 3px;
-    animation: infinite 2s ease-in ${blink};
+    animation: infinite 5s ease-in ${blink};
     transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     color: ${({ theme }) => theme.colors.lightColor};
     &:hover {
@@ -117,3 +156,4 @@ export const LandingPageStyledComponent = styled.main`
     }
   }
 `;
+  

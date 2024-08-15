@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { mdScreenWidth } from '../../constants/styleConstants';
+import styled, { css, keyframes } from 'styled-components';
+import { darkColor, mdScreenWidth } from '../../constants/styleConstants';
 
 const blink = keyframes`
   from, to {
@@ -72,7 +72,9 @@ export const LandingPageStyledComponent = styled.main`
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(334deg, #2e0518, #081d30, #260752, #2e0518);
+      background:${({ theme }) => theme.colors.background == darkColor
+        ? "linear-gradient(334deg, #2e0518, #081d30, #260752, #2e0518)"
+        : "linear-gradient(334deg, #ffcee5, #c0e0ff, #d1b0ff, #ffbedc)"};
       background-size: 180% 180%;
       animation: ${gradientAnimation} 10s ease-in-out infinite;
       border-radius: 0.3rem;
@@ -93,7 +95,8 @@ export const LandingPageStyledComponent = styled.main`
     z-index: 1;
     &:hover {
       cursor: pointer;
-      box-shadow: 0 0 200px 10px ${({ theme }) => theme.colors.primary}30;
+      ${({ theme }) => theme.colors.background == darkColor && css`box-shadow: 0 0 200px 10px ${({ theme }) => theme.colors.primary}30;`};
+      
       &::before {
         filter: blur(25px);
       }

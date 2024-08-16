@@ -367,8 +367,8 @@ const projectsMedia = [
   {
     title: "Prematch surebets gettor",
     description: {
-      "es": "Este es un bot, que busca surebets en 3 casas de apuestas: wplay, betplay y codere. Analisa los eventos de futbol de cada una de las casas de apuestas y agrupa los mismos eventos, para luego ver si existe una surebet. Si es asi, la envia a todos los que esten suscritos al bot de instagram!",
-      "en": "This is a bot, that looks for surebets in 3 bookmakers: wplay, betplay and codere. It analyzes the soccer events of each of the bookmakers and groups the same events, to then see if there is a surebet. If so, it sends it to everyone subscribed to the instagram bot!"
+      "es": "Este es un bot, que busca surebets en 3 casas de apuestas: wplay, betplay y codere. Analisa los eventos de futbol de cada una de las casas de apuestas y agrupa los mismos eventos, para luego ver si existe una surebet. Si es asi, la envia a todos los que esten suscritos al bot de telegram!",
+      "en": "This is a bot, that looks for surebets in 3 bookmakers: wplay, betplay and codere. It analyzes the soccer events of each of the bookmakers and groups the same events, to then see if there is a surebet. If so, it sends it to everyone subscribed to the telegram bot!"
     },
     tags: [
       "Python",

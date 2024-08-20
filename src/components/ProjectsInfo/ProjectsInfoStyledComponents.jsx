@@ -145,9 +145,12 @@ export const ProjectsContainer = styled.div`
         z-index: 2;
         font-size: clamp(1.5rem, 3vw, 2rem);
         border-radius: 1rem;
-        padding: .2rem 2rem;
-
+        box-sizing: border-box;
+        display: grid;
+        place-items: center;
+        
         span{
+          padding: .2rem ;
           /* give a linear gradient to text */
           background: linear-gradient(45deg, ${primaryColor}, ${secondaryColor});
           -webkit-background-clip: text;
@@ -161,12 +164,12 @@ export const ProjectsContainer = styled.div`
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 90%;
-          height: 80%;
+          width: 105%;
+          height: 90%;
 
           border-radius: 1rem;
           background: ${({theme})=>theme.colors.darkColor };
-          filter: blur(2px);
+          filter: blur(5px);
           z-index: -1;
           
         }

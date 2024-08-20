@@ -97,6 +97,13 @@ const technologies = {
       technologyLink: "https://www.typescriptlang.org/",
       importance: 4,
       knowlegePercentage: 70
+    },
+    {
+      name: "Three.js",
+      svgUrl: "/SVG/threejs.svg",
+      technologyLink: "https://threejs.org/",
+      importance: 4,
+      knowlegePercentage: 30
     }
   ],
   backend: [

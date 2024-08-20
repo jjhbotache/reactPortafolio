@@ -9,6 +9,7 @@ import memorable3 from '/projects/imgs/memorable.gif';
 import memorable_instabot_flowchar from '/projects/imgs/memorable_instabot_flowchar.png';
 import iphone_api from '/projects/imgs/iphone_api.png';
 import prematch_bettor from '/projects/imgs/prematch_bettor.gif';
+import threejs_microcontrollers from '/projects/imgs/microcontrollers.gif';
 
 // videos
 // (in cloudinary)
@@ -388,6 +389,32 @@ const projectsMedia = [
       }
     ],
     importance: 3
+  },
+  // Three js and Microcontrollers
+  {
+    title: "Three js and Microcontrollers",
+    description: {
+      es: "Three.js? Páginas 3d? Microcontroladores? En este proyecto se unieron estos dos mundos para asi, adentrarse en el mundo de las páginas 3d con Three.js. Esta página web, muestra información de un microcontrolador y su modelo 3d, el cual se puede girar para echarle un buen vistazo.",
+      en: "Three.js? 3d pages? Microcontrollers? In this project, these two worlds were joined to enter the world of 3d pages with Three.js. This website shows information about a microcontroller and its 3d model, which can be rotated to take a good look."
+    },
+    tags: [
+      "Three.js",
+      "Typescript",
+      "CSS"
+    ],
+    img: threejs_microcontrollers,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1724195866/Microcontrollers_and_2_more_pages_-_yo_-_Microsoft_Edge_2024-08-20_18-04-16_nlovik.mp4",
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/first3DProject"
+      },
+      {
+        name: "Web",
+        link: "https://microcontrollers.surge.sh/"
+      }
+    ],
+    importance: 2
   },
 
 

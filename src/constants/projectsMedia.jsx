@@ -426,8 +426,9 @@ const projectsMedia = [
     },
     tags: [
       "React native",
-      "Expo",
+      "React native elements",
       "Typescript",
+      "Expo",
       "SQLite",
     ],
     img: ordersQuotator,

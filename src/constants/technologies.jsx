@@ -104,6 +104,13 @@ const technologies = {
       technologyLink: "https://threejs.org/",
       importance: 4,
       knowlegePercentage: 30
+    },
+    {
+      name: "React native elements",
+      svgUrl: "/SVG/RNE.svg",
+      technologyLink: "https://reactnativeelements.com",
+      importance: 4,
+      knowlegePercentage: 68
     }
   ],
   backend: [
@@ -241,13 +248,6 @@ const technologies = {
       technologyLink: "https://ai.google.dev/gemini-api/docs?hl=es-419",
       importance: 5,
       knowlegePercentage: 70
-    },
-    {
-      name: "React native elements",
-      svgUrl: "/SVG/RNE.svg",
-      technologyLink: "https://reactnativeelements.com",
-      importance: 4,
-      knowlegePercentage: 68
     }
   ]
 };

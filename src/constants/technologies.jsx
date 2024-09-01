@@ -33,7 +33,7 @@ const technologies = {
       svgUrl: "/SVG/react native.svg",
       technologyLink: "https://reactnative.dev/",
       importance: 5,
-      knowlegePercentage: 40
+      knowlegePercentage: 60
     },
     {
       name: "Redux Toolkit",

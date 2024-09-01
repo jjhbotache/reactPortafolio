@@ -10,6 +10,7 @@ import memorable_instabot_flowchar from '/projects/imgs/memorable_instabot_flowc
 import iphone_api from '/projects/imgs/iphone_api.png';
 import prematch_bettor from '/projects/imgs/prematch_bettor.gif';
 import threejs_microcontrollers from '/projects/imgs/microcontrollers.gif';
+import ordersQuotator from '/projects/imgs/orders quotator.gif';
 
 // videos
 // (in cloudinary)
@@ -129,7 +130,7 @@ const projectsMedia = [
         link: "https://starwars-plum-seven.vercel.app/"
       }
     ],
-    importance: 2
+    importance: 1
   },
   // rickAndMorty
   {
@@ -158,7 +159,7 @@ const projectsMedia = [
         link: "https://rick-and-morty-indol.vercel.app/"
       }
     ],
-    importance: 2
+    importance: 1
   },
   // surebetsBettor
   {
@@ -305,7 +306,7 @@ const projectsMedia = [
         link: "https://vinos-memorable.vercel.app/"
       }
     ],
-    importance: 4
+    importance: 5
   },
   // Instagram follower bot
   {
@@ -337,7 +338,7 @@ const projectsMedia = [
         link: "https://github.com/jjhbotache/memorable_insta_bot"
       },
     ],
-    importance: 4
+    importance: 5
   },
   // Iphone4s api
   {
@@ -388,7 +389,7 @@ const projectsMedia = [
         link: "https://t.me/PreSureBetbot"
       }
     ],
-    importance: 3
+    importance: 4
   },
   // Three js and Microcontrollers
   {
@@ -414,7 +415,34 @@ const projectsMedia = [
         link: "https://microcontrollers.surge.sh/"
       }
     ],
-    importance: 2
+    importance: 3
+  },
+  // Orders Quotator
+  {
+    title: "Orders Quotator",
+    description: {
+      es: "Este proyecto es una app movil, que permite a quién la use, crear cotizaciónes de sus propios productos. La app permite crear productos, y cotizaciones para luego, enviar una cuenta de cobro en pdf.",
+      en: "This project is a mobile app, that allows the user to create quotes for their own products. The app allows you to create products, and quotes to then, send an invoice in pdf."
+    },
+    tags: [
+      "React native",
+      "Expo",
+      "Typescript",
+      "SQLite",
+    ],
+    img: ordersQuotator,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1725216070/orders_quotation_flr6qj.mp4",
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/ReactNativeOrderQuotator"
+      },
+      {
+        name: "Download",
+        link: "https://terabox.com/s/1cpE_4pBYe-Ehmqw5H4lvRQ"
+      }
+    ],
+    importance: 4
   },
 
 

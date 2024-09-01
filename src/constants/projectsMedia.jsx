@@ -440,7 +440,7 @@ const projectsMedia = [
       },
       {
         name: "Download",
-        link: "https://terabox.com/s/1GOREDsGmJknWB3N_C_ESoQ"
+        link: "https://www.mediafire.com/file/mnmn3w1n220gzxr/OrdesrQuotator.apk/file"
       }
     ],
     importance: 4

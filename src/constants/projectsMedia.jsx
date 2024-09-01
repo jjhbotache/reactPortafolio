@@ -440,7 +440,7 @@ const projectsMedia = [
       },
       {
         name: "Download",
-        link: "https://terabox.com/s/1cpE_4pBYe-Ehmqw5H4lvRQ"
+        link: "https://terabox.com/s/1GOREDsGmJknWB3N_C_ESoQ"
       }
     ],
     importance: 4

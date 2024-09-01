@@ -338,7 +338,7 @@ const projectsMedia = [
         link: "https://github.com/jjhbotache/memorable_insta_bot"
       },
     ],
-    importance: 5
+    importance: 4
   },
   // Iphone4s api
   {

@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react"
+import {  useRef } from "react"
 import { LandingPageStyledComponent } from "./LandingPageStyledComponents"
 import { useNavigate } from "react-router-dom";
 import Typewriter from 'typewriter-effect';
-import { Analytics } from "@vercel/analytics/react"
+
 
 
 
@@ -59,7 +59,6 @@ export default function LandingPage() {
         />
         <small className="main-content__instruction">Click us - Cliquéanos</small>
       </div>
-      <Analytics />
     </LandingPageStyledComponent>
   )
 };

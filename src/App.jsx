@@ -6,6 +6,7 @@ import { darkTheme, lightTheme } from './themes'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './globalStyles'
 import { useSelector } from 'react-redux'
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const theme = useSelector(state => state.theme)
@@ -31,6 +32,7 @@ function App() {
         />
         <RouterProvider router={router} />
       </ThemeProvider>
+      <Analytics/>
     </>
   )
 }

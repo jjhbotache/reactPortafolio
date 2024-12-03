@@ -29,7 +29,7 @@ export default function Channels({channels,onSelectChannel}) {
 
   return (
     <ChannelsStyledComponent>
-      <details className={`channels-details ${menuOpen ? "open":""}`} open={menuOpen} onClick={cliked} >
+      <details className={`channels-details `} open={menuOpen} onClick={cliked} >
         <summary className="channels-details--title"> <small>{
           currentChannel
             ?texts.channels.channels[titleInfoToDisplay][language]

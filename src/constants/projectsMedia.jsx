@@ -11,6 +11,7 @@ import iphone_api from '/projects/imgs/iphone_api.png';
 import prematch_bettor from '/projects/imgs/prematch_bettor.gif';
 import threejs_microcontrollers from '/projects/imgs/microcontrollers.gif';
 import ordersQuotator from '/projects/imgs/orders quotator.gif';
+import easySite from '/projects/imgs/easySite.gif';
 
 // videos
 // (in cloudinary)
@@ -444,6 +445,32 @@ const projectsMedia = [
       }
     ],
     importance: 4
+  },
+  // Easy site
+  {
+    title: "EasySite",
+    description: {
+      es: "EasySite es una plataforma que permite a las empresas crear, administrar y personalizar páginas web simples. Con un enfoque minimalista pero funcional, provee herramientas intuitivas para la creación de contenido, gestión de citas y contacto con clientes. El administrador global gestiona todas las empresas, mientras que cada empresa dispone de un panel limitado para personalizar su web y administrar su agenda.",
+      en: "EasySite is a platform that allows companies to create, manage, and customize simple websites. With a minimalist yet functional approach, it provides intuitive tools for content creation, appointment scheduling, and customer contact management. The global admin manages all companies, while each company has a limited dashboard for customizing its web presence and scheduling."
+    },
+    tags: [
+      "Django",
+      "Tailwind CSS",
+      "Postgres SQL",
+    ],
+    img: easySite,
+    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1738634355/easySiteVideo_vcm8uh.mp4",
+    links: [
+      {
+        name: "Github",
+        link: "https://github.com/jjhbotache/easy-site"
+      },
+      {
+        name: "Web",
+        link: "http://easy-site.onrender.com"
+      }
+    ],
+    importance: 5
   },
 
 

@@ -1,25 +1,25 @@
 const technologies = {
   frontend: [
-    {
-      name: "HTML",
-      svgUrl: "/SVG/html5.svg",
-      technologyLink: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-      importance: 1,
-      knowlegePercentage: 100
-    },
-    {
-      name: "CSS",
-      svgUrl: "/SVG/css.svg",
-      technologyLink: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-      importance: 1,
-      knowlegePercentage: 100
-    },
+    // {
+    //   name: "HTML",
+    //   svgUrl: "/SVG/html5.svg",
+    //   technologyLink: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    //   importance: 1,
+    //   knowlegePercentage: 100
+    // },
+    // {
+    //   name: "CSS",
+    //   svgUrl: "/SVG/css.svg",
+    //   technologyLink: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    //   importance: 1,
+    //   knowlegePercentage: 100
+    // },
     {
       name: "JavaScript",
       svgUrl: "/SVG/javascript.svg",
       technologyLink: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
       importance: 2,
-      knowlegePercentage: 90
+      knowlegePercentage: 100
     },
     {
       name: "React",
@@ -111,6 +111,13 @@ const technologies = {
       technologyLink: "https://reactnativeelements.com",
       importance: 4,
       knowlegePercentage: 68
+    },
+    {
+      name: "Tailwind CSS",
+      svgUrl: "/SVG/tailwind.svg",
+      technologyLink: "https://tailwindcss.com/",
+      importance: 3,
+      knowlegePercentage: 80
     }
   ],
   backend: [
@@ -126,7 +133,7 @@ const technologies = {
       svgUrl: "/SVG/python.svg",
       technologyLink: "https://www.python.org/",
       importance: 5,
-      knowlegePercentage: 85
+      knowlegePercentage: 90
     },
     {
       name: "Flask",
@@ -190,6 +197,15 @@ const technologies = {
       technologyLink: "https://www.postgresql.org/",
       importance: 5,
       knowlegePercentage: 40
+    }
+  ],
+  fullstack: [
+    {
+      name: "Django",
+      svgUrl: "/SVG/django.svg",
+      technologyLink: "https://www.djangoproject.com/",
+      importance: 4,
+      knowlegePercentage: 75
     }
   ],
   others: [

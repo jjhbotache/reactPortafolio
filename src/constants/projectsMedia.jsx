@@ -12,7 +12,7 @@ import prematch_bettor from '/projects/imgs/prematch_bettor.gif';
 import threejs_microcontrollers from '/projects/imgs/microcontrollers.gif';
 import ordersQuotator from '/projects/imgs/orders quotator.gif';
 import easySite from '/projects/imgs/easySite.gif';
-import devKalk from '/projects/imgs/devKalk.gif';
+import devKalk from '/projects/imgs/devkalk.gif';
 
 // videos
 // (in cloudinary)
@@ -473,14 +473,14 @@ const projectsMedia = [
     ],
     importance: 5
   },
-  // DevKalk -> Actualizado a ProjectCalc
+  // DevKalk 
   {
     title: "DevKalk",
     description: {
-      es: `ProjectCalc es una Progressive Web App (PWA) diseñada para desarrolladores freelance. 
+      es: `DevKalk es una Progressive Web App (PWA) diseñada para desarrolladores freelance. 
 Esta herramienta ayuda a crear presupuestos de proyectos con precisión utilizando sugerencias impulsadas por Inteligencia Artificial para mejorar la exactitud en la estimación. 
 Permite crear, editar y gestionar funcionalidades y tareas del proyecto, con opciones como exportación a PDF, importación/exportación de configuraciones y edición dinámica del proyecto.`,
-      en: `ProjectCalc is a Progressive Web App (PWA) designed for freelance developers. 
+      en: `DevKalk is a Progressive Web App (PWA) designed for freelance developers. 
 It helps create accurate project quotations by combining manual inputs with AI-powered suggestions to improve estimation accuracy. 
 The app allows users to create, edit, and manage project functionalities and tasks while offering features like PDF export, configuration import/export, and dynamic project editing.`
     },
@@ -495,7 +495,7 @@ The app allows users to create, edit, and manage project functionalities and tas
       "Tailwindcss-animate",
       "Vite"
     ],
-    img: easySite, 
+    img: devKalk, 
     video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1738808731/devkalk_1_nb2hhl.mp4",
     links: [
       {

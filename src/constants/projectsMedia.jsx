@@ -107,62 +107,62 @@ const projectsMedia = [
     ],
     importance: 2
   },
-  // SWapiProject
-  {
-    title: "Star Wars",
-    tags: [
-      "React",
-      "Api consumption",
-      "Styled Components",
-      "React Router DOM"
-    ],
-    description: {
-      es: "Este proyecto, utiliza la api SWapi,la api de Pixabay y StyledComponents. Se utiliza la información de la api SWapi para pasar props a componentes y hacer un pequeño avatar con altura, color y recuadro variable con base a esta información. La api SWapi no proporciona imágenes de los personajes, por lo que se recurrió a utilizar la api de Pixabay para buscar el nombre y seleccionar una imagen aleatoria de los resultados.",
-      en: "This project uses the SWapi api, the Pixabay api and StyledComponents. The information from the SWapi api is used to pass props to components and make a small avatar with variable height, color and box, based on this information. The SWapi api doesn't provide images of the characters, so the Pixabay api was used to search for the name and select a random image from the results."
-    },
-    img: SW,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255004/SWVideo_reducido_o7xeoq.mp4",
-    links: [
-      {
-        name: "Github",
-        link: "https://github.com/jjhbotache/SWApi_project"
-      },
-      {
-        name: "Web",
-        link: "https://starwars-plum-seven.vercel.app/"
-      }
-    ],
-    importance: 1
-  },
-  // rickAndMorty
-  {
-    title: "Rick and Morty Characters",
-    tags: [
-      "Typescript",
-      "React",
-      "Api consumption",
-      "Bootstrap",
-      "React Router DOM"
-    ],
-    description: {
-      es: "Este proyecto se centró en el efectivo consumo de la api de Rick y Morty y uso de TypeScript, agregando funciones como el scroll infinito, búsqueda de caracteres y filtro de los mismos. La estética de la pagina se vio apoyada en Bootstrap.",
-      en: "This project focused on the effective consumption of the Rick and Morty api and the use of TypeScript, adding functions such as infinite scroll, character search and filter. The aesthetics of the page were supported by Bootstrap."
+  // // SWapiProject
+  // {
+  //   title: "Star Wars",
+  //   tags: [
+  //     "React",
+  //     "Api consumption",
+  //     "Styled Components",
+  //     "React Router DOM"
+  //   ],
+  //   description: {
+  //     es: "Este proyecto, utiliza la api SWapi,la api de Pixabay y StyledComponents. Se utiliza la información de la api SWapi para pasar props a componentes y hacer un pequeño avatar con altura, color y recuadro variable con base a esta información. La api SWapi no proporciona imágenes de los personajes, por lo que se recurrió a utilizar la api de Pixabay para buscar el nombre y seleccionar una imagen aleatoria de los resultados.",
+  //     en: "This project uses the SWapi api, the Pixabay api and StyledComponents. The information from the SWapi api is used to pass props to components and make a small avatar with variable height, color and box, based on this information. The SWapi api doesn't provide images of the characters, so the Pixabay api was used to search for the name and select a random image from the results."
+  //   },
+  //   img: SW,
+  //   video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255004/SWVideo_reducido_o7xeoq.mp4",
+  //   links: [
+  //     {
+  //       name: "Github",
+  //       link: "https://github.com/jjhbotache/SWApi_project"
+  //     },
+  //     {
+  //       name: "Web",
+  //       link: "https://starwars-plum-seven.vercel.app/"
+  //     }
+  //   ],
+  //   importance: 1
+  // },
+  // // rickAndMorty
+  // {
+  //   title: "Rick and Morty Characters",
+  //   tags: [
+  //     "Typescript",
+  //     "React",
+  //     "Api consumption",
+  //     "Bootstrap",
+  //     "React Router DOM"
+  //   ],
+  //   description: {
+  //     es: "Este proyecto se centró en el efectivo consumo de la api de Rick y Morty y uso de TypeScript, agregando funciones como el scroll infinito, búsqueda de caracteres y filtro de los mismos. La estética de la pagina se vio apoyada en Bootstrap.",
+  //     en: "This project focused on the effective consumption of the Rick and Morty api and the use of TypeScript, adding functions such as infinite scroll, character search and filter. The aesthetics of the page were supported by Bootstrap."
       
-    },
-    img: rickAndMorty,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254886/rickAndMortyVideo_reducido_toqeex.mp4",
-    links: [
-      {
-        name: "Github",
-        link: "https://github.com/jjhbotache/rickAndMorty"
-      },
-      {
-        name: "Web",
-        link: "https://rick-and-morty-indol.vercel.app/"
-      }
-    ],
-    importance: 1
-  },
+  //   },
+  //   img: rickAndMorty,
+  //   video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254886/rickAndMortyVideo_reducido_toqeex.mp4",
+  //   links: [
+  //     {
+  //       name: "Github",
+  //       link: "https://github.com/jjhbotache/rickAndMorty"
+  //     },
+  //     {
+  //       name: "Web",
+  //       link: "https://rick-and-morty-indol.vercel.app/"
+  //     }
+  //   ],
+  //   importance: 1
+  // },
   // surebetsBettor
   {
     title: "Surebets Bettor",

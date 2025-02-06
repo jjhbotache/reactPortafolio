@@ -490,9 +490,7 @@ The app allows users to create, edit, and manage project functionalities and tas
       "Tailwind CSS",
       "PWA",
       "React Toastify",
-      "Radix UI",
       "Lucide React",
-      "Tailwindcss-animate",
       "Vite"
     ],
     img: devKalk, 

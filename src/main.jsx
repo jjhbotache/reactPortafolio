@@ -7,6 +7,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import LanguajeContextProvider from './contexts/LanguajeContextProvider.jsx'
 import { Provider } from 'react-redux'
 import store from './redux/store.jsx'
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
+
 
 
 

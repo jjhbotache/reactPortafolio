@@ -37,9 +37,21 @@ export default function Channels({channels,onSelectChannel}) {
         }</small> </summary>
         <section className={`channels-details--info ${menuOpen ? "open":""}`} >
           <ol>
-            {channels.map((channel, index) =>( 
-            <li key={index} className="channels-select--options" onClick={e=>{channelClicked(channel)}} value={channel.value}>{channel.name[language]}</li>
-            ))}
+            {channels.map((channel, index) =>{
+              
+              return( 
+              <li
+                key={index}
+                className={`
+                  channels-select--options
+                  ${currentChannel?.value === channel.value ? "channels-select--options__active" : ""}
+                  ${"experience" === channel.value ? "channels-select--options__experience" : ""}
+                  `}
+                onClick={e=>{channelClicked(channel)}} 
+                value={channel.value}>
+                  {channel.name[language]}
+              </li>
+            )})}
           </ol>
         </section>
       </details>

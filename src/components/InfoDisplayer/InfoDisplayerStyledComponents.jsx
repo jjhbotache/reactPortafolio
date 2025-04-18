@@ -43,10 +43,14 @@ const standOut = keyframes`
     box-shadow: 0 0 .5em ${primaryColor};
   }
 `;
-  
+
+
 
 export const InfoDisplayerStyledComponent = styled.div`
   grid-area: tv;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   .tv-container{
 
       display: flex;
@@ -58,21 +62,7 @@ export const InfoDisplayerStyledComponent = styled.div`
       margin: 0;
       position: relative;
 
-      & .tv-container__antenna{
-        position: absolute;
-        top: 0;
-        left: clamp(10%, 10vw, 25%);
-        transform: translate(-65%,calc(-100% + .25em));
-        height: 2em;
-        width: auto;
-        z-index:1;
-
-        @media screen and (width < ${mdScreenWidth}){
-          display: none;
-          
-        }
-
-      } 
+      
       
       .tv{
         position: relative;

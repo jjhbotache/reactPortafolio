@@ -22,6 +22,11 @@ const texts = {
       contact: {
         en: "Contact",
         es: "Contacto"
+      },
+      // Nuevos textos para el canal experience
+      experience: {
+        en: "Experience",
+        es: "Experiencia"
       }
     }
   },
@@ -91,6 +96,11 @@ const texts = {
       es: "Revisar"
     }
   },
+  // Nuevos textos para la información de experiencia
+  experienceInfo: {
+    en: "This is my experience information. Here you can find details about my work history and skills.",
+    es: "Esta es mi información de experiencia. Aquí podrás encontrar detalles sobre mi trayectoria laboral y mis habilidades."
+  }
 }
 
 export default texts;

@@ -17,15 +17,9 @@ export default function MainPage() {
   const mainComponentRef = useRef(null);
   const titleInfoToDisplay = useSelector(state => state.titleInfoToDisplay);
 
-
-
-
-
   const { language } = useContext( GlobalStateContext )
   const dispatcher = useDispatch();
   
-  
-
   const channels = [
     {
       name:{
@@ -48,6 +42,14 @@ export default function MainPage() {
       },
       value: "contact"
     },
+    // Nuevo canal experience
+    {
+      name: {
+        en: texts.channels.channels.experience.en,
+        es: texts.channels.channels.experience.es
+      },
+      value: "experience"
+    }
   ]
 
   useEffect(() => {

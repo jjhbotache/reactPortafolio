@@ -20,9 +20,12 @@ const GlobalStyles = createGlobalStyle`
   }
 
 
+
+
   /* tostify classes overriding */
   :root {
     --toastify-color-info: ${({theme})=>theme.colors.primary};
+    --swiper-pagination-color: ${({theme})=>theme.colors.primary};
   }
 
   ul{

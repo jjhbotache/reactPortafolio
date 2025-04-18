@@ -5,6 +5,7 @@ import { useState } from "react";
 import AboutInfo from "../AboutInfo/AboutInfo";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import ProjectsInfo from "../ProjectsInfo/ProjectsInfo";
+import ExperienceInfo from "../ExperienceInfo/ExperienceInfo";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
 import texts from "../../constants/texts";
 import exitFullscreen from "../../helpers/exitFullScreen";
@@ -74,7 +75,7 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
   return(
     <InfoDisplayerStyledComponent onClick={onClick}>
       <div className={`tv-container`}>
-        <img className="tv-container__antenna" src="/antenna.svg" alt="antenna" />
+        {/* <img className="tv-container__antenna" src="/antenna.svg" alt="antenna" /> */}
         <div className={`tv ${maximazedManualy ? "tv__maximazed" : ""}`} ref={tvRef} > 
 
           {titleInfoToDisplay !== null &&  <div className={"maximizeBtn"+(!firstTimeMaximazed ? " maximizeBtn--stand-out":"")} onClick={handleTvMaximazed}>
@@ -85,13 +86,10 @@ export default function InfoDisplayer({titleInfoToDisplay,onClick}) {
           {titleInfoToDisplay !== null
           ? 
             titleInfoToDisplay === "about" ? <AboutInfo /> :
-
-
             titleInfoToDisplay === "projects" ? <ProjectsInfo maximazed={maximazed} /> :
-
-
-            titleInfoToDisplay === "contact" ? <ContactInfo/> : undefined
-
+            titleInfoToDisplay === "contact" ? <ContactInfo/> :
+            titleInfoToDisplay === "experience" ? <ExperienceInfo /> :
+            undefined
           : <span className="no-channel-alert">{texts.infoDisplayer.noInfo[language]}</span>
           }
         </div>

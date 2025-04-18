@@ -9,7 +9,21 @@ const glowing = keyframes`
   50%{
     background-position: 400% 0;
   }
-`
+`;
+
+// Define keyframes using the aurora colors including a pause
+const textAurora = keyframes`
+  // Animation phase (0% to 60% = 3 seconds of 5)
+  15% { color: #00c2ff; text-shadow: 0 0 .1rem ${primaryColor}; }
+  30% { color: #00ffc3; text-shadow: 0 0 .1rem ${primaryColor}; } 
+  45% { color: #e54cff; text-shadow: 0 0 .1rem ${primaryColor}; }
+  75% { color: ${primaryColor}; text-shadow: 0 0 .1rem ${primaryColor}; }
+  // Pause phase (60.1% to 100% = 2 seconds of 5)
+  80.1%, 100% {
+    color: ${secondaryColor}; // Reset to default li color during pause
+    text-shadow: none; // Remove text shadow during pause
+  }
+`;
 
 export const ChannelsStyledComponent = styled.div`
   width: 100%;
@@ -23,8 +37,8 @@ export const ChannelsStyledComponent = styled.div`
   summary::-webkit-details-marker {
     display: none;
   }
-  
-  
+
+
   @media screen and (width < ${mdScreenWidth}){
     margin-top: unset;
     align-items: center;
@@ -41,19 +55,22 @@ export const ChannelsStyledComponent = styled.div`
     border-radius: .5rem;
     padding: .2em;
     box-sizing: border-box;
-    
+
 
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     cursor: pointer;
 
     summary{
       background-color: ${({theme})=>theme.colors.darkColor};
       padding: .3rem;
       border-radius: .5rem;
-      width: 100%;
+      height: auto;
+      min-height: 100%;
+      min-width: 100%;
+      text-align: center;
 
       &::before{
         content: "";
@@ -80,9 +97,9 @@ export const ChannelsStyledComponent = styled.div`
     }
 
 
-    
+
     color: white;
-    
+
     font-size: 1.2rem;
     transition: all 0.3s ease-in-out;
     &:hover{
@@ -126,7 +143,7 @@ export const ChannelsStyledComponent = styled.div`
         filter: blur(10px);
         box-shadow: 0 0 10px ${primaryColor};
       }
-      
+
       &.open{
         opacity: 1;
       }
@@ -161,6 +178,19 @@ export const ChannelsStyledComponent = styled.div`
 
   }
 
+  .channels-select--options{
+    &__active{
+      text-shadow: 0 0 .2rem ${primaryColor};
+      letter-spacing: .2rem;
+      font-weight: 500;
+      transform: scale(1.2);
+    }
 
-  
+    &__experience{
+      /* Apply the modified text aurora animation */
+      animation: ${textAurora} 10s ease-out infinite; /* 3s animation + 2s pause = 5s cycle */
+      /* text-shadow is now handled within the keyframes */
+    }
+  }
+
 `;

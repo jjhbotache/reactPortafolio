@@ -28,7 +28,7 @@ export default function ExperienceInfo() {
         >
           {experienceMedia.map((experience, index) => {
 
-            const startMonth = months[language][experience.date.start.month];
+            const startMonth = months[language][experience.date.start.month -1];
             const startYear = experience.date.start.year;
             let formattedExperienceDate;
 
@@ -41,7 +41,7 @@ export default function ExperienceInfo() {
               formattedExperienceDate = `${startMonth} ${startYear}`;
             } else {
               const endDateStr = experience.date.end
-                ? `${months[language][experience.date.end.month]} ${experience.date.end.year}`
+                ? `${months[language][experience.date.end.month-1]} ${experience.date.end.year}`
                 : language === "en"
                 ? "Present"
                 : "Presente";

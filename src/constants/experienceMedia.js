@@ -60,6 +60,7 @@ export const months = {
   ]
 };
 
+const myLogo = "/ico/jj.png";
 const experienceMedia = [
   // dpagos
   {
@@ -112,7 +113,7 @@ const experienceMedia = [
     enterprises: [
       {
         name: "Juan Jose Huertas Botache",
-        logo: "/ico/jj.png", // Placeholder icon name
+        logo: myLogo, // Placeholder icon name
         link: "/",
       }
     ],
@@ -136,7 +137,39 @@ const experienceMedia = [
       en: "This project is an AI chatbot designed to answer questions about an educational institution. It was developed using Shadcn and the Gemini API.",
     },
   },
-  // 
+  // Intellibot
+  {
+    title: {
+      es: "Intellibot",
+      en: "Intellibot",
+    },
+    enterprises: [
+      {
+        name: "Juan Jose Huertas Botache",
+        logo: myLogo, // Placeholder icon name
+        link: "/",
+      }
+    ],
+    imgs:[
+      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744991423/Screenshot_2025-04-18_10-42-01_ftuzp4.png",
+      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744991423/Screenshot_2025-04-18_10-40-49_lydfoj.png"
+    ], // Example image path
+    technologies: [ "React" ],
+    date: {
+      start: {
+        month: 12,
+        year: "2024"
+      },
+      end: {
+        month: 12,
+        year: "2024"
+      },
+    },
+    description: {
+      es: "Este es un software diseñado para manejar el whatsapp de una empresa. Permite responder preguntas frecuentes, enviar mensajes automáticos y manejar el flujo de conversación con los clientes. En este proyecto, colaboré para agregar nuevas funcionalidades UI y mejorar la experiencia del usuario.",
+      en: "This is a software designed to manage a company's WhatsApp. It allows for answering frequently asked questions, sending automatic messages, and managing the flow of conversation with customers. In this project, I collaborated to add new UI functionalities and improve the user experience.",
+    },
+  },
 ]
 
 export default experienceMedia;

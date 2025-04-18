@@ -96,7 +96,7 @@ export const PageOptionsContainer = styled.ol`
     position: fixed;
     width: 85%;
     height: 85%;
-    z-index: 5;
+    z-index: 30;
     border-radius: 1rem;
 
     top: 50%;

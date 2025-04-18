@@ -172,7 +172,7 @@ export const InfoDisplayerStyledComponent = styled.div`
           top: 54%;
           left: 50%;
           transform: translate(-50%,-50%);
-          z-index: 1;
+          z-index: 9;
           filter: hue-rotate(35deg);
           width: 130%;
           height: 130%;
@@ -193,7 +193,7 @@ export const InfoDisplayerStyledComponent = styled.div`
 
         .no-channel-alert{
           position: absolute;
-          z-index: 1;
+          z-index: 9;
 
           padding: 10%;
           width: 105%;

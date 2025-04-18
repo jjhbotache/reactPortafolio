@@ -751,10 +751,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
         .no-channel-alert{
           position: absolute;
-          /* top: 50%;
-          left: 50%;
-          transform: translate(-50%,-50%); */
-          z-index: 1;
+          z-index: 11;
 
           padding: 10%;
           width: 105%;

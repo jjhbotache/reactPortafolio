@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-
 
 // Assuming you'll create a styles.css file in the same directory or adjust the path
 // import './styles.css'; // You might need to create this file or adjust the path
 
 // import required modules
-import { EffectCards, Pagination } from 'swiper/modules';
+import { EffectCards, Pagination, Zoom } from 'swiper/modules';
 import { ExperienceInfoStyledComponents, ExperienceCard } from "./ExperienceInfoStyledComponents";
 import experienceMedia, { months } from "../../constants/experienceMedia";
 import { GlobalStateContext } from "../../contexts/LanguajeContextProvider";
@@ -18,15 +16,48 @@ import { Link } from "react-router-dom";
 export default function ExperienceInfo() {
   const {language} = useContext(GlobalStateContext);
 
+  // show slideLeft only once per session
+  const [showSlide, setShowSlide] = useState(false);
+  useEffect(() => {
+    const hasShown = sessionStorage.getItem('hasShownSlide');
+    if (!hasShown) {
+      setShowSlide(true);
+      sessionStorage.setItem('hasShownSlide', 'true');
+    }
+  }, []);
+
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleCount(prev => {
+        if (prev >= experienceMedia.length) {
+          clearInterval(interval);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, 300);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <ExperienceInfoStyledComponents>
+      {showSlide && (
+        <img
+          src="/svgs/slideLeft.svg"
+          alt="slideLeft"
+          className="slideLeft"
+          onAnimationEnd={() => setShowSlide(false)}
+        />
+      )}
         <Swiper
           effect={'cards'}
           grabCursor={true}
           modules={[EffectCards]}
           className="experience-info__swiper"
         >
-          {experienceMedia.map((experience, index) => {
+          {experienceMedia.slice(0, visibleCount).map((experience, index) => {
 
             const startMonth = months[language][experience.date.start.month -1];
             const startYear = experience.date.start.year;
@@ -50,7 +81,7 @@ export default function ExperienceInfo() {
             }
                 
           return (
-            <SwiperSlide key={index} className="experience-info__slide">
+            <SwiperSlide key={index} className="experience-info__slide" >
               <ExperienceCard className="experience-card" >
                 <div>
                   <h3 className="experience-card__title">{experience.title[language]}</h3>
@@ -63,8 +94,10 @@ export default function ExperienceInfo() {
                 <Swiper
                   className="experience-card__images"
                   modules={[Pagination]} 
+                  zoom={true}
                   direction="vertical"
                   pagination={{ clickable: true }}
+                  loop={true}
                   >
                 {experience.imgs.map((img, imgIndex) => (
                   <SwiperSlide key={imgIndex}>

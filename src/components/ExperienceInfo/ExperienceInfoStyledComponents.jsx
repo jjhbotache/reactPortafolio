@@ -1,16 +1,53 @@
 import styled, { css, keyframes } from "styled-components";
 import { darkColor, lightColor, mdScreenWidth, primaryColor, secondaryColor } from "../../constants/styleConstants";
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+// replace slide-left animation with a curved path (arc to the left)
+const arcLeftAnim = keyframes`
+  from {
+    opacity: 1;
+    transform: translateX(200%) rotate(0deg) translateY(0);
+  }
+  to {
+    transform: translateX(-300%) rotate(-20deg) translateY(-10px);
+    display: block;
+  }
+`;
+
 export const ExperienceInfoStyledComponents = styled.div`
+  /* make wrapper relative to position the sliding image */
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  /* animate .slideLeft: move along an arc to the left */
+  .slideLeft {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    z-index: 10;
+    width: auto;
+    height: 10vh;
+    transform: translateX(-500%) translateY(-50%);
+    animation: ${arcLeftAnim} 1s ease-in-out 3 forwards;
+    opacity: 0;
+    animation-delay: 1.5s;
+  }
+
   .experience-info__swiper {
     height: 90%;
-    width: 90%;
+    width: 85%;
     max-height: 400px !important;
     margin: 0;
   }
@@ -19,11 +56,13 @@ export const ExperienceInfoStyledComponents = styled.div`
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#555555+0,333333+44,111111+100 */
     background: ${({ theme }) =>
       theme.colors.background == "#222222"
-        ? "linear-gradient(10deg, #1a1a1a 0%, rgba(51,51,51,1) 44%, rgba(17,17,17,1) 100%)"
-        : "linear-gradient(10deg, #dadada 0%, #f7f7f7 44%, #dadada 100%)"};
+        ? "linear-gradient(10deg, #2a1a3a 0%, rgba(61,41,81,1) 44%, rgba(31,17,51,1) 100%)"
+        : "linear-gradient(10deg, #d4c2e0 0%, #f0e4f7 44%, #d4c2e0 100%)"};
     border-radius: 1em;
     padding: 1em 1.3em;
     overflow-y: scroll;
+    animation: ${fadeIn} 0.5s ease-in;
+
     /* Hide scrollbar for Chrome, Safari and Opera */
     &::-webkit-scrollbar {
       display: none;
@@ -32,9 +71,6 @@ export const ExperienceInfoStyledComponents = styled.div`
     scrollbar-width: none; /* Firefox */
   }
 
-  .experience-info__slide--visible {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
 `;
 
 export const ExperienceCard = styled.div`

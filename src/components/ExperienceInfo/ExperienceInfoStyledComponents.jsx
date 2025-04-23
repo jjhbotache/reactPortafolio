@@ -147,14 +147,13 @@ export const ExperienceCard = styled.div`
       height: 20px;
       font-size: .9em;
       font-weight: bold;
-      color: ${darkColor};
+      
 
       &__logo {
         height: calc(1em - 5px);
       }
 
       &__name {
-        color: ${lightColor};
       }
     }
   }

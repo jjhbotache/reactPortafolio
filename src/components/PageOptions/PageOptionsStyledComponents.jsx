@@ -12,7 +12,7 @@ const fadeIn = keyframes`
 
 export const PageOptionsContainer = styled.ol`
   position: fixed;
-  z-index: 3;
+  z-index: 10;
   list-style: none;
   display: flex;
   justify-content: flex-start;

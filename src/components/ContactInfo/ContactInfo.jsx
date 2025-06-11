@@ -33,7 +33,7 @@ export default function ContactInfo() {
     {
       "name": "whatsapp",
       "icon": whatsappImg,
-      "link": "https://wa.me/3012167977?text= Hola Juan Jose, vi tu portafolio y me gustaría contactarte!"
+      "link": "https://wa.me/3241066569?text=Hola Juan Jose, vi tu portafolio y me gustaría contactarte!"
     }
   ]
 

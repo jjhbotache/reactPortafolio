@@ -81,12 +81,13 @@ const experienceMedia = [
       }
     ],
     imgs:[
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744923831/Captura_de_pantalla_2025-04-17_155832_l4oywu.png",
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744923831/Captura_de_pantalla_2025-04-17_155942_sw3cfo.png",
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744923831/Captura_de_pantalla_2025-04-17_160011_bxkqzo.png",
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744923831/Screenshot_23_ydrxt2.png",
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744923832/Screenshot_24_xiqgar.png",
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744923831/Screenshot_25_k190iv.png",
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945606/Captura_de_pantalla_2025-04-17_155832_l4oywu_befdsq.png",
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945606/Captura_de_pantalla_2025-04-17_155942_sw3cfo_xy7q0t.png",
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945606/Captura_de_pantalla_2025-04-17_160011_bxkqzo_psnbic.png",
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945606/dpagos_uj37xt.png",
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945606/Screenshot_24_xiqgar_hckrzw.png",
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945606/Screenshot_23_ydrxt2_opzixd.png",
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945607/Screenshot_25_k190iv_xgdk3d.png"
     ], // Example image paths
     technologies: [ "React", "TypeScript", "Fastapi", "Shadcn", "Recharts", "SQLAlchemy"],
     date: {
@@ -113,13 +114,13 @@ const experienceMedia = [
     enterprises: [
       {
         name: "Juan Jose Huertas Botache",
-        logo: myLogo, // Placeholder icon name
+        logo: myLogo, 
         link: "/",
       }
     ],
     imgs:[
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744944114/Screenshot_27_cgskb2.png",
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744944113/Screenshot_26_oynq8b.png"
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945608/Screenshot_27_cgskb2_dgvojd.png",
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945608/Screenshot_26_oynq8b_q7hggo.png"
     ], // Example image path
     technologies: [ "Shadcn", "Tailwind", "TypeScript", "Gemini API",],
     date: {
@@ -151,8 +152,8 @@ const experienceMedia = [
       }
     ],
     imgs:[
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744991423/Screenshot_2025-04-18_10-42-01_ftuzp4.png",
-      "https://res.cloudinary.com/db8fpml9m/image/upload/v1744991423/Screenshot_2025-04-18_10-40-49_lydfoj.png"
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945607/Screenshot_2025-04-18_10-42-01_ftuzp4_harlkw.png",
+      "https://res.cloudinary.com/ddt7qdant/image/upload/v1757945607/Screenshot_2025-04-18_10-40-49_lydfoj_tiegtf.png"
     ], // Example image path
     technologies: [ "React" ],
     date: {

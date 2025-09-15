@@ -68,7 +68,7 @@ const projectsMedia = [
       en: "This is a clone of the Netflix web page. The app simulates user login and registration using AWS Cognito, allows payment of the subscription using Paypal and stores user information in Firebase."
     },
     img: netflixClone,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255076/netflixCloneVideo_gkycka.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945621/netflixCloneVideo_gkycka_b6wrbm.mp4",
     links: [
       {
         name: "Github",
@@ -94,7 +94,7 @@ const projectsMedia = [
       Se evitó adrede el uso de cualquier tipo de librería u hojas de estilos existentes y se construyó bajo la metodología BEM para dar orden al nombramiento de clases CSS.`,
     },
     img: disneyPlus,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254665/disneyCloneVideo_reducido_zplh4m.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945609/disneyCloneVideo_reducido_zplh4m_iacub1.mp4",
     links: [
       {
         name: "Github",
@@ -107,62 +107,7 @@ const projectsMedia = [
     ],
     importance: 2
   },
-  // // SWapiProject
-  // {
-  //   title: "Star Wars",
-  //   tags: [
-  //     "React",
-  //     "Api consumption",
-  //     "Styled Components",
-  //     "React Router DOM"
-  //   ],
-  //   description: {
-  //     es: "Este proyecto, utiliza la api SWapi,la api de Pixabay y StyledComponents. Se utiliza la información de la api SWapi para pasar props a componentes y hacer un pequeño avatar con altura, color y recuadro variable con base a esta información. La api SWapi no proporciona imágenes de los personajes, por lo que se recurrió a utilizar la api de Pixabay para buscar el nombre y seleccionar una imagen aleatoria de los resultados.",
-  //     en: "This project uses the SWapi api, the Pixabay api and StyledComponents. The information from the SWapi api is used to pass props to components and make a small avatar with variable height, color and box, based on this information. The SWapi api doesn't provide images of the characters, so the Pixabay api was used to search for the name and select a random image from the results."
-  //   },
-  //   img: SW,
-  //   video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255004/SWVideo_reducido_o7xeoq.mp4",
-  //   links: [
-  //     {
-  //       name: "Github",
-  //       link: "https://github.com/jjhbotache/SWApi_project"
-  //     },
-  //     {
-  //       name: "Web",
-  //       link: "https://starwars-plum-seven.vercel.app/"
-  //     }
-  //   ],
-  //   importance: 1
-  // },
-  // // rickAndMorty
-  // {
-  //   title: "Rick and Morty Characters",
-  //   tags: [
-  //     "Typescript",
-  //     "React",
-  //     "Api consumption",
-  //     "Bootstrap",
-  //     "React Router DOM"
-  //   ],
-  //   description: {
-  //     es: "Este proyecto se centró en el efectivo consumo de la api de Rick y Morty y uso de TypeScript, agregando funciones como el scroll infinito, búsqueda de caracteres y filtro de los mismos. La estética de la pagina se vio apoyada en Bootstrap.",
-  //     en: "This project focused on the effective consumption of the Rick and Morty api and the use of TypeScript, adding functions such as infinite scroll, character search and filter. The aesthetics of the page were supported by Bootstrap."
-      
-  //   },
-  //   img: rickAndMorty,
-  //   video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254886/rickAndMortyVideo_reducido_toqeex.mp4",
-  //   links: [
-  //     {
-  //       name: "Github",
-  //       link: "https://github.com/jjhbotache/rickAndMorty"
-  //     },
-  //     {
-  //       name: "Web",
-  //       link: "https://rick-and-morty-indol.vercel.app/"
-  //     }
-  //   ],
-  //   importance: 1
-  // },
+  
   // surebetsBettor
   {
     title: "Surebets Bettor",
@@ -187,7 +132,7 @@ const projectsMedia = [
       The preview you can see below, is only the displayed interface, so it will not scrape information.`
     },
     img: surebetsBettor,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254946/surebetsBettorVideo_reducido_z1ba0f.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945609/surebetsBettorVideo_reducido_z1ba0f_tsvcsh.mp4",
     links: [
       {
         name: "Github",
@@ -200,6 +145,7 @@ const projectsMedia = [
     ],
     importance: 2
   },
+  
   // reactTodoApp
   {
     title: "React native Todo App",
@@ -213,7 +159,7 @@ const projectsMedia = [
       en: "This application allows users to manage and rearrange tasks. It uses Expo SQLite to store tasks and drag and drop reorganization features."
     },
     img: reactTodoApp,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255131/reactTodoApp_asmrrg.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945608/reactTodoApp_asmrrg_martgh.mp4",
     links: [
       {
         name: "Github",
@@ -226,6 +172,7 @@ const projectsMedia = [
     ],
     importance: 2
   },
+
   // chattus
   {
     title: "Chattus",
@@ -251,7 +198,7 @@ const projectsMedia = [
       The site was built with React and Typescript and the backend with Fastapi.`
     },
     img: chattus,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723254371/chattus_iv1lbg.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945612/chattus_iv1lbg_dgzz3h.mp4",
     links: [
       {
         name: "Github Frontend",
@@ -268,6 +215,7 @@ const projectsMedia = [
     ],
     importance: 3
   },
+
   // memorable 3
   {
     title: "Memorable3",
@@ -293,7 +241,7 @@ const projectsMedia = [
       "Postgres SQL",
     ],
     img: memorable3,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723255185/memorable_complete_video_elyftt.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945615/memorable_complete_video_elyftt_sbjeta.mp4",
     links: [
       {
         name: "Github Frontend",
@@ -310,6 +258,7 @@ const projectsMedia = [
     ],
     importance: 5
   },
+
   // Instagram follower bot
   {
     title: "Instagram follower bot",
@@ -333,7 +282,7 @@ const projectsMedia = [
       "Google gemini",
     ],
     img: memorable_instabot_flowchar,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723244275/memorable_instabot_flowchar_n7tiqo.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945612/memorable_instabot_flowchar_n7tiqo_yacu70.mp4",
     links: [
       {
         name: "Github",
@@ -342,6 +291,7 @@ const projectsMedia = [
     ],
     importance: 4
   },
+
   // Iphone4s api
   {
     title: "Iphone 4s api",
@@ -358,7 +308,7 @@ const projectsMedia = [
       "HTML",
     ],
     img: iphone_api,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723336992/0810_m6uk33.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945629/iphone_ap%C3%AD_tixjj8.mp4",
     links: [
       {
         name: "Github",
@@ -367,6 +317,7 @@ const projectsMedia = [
     ],
     importance: 3
   },
+
   // Prematch Surebets gettor
   {
     title: "Prematch surebets gettor",
@@ -380,7 +331,7 @@ const projectsMedia = [
       "pyTelegramBotAPI"
     ],
     img: prematch_bettor,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1723668852/simplescreenrecorder-2024-08-14_11.26.20-ezgif.com-video-to-gif-converter_iugz1t.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945609/simplescreenrecorder-2024-08-14_11.26.20-ezgif.com-video-to-gif-converter_iugz1t_aql62q.mp4",
     links: [
       {
         name: "Github",
@@ -393,6 +344,7 @@ const projectsMedia = [
     ],
     importance: 4
   },
+
   // Three js and Microcontrollers
   {
     title: "Three js and Microcontrollers",
@@ -406,7 +358,7 @@ const projectsMedia = [
       "CSS"
     ],
     img: threejs_microcontrollers,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1724195866/Microcontrollers_and_2_more_pages_-_yo_-_Microsoft_Edge_2024-08-20_18-04-16_nlovik.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945623/microcontrollers_b2ubyl.mp4",
     links: [
       {
         name: "Github",
@@ -419,6 +371,7 @@ const projectsMedia = [
     ],
     importance: 3
   },
+
   // Orders Quotator
   {
     title: "Orders Quotator",
@@ -434,7 +387,7 @@ const projectsMedia = [
       "SQLite",
     ],
     img: ordersQuotator,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1725216070/orders_quotation_flr6qj.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945615/orders_quotator_nzchqa.mp4",
     links: [
       {
         name: "Github",
@@ -447,6 +400,7 @@ const projectsMedia = [
     ],
     importance: 4
   },
+
   // Easy site
   {
     title: "EasySite",
@@ -460,7 +414,7 @@ const projectsMedia = [
       "Postgres SQL",
     ],
     img: easySite,
-    video: "https://res.cloudinary.com/db8fpml9m/video/upload/v1738634355/easySiteVideo_vcm8uh.mp4",
+    video: "https://res.cloudinary.com/ddt7qdant/video/upload/v1757945619/easySiteVideo_vcm8uh_wvvlpd.mp4",
     links: [
       {
         name: "Github",
@@ -473,6 +427,7 @@ const projectsMedia = [
     ],
     importance: 5
   },
+
   // DevKalk 
   {
     title: "DevKalk",
@@ -498,11 +453,11 @@ The app allows users to create, edit, and manage project functionalities and tas
     links: [
       {
         name: "Github",
-        link: "https://github.com/jjhbotache/easy-site"
+        link: "https://github.com/jjhbotache/projectCalc"
       },
       {
         name: "Web",
-        link: "http://easy-site.onrender.com"
+        link: "https://devkalk.vercel.app"
       }
     ],
     importance: 5
